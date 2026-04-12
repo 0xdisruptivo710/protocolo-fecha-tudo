@@ -1,0 +1,17 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
+    { "source": "/pagina1", "destination": "/pagina1/index.html" },
+    { "source": "/pagina2", "destination": "/pagina2/index.html" },
+    { "source": "/pagina3", "destination": "/pagina3/index.html" },
+    { "source": "/pagina4", "destination": "/pagina4/index.html" },
+    { "source": "/pagina5", "destination": "/pagina5/index.html" },
+    { "source": "/pagina6", "destination": "/pagina6/index.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/pagina1/index.html" }
+  ]
+}
