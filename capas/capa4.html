@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Protocolo Fecha-Tudo - Clinical White</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 720px;
+    margin: 0;
+    overflow: hidden;
+    background: #F8FAFC;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Grid pattern background */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(13,148,136,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,148,136,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+
+  /* Top teal accent line */
+  .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0D9488 20%, #0D9488 80%, transparent);
+  }
+
+  /* Bottom teal accent line */
+  .bottom-line {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0D9488 20%, #0D9488 80%, transparent);
+  }
+
+  /* Corner geometric accents */
+  .corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+  }
+  .corner--tl { top: 30px; left: 30px; border-top: 2px solid #0D9488; border-left: 2px solid #0D9488; }
+  .corner--tr { top: 30px; right: 30px; border-top: 2px solid #0D9488; border-right: 2px solid #0D9488; }
+  .corner--bl { bottom: 30px; left: 30px; border-bottom: 2px solid #0D9488; border-left: 2px solid #0D9488; }
+  .corner--br { bottom: 30px; right: 30px; border-bottom: 2px solid #0D9488; border-right: 2px solid #0D9488; }
+
+  /* Geometric hexagon cluster - left side */
+  .hex-cluster {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .hex {
+    position: absolute;
+    width: 60px;
+    height: 34px;
+    background: transparent;
+    border: 1.5px solid rgba(13,148,136,0.2);
+  }
+  .hex::before, .hex::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 0;
+    left: -1.5px;
+    border-left: 31.5px solid transparent;
+    border-right: 31.5px solid transparent;
+  }
+  .hex::before {
+    top: -18px;
+    border-bottom: 18px solid rgba(13,148,136,0.2);
+  }
+  .hex::after {
+    bottom: -18px;
+    border-top: 18px solid rgba(13,148,136,0.2);
+  }
+  .hex:nth-child(1) { top: 0; left: 0; }
+  .hex:nth-child(2) { top: -35px; left: 50px; }
+  .hex:nth-child(3) { top: 35px; left: 50px; }
+  .hex:nth-child(4) { top: 0; left: 100px; opacity: 0.5; }
+  .hex:nth-child(5) { top: -70px; left: 50px; opacity: 0.3; }
+
+  /* Geometric circles - right side */
+  .circle-cluster {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .geo-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(13,148,136,0.15);
+  }
+  .geo-circle:nth-child(1) { width: 120px; height: 120px; top: -60px; right: 0; }
+  .geo-circle:nth-child(2) { width: 80px; height: 80px; top: -20px; right: 50px; border-color: rgba(13,148,136,0.25); }
+  .geo-circle:nth-child(3) { width: 160px; height: 160px; top: -80px; right: -20px; border-color: rgba(13,148,136,0.08); }
+  .geo-circle:nth-child(4) { width: 40px; height: 40px; top: 30px; right: 90px; border-color: rgba(236,72,153,0.2); }
+  .geo-circle:nth-child(5) { width: 20px; height: 20px; top: -90px; right: 100px; background: rgba(13,148,136,0.08); border: none; }
+
+  /* Floating dots */
+  .dot {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .dot:nth-child(1) { width: 6px; height: 6px; background: #0D9488; top: 60px; left: 200px; opacity: 0.3; }
+  .dot:nth-child(2) { width: 4px; height: 4px; background: #EC4899; top: 120px; right: 250px; opacity: 0.4; }
+  .dot:nth-child(3) { width: 8px; height: 8px; background: #0D9488; bottom: 100px; left: 300px; opacity: 0.15; }
+  .dot:nth-child(4) { width: 5px; height: 5px; background: #0D9488; bottom: 150px; right: 300px; opacity: 0.25; }
+  .dot:nth-child(5) { width: 3px; height: 3px; background: #EC4899; top: 200px; left: 350px; opacity: 0.3; }
+
+  /* Main content */
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+  }
+
+  /* Thin teal line above title */
+  .content::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1.5px;
+    background: #0D9488;
+    margin: 0 auto 28px;
+  }
+
+  .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #0D9488;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-family: 'Cinzel', serif;
+    font-size: 62px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .title-accent {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.1;
+  }
+
+  /* Pink underline under title */
+  .title-underline {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #EC4899, transparent);
+    margin: 16px auto 28px;
+  }
+
+  .divider-diamonds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .divider-diamonds span {
+    width: 5px;
+    height: 5px;
+    background: #0D9488;
+    transform: rotate(45deg);
+  }
+  .divider-diamonds::before,
+  .divider-diamonds::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(13,148,136,0.3);
+  }
+
+  .subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #64748B;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .subtitle strong {
+    color: #1A1A2E;
+    font-weight: 600;
+  }
+
+  /* Bottom thin line */
+  .content::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1.5px;
+    background: #0D9488;
+    margin: 32px auto 0;
+  }
+
+  /* Subtle cross pattern elements */
+  .cross {
+    position: absolute;
+    z-index: 1;
+  }
+  .cross::before, .cross::after {
+    content: '';
+    position: absolute;
+    background: rgba(13,148,136,0.12);
+  }
+  .cross::before { width: 16px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .cross::after { width: 1.5px; height: 16px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .cross:nth-of-type(1) { top: 100px; left: 250px; }
+  .cross:nth-of-type(2) { bottom: 120px; right: 220px; }
+  .cross:nth-of-type(3) { top: 180px; right: 350px; transform: rotate(45deg); }
+</style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="bottom-line"></div>
+
+  <div class="corner corner--tl"></div>
+  <div class="corner corner--tr"></div>
+  <div class="corner corner--bl"></div>
+  <div class="corner corner--br"></div>
+
+  <div class="hex-cluster">
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+  </div>
+
+  <div class="circle-cluster">
+    <div class="geo-circle"></div>
+    <div class="geo-circle"></div>
+    <div class="geo-circle"></div>
+    <div class="geo-circle"></div>
+    <div class="geo-circle"></div>
+  </div>
+
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+
+  <div class="cross"></div>
+  <div class="cross"></div>
+  <div class="cross"></div>
+
+  <div class="content">
+    <div class="label">WhatsApp Scripts</div>
+    <div class="title">
+      Protocolo
+      <span class="title-accent">Fecha-Tudo</span>
+    </div>
+    <div class="title-underline"></div>
+    <div class="divider-diamonds">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="subtitle"><strong>13</strong> Scripts de Vendas para Esteticistas</div>
+  </div>
+</body>
+</html>
