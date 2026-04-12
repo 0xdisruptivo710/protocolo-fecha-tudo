@@ -2,16 +2,16 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "framework": null,
-  "rewrites": [
-    { "source": "/pagina1", "destination": "/pagina1/index.html" },
-    { "source": "/pagina2", "destination": "/pagina2/index.html" },
-    { "source": "/pagina3", "destination": "/pagina3/index.html" },
-    { "source": "/pagina4", "destination": "/pagina4/index.html" },
-    { "source": "/pagina5", "destination": "/pagina5/index.html" },
-    { "source": "/pagina6", "destination": "/pagina6/index.html" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/pagina1/?", "dest": "/pagina1/index.html" },
+    { "src": "/pagina2/?", "dest": "/pagina2/index.html" },
+    { "src": "/pagina3/?", "dest": "/pagina3/index.html" },
+    { "src": "/pagina4/?", "dest": "/pagina4/index.html" },
+    { "src": "/pagina5/?", "dest": "/pagina5/index.html" },
+    { "src": "/pagina6/?", "dest": "/pagina6/index.html" },
     { "src": "/", "dest": "/pagina1/index.html" }
   ]
 }
