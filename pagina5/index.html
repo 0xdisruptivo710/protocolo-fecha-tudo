@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Fecha-Tudo — Clínicas de Estética Premium</title>
+    <meta name="description" content="Duas esteticistas. Mesma técnica. Uma lota a agenda. Descubra o que muda nos primeiros 15 minutos no WhatsApp.">
+    <meta property="og:title" content="Protocolo Fecha-Tudo — Clínicas Premium">
+    <meta property="og:description" content="O que separa a esteticista que fecha da que perde? Não é talento. É sequência.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1C1017;
+            --bg-surface: rgba(255,248,240,.04);
+            --primary: #D4AF37;
+            --primary-dim: rgba(212,175,55,.55);
+            --primary-border: rgba(212,175,55,.15);
+            --primary-glow: rgba(212,175,55,.08);
+            --text: #FFF8F0;
+            --text-muted: rgba(255,248,240,.55);
+            --text-faint: rgba(255,248,240,.3);
+            --accent: #E8B4B8;
+            --accent-dim: rgba(232,180,184,.4);
+            --surface-border: rgba(212,175,55,.15);
+            --surface-hover: rgba(255,248,240,.07);
+            --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', system-ui, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            cursor: none;
+        }
+
+        /* ═══════ CUSTOM CURSOR ═══════ */
+        .cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 14px; height: 14px;
+            background: var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99;
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform .2s var(--ease-out),
+                        opacity .2s var(--ease-out);
+            opacity: .85;
+            will-change: transform;
+        }
+
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(3.2);
+            opacity: .25;
+        }
+
+        @media (pointer: coarse) {
+            body { cursor: auto; }
+            .cursor { display: none; }
+        }
+
+        ::selection { background: rgba(212,175,55,.25); color: var(--text); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-dim); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        /* ═══════ TYPOGRAPHY ═══════ */
+        .serif { font-family: 'Cormorant', 'Georgia', serif; }
+        .eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px; font-weight: 500;
+            letter-spacing: .22em; text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        /* ═══════ REVEAL SYSTEM ═══════ */
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity .7s var(--ease-smooth), transform .7s var(--ease-smooth);
+        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: .12s; }
+        .d2 { transition-delay: .24s; }
+        .d3 { transition-delay: .36s; }
+        .d4 { transition-delay: .48s; }
+        .d5 { transition-delay: .6s; }
+        .d6 { transition-delay: .72s; }
+
+        /* ═══════ UTILITY ═══════ */
+        .tabular { font-variant-numeric: tabular-nums; }
+
+        /* ═══════ THIN GOLD DIVIDER ═══════ */
+        .gold-rule {
+            width: 56px; height: 1px;
+            background: var(--primary);
+            border: none;
+        }
+        .gold-rule--center { margin-left: auto; margin-right: auto; }
+
+        /* ═══════ SECTION 1 — HERO ═══════ */
+        .hero {
+            min-height: 100dvh;
+            display: flex; flex-direction: column;
+            justify-content: center;
+            padding: 100px 10vw 72px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 20% 50%, rgba(212,175,55,.04) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(232,180,184,.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            position: absolute;
+            top: 40px; left: 10vw;
+        }
+
+        .hero-headline {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(44px, 7.5vw, 104px);
+            line-height: 1.06;
+            color: var(--text);
+            letter-spacing: -.02em;
+            margin-bottom: 44px;
+            text-wrap: balance;
+        }
+
+        .hero-line {
+            display: block;
+            opacity: 0; transform: translateY(18px);
+            transition: opacity .6s var(--ease-smooth), transform .6s var(--ease-smooth);
+        }
+        .hero-line.visible { opacity: 1; transform: translateY(0); }
+
+        .hero-line--accent { color: var(--primary); }
+
+        .hero-body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px; font-weight: 300;
+            color: var(--text-muted);
+            max-width: 500px; line-height: 1.8;
+            margin-bottom: 40px;
+            text-wrap: pretty;
+            opacity: 0; transform: translateY(12px);
+            transition: opacity .6s .9s var(--ease-smooth), transform .6s .9s var(--ease-smooth);
+        }
+        .hero-body.visible { opacity: 1; transform: translateY(0); }
+
+        .hero-link {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px; font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--primary-border);
+            transition: border-color .2s var(--ease-out), gap .2s var(--ease-out);
+            cursor: pointer;
+            opacity: 0; transform: translateY(10px);
+            transition: opacity .5s 1.15s var(--ease-smooth), transform .5s 1.15s var(--ease-smooth),
+                        border-color .2s var(--ease-out), gap .2s var(--ease-out);
+        }
+        .hero-link.visible { opacity: 1; transform: translateY(0); }
+        .hero-link:hover { border-color: var(--primary); gap: 16px; }
+        .hero-link svg { flex-shrink: 0; transition: transform .2s var(--ease-out); }
+        .hero-link:hover svg { transform: translateX(3px); }
+
+        .hero-corner {
+            position: absolute;
+            bottom: 40px; right: 10vw;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ═══════ SECTION 2 — CONTRASTE ═══════ */
+        .contraste {
+            padding: 140px 10vw;
+            border-top: 1px solid var(--primary-border);
+        }
+
+        .contraste-title {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(30px, 4.5vw, 52px);
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 20px;
+            max-width: 620px;
+            text-wrap: balance;
+        }
+
+        .contraste-sub {
+            font-size: 16px; font-weight: 300;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin-bottom: 72px;
+            line-height: 1.75;
+            text-wrap: pretty;
+        }
+
+        .contraste-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .contraste-col {
+            padding: 40px 32px;
+            background: var(--bg-surface);
+            border: 1px solid var(--surface-border);
+            position: relative;
+        }
+
+        .contraste-col--sem { border-color: rgba(232,180,184,.12); }
+        .contraste-col--com { border-color: var(--surface-border); }
+
+        .contraste-col-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px; font-weight: 600;
+            letter-spacing: .2em; text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .contraste-col--sem .contraste-col-label { color: var(--accent-dim); }
+        .contraste-col--com .contraste-col-label { color: var(--primary); }
+
+        .contraste-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,248,240,.06);
+        }
+        .contraste-item:last-child { border-bottom: none; }
+
+        .contraste-q {
+            font-family: 'Cormorant', serif;
+            font-size: 18px; font-weight: 500;
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .contraste-a {
+            font-size: 14px; font-weight: 400;
+            line-height: 1.65;
+        }
+
+        .contraste-col--sem .contraste-a { color: var(--accent-dim); }
+        .contraste-col--com .contraste-a { color: var(--text-muted); }
+
+        /* ═══════ SECTION 3 — MECANISMO ═══════ */
+        .mecanismo {
+            padding: 140px 10vw;
+            border-top: 1px solid var(--primary-border);
+        }
+
+        .mecanismo-title {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(30px, 4.5vw, 52px);
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 72px;
+            max-width: 600px;
+            text-wrap: balance;
+        }
+
+        .mec-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .mec-paragraphs { display: flex; flex-direction: column; gap: 40px; }
+
+        .mec-para {
+            display: flex; gap: 20px; align-items: flex-start;
+        }
+
+        .mec-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px; font-weight: 600;
+            color: var(--primary);
+            flex-shrink: 0; min-width: 28px;
+            margin-top: 3px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .mec-text {
+            font-size: 15px; font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.85;
+            text-wrap: pretty;
+        }
+
+        .mec-sticky {
+            position: sticky; top: 120px;
+            background: var(--bg-surface);
+            border: 1px solid var(--surface-border);
+            padding: 36px 28px;
+            text-align: center;
+        }
+
+        .mec-sticky-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px; font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-wrap: pretty;
+        }
+
+        .mec-sticky-attr {
+            font-family: 'Cormorant', serif;
+            font-size: 15px; font-weight: 500;
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        /* ═══════ SECTION 4 — METODO M.A.C.A. (TIMELINE) ═══════ */
+        .metodo {
+            padding: 140px 10vw;
+            border-top: 1px solid var(--primary-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metodo::before {
+            content: '';
+            position: absolute;
+            top: 0; right: -10%;
+            width: 45%; height: 100%;
+            background: radial-gradient(ellipse at center, rgba(212,175,55,.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .metodo-header {
+            margin-bottom: 80px;
+        }
+
+        .metodo-title {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(30px, 5vw, 56px);
+            line-height: 1.12;
+            color: var(--text);
+            margin-top: 16px;
+            max-width: 560px;
+            text-wrap: balance;
+        }
+
+        .metodo-subtitle {
+            font-size: 15px; font-weight: 300;
+            color: var(--text-muted);
+            margin-top: 20px;
+            max-width: 440px;
+            text-wrap: pretty;
+        }
+
+        /* Timeline container */
+        .timeline {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 0;
+            position: relative;
+        }
+
+        .timeline-track {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-line {
+            width: 1px;
+            height: 100%;
+            background: rgba(212,175,55,.15);
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-fill {
+            width: 1px;
+            height: 0;
+            background: var(--primary);
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            transition: height .1s linear;
+            will-change: transform;
+        }
+
+        .timeline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .timeline-step {
+            display: contents;
+        }
+
+        .timeline-dot-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-dot {
+            width: 11px; height: 11px;
+            border-radius: 50%;
+            border: 1.5px solid var(--primary-border);
+            background: var(--bg);
+            transition: background .3s var(--ease-out), border-color .3s var(--ease-out),
+                        transform .2s var(--ease-out);
+            flex-shrink: 0;
+        }
+
+        .timeline-dot.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.3);
+        }
+
+        .timeline-card {
+            padding: 32px 28px;
+            margin-bottom: 16px;
+            background: var(--bg-surface);
+            border: 1px solid var(--surface-border);
+            transition: border-color .2s var(--ease-out), background .2s var(--ease-out);
+            cursor: default;
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(212,175,55,.3);
+            background: var(--surface-hover);
+        }
+
+        .tc-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px; font-weight: 600;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: var(--primary-dim);
+            margin-bottom: 12px;
+        }
+
+        .tc-name {
+            font-family: 'Cormorant', serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .tc-timing {
+            font-size: 12px; font-weight: 500;
+            color: var(--text-faint);
+            letter-spacing: .04em;
+            margin-bottom: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .tc-desc {
+            font-size: 14px; font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.7;
+            text-wrap: pretty;
+        }
+
+        /* ═══════ SECTION 5 — CONTEUDO ═══════ */
+        .conteudo {
+            padding: 140px 10vw;
+            border-top: 1px solid var(--primary-border);
+        }
+
+        .conteudo-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .conteudo-left {
+            position: sticky; top: 120px;
+        }
+
+        .conteudo-title {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(34px, 4.5vw, 58px);
+            line-height: 1.1;
+            color: var(--text);
+            text-wrap: balance;
+        }
+
+        .conteudo-title-accent {
+            color: var(--primary);
+        }
+
+        .conteudo-note {
+            font-size: 14px; font-weight: 300;
+            color: var(--text-muted);
+            margin-top: 24px;
+            line-height: 1.7;
+            text-wrap: pretty;
+        }
+
+        .conteudo-list {
+            list-style: none;
+            display: flex; flex-direction: column;
+        }
+
+        .conteudo-item {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,248,240,.06);
+        }
+
+        .conteudo-item:first-child {
+            border-top: 1px solid rgba(255,248,240,.06);
+        }
+
+        .ci-tag {
+            font-size: 10px; font-weight: 600;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .ci-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px; font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .ci-desc {
+            font-size: 14px; font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.7;
+            text-wrap: pretty;
+        }
+
+        /* ═══════ SECTION 6 — OFERTA ═══════ */
+        .oferta {
+            padding: 140px 10vw;
+            text-align: center;
+            border-top: 1px solid var(--primary-border);
+            position: relative;
+        }
+
+        .oferta::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 500px; height: 500px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(212,175,55,.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .oferta-titulo {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(34px, 5.5vw, 60px);
+            color: var(--text);
+            margin-top: 16px;
+            margin-bottom: 44px;
+            text-wrap: balance;
+        }
+
+        .oferta-preco { margin-bottom: 8px; position: relative; z-index: 1; }
+
+        .preco-old {
+            font-size: 18px; font-weight: 400; color: var(--text-faint);
+            text-decoration: line-through;
+            display: block; margin-bottom: 6px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .preco-new {
+            font-family: 'Cormorant', serif;
+            font-weight: 700;
+            font-size: clamp(52px, 8vw, 80px);
+            color: var(--primary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .oferta-parcelas {
+            font-size: 14px; font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .oferta-rule {
+            margin: 36px auto;
+        }
+
+        .oferta-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px; font-weight: 500;
+            color: var(--bg);
+            background: var(--primary);
+            padding: 18px 56px;
+            text-decoration: none;
+            letter-spacing: .03em;
+            transition: transform .2s var(--ease-out), opacity .2s var(--ease-out);
+            cursor: pointer;
+            position: relative; z-index: 1;
+        }
+
+        .oferta-cta:hover {
+            transform: translateY(-2px);
+            opacity: .9;
+        }
+        .oferta-cta:active { transform: translateY(0); }
+
+        .oferta-cta svg { flex-shrink: 0; }
+
+        .oferta-garantia {
+            margin-top: 28px;
+            font-size: 11px; font-weight: 500;
+            letter-spacing: .18em; text-transform: uppercase;
+            color: var(--text-faint);
+            position: relative; z-index: 1;
+        }
+
+        .oferta-garantia-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        /* ═══════ SECTION 7 — FECHAMENTO ═══════ */
+        .fechamento {
+            padding: 140px 10vw;
+            text-align: center;
+            border-top: 1px solid var(--primary-border);
+            position: relative;
+        }
+
+        .fechamento::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(28,16,23,.5) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .fech-line {
+            font-family: 'Cormorant', serif;
+            font-weight: 400;
+            font-size: clamp(28px, 4.5vw, 52px);
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 8px;
+            text-wrap: balance;
+        }
+
+        .fech-line--accent { color: var(--primary); }
+
+        .fech-body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(15px, 1.8vw, 18px);
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 540px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+            text-wrap: pretty;
+        }
+
+        .fech-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px; font-weight: 500;
+            color: var(--bg);
+            background: var(--text);
+            padding: 18px 56px;
+            text-decoration: none;
+            transition: transform .2s var(--ease-out), background .2s var(--ease-out),
+                        color .2s var(--ease-out);
+            cursor: pointer;
+            position: relative; z-index: 1;
+        }
+
+        .fech-cta:hover {
+            background: var(--primary);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        .fech-cta:active { transform: translateY(0); }
+
+        /* ═══════ FOOTER ═══════ */
+        .site-footer {
+            padding: 44px 10vw;
+            text-align: center;
+            border-top: 1px solid var(--primary-border);
+        }
+
+        .site-footer p {
+            font-size: 11px; font-weight: 400;
+            color: var(--text-faint); letter-spacing: .06em;
+        }
+
+        /* ═══════ RESPONSIVE — 768px ═══════ */
+        @media (max-width: 768px) {
+            .hero { padding: 80px 7vw 60px; min-height: 100dvh; }
+            .hero-eyebrow { left: 7vw; top: 28px; }
+            .hero-corner { right: 7vw; bottom: 28px; }
+
+            .contraste { padding: 80px 7vw; }
+            .contraste-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .mecanismo { padding: 80px 7vw; }
+            .mec-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .mec-sticky { position: static; }
+
+            .metodo { padding: 80px 7vw; }
+            .timeline {
+                grid-template-columns: 40px 1fr;
+            }
+
+            .conteudo { padding: 80px 7vw; }
+            .conteudo-layout {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .conteudo-left { position: static; }
+
+            .oferta { padding: 80px 7vw; }
+            .oferta-cta {
+                width: 100%; max-width: 380px;
+                justify-content: center;
+                padding: 16px 24px;
+            }
+
+            .fechamento { padding: 80px 7vw; }
+            .fech-cta {
+                width: 100%; max-width: 380px;
+                justify-content: center;
+                padding: 16px 24px;
+            }
+        }
+
+        /* ═══════ RESPONSIVE — 375px ═══════ */
+        @media (max-width: 420px) {
+            .hero { padding: 72px 6vw 48px; }
+            .hero-eyebrow { left: 6vw; top: 20px; font-size: 9px; }
+            .hero-corner { right: 6vw; bottom: 20px; font-size: 9px; }
+            .hero-headline { margin-bottom: 32px; }
+            .hero-body { font-size: 15px; margin-bottom: 28px; }
+
+            .contraste { padding: 64px 6vw; }
+            .contraste-col { padding: 28px 20px; }
+
+            .mecanismo { padding: 64px 6vw; }
+            .metodo { padding: 64px 6vw; }
+            .conteudo { padding: 64px 6vw; }
+            .oferta { padding: 64px 6vw; }
+            .fechamento { padding: 64px 6vw; }
+
+            .timeline-card { padding: 24px 20px; }
+            .tc-name { font-size: 21px; }
+        }
+
+        /* ═══════ RESPONSIVE — 1024px+ ═══════ */
+        @media (min-width: 1024px) and (max-width: 1439px) {
+            .hero { padding-left: 10vw; padding-right: 10vw; }
+        }
+
+        /* ═══════ RESPONSIVE — 1440px+ ═══════ */
+        @media (min-width: 1440px) {
+            .hero { padding-left: 14vw; padding-right: 14vw; }
+            .hero-eyebrow { left: 14vw; }
+            .hero-corner { right: 14vw; }
+            .contraste { padding-left: 14vw; padding-right: 14vw; }
+            .mecanismo { padding-left: 14vw; padding-right: 14vw; }
+            .metodo { padding-left: 14vw; padding-right: 14vw; }
+            .conteudo { padding-left: 14vw; padding-right: 14vw; }
+            .oferta { padding-left: 14vw; padding-right: 14vw; }
+            .fechamento { padding-left: 14vw; padding-right: 14vw; }
+            .site-footer { padding-left: 14vw; padding-right: 14vw; }
+        }
+
+        /* ═══════ REDUCED MOTION ═══════ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+            html { scroll-behavior: auto; }
+            .reveal, .hero-line, .hero-body, .hero-link {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .timeline-fill { transition: none !important; }
+            .timeline-dot { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom cursor (gold dot) -->
+    <div class="cursor" id="cursor"></div>
+
+    <main>
+
+        <!-- ═══════════════════════════════════
+             SECTION 1 — HERO
+             ═══════════════════════════════════ -->
+        <section class="hero" id="hero">
+            <div class="hero-eyebrow eyebrow">Protocolo Fecha-Tudo</div>
+
+            <h1 class="hero-headline" id="heroHeadline">
+                <span class="hero-line">Duas esteticistas.</span>
+                <span class="hero-line">Mesma formacao.</span>
+                <span class="hero-line">Mesmos precos.</span>
+                <span class="hero-line hero-line--accent">So uma lota a agenda.</span>
+            </h1>
+
+            <p class="hero-body" id="heroBody">Nao e sobre talento, diploma ou seguidores. E sobre o que acontece nos primeiros minutos depois que a cliente manda "oi" no WhatsApp.</p>
+
+            <a href="#contraste" class="hero-link" id="heroLink">
+                Entenda o que muda entre as duas
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <div class="hero-corner eyebrow tabular">Do primeiro 'oi' ao Pix &middot; 15 minutos</div>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 2 — CONTRASTE
+             ═══════════════════════════════════ -->
+        <section class="contraste" id="contraste">
+            <div class="eyebrow reveal">O teste silencioso</div>
+            <h2 class="contraste-title reveal d1">A cliente mandou a mesma mensagem para as duas.</h2>
+            <p class="contraste-sub reveal d2">Mesma pergunta, mesmo horario. Veja como cada uma respondeu &mdash; e por que so uma fechou.</p>
+
+            <div class="contraste-grid">
+                <div class="contraste-col contraste-col--sem reveal d3">
+                    <div class="contraste-col-label">Esteticista A &mdash; sem protocolo</div>
+
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Quanto custa a lipo de papada?"</div>
+                        <div class="contraste-a">"R$ 800 por sessao. Quer agendar?"</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Pode fazer quando?"</div>
+                        <div class="contraste-a">"Qualquer dia da semana, so escolher!"</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Ta caro."</div>
+                        <div class="contraste-a">"Posso fazer por 650 pra voce."</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Vou pensar."</div>
+                        <div class="contraste-a">Silencio. Espera ate hoje.</div>
+                    </div>
+                </div>
+
+                <div class="contraste-col contraste-col--com reveal d4">
+                    <div class="contraste-col-label">Esteticista B &mdash; com protocolo</div>
+
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Quanto custa a lipo de papada?"</div>
+                        <div class="contraste-a">"Oi! Antes de falar valores, me conta: o que mais te incomoda nessa regiao? Assim consigo te indicar o melhor caminho."</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Pode fazer quando?"</div>
+                        <div class="contraste-a">"Tenho quinta as 14h ou sexta as 10h. Qual encaixa melhor pra voce?"</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Ta caro."</div>
+                        <div class="contraste-a">"Entendo. Quer que eu te explique exatamente o que ta incluso e por que o resultado dura mais?"</div>
+                    </div>
+                    <div class="contraste-item">
+                        <div class="contraste-q">"Vou pensar."</div>
+                        <div class="contraste-a">"Claro, sem pressa. Tem alguma duvida que eu possa resolver agora pra facilitar sua decisao?"</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 3 — MECANISMO
+             ═══════════════════════════════════ -->
+        <section class="mecanismo" id="mecanismo">
+            <div class="eyebrow reveal">Por que a maioria perde</div>
+            <h2 class="mecanismo-title reveal d1">Nao foi o preco que afastou a cliente. Foi a sequencia.</h2>
+
+            <div class="mec-layout">
+                <div class="mec-paragraphs">
+                    <div class="mec-para reveal">
+                        <span class="mec-num tabular">01</span>
+                        <p class="mec-text">Quando o valor aparece antes de qualquer contexto, o cerebro da cliente faz a unica coisa que sabe: compara com a opcao mais barata que ja viu. Voce perde antes mesmo de mostrar seu diferencial.</p>
+                    </div>
+                    <div class="mec-para reveal">
+                        <span class="mec-num tabular">02</span>
+                        <p class="mec-text">Responder no piloto automatico &mdash; procedimento, preco, link &mdash; transmite uma mensagem invisivel: "sou intercambiavel." E quando voce e so mais uma opcao, preco vira o unico filtro.</p>
+                    </div>
+                    <div class="mec-para reveal">
+                        <span class="mec-num tabular">03</span>
+                        <p class="mec-text">Sem um proximo passo claro, ela diz "vou pensar" e some. A janela de decisao dura minutos, nao horas. Quando fecha, raramente reabre.</p>
+                    </div>
+                </div>
+
+                <div class="mec-sticky reveal">
+                    <p class="mec-sticky-text">A solucao nao exige que voce vire "vendedora". Exige reorganizar a ordem do que voce ja fala.</p>
+                    <hr class="gold-rule gold-rule--center" style="margin: 20px auto;">
+                    <p class="mec-sticky-attr">Protocolo Fecha-Tudo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 4 — METODO M.A.C.A. (TIMELINE)
+             ═══════════════════════════════════ -->
+        <section class="metodo" id="metodo">
+            <div class="metodo-header">
+                <div class="eyebrow reveal">O metodo</div>
+                <h2 class="metodo-title reveal d1">M.A.C.A.<br>Quatro movimentos. Zero improviso.</h2>
+                <p class="metodo-subtitle reveal d2">Cada etapa tem script pronto. Voce so adapta ao seu tom de voz.</p>
+            </div>
+
+            <div class="timeline" id="timeline">
+                <!-- Track line -->
+                <div class="timeline-track" id="timelineTrack">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-fill" id="timelineFill"></div>
+                </div>
+
+                <!-- Steps column -->
+                <div class="timeline-steps" id="timelineSteps">
+                    <!-- Step 1 -->
+                    <div class="timeline-step" data-step="0">
+                        <div class="timeline-dot-wrap">
+                            <div class="timeline-dot" data-dot="0"></div>
+                        </div>
+                        <div class="timeline-card reveal">
+                            <div class="tc-label">Etapa 01</div>
+                            <div class="tc-name">Mapeamento de Dor</div>
+                            <div class="tc-timing tabular">Minutos 1 &ndash; 3</div>
+                            <p class="tc-desc">Antes de qualquer numero, ela fala sobre o que a incomoda. Voce escuta, faz a pergunta certa, e constroi a base para tudo que vem depois.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-step" data-step="1">
+                        <div class="timeline-dot-wrap">
+                            <div class="timeline-dot" data-dot="1"></div>
+                        </div>
+                        <div class="timeline-card reveal d1">
+                            <div class="tc-label">Etapa 02</div>
+                            <div class="tc-name">Ancoragem de Valor</div>
+                            <div class="tc-timing tabular">Minutos 4 &ndash; 7</div>
+                            <p class="tc-desc">Agora que ela contou a dor, voce mostra como resolve &mdash; de um jeito que so voce faz. O preco chega depois da percepcao de valor, nao antes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-step" data-step="2">
+                        <div class="timeline-dot-wrap">
+                            <div class="timeline-dot" data-dot="2"></div>
+                        </div>
+                        <div class="timeline-card reveal d2">
+                            <div class="tc-label">Etapa 03</div>
+                            <div class="tc-name">Comando de Escassez</div>
+                            <div class="tc-timing tabular">Minutos 8 &ndash; 11</div>
+                            <p class="tc-desc">Dois horarios concretos. A decisao muda de "se vou" para "qual dia prefiro". Sem pressao artificial &mdash; agenda real, disponibilidade real.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-step" data-step="3">
+                        <div class="timeline-dot-wrap">
+                            <div class="timeline-dot" data-dot="3"></div>
+                        </div>
+                        <div class="timeline-card reveal d3">
+                            <div class="tc-label">Etapa 04</div>
+                            <div class="tc-name">Agendamento Blindado</div>
+                            <div class="tc-timing tabular">Minutos 12 &ndash; 15</div>
+                            <p class="tc-desc">Confirmacao com sinal. Pix parcial ou integral + lembrete no dia anterior. Ela aparece, porque investiu antes de chegar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 5 — CONTEUDO
+             ═══════════════════════════════════ -->
+        <section class="conteudo" id="conteudo">
+            <div class="conteudo-layout">
+                <div class="conteudo-left reveal">
+                    <h2 class="conteudo-title">O que entra<br>na sua <span class="conteudo-title-accent">caixa de ferramentas</span>.</h2>
+                    <p class="conteudo-note">Tudo o que voce precisa pra transformar conversas em agendamentos &mdash; sem virar outra pessoa.</p>
+                </div>
+
+                <ul class="conteudo-list">
+                    <li class="conteudo-item reveal">
+                        <div class="ci-tag">Metodo</div>
+                        <div class="ci-name">Roteiro M.A.C.A. completo</div>
+                        <div class="ci-desc">Do primeiro contato ao Pix confirmado. Scripts palavra por palavra, adaptaveis ao seu jeito de atender.</div>
+                    </li>
+                    <li class="conteudo-item reveal d1">
+                        <div class="ci-tag">Defesa</div>
+                        <div class="ci-name">Matriz de Objecoes</div>
+                        <div class="ci-desc">Respostas prontas para "ta caro", "vou pensar", "minha amiga paga menos" e outras 9 objecoes reais.</div>
+                    </li>
+                    <li class="conteudo-item reveal d2">
+                        <div class="ci-tag">Recuperacao</div>
+                        <div class="ci-name">Kit Anti-Vacuo</div>
+                        <div class="ci-desc">5 mensagens de resgate com intervalos testados. Para reativar quem sumiu sem parecer insistente.</div>
+                    </li>
+                    <li class="conteudo-item reveal d3">
+                        <div class="ci-tag">Checklist</div>
+                        <div class="ci-name">9 Regras de Ouro + 6 Erros Fatais</div>
+                        <div class="ci-desc">Referencia rapida antes de responder qualquer mensagem. Cole na parede ou salve nos favoritos.</div>
+                    </li>
+                    <li class="conteudo-item reveal d4">
+                        <div class="ci-tag">Pivo</div>
+                        <div class="ci-name">Script de Redirecionamento</div>
+                        <div class="ci-desc">Para quando ela insiste no preco antes da hora. Voce redireciona sem perder a conversa &mdash; e sem parecer que esta enrolando.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 6 — OFERTA
+             ═══════════════════════════════════ -->
+        <section class="oferta" id="oferta">
+            <div class="eyebrow reveal">Investimento unico</div>
+            <h2 class="oferta-titulo reveal d1">Protocolo Fecha-Tudo</h2>
+
+            <div class="oferta-preco reveal d2">
+                <span class="preco-old tabular">R$ 297</span>
+                <span class="preco-new tabular">R$ 97</span>
+            </div>
+
+            <p class="oferta-parcelas reveal d3 tabular">ou 12x de R$ 9,70</p>
+
+            <hr class="gold-rule gold-rule--center oferta-rule reveal d3">
+
+            <div class="reveal d4">
+                <a href="#" class="oferta-cta">
+                    Quero comecar agora
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <p class="oferta-garantia reveal d5">
+                <svg class="oferta-garantia-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.76 3.57L13 5.24l-3 2.92.71 4.13L7 10.27 3.29 12.3 4 8.16 1 5.24l4.24-.67L7 1z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                7 dias de garantia &middot; Nao funcionou, devolucao integral
+            </p>
+        </section>
+
+        <!-- ═══════════════════════════════════
+             SECTION 7 — FECHAMENTO
+             ═══════════════════════════════════ -->
+        <section class="fechamento" id="fechamento">
+            <p class="fech-line reveal">Voce ja domina a tecnica.</p>
+            <p class="fech-line reveal d1">Ja entrega resultado real.</p>
+            <p class="fech-line fech-line--accent reveal d2">Agora e so ajustar a conversa.</p>
+
+            <hr class="gold-rule gold-rule--center reveal d3" style="margin: 48px auto;">
+
+            <p class="fech-body reveal d4">O protocolo organiza a ordem certa para que a cliente enxergue seu valor antes de ouvir qualquer numero. E quando ela enxerga, o preco para de ser problema.</p>
+
+            <div class="reveal d5">
+                <a href="#" class="fech-cta">
+                    Comecar agora
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Protocolo Fecha-Tudo &mdash; Clinicas de Estetica Premium</p>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ── Custom Cursor (gold dot) ── */
+        var cursor = document.getElementById('cursor');
+        if (cursor && window.matchMedia('(pointer: fine)').matches) {
+            var cx = 0, cy = 0, tx = 0, ty = 0;
+            document.addEventListener('mousemove', function (e) {
+                tx = e.clientX; ty = e.clientY;
+            });
+            (function loop() {
+                cx += (tx - cx) * 0.15;
+                cy += (ty - cy) * 0.15;
+                cursor.style.left = cx + 'px';
+                cursor.style.top = cy + 'px';
+                requestAnimationFrame(loop);
+            })();
+
+            var interactives = document.querySelectorAll('a, button, .timeline-card, .contraste-col, .oferta-cta, .fech-cta');
+            interactives.forEach(function (el) {
+                el.addEventListener('mouseenter', function () { cursor.classList.add('hover'); });
+                el.addEventListener('mouseleave', function () { cursor.classList.remove('hover'); });
+            });
+        } else if (cursor) {
+            cursor.style.display = 'none';
+        }
+
+        /* ── Hero line-by-line reveal ── */
+        var heroLines = document.querySelectorAll('.hero-line');
+        var heroBody = document.getElementById('heroBody');
+        var heroLink = document.getElementById('heroLink');
+
+        if (!reduced) {
+            heroLines.forEach(function (line, i) {
+                setTimeout(function () { line.classList.add('visible'); }, 350 + i * 220);
+            });
+            var baseDelay = 350 + heroLines.length * 220;
+            setTimeout(function () { if (heroBody) heroBody.classList.add('visible'); }, baseDelay + 200);
+            setTimeout(function () { if (heroLink) heroLink.classList.add('visible'); }, baseDelay + 450);
+        } else {
+            heroLines.forEach(function (l) { l.classList.add('visible'); });
+            if (heroBody) heroBody.classList.add('visible');
+            if (heroLink) heroLink.classList.add('visible');
+        }
+
+        /* ── Scroll Reveal (IntersectionObserver) ── */
+        if ('IntersectionObserver' in window && !reduced) {
+            var revealObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('revealed');
+                        revealObs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+        } else {
+            document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('revealed'); });
+        }
+
+        /* ── Timeline scroll-fill + dot activation ── */
+        var timelineTrack = document.getElementById('timelineTrack');
+        var timelineFill = document.getElementById('timelineFill');
+        var timelineDots = document.querySelectorAll('.timeline-dot');
+        var timelineCards = document.querySelectorAll('.timeline-card');
+
+        if (timelineTrack && timelineFill && !reduced) {
+            var ticking = false;
+
+            function updateTimeline() {
+                var trackRect = timelineTrack.getBoundingClientRect();
+                var trackTop = trackRect.top;
+                var trackHeight = trackRect.height;
+                var viewportMiddle = window.innerHeight * 0.6;
+
+                // Calculate fill percentage
+                var progress = (viewportMiddle - trackTop) / trackHeight;
+                progress = Math.max(0, Math.min(1, progress));
+                timelineFill.style.height = (progress * 100) + '%';
+
+                // Activate dots based on their position
+                timelineDots.forEach(function (dot, i) {
+                    var dotRect = dot.getBoundingClientRect();
+                    if (dotRect.top < viewportMiddle) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(updateTimeline);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            // Initial check
+            updateTimeline();
+        } else if (timelineFill) {
+            timelineFill.style.height = '100%';
+            timelineDots.forEach(function (d) { d.classList.add('active'); });
+        }
+
+        /* ── Smooth anchor scrolling ── */
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    })();
+    </script>
+
+    <script>
+    console.log('%cScript de rastreio 4.0 by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: yellow; font-size: 20px;');
+    (function () {
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        function setCookie(cookieName, cookieValue, expirationTime) {
+            var cookiePath = "/";
+            expirationTime = expirationTime * 1000;
+            var date = new Date();
+            var dateTimeNow = date.getTime();
+            date.setTime(dateTimeNow + expirationTime);
+            var expirationDate = date.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue + "; expires=" + expirationDate + "; path=" + cookiePath;
+        }
+        function getCookieValue(name) {
+            const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        const adParams = ['fbclid', 'gclid'];
+        const urlParams = new URLSearchParams(window.location.search);
+        let isAdClick = false;
+        adParams.forEach(function(param) { if (urlParams.has(param)) isAdClick = true; });
+        if (isAdClick) {
+            const utmSource = getParameterByName('utm_source');
+            const utmMedium = getParameterByName('utm_medium');
+            const utmCampaign = getParameterByName('utm_campaign');
+            const utmContent = getParameterByName('utm_content');
+            const utmTerm = getParameterByName('utm_term');
+            if (utmSource) setCookie('cookieUtmSource', utmSource, 63072000);
+            if (utmMedium) setCookie('cookieUtmMedium', utmMedium, 63072000);
+            if (utmCampaign) setCookie('cookieUtmCampaign', utmCampaign, 63072000);
+            if (utmContent) setCookie('cookieUtmContent', utmContent, 63072000);
+            if (utmTerm) setCookie('cookieUtmTerm', utmTerm, 63072000);
+        }
+        var parametros = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+        var urlParamsCapt = new URLSearchParams(window.location.search);
+        var urlParamsCaptReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
+        var utms = {};
+        var cookieUtmSource = getCookieValue('cookieUtmSource');
+        var cookieUtmMedium = getCookieValue('cookieUtmMedium');
+        var cookieUtmCampaign = getCookieValue('cookieUtmCampaign');
+        var cookieUtmContent = getCookieValue('cookieUtmContent');
+        var cookieUtmTerm = getCookieValue('cookieUtmTerm');
+        parametros.forEach(function(el) {
+            if (el === "utm_source") {
+                utms[el] = urlParamsCapt.get(el) || (document.referrer ? (urlParamsCaptReferrer.get(el) || new URL(document.referrer).hostname) : "direto");
+            } else {
+                utms[el] = urlParamsCapt.get(el) || urlParamsCaptReferrer.get(el) || "";
+            }
+        });
+        var scks = Object.values(utms).filter(function(v) { return v !== ""; });
+        var currentSckValues = [];
+        if (urlParamsCapt.get('sck')) currentSckValues = urlParamsCapt.get('sck').split('|');
+        scks = scks.filter(function(v) { return currentSckValues.indexOf(v) === -1; });
+        var srcValues = [cookieUtmSource, cookieUtmMedium, cookieUtmCampaign, cookieUtmContent, cookieUtmTerm].filter(function(v) { return v !== null && v !== ""; });
+        var updateLinks = function(el, elURL) {
+            var elSearchParams = new URLSearchParams(elURL.search);
+            var modified = false;
+            urlParams.forEach(function(value, key) {
+                if (!elSearchParams.has(key)) { elSearchParams.append(key, value); modified = true; }
+            });
+            for (var key in utms) {
+                if (!elSearchParams.has(key)) { elSearchParams.append(key, utms[key]); modified = true; }
+            }
+            if (cookieUtmSource) elSearchParams.append('cookieUtmSource', cookieUtmSource);
+            if (cookieUtmMedium) elSearchParams.append('cookieUtmMedium', cookieUtmMedium);
+            if (cookieUtmCampaign) elSearchParams.append('cookieUtmCampaign', cookieUtmCampaign);
+            if (cookieUtmContent) elSearchParams.append('cookieUtmContent', cookieUtmContent);
+            if (cookieUtmTerm) elSearchParams.append('cookieUtmTerm', cookieUtmTerm);
+            if (!elSearchParams.has('sck') && scks.length > 0) { elSearchParams.append('sck', scks.join('|')); modified = true; }
+            if (!elSearchParams.has('src') && srcValues.length > 0) { elSearchParams.append('src', srcValues.join('|')); modified = true; }
+            if (modified) return elURL.origin + elURL.pathname + "?" + elSearchParams.toString();
+            return el.href;
+        };
+        document.querySelectorAll('a').forEach(function(el) {
+            try {
+                var elURL = new URL(el.href, window.location.origin);
+                if (!elURL.hash) el.href = updateLinks(el, elURL);
+            } catch (e) {
+                console.warn('Erro ao processar URL no link:', el.href);
+            }
+        });
+    })();
+    </script>
+
+    <script>
+    function preencherCamposUTM(form) {
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlParamsReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
+        var utms = ['utm_campaign', 'utm_medium', 'utm_source', 'utm_content', 'utm_term'];
+        var utmSourceField = form.querySelector('[id^="form-field-utm_source"]');
+        if (utmSourceField) {
+            var utmSourceValue = urlParams.get('utm_source') || urlParamsReferrer.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : "direto");
+            utmSourceField.value = utmSourceValue;
+            if (utmSourceValue !== "direto") {
+                utms.forEach(function(utm) {
+                    if (utm !== 'utm_source') {
+                        var campo = form.querySelector('[id^="form-field-' + utm + '"]');
+                        if (campo) campo.value = urlParams.get(utm) || urlParamsReferrer.get(utm) || '';
+                    }
+                });
+            }
+        }
+        var campoSlug = form.querySelector('[id^="form-field-pagina_captura"]');
+        if (campoSlug) campoSlug.value = window.location.pathname.split('/')[1];
+    }
+    document.querySelectorAll('form').forEach(preencherCamposUTM);
+    console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD', 'font-size:20px;color:yellow;');
+    window.onload = function() { document.querySelectorAll('form').forEach(preencherCamposUTM); };
+    </script>
+
+</body>
+</html>

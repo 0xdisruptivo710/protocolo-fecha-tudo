@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Fecha-Tudo — Scripts de WhatsApp para Esteticistas</title>
+    <meta name="description" content="Converta curiosas em agendamentos confirmados no WhatsApp. 13 scripts prontos. Método M.A.C.A. em 15 minutos.">
+    <meta property="og:title" content="Protocolo Fecha-Tudo — Scripts de WhatsApp para Esteticistas">
+    <meta property="og:description" content="Ela perguntou o preço. Você respondeu. Ela sumiu. O problema nunca foi o valor — foi a sequência. Veja a prova.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F8FAFC;
+            --primary: #1A1A2E;
+            --accent: #0D9488;
+            --accent-light: rgba(13, 148, 136, 0.08);
+            --accent-medium: rgba(13, 148, 136, 0.15);
+            --cta: #EC4899;
+            --cta-hover: #DB2777;
+            --text: #1A1A2E;
+            --text-muted: #64748B;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --wa-bg: #0B141A;
+            --wa-received: #1F2C34;
+            --wa-sent: #005C4B;
+            --wa-header: #1F2C34;
+            --red-soft: #FEF2F2;
+            --red-text: #DC2626;
+            --green-soft: #F0FDF4;
+            --green-text: #16A34A;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: rgba(13, 148, 136, 0.2);
+            color: var(--primary);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* ======= UTILITY ======= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.12s; }
+        .delay-2 { transition-delay: 0.24s; }
+        .delay-3 { transition-delay: 0.36s; }
+        .delay-4 { transition-delay: 0.48s; }
+
+        /* ======= HEADER ======= */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(248, 250, 252, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            transition: transform 0.2s ease-out;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .header-logo {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--primary);
+            letter-spacing: 0.04em;
+            text-decoration: none;
+        }
+
+        .header-cta {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--surface);
+            background: var(--cta);
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 200ms ease-out, transform 200ms ease-out;
+        }
+
+        .header-cta:hover {
+            background: var(--cta-hover);
+            transform: translateY(-1px);
+        }
+
+        /* ======= SECTION 1 — HERO ======= */
+        .hero {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px 48px;
+            position: relative;
+            text-align: center;
+            background: var(--bg);
+        }
+
+        /* iPhone mockup */
+        .phone {
+            width: 288px;
+            height: 540px;
+            border-radius: 40px;
+            border: 3px solid var(--border);
+            background: var(--wa-bg);
+            position: relative;
+            box-shadow:
+                0 0 0 1px rgba(0, 0, 0, 0.04),
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                0 24px 64px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            margin-bottom: 48px;
+            flex-shrink: 0;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 28px;
+            background: #000;
+            border-radius: 0 0 18px 18px;
+            z-index: 5;
+        }
+
+        .phone-notch::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 5px;
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+
+        /* WhatsApp header */
+        .wa-header {
+            background: var(--wa-header);
+            padding: 32px 14px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wa-back {
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        .wa-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .wa-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #E4E6EB;
+        }
+
+        .wa-status {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Chat area */
+        .wa-chat {
+            background: var(--wa-bg);
+            padding: 12px 10px;
+            min-height: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            height: calc(100% - 56px);
+            overflow: hidden;
+        }
+
+        .wa-msg {
+            max-width: 85%;
+            padding: 7px 10px 3px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            line-height: 1.45;
+            font-family: 'DM Sans', sans-serif;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+
+        .wa-msg.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .wa-msg--in {
+            align-self: flex-start;
+            background: var(--wa-received);
+            color: #E4E6EB;
+            border-top-left-radius: 2px;
+        }
+
+        .wa-msg--out {
+            align-self: flex-end;
+            background: var(--wa-sent);
+            color: #E4E6EB;
+            border-top-right-radius: 2px;
+        }
+
+        .wa-time {
+            display: block;
+            text-align: right;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 2px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .wa-checks {
+            font-size: 11px;
+            margin-left: 3px;
+        }
+
+        .wa-checks--gray {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .wa-checks--blue {
+            color: #53BDEB;
+        }
+
+        /* Typing indicator */
+        .wa-typing {
+            align-self: flex-start;
+            padding: 10px 14px;
+            background: var(--wa-received);
+            border-radius: 8px;
+            border-top-left-radius: 2px;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .wa-typing.show {
+            opacity: 1;
+        }
+
+        .wa-typing-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            animation: typeBounce 0.9s infinite;
+        }
+
+        .wa-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .wa-typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes typeBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+            30% { transform: translateY(-3px); opacity: 0.8; }
+        }
+
+        .wa-blink {
+            animation: checkBlink 1.5s infinite;
+        }
+
+        @keyframes checkBlink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Hero text */
+        .hero-text {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .hero-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-eyebrow {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .hero-headline {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(32px, 6vw, 72px);
+            line-height: 1.15;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+            text-wrap: balance;
+        }
+
+        .hero-sub {
+            margin-top: 16px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: clamp(15px, 1.6vw, 18px);
+            color: var(--text-muted);
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            text-wrap: pretty;
+        }
+
+        .hero-cta-wrap {
+            margin-top: 32px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--accent);
+            background: transparent;
+            border: 1.5px solid var(--accent);
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 200ms ease-out, color 200ms ease-out, transform 200ms ease-out;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent);
+            color: var(--surface);
+            transform: translateY(-2px);
+        }
+
+        .hero-cta:active {
+            transform: translateY(0);
+        }
+
+        .hero-cta svg {
+            transition: transform 200ms ease-out;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* Scroll indicator */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.4;
+        }
+
+        .scroll-arrow span {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .scroll-arrow svg {
+            animation: arrowPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(5px); opacity: 0.9; }
+        }
+
+        /* ======= SECTION 2 — DIAGNOSTICO ======= */
+        .diagnostico {
+            background: var(--surface);
+            padding: 120px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .diagnostico-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .sec-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .sec-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: clamp(24px, 3.5vw, 40px);
+            line-height: 1.25;
+            text-align: center;
+            margin-bottom: 64px;
+            text-wrap: balance;
+        }
+
+        .sec-title--primary {
+            color: var(--primary);
+        }
+
+        .sec-title--accent {
+            color: var(--accent);
+        }
+
+        .diag-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .diag-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 24px;
+            transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+        }
+
+        .diag-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .diag-num {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 16px;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .diag-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            text-wrap: balance;
+        }
+
+        .diag-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+            text-wrap: pretty;
+        }
+
+        /* ======= SECTION 3 — PROVA ======= */
+        .prova {
+            background: var(--bg);
+            padding: 120px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .prova-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .prova-grid {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 0;
+        }
+
+        .prova-divider {
+            width: 1px;
+            background: var(--border);
+            margin: 0 28px;
+        }
+
+        .prova-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .prova-col-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .prova-col-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .prova-col--sem .prova-col-icon {
+            background: var(--red-soft);
+        }
+
+        .prova-col--com .prova-col-icon {
+            background: var(--green-soft);
+        }
+
+        .prova-col-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .prova-col--sem .prova-col-title { color: var(--red-text); }
+        .prova-col--com .prova-col-title { color: var(--green-text); }
+
+        .prova-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            margin-bottom: 2px;
+            font-size: 14px;
+            line-height: 1.55;
+            font-weight: 400;
+            border-radius: 6px;
+            transition: background 200ms ease-out;
+        }
+
+        .prova-item:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .prova-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .prova-col--sem .prova-item { color: var(--text-muted); }
+        .prova-col--com .prova-item { color: var(--text); }
+
+        .prova-col--sem {
+            background: var(--red-soft);
+            border-radius: 12px;
+            padding: 24px 20px;
+            border: 1px solid rgba(220, 38, 38, 0.1);
+        }
+
+        .prova-col--com {
+            background: var(--green-soft);
+            border-radius: 12px;
+            padding: 24px 20px;
+            border: 1px solid rgba(22, 163, 74, 0.1);
+        }
+
+        /* ======= SECTION 4 — METODO ======= */
+        .metodo {
+            background: var(--surface);
+            padding: 120px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .metodo-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .metodo-sub {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-top: -48px;
+            margin-bottom: 64px;
+            text-wrap: pretty;
+        }
+
+        .metodo-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        /* Progress line */
+        .metodo-line {
+            position: absolute;
+            top: 42px;
+            left: calc(12.5% + 12px);
+            right: calc(12.5% + 12px);
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .metodo-line-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            transition: width 1.5s ease-out;
+        }
+
+        .metodo-line-fill.animated {
+            width: 100%;
+        }
+
+        .metodo-card {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 28px 16px;
+        }
+
+        .metodo-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            background: var(--surface);
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+            transition: border-color 0.4s ease-out, background 0.4s ease-out, transform 0.3s ease-out;
+        }
+
+        .metodo-dot.lit {
+            border-color: var(--accent);
+            background: var(--accent);
+            transform: scale(1.15);
+        }
+
+        .metodo-label {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .metodo-card h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 6px;
+            text-wrap: balance;
+        }
+
+        .metodo-timing {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .metodo-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            font-weight: 300;
+            text-wrap: pretty;
+        }
+
+        /* Golden rule box */
+        .golden-rule {
+            max-width: 720px;
+            margin: 56px auto 0;
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 28px 32px;
+            text-align: center;
+            position: relative;
+            background: var(--accent-light);
+        }
+
+        .golden-rule-icon {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--surface);
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .golden-rule p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+            text-wrap: pretty;
+        }
+
+        .golden-rule strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ======= SECTION 5 — OBJECOES ======= */
+        .objecoes {
+            background: var(--bg);
+            padding: 120px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .objecoes-inner {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .obj-row {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            background: var(--surface);
+            overflow: hidden;
+            transition: box-shadow 200ms ease-out;
+        }
+
+        .obj-row:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .obj-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 32px;
+            gap: 16px;
+            padding: 20px 24px;
+            cursor: pointer;
+            align-items: center;
+            transition: background 200ms ease-out;
+        }
+
+        .obj-header:hover {
+            background: rgba(0, 0, 0, 0.01);
+        }
+
+        .obj-col-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .obj-col-label--says {
+            color: var(--text-muted);
+        }
+
+        .obj-col-label--means {
+            color: var(--accent);
+        }
+
+        .obj-says {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .obj-means {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateX(6px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        .obj-header:hover .obj-means,
+        .obj-row.open .obj-means {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .obj-chevron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease-out;
+        }
+
+        .obj-row.open .obj-chevron {
+            transform: rotate(180deg);
+        }
+
+        .obj-script {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease-out;
+        }
+
+        .obj-row.open .obj-script {
+            padding-bottom: 20px;
+        }
+
+        .obj-script-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 0 24px;
+            margin-top: 4px;
+        }
+
+        .obj-script-tag {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--surface);
+            background: var(--accent);
+            padding: 3px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .obj-script-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text);
+            font-style: italic;
+            line-height: 1.6;
+            text-wrap: pretty;
+        }
+
+        /* ======= SECTION 6 — OFERTA ======= */
+        .oferta {
+            padding: 120px 24px;
+            text-align: center;
+            position: relative;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .oferta-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .oferta-titulo {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(28px, 5vw, 48px);
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-wrap: balance;
+        }
+
+        .oferta-sub {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+            text-wrap: pretty;
+        }
+
+        .oferta-list {
+            list-style: none;
+            text-align: left;
+            max-width: 540px;
+            margin: 0 auto 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .oferta-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.55;
+            padding: 8px 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .oferta-check {
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--accent);
+        }
+
+        .oferta-preco {
+            margin-bottom: 36px;
+        }
+
+        .preco-old {
+            font-size: 20px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            display: block;
+            margin-bottom: 4px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .preco-new {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(44px, 7vw, 72px);
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .oferta-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--surface);
+            background: var(--cta);
+            padding: 18px 48px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
+            animation: ctaPulse 3s infinite ease-in-out;
+        }
+
+        .oferta-cta:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.25);
+        }
+
+        .oferta-cta:active {
+            transform: translateY(0);
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.2); }
+            50% { box-shadow: 0 0 0 10px rgba(236, 72, 153, 0); }
+        }
+
+        .garantia {
+            margin-top: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 24px;
+        }
+
+        .garantia-icon {
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .garantia p {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 400;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .garantia strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ======= SECTION 7 — FECHAMENTO ======= */
+        .fechamento {
+            background: var(--bg);
+            padding: 120px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .fechamento-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .fech-line {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            font-size: clamp(20px, 3.2vw, 32px);
+            line-height: 1.4;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-wrap: balance;
+        }
+
+        .fech-divider {
+            width: 48px;
+            height: 2px;
+            background: var(--accent);
+            margin: 40px auto;
+            border-radius: 1px;
+        }
+
+        .fech-final {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            font-size: clamp(16px, 2.5vw, 20px);
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            text-wrap: pretty;
+        }
+
+        .fech-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--surface);
+            background: var(--cta);
+            padding: 18px 44px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
+        }
+
+        .fech-cta:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.2);
+        }
+
+        .fech-cta:active {
+            transform: translateY(0);
+        }
+
+        /* ======= FOOTER ======= */
+        .site-footer {
+            background: var(--surface);
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .site-footer p {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ======= RESPONSIVE — 768px ======= */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 72px 16px 40px;
+            }
+
+            .phone {
+                width: 248px;
+                height: 460px;
+                border-radius: 32px;
+            }
+
+            .phone-notch {
+                width: 100px;
+                height: 24px;
+                border-radius: 0 0 14px 14px;
+            }
+
+            .wa-header {
+                padding: 28px 12px 8px;
+            }
+
+            .wa-chat {
+                padding: 10px 8px;
+            }
+
+            .wa-msg {
+                font-size: 11.5px;
+            }
+
+            .diagnostico {
+                padding: 80px 20px;
+            }
+
+            .diag-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .prova {
+                padding: 80px 20px;
+            }
+
+            .prova-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .prova-divider {
+                display: none;
+            }
+
+            .metodo {
+                padding: 80px 20px;
+            }
+
+            .metodo-track {
+                grid-template-columns: 1fr;
+                gap: 0;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                display: flex;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .metodo-card {
+                min-width: 260px;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+            }
+
+            .metodo-line {
+                display: none;
+            }
+
+            .metodo-sub {
+                margin-top: -40px;
+                margin-bottom: 40px;
+            }
+
+            .objecoes {
+                padding: 80px 20px;
+            }
+
+            .obj-header {
+                grid-template-columns: 1fr 24px;
+                gap: 8px;
+            }
+
+            .obj-means-col {
+                display: none;
+            }
+
+            .obj-means {
+                opacity: 1;
+                transform: none;
+            }
+
+            .oferta {
+                padding: 80px 20px;
+            }
+
+            .oferta-cta {
+                width: 100%;
+                max-width: 380px;
+                justify-content: center;
+                padding: 18px 24px;
+            }
+
+            .fechamento {
+                padding: 80px 20px;
+            }
+
+            .fech-cta {
+                width: 100%;
+                max-width: 380px;
+                justify-content: center;
+                padding: 16px 24px;
+            }
+        }
+
+        /* ======= RESPONSIVE — 480px ======= */
+        @media (max-width: 480px) {
+            .phone {
+                width: 224px;
+                height: 408px;
+                border-radius: 28px;
+            }
+
+            .hero-headline {
+                font-size: clamp(28px, 8vw, 44px);
+            }
+
+            .obj-says {
+                font-size: 16px;
+            }
+
+            .header-logo {
+                font-size: 13px;
+            }
+
+            .garantia {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .garantia p {
+                text-align: center;
+            }
+        }
+
+        /* ======= REDUCED MOTION ======= */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal, .hero-text, .wa-msg, .wa-typing {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#hero" class="header-logo">Protocolo Fecha-Tudo</a>
+            <a href="#oferta" class="header-cta">Quero os scripts</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========================================
+             SECTION 1 — HERO
+             ======================================== -->
+        <section class="hero" id="hero">
+            <div class="phone" aria-hidden="true">
+                <div class="phone-notch"></div>
+                <div class="wa-header">
+                    <svg class="wa-back" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <div class="wa-avatar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#aaa" stroke-width="1.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <div>
+                        <div class="wa-name">Cliente nova</div>
+                        <div class="wa-status">online</div>
+                    </div>
+                </div>
+                <div class="wa-chat" id="waChat">
+                    <div class="wa-msg wa-msg--in" id="msg1">
+                        oi, quanto custa a limpeza de pele?
+                        <span class="wa-time">14:21</span>
+                    </div>
+                    <div class="wa-typing" id="waTyping">
+                        <span class="wa-typing-dot"></span>
+                        <span class="wa-typing-dot"></span>
+                        <span class="wa-typing-dot"></span>
+                    </div>
+                    <div class="wa-msg wa-msg--out" id="msg2">
+                        Oi! A limpeza de pele custa R$ 180,00
+                        <span class="wa-time">14:23 <span class="wa-checks wa-checks--gray" id="waChecks">&#10003;&#10003;</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-text" id="heroText">
+                <p class="hero-eyebrow">A conversa que nao deveria ter acontecido assim</p>
+                <h1 class="hero-headline">Ela perguntou o preco.<br>Voce respondeu.<br>Ela sumiu.</h1>
+                <p class="hero-sub">Nao foi o valor. Foi a sequencia. E isso tem conserto em 15 minutos.</p>
+                <div class="hero-cta-wrap">
+                    <a href="#diagnostico" class="hero-cta">
+                        Ver o que deu errado
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="scroll-arrow" id="scrollArrow">
+                <span>scroll</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 2 — DIAGNOSTICO
+             ======================================== -->
+        <section class="diagnostico" id="diagnostico">
+            <div class="diagnostico-inner">
+                <p class="sec-label reveal">Diagnostico</p>
+                <h2 class="sec-title sec-title--primary reveal">A venda nao morreu quando ela viu o preco.<br>Morreu tres mensagens antes.</h2>
+                <div class="diag-grid">
+                    <div class="diag-card reveal">
+                        <div class="diag-num">01</div>
+                        <h3>Preco sem contexto e so um numero solto.</h3>
+                        <p>Quando a cliente nao entende o que esta por tras do valor, ela compara com a primeira opcao mais barata que encontrar. Nao e culpa dela, e falta de ancoragem.</p>
+                    </div>
+                    <div class="diag-card reveal delay-1">
+                        <div class="diag-num">02</div>
+                        <h3>Resposta rapida nao e a mesma coisa que resposta boa.</h3>
+                        <p>Procedimento, preco, link. Eficiente? Sim. Pessoal? Nenhum pouco. A cliente se sente atendida por um catalogo, nao por uma especialista.</p>
+                    </div>
+                    <div class="diag-card reveal delay-2">
+                        <div class="diag-num">03</div>
+                        <h3>Silencio depois do preco e um "nao" disfarado.</h3>
+                        <p>Existe uma janela curta de decisao. Se ninguem conduz a conversa para o proximo passo, a cliente simplesmente segue com a vida. E voce fica esperando.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 3 — PROVA
+             ======================================== -->
+        <section class="prova" id="prova">
+            <div class="prova-inner">
+                <p class="sec-label reveal">Comparacao</p>
+                <h2 class="sec-title sec-title--primary reveal">Mesma tecnica, mesmo preco, mesma cidade. Uma fecha toda semana. A outra nao. A diferenca esta na conversa.</h2>
+                <div class="prova-grid">
+                    <div class="prova-col prova-col--sem reveal">
+                        <div class="prova-col-header">
+                            <div class="prova-col-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </div>
+                            <div class="prova-col-title">Sem protocolo</div>
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Manda o preco em 2 minutos e torce
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Cliente compara com 5 concorrentes
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Agenda sem sinal e leva falta
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Da desconto na primeira objecao
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            Termina o dia sem nenhum agendamento
+                        </div>
+                    </div>
+                    <div class="prova-divider"></div>
+                    <div class="prova-col prova-col--com reveal delay-1">
+                        <div class="prova-col-header">
+                            <div class="prova-col-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 5" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <div class="prova-col-title">Com o protocolo</div>
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Faz diagnostico antes de falar em valor
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Cliente sente que esta sendo cuidada
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Oferece dois horarios e fecha ali mesmo
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Cobra sinal via Pix — sem constrangimento
+                        </div>
+                        <div class="prova-item">
+                            <svg class="prova-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Nao precisa dar desconto pra fechar
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 4 — METODO M.A.C.A.
+             ======================================== -->
+        <section class="metodo" id="metodo">
+            <div class="metodo-inner">
+                <p class="sec-label reveal">O metodo</p>
+                <h2 class="sec-title sec-title--primary reveal">Metodo M.A.C.A.</h2>
+                <p class="metodo-sub reveal">4 etapas. 15 minutos. Do "oi" ao Pix confirmado.</p>
+
+                <div class="metodo-track" id="metodoTrack">
+                    <div class="metodo-line"><div class="metodo-line-fill" id="metodoLineFill"></div></div>
+                    <div class="metodo-card reveal">
+                        <div class="metodo-dot" id="dot0"></div>
+                        <div class="metodo-label">Etapa 01</div>
+                        <h3>Mapeamento</h3>
+                        <div class="metodo-timing">Min 1 - 3</div>
+                        <p>Antes de falar qualquer valor, voce ouve. A cliente conta o que incomoda. Voce entende a dor real, nao so o procedimento que ela pesquisou.</p>
+                    </div>
+                    <div class="metodo-card reveal delay-1">
+                        <div class="metodo-dot" id="dot1"></div>
+                        <div class="metodo-label">Etapa 02</div>
+                        <h3>Ancoragem</h3>
+                        <div class="metodo-timing">Min 4 - 7</div>
+                        <p>Agora sim o preco aparece. Mas depois da dor, depois do contexto. O numero chega ancorado no valor que voce acabou de construir.</p>
+                    </div>
+                    <div class="metodo-card reveal delay-2">
+                        <div class="metodo-dot" id="dot2"></div>
+                        <div class="metodo-label">Etapa 03</div>
+                        <h3>Comando</h3>
+                        <div class="metodo-timing">Min 8 - 11</div>
+                        <p>Dois horarios. A pergunta muda de "voce quer?" para "qual prefere?" Isso muda tudo. Ela ja esta escolhendo, nao decidindo se vai ou nao.</p>
+                    </div>
+                    <div class="metodo-card reveal delay-3">
+                        <div class="metodo-dot" id="dot3"></div>
+                        <div class="metodo-label">Etapa 04</div>
+                        <h3>Agendamento</h3>
+                        <div class="metodo-timing">Min 12 - 15</div>
+                        <p>Sinal via Pix, tres lembretes na sequencia certa. Ela aparece, voce atende. Sem furo, sem surpresa, sem vacuo.</p>
+                    </div>
+                </div>
+
+                <div class="golden-rule reveal">
+                    <div class="golden-rule-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="none" stroke="#0D9488" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p><strong>O preco so aparece depois da Etapa 2.</strong> Se a cliente insistir antes, voce tem o script exato de redirecionamento no material.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 5 — OBJECOES
+             ======================================== -->
+        <section class="objecoes" id="objecoes">
+            <div class="objecoes-inner">
+                <p class="sec-label reveal">Matriz de traducao</p>
+                <h2 class="sec-title sec-title--primary reveal">Toda objecao tem uma traducao.<br>E toda traducao tem uma resposta.</h2>
+
+                <div class="obj-row reveal" data-obj>
+                    <div class="obj-header" role="button" tabindex="0" aria-expanded="false">
+                        <div>
+                            <div class="obj-col-label obj-col-label--says">O que ela diz</div>
+                            <div class="obj-says">"Ta caro"</div>
+                        </div>
+                        <div class="obj-means-col">
+                            <div class="obj-col-label obj-col-label--means">O que ela quer dizer</div>
+                            <div class="obj-means">Ela nao entendeu o que esta incluso no valor.</div>
+                        </div>
+                        <div class="obj-chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="obj-script">
+                        <div class="obj-script-inner">
+                            <span class="obj-script-tag">Responder</span>
+                            <span class="obj-script-text">"Entendo. Posso te mostrar tudo que esse valor cobre pra voce ver se faz sentido?"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="obj-row reveal delay-1" data-obj>
+                    <div class="obj-header" role="button" tabindex="0" aria-expanded="false">
+                        <div>
+                            <div class="obj-col-label obj-col-label--says">O que ela diz</div>
+                            <div class="obj-says">"Vou falar com meu marido"</div>
+                        </div>
+                        <div class="obj-means-col">
+                            <div class="obj-col-label obj-col-label--means">O que ela quer dizer</div>
+                            <div class="obj-means">Ela precisa de seguranca pra tomar a decisao sozinha.</div>
+                        </div>
+                        <div class="obj-chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="obj-script">
+                        <div class="obj-script-inner">
+                            <span class="obj-script-tag">Responder</span>
+                            <span class="obj-script-text">"Claro, sem pressa. Quer que eu mande um resumo pra facilitar essa conversa com ele?"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="obj-row reveal delay-2" data-obj>
+                    <div class="obj-header" role="button" tabindex="0" aria-expanded="false">
+                        <div>
+                            <div class="obj-col-label obj-col-label--says">O que ela diz</div>
+                            <div class="obj-says">"Preciso pensar"</div>
+                        </div>
+                        <div class="obj-means-col">
+                            <div class="obj-col-label obj-col-label--means">O que ela quer dizer</div>
+                            <div class="obj-means">Ela nao sabe qual e o proximo passo.</div>
+                        </div>
+                        <div class="obj-chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="obj-script">
+                        <div class="obj-script-inner">
+                            <span class="obj-script-tag">Responder</span>
+                            <span class="obj-script-text">"Fique a vontade. Tem alguma duvida que ficou no ar? As vezes resolver isso ja ajuda na decisao."</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="obj-row reveal delay-3" data-obj>
+                    <div class="obj-header" role="button" tabindex="0" aria-expanded="false">
+                        <div>
+                            <div class="obj-col-label obj-col-label--says">O que ela diz</div>
+                            <div class="obj-says">"Achei mais barato em outro lugar"</div>
+                        </div>
+                        <div class="obj-means-col">
+                            <div class="obj-col-label obj-col-label--means">O que ela quer dizer</div>
+                            <div class="obj-means">Ela ainda nao viu a diferenca entre preco e resultado.</div>
+                        </div>
+                        <div class="obj-chevron">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="obj-script">
+                        <div class="obj-script-inner">
+                            <span class="obj-script-tag">Responder</span>
+                            <span class="obj-script-text">"Entendo! Posso te explicar o que diferencia o meu atendimento pra voce comparar melhor?"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 6 — OFERTA
+             ======================================== -->
+        <section class="oferta" id="oferta">
+            <div class="oferta-inner">
+                <p class="sec-label reveal">Acesso completo</p>
+                <h2 class="oferta-titulo reveal">Protocolo Fecha-Tudo</h2>
+                <p class="oferta-sub reveal">Tudo que voce precisa pra transformar conversas no WhatsApp em agendamentos reais. Sem enrolacao, sem parecer robotica.</p>
+
+                <ul class="oferta-list reveal">
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Metodo M.A.C.A. completo com scripts palavra por palavra
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Matriz de Traducao de Objecoes com 6 pivos prontos
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Kit Anti-Vacuo: resgate de clientes em 5 contatos
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Check-list com 9 Regras de Ouro + 6 Erros Fatais
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Scripts de redirecionamento quando ela pede preco antes da hora
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Sequencia de 3 lembretes que evita no-show
+                    </li>
+                    <li>
+                        <svg class="oferta-check" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.5 3.5L14 6" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Modelo de mensagem pra cobrar sinal sem constrangimento
+                    </li>
+                </ul>
+
+                <div class="oferta-preco reveal">
+                    <span class="preco-old">R$ 297</span>
+                    <span class="preco-new">R$ 97</span>
+                </div>
+
+                <div class="reveal">
+                    <a href="#" class="oferta-cta">
+                        Quero o Protocolo Fecha-Tudo
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="garantia reveal">
+                    <svg class="garantia-icon" width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="none" stroke="#0D9488" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p><strong>7 dias de garantia incondicional.</strong> Se voce aplicar e nao fechar nenhum agendamento, devolvo 100% do valor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECTION 7 — FECHAMENTO
+             ======================================== -->
+        <section class="fechamento" id="fechamento">
+            <div class="fechamento-inner">
+                <p class="fech-line reveal">Voce ja domina a tecnica.</p>
+                <p class="fech-line reveal delay-1">Voce ja entrega resultado.</p>
+                <div class="fech-divider reveal delay-2"></div>
+                <p class="fech-final reveal delay-3">So falta a conversa certa pra cliente enxergar tudo isso antes de ver qualquer numero.</p>
+                <div class="reveal delay-4">
+                    <a href="#" class="fech-cta">
+                        Comecar agora
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Protocolo Fecha-Tudo &mdash; Scripts de vendas para esteticistas</p>
+    </footer>
+
+    <!-- ========================================
+         SCRIPTS
+         ======================================== -->
+    <script>
+    (function () {
+        'use strict';
+
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ---- WhatsApp conversation sequence ---- */
+        var msg1 = document.getElementById('msg1');
+        var msg2 = document.getElementById('msg2');
+        var typing = document.getElementById('waTyping');
+        var heroText = document.getElementById('heroText');
+        var checks = document.getElementById('waChecks');
+
+        if (!reduced) {
+            setTimeout(function () { msg1.classList.add('show'); }, 500);
+            setTimeout(function () { typing.classList.add('show'); }, 1500);
+            setTimeout(function () {
+                typing.classList.remove('show');
+                msg2.classList.add('show');
+            }, 2800);
+            setTimeout(function () {
+                if (checks) checks.classList.add('wa-blink');
+            }, 3500);
+            setTimeout(function () { heroText.classList.add('show'); }, 5500);
+        } else {
+            msg1.classList.add('show');
+            msg2.classList.add('show');
+            heroText.classList.add('show');
+        }
+
+        /* ---- Scroll reveal (IntersectionObserver) ---- */
+        if ('IntersectionObserver' in window && !reduced) {
+            var revealObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(function (el) {
+                revealObs.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.reveal').forEach(function (el) {
+                el.classList.add('revealed');
+            });
+        }
+
+        /* ---- Method progress line ---- */
+        var lineFill = document.getElementById('metodoLineFill');
+        var dots = [
+            document.getElementById('dot0'),
+            document.getElementById('dot1'),
+            document.getElementById('dot2'),
+            document.getElementById('dot3')
+        ];
+
+        if (lineFill && 'IntersectionObserver' in window) {
+            var lineObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        lineFill.classList.add('animated');
+                        dots.forEach(function (dot, i) {
+                            if (dot) {
+                                setTimeout(function () {
+                                    dot.classList.add('lit');
+                                }, 350 * i + 300);
+                            }
+                        });
+                        lineObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            lineObs.observe(lineFill.parentElement);
+        }
+
+        /* ---- Objection toggle ---- */
+        document.querySelectorAll('[data-obj]').forEach(function (row) {
+            var header = row.querySelector('.obj-header');
+            var script = row.querySelector('.obj-script');
+
+            function toggleRow() {
+                var isOpen = row.classList.contains('open');
+                if (isOpen) {
+                    script.style.maxHeight = '0';
+                    row.classList.remove('open');
+                    header.setAttribute('aria-expanded', 'false');
+                } else {
+                    row.classList.add('open');
+                    script.style.maxHeight = script.scrollHeight + 'px';
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            header.addEventListener('click', toggleRow);
+            header.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleRow();
+                }
+            });
+        });
+
+        /* ---- Smooth anchors ---- */
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        /* ---- Hide scroll arrow on scroll (requestAnimationFrame) ---- */
+        var arrow = document.getElementById('scrollArrow');
+        if (arrow) {
+            var arrowHidden = false;
+            var ticking = false;
+
+            function onScrollArrow() {
+                if (!arrowHidden && window.scrollY > 100) {
+                    arrow.style.opacity = '0';
+                    arrow.style.transition = 'opacity 0.4s ease-out';
+                    arrowHidden = true;
+                }
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    requestAnimationFrame(onScrollArrow);
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        /* ---- Header hide/show on scroll (requestAnimationFrame) ---- */
+        var siteHeader = document.getElementById('siteHeader');
+        if (siteHeader) {
+            var lastScrollY = 0;
+            var headerTicking = false;
+
+            function onScrollHeader() {
+                var currentScrollY = window.scrollY;
+                if (currentScrollY > lastScrollY && currentScrollY > 120) {
+                    siteHeader.style.transform = 'translateY(-100%)';
+                } else {
+                    siteHeader.style.transform = 'translateY(0)';
+                }
+                lastScrollY = currentScrollY;
+                headerTicking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!headerTicking) {
+                    requestAnimationFrame(onScrollHeader);
+                    headerTicking = true;
+                }
+            }, { passive: true });
+        }
+    })();
+    </script>
+
+    <script>
+    console.log('%cScript de rastreio 4.0 by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: yellow; font-size: 20px;');
+    (function () {
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        function setCookie(cookieName, cookieValue, expirationTime) {
+            var cookiePath = "/";
+            expirationTime = expirationTime * 1000;
+            var date = new Date();
+            var dateTimeNow = date.getTime();
+            date.setTime(dateTimeNow + expirationTime);
+            var expirationDate = date.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue + "; expires=" + expirationDate + "; path=" + cookiePath;
+        }
+        function getCookieValue(name) {
+            const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        const adParams = ['fbclid', 'gclid'];
+        const urlParams = new URLSearchParams(window.location.search);
+        let isAdClick = false;
+        adParams.forEach(function(param) { if (urlParams.has(param)) isAdClick = true; });
+        if (isAdClick) {
+            const utmSource = getParameterByName('utm_source');
+            const utmMedium = getParameterByName('utm_medium');
+            const utmCampaign = getParameterByName('utm_campaign');
+            const utmContent = getParameterByName('utm_content');
+            const utmTerm = getParameterByName('utm_term');
+            if (utmSource) setCookie('cookieUtmSource', utmSource, 63072000);
+            if (utmMedium) setCookie('cookieUtmMedium', utmMedium, 63072000);
+            if (utmCampaign) setCookie('cookieUtmCampaign', utmCampaign, 63072000);
+            if (utmContent) setCookie('cookieUtmContent', utmContent, 63072000);
+            if (utmTerm) setCookie('cookieUtmTerm', utmTerm, 63072000);
+        }
+        var parametros = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+        var urlParamsCapt = new URLSearchParams(window.location.search);
+        var urlParamsCaptReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
+        var utms = {};
+        var cookieUtmSource = getCookieValue('cookieUtmSource');
+        var cookieUtmMedium = getCookieValue('cookieUtmMedium');
+        var cookieUtmCampaign = getCookieValue('cookieUtmCampaign');
+        var cookieUtmContent = getCookieValue('cookieUtmContent');
+        var cookieUtmTerm = getCookieValue('cookieUtmTerm');
+        parametros.forEach(function(el) {
+            if (el === "utm_source") {
+                utms[el] = urlParamsCapt.get(el) || (document.referrer ? (urlParamsCaptReferrer.get(el) || new URL(document.referrer).hostname) : "direto");
+            } else {
+                utms[el] = urlParamsCapt.get(el) || urlParamsCaptReferrer.get(el) || "";
+            }
+        });
+        var scks = Object.values(utms).filter(function(v) { return v !== ""; });
+        var currentSckValues = [];
+        if (urlParamsCapt.get('sck')) currentSckValues = urlParamsCapt.get('sck').split('|');
+        scks = scks.filter(function(v) { return currentSckValues.indexOf(v) === -1; });
+        var srcValues = [cookieUtmSource, cookieUtmMedium, cookieUtmCampaign, cookieUtmContent, cookieUtmTerm].filter(function(v) { return v !== null && v !== ""; });
+        var updateLinks = function(el, elURL) {
+            var elSearchParams = new URLSearchParams(elURL.search);
+            var modified = false;
+            urlParams.forEach(function(value, key) {
+                if (!elSearchParams.has(key)) { elSearchParams.append(key, value); modified = true; }
+            });
+            for (var key in utms) {
+                if (!elSearchParams.has(key)) { elSearchParams.append(key, utms[key]); modified = true; }
+            }
+            if (cookieUtmSource) elSearchParams.append('cookieUtmSource', cookieUtmSource);
+            if (cookieUtmMedium) elSearchParams.append('cookieUtmMedium', cookieUtmMedium);
+            if (cookieUtmCampaign) elSearchParams.append('cookieUtmCampaign', cookieUtmCampaign);
+            if (cookieUtmContent) elSearchParams.append('cookieUtmContent', cookieUtmContent);
+            if (cookieUtmTerm) elSearchParams.append('cookieUtmTerm', cookieUtmTerm);
+            if (!elSearchParams.has('sck') && scks.length > 0) { elSearchParams.append('sck', scks.join('|')); modified = true; }
+            if (!elSearchParams.has('src') && srcValues.length > 0) { elSearchParams.append('src', srcValues.join('|')); modified = true; }
+            if (modified) return elURL.origin + elURL.pathname + "?" + elSearchParams.toString();
+            return el.href;
+        };
+        document.querySelectorAll('a').forEach(function(el) {
+            try {
+                var elURL = new URL(el.href, window.location.origin);
+                if (!elURL.hash) el.href = updateLinks(el, elURL);
+            } catch (e) {
+                console.warn('Erro ao processar URL no link:', el.href);
+            }
+        });
+    })();
+    </script>
+
+    <script>
+    function preencherCamposUTM(form) {
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlParamsReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
+        var utms = ['utm_campaign', 'utm_medium', 'utm_source', 'utm_content', 'utm_term'];
+        var utmSourceField = form.querySelector('[id^="form-field-utm_source"]');
+        if (utmSourceField) {
+            var utmSourceValue = urlParams.get('utm_source') || urlParamsReferrer.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : "direto");
+            utmSourceField.value = utmSourceValue;
+            if (utmSourceValue !== "direto") {
+                utms.forEach(function(utm) {
+                    if (utm !== 'utm_source') {
+                        var campo = form.querySelector('[id^="form-field-' + utm + '"]');
+                        if (campo) campo.value = urlParams.get(utm) || urlParamsReferrer.get(utm) || '';
+                    }
+                });
+            }
+        }
+        var campoSlug = form.querySelector('[id^="form-field-pagina_captura"]');
+        if (campoSlug) campoSlug.value = window.location.pathname.split('/')[1];
+    }
+    document.querySelectorAll('form').forEach(preencherCamposUTM);
+    console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD', 'font-size:20px;color:yellow;');
+    window.onload = function() { document.querySelectorAll('form').forEach(preencherCamposUTM); };
+    </script>
+
+</body>
+</html>
