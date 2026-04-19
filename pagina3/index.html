@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
+
+    <!-- Meta Pixel Base Code — Protocolo Fecha-tudo -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1624871735228400');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Base Code -->
+
     <title>Protocolo Fecha-Tudo — O Custo Silencioso das Conversas Perdidas</title>
     <meta name="description" content="Cada conversa que morre no WhatsApp tem um custo real. Descubra quanto você perde por mês sem scripts de venda. 13 scripts prontos por R$28,00.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1013,7 +1033,7 @@
 
     <header class="site-header" id="siteHeader">
         <a href="#" class="header-logo">Fecha-Tudo</a>
-        <a href="#cta-final" class="header-cta">Garantir acesso</a>
+        <a href="#cta-final" class="header-cta" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:28.00,currency:'BRL'});">Garantir acesso</a>
     </header>
 
     <main>
@@ -1178,7 +1198,7 @@
             <div class="cta-final-preco reveal tabular">R$ 28,00</div>
             <p class="cta-final-sub reveal">Acesso imediato. Voc&ecirc; usa j&aacute; na pr&oacute;xima mensagem que receber.</p>
             <div class="reveal">
-                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-btn">Quero parar de perder vendas</a>
+                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-btn" onclick="fbq('track','InitiateCheckout',{value:28.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">Quero parar de perder vendas</a>
             </div>
             <div class="cta-final-details reveal">
                 <span class="cta-final-detail">
@@ -1201,7 +1221,7 @@
     <!-- ═══════ STICKY BAR ═══════ -->
     <div class="sticky-bar" id="stickyBar">
         <span class="sticky-bar-text">Protocolo Fecha-Tudo &mdash; <strong>R$ 28,00</strong></span>
-        <a href="#cta-final" class="sticky-bar-btn">Garantir agora</a>
+        <a href="#cta-final" class="sticky-bar-btn" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:28.00,currency:'BRL'});">Garantir agora</a>
     </div>
 
     <footer class="site-footer">

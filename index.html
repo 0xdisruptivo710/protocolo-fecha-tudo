@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
+
+    <!-- Meta Pixel Base Code — Protocolo Fecha-tudo -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1624871735228400');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Base Code -->
+
     <title>Protocolo Fecha-Tudo — Scripts de Vendas para Esteticistas</title>
     <meta name="description" content="13 scripts prontos para fechar mais clientes no WhatsApp. Para esteticistas e proprietárias de clínicas de estética.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -524,7 +544,7 @@
 
     <header class="site-header" id="siteHeader">
         <a href="#" class="header-logo">fecha·tudo</a>
-        <a href="#oferta" class="header-cta">Garantir acesso</a>
+        <a href="#oferta" class="header-cta" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:28.00,currency:'BRL'});">Garantir acesso</a>
     </header>
 
     <main>
@@ -752,7 +772,7 @@
             </p>
 
             <div class="reveal">
-                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-button">Quero garantir meu acesso</a>
+                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-button" onclick="fbq('track','InitiateCheckout',{value:28.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">Quero garantir meu acesso</a>
             </div>
 
             <p class="oferta-pagamento reveal">
