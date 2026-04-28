@@ -1,1557 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
-
-    <!-- Meta Pixel Base Code — Protocolo Fecha-tudo -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1624871735228400');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Base Code -->
-
-    <title>Protocolo Fecha-Tudo — Conduza, Nao Empurre</title>
-    <meta name="description" content="Nao e sobre vender. E sobre conduzir. O Metodo M.A.C.A. transforma curiosas em agendamentos pagos — sem pressao, sem desconto, sem improvisar.">
-    <meta property="og:title" content="Protocolo Fecha-Tudo — Conduza, Nao Empurre">
-    <meta property="og:description" content="Toda objecao e uma pergunta disfarcada. Aprenda a conduzir a conversa e fechar mais agendamentos.">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,700;1,9..144,900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* ══════════════════════════════════════
-           BOTANICAL BLOOM — Design Tokens
-           ══════════════════════════════════════ */
-        :root {
-            --bg: #F7FAF5;
-            --bg-deep: #EEF3EA;
-            --primary: #2D5A3D;
-            --primary-dim: rgba(45, 90, 61, .08);
-            --accent: #E8B4B8;
-            --accent-strong: #D4949A;
-            --text: #1A2E1A;
-            --text-body: #3A4F3A;
-            --text-muted: #6B7B6B;
-            --surface: #FFFFFF;
-            --surface-border: rgba(45, 90, 61, .1);
-            --surface-border-hover: rgba(45, 90, 61, .25);
-            --ease: cubic-bezier(.16, 1, .3, 1);
-            --ease-out: cubic-bezier(0, 0, .2, 1);
-            --radius: 12px;
-            --radius-sm: 8px;
-        }
-
-        /* ══════════════════════════════════════
-           RESET & BASE
-           ══════════════════════════════════════ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-            font-weight: 400;
-            line-height: 1.65;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            cursor: none;
-        }
-
-        ::selection {
-            background: rgba(45, 90, 61, .12);
-            color: var(--text);
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: rgba(45, 90, 61, .2); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-
-        @media (pointer: coarse) {
-            body { cursor: auto; }
-            .cursor-dot { display: none !important; }
-        }
-
-        img, svg { display: block; max-width: 100%; }
-
-        a { color: inherit; text-decoration: none; cursor: pointer; }
-        button { cursor: pointer; font-family: inherit; }
-
-        h1, h2, h3, h4 {
-            font-family: 'Fraunces', 'Georgia', serif;
-            text-wrap: balance;
-        }
-
-        p { text-wrap: pretty; }
-
-        /* ══════════════════════════════════════
-           CUSTOM CURSOR — Diamond / Circle
-           ══════════════════════════════════════ */
-        .cursor-dot {
-            position: fixed;
-            top: 0; left: 0;
-            z-index: 99;
-            pointer-events: none;
-            width: 14px; height: 14px;
-            border: 1.5px solid var(--primary);
-            transform: translate(-50%, -50%) rotate(45deg);
-            transition: width .2s ease-out, height .2s ease-out, border-radius .2s ease-out, background .2s ease-out, transform .2s ease-out;
-            will-change: transform;
-        }
-        .cursor-dot.hover {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            background: rgba(45, 90, 61, .06);
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-
-        /* ══════════════════════════════════════
-           SCROLL REVEAL
-           ══════════════════════════════════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
-        }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
-        .d1 { transition-delay: .1s; }
-        .d2 { transition-delay: .2s; }
-        .d3 { transition-delay: .3s; }
-        .d4 { transition-delay: .4s; }
-        .d5 { transition-delay: .5s; }
-        .d6 { transition-delay: .6s; }
-
-        /* ══════════════════════════════════════
-           SHARED ELEMENTS
-           ══════════════════════════════════════ */
-        .eyebrow {
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: .2em;
-            text-transform: uppercase;
-            color: var(--accent-strong);
-        }
-
-        .accent-word {
-            color: var(--accent-strong);
-        }
-
-        .section-pad {
-            padding: 120px 10vw;
-        }
-
-        /* ══════════════════════════════════════
-           S1 — ABERTURA (Hero)
-           ══════════════════════════════════════ */
-        .abertura {
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 100px 10vw 80px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(165deg, var(--bg) 0%, var(--bg-deep) 60%, rgba(232, 180, 184, .08) 100%);
-        }
-
-        .grid-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            opacity: .05;
-            background-image:
-                linear-gradient(var(--primary) 1px, transparent 1px),
-                linear-gradient(90deg, var(--primary) 1px, transparent 1px);
-            background-size: 80px 80px;
-            will-change: transform;
-        }
-
-        .ab-logo {
-            position: absolute;
-            top: 36px; left: 10vw;
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: .2em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            z-index: 50;
-        }
-
-        /* Organic leaf decoration */
-        .ab-leaf {
-            position: absolute;
-            right: 8vw; top: 50%;
-            transform: translateY(-50%);
-            width: 280px; height: 280px;
-            opacity: .06;
-            pointer-events: none;
-        }
-
-        .ab-title {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: clamp(38px, 7vw, 88px);
-            line-height: 1.08;
-            color: var(--text);
-            position: relative;
-            z-index: 1;
-            margin-bottom: 28px;
-            max-width: 720px;
-            opacity: 0;
-            filter: blur(16px);
-            transition: opacity .9s ease-out, filter .9s ease-out;
-        }
-        .ab-title.visible { opacity: 1; filter: blur(0); }
-        .ab-title .accent-word { color: var(--primary); }
-
-        .ab-sub {
-            font-size: 18px;
-            font-weight: 400;
-            color: var(--text-body);
-            max-width: 480px;
-            line-height: 1.75;
-            margin-bottom: 36px;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity .6s .45s var(--ease-out), transform .6s .45s var(--ease-out);
-        }
-        .ab-sub.visible { opacity: 1; transform: translateY(0); }
-
-        .ab-cta {
-            display: inline-block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #FFFFFF;
-            background: var(--primary);
-            padding: 16px 40px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity .5s .65s var(--ease-out), transform .5s .65s var(--ease-out), box-shadow .2s ease-out, background .2s ease-out;
-        }
-        .ab-cta.visible { opacity: 1; transform: translateY(0); }
-        .ab-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(45, 90, 61, .18);
-        }
-        .ab-cta svg {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
-
-        .ab-proofs {
-            display: flex;
-            gap: 24px;
-            margin-top: 28px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            transition: opacity .5s .85s var(--ease-out);
-        }
-        .ab-proofs.visible { opacity: 1; }
-        .ab-proof {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-muted);
-            letter-spacing: .02em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .ab-proof svg { flex-shrink: 0; }
-
-        /* ══════════════════════════════════════
-           S2 — DOR (Before / After Split)
-           ══════════════════════════════════════ */
-        .dor {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            position: relative;
-        }
-        .dor-col {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 100px 8vw;
-        }
-        .dor-col--sem { background: var(--text); }
-        .dor-col--com { background: var(--primary); }
-
-        .dor-title {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-weight: 700;
-            font-size: clamp(26px, 3.5vw, 44px);
-            line-height: 1.15;
-            margin-bottom: 36px;
-        }
-        .dor-col--sem .dor-title { color: var(--accent); }
-        .dor-col--com .dor-title { color: #FFFFFF; }
-
-        .dor-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .dor-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            font-size: 15px;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-        .dor-col--sem .dor-item { color: rgba(255, 255, 255, .65); }
-        .dor-col--com .dor-item { color: rgba(255, 255, 255, .85); }
-
-        .dor-icon {
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .dor-divider {
-            position: absolute;
-            left: 50%; top: 0; bottom: 0;
-            width: 1px;
-            background: rgba(255, 255, 255, .1);
-            z-index: 2;
-        }
-
-        /* ══════════════════════════════════════
-           S3 — MECANISMO
-           ══════════════════════════════════════ */
-        .mecanismo {
-            padding: 140px 10vw;
-            background: var(--bg);
-        }
-
-        .mec-eyebrow { margin-bottom: 16px; }
-
-        .mec-title {
-            font-weight: 700;
-            font-size: clamp(30px, 5vw, 60px);
-            line-height: 1.1;
-            color: var(--text);
-            margin-bottom: 80px;
-            max-width: 620px;
-        }
-
-        .mec-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px;
-        }
-
-        .mec-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: var(--radius);
-            padding: 40px 32px;
-            transition: border-color .2s ease-out, transform .2s ease-out;
-        }
-        .mec-card:hover {
-            border-color: var(--surface-border-hover);
-            transform: translateY(-4px);
-        }
-
-        .mec-card-icon {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            background: var(--primary-dim);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
-
-        .mec-card-title {
-            font-family: 'Fraunces', serif;
-            font-weight: 600;
-            font-size: 20px;
-            color: var(--text);
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .mec-card-text {
-            font-size: 15px;
-            font-weight: 400;
-            color: var(--text-muted);
-            line-height: 1.75;
-        }
-
-        /* ══════════════════════════════════════
-           S4 — METODO M.A.C.A. (Vertical Timeline)
-           ══════════════════════════════════════ */
-        .metodo {
-            background: var(--surface);
-            padding: 120px 10vw;
-            position: relative;
-        }
-
-        .met-eyebrow { margin-bottom: 16px; }
-
-        .met-title {
-            font-weight: 700;
-            font-size: clamp(28px, 4.5vw, 52px);
-            line-height: 1.12;
-            color: var(--text);
-            margin-bottom: 80px;
-            max-width: 540px;
-        }
-
-        .met-timeline {
-            position: relative;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .met-timeline::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 0; bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            opacity: .25;
-        }
-
-        .met-step {
-            position: relative;
-            padding-left: 72px;
-            padding-bottom: 56px;
-        }
-        .met-step:last-child { padding-bottom: 0; }
-
-        /* Leaf-shaped organic marker */
-        .met-marker {
-            position: absolute;
-            left: 11px;
-            top: 4px;
-            width: 28px; height: 28px;
-            background: var(--bg);
-            border: 2px solid var(--primary);
-            border-radius: 50% 50% 50% 4px;
-            transform: rotate(-45deg);
-            transition: background .2s ease-out, transform .2s ease-out;
-        }
-        .met-step:hover .met-marker {
-            background: var(--primary);
-            transform: rotate(-45deg) scale(1.1);
-        }
-
-        .met-step-label {
-            font-family: 'Outfit', sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--accent-strong);
-            margin-bottom: 4px;
-        }
-
-        .met-step-name {
-            font-family: 'Fraunces', serif;
-            font-weight: 600;
-            font-size: 22px;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .met-step-timing {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .met-step-text {
-            font-size: 15px;
-            font-weight: 400;
-            color: var(--text-body);
-            line-height: 1.8;
-            max-width: 520px;
-        }
-        .met-step-text strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        /* ══════════════════════════════════════
-           S5 — OBJECOES (Philosophical Reframe)
-           ══════════════════════════════════════ */
-        .objecoes {
-            padding: 140px 10vw;
-            background: var(--bg-deep);
-        }
-
-        .obj-philosophy {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-weight: 500;
-            font-size: clamp(22px, 3.5vw, 38px);
-            line-height: 1.35;
-            color: var(--text);
-            margin-bottom: 16px;
-            max-width: 680px;
-        }
-
-        .obj-subtitle {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 64px;
-            max-width: 520px;
-            line-height: 1.7;
-        }
-
-        .obj-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .obj-card-wrap {
-            perspective: 1000px;
-            height: 340px;
-            cursor: pointer;
-        }
-
-        .obj-card {
-            position: relative;
-            width: 100%; height: 100%;
-            transition: transform .6s var(--ease);
-            transform-style: preserve-3d;
-        }
-        .obj-card-wrap:hover .obj-card { transform: rotateY(180deg); }
-
-        .obj-face {
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 36px 28px;
-            border-radius: var(--radius);
-        }
-
-        .obj-front {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-        }
-
-        .obj-front-quote {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-weight: 700;
-            font-size: 26px;
-            color: var(--text);
-            line-height: 1.25;
-        }
-
-        .obj-front-label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: var(--accent-strong);
-            margin-bottom: 16px;
-        }
-
-        .obj-front-hint {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .obj-front-hint svg { flex-shrink: 0; }
-
-        .obj-back {
-            background: var(--primary);
-            transform: rotateY(180deg);
-        }
-
-        .obj-back-label {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 14px;
-        }
-
-        .obj-back-meaning {
-            font-size: 15px;
-            color: rgba(255, 255, 255, .7);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .obj-back-script {
-            font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            font-style: italic;
-            color: #FFFFFF;
-            line-height: 1.65;
-            padding-left: 16px;
-            border-left: 2px solid var(--accent);
-        }
-
-        /* ══════════════════════════════════════
-           S6 — OFERTA
-           ══════════════════════════════════════ */
-        .oferta-sec {
-            background: var(--text);
-            padding: 120px 10vw;
-        }
-
-        .of-eyebrow {
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-
-        .of-title {
-            font-family: 'Fraunces', serif;
-            font-weight: 700;
-            font-size: clamp(28px, 4vw, 48px);
-            color: #FFFFFF;
-            margin-bottom: 64px;
-            max-width: 500px;
-            line-height: 1.15;
-        }
-
-        .of-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 80px;
-        }
-
-        .of-card {
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .06);
-            border-radius: var(--radius-sm);
-            padding: 28px 24px;
-            transition: border-color .2s ease-out, transform .2s ease-out;
-        }
-        .of-card:hover {
-            border-color: rgba(232, 180, 184, .3);
-            transform: translateY(-2px);
-        }
-
-        .of-card-icon {
-            color: var(--accent);
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .of-card-name {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            color: #FFFFFF;
-            margin-bottom: 8px;
-        }
-
-        .of-card-desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, .45);
-            line-height: 1.65;
-        }
-
-        .of-divider {
-            height: 1px;
-            background: var(--accent);
-            opacity: .15;
-            margin-bottom: 80px;
-        }
-
-        .of-center { text-align: center; }
-
-        .of-titulo {
-            font-family: 'Fraunces', serif;
-            font-weight: 700;
-            font-size: clamp(26px, 4vw, 42px);
-            color: #FFFFFF;
-            margin-bottom: 32px;
-        }
-
-        .of-price-old {
-            font-size: 18px;
-            color: rgba(255, 255, 255, .35);
-            text-decoration: line-through;
-            display: block;
-            margin-bottom: 4px;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .of-price-new {
-            font-family: 'Fraunces', serif;
-            font-weight: 800;
-            font-size: clamp(48px, 7vw, 72px);
-            color: var(--accent);
-            display: block;
-            margin-bottom: 32px;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .of-cta {
-            display: inline-block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text);
-            background: var(--accent);
-            padding: 18px 52px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform .2s ease-out, box-shadow .2s ease-out;
-        }
-        .of-cta:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(232, 180, 184, .2);
-        }
-
-        .of-garantia {
-            margin-top: 28px;
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, .4);
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        /* ══════════════════════════════════════
-           S7 — MANIFESTO
-           ══════════════════════════════════════ */
-        .manifesto {
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 10vw;
-            background: var(--primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Faint organic background shape */
-        .manifesto::before {
-            content: '';
-            position: absolute;
-            width: 600px; height: 600px;
-            border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
-            background: rgba(232, 180, 184, .06);
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .manifesto-eyebrow {
-            color: var(--accent);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .manifesto-text {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-weight: 400;
-            font-size: clamp(26px, 4.5vw, 56px);
-            line-height: 1.3;
-            color: #FFFFFF;
-            max-width: 760px;
-            margin-bottom: 48px;
-            position: relative;
-        }
-
-        .manifesto-line {
-            width: 60px; height: 2px;
-            background: var(--accent);
-            margin: 0 auto 48px;
-            position: relative;
-        }
-
-        .manifesto-sub {
-            font-size: 17px;
-            color: rgba(255, 255, 255, .6);
-            max-width: 440px;
-            line-height: 1.75;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .manifesto-cta {
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 4px;
-            transition: opacity .2s ease-out;
-            position: relative;
-            cursor: pointer;
-        }
-        .manifesto-cta:hover { opacity: .75; }
-
-        /* ══════════════════════════════════════
-           FOOTER
-           ══════════════════════════════════════ */
-        .site-footer {
-            background: var(--text);
-            padding: 40px 10vw;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, .04);
-        }
-        .site-footer p {
-            font-size: 11px;
-            color: rgba(255, 255, 255, .25);
-            letter-spacing: .04em;
-        }
-
-        /* ══════════════════════════════════════
-           RESPONSIVE — 768px
-           ══════════════════════════════════════ */
-        @media (max-width: 768px) {
-            .abertura { padding: 80px 7vw 60px; }
-            .ab-logo { left: 7vw; }
-            .ab-leaf { display: none; }
-
-            .dor { grid-template-columns: 1fr; }
-            .dor-col { padding: 60px 7vw; }
-            .dor-divider { display: none; }
-
-            .mecanismo { padding: 80px 7vw; }
-            .mec-grid { grid-template-columns: 1fr; gap: 20px; }
-
-            .metodo { padding: 80px 7vw; }
-            .met-timeline { max-width: 100%; }
-
-            .objecoes { padding: 80px 7vw; }
-            .obj-grid { grid-template-columns: 1fr; gap: 20px; }
-            .obj-card-wrap { height: 300px; }
-
-            .oferta-sec { padding: 80px 7vw; }
-            .of-grid { grid-template-columns: 1fr; gap: 16px; }
-            .of-cta { width: 100%; max-width: 380px; text-align: center; padding: 16px 24px; }
-
-            .manifesto { padding: 80px 7vw; }
-        }
-
-        /* ══════════════════════════════════════
-           RESPONSIVE — 480px
-           ══════════════════════════════════════ */
-        @media (max-width: 480px) {
-            .ab-title { font-size: clamp(30px, 9vw, 44px); }
-            .obj-front-quote { font-size: 22px; }
-            .met-step { padding-left: 56px; }
-            .met-step-name { font-size: 19px; }
-        }
-
-        /* ══════════════════════════════════════
-           RESPONSIVE — 1024px (tablet landscape)
-           ══════════════════════════════════════ */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .mec-grid { grid-template-columns: 1fr 1fr; }
-            .obj-grid { grid-template-columns: 1fr 1fr; }
-            .of-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        /* ══════════════════════════════════════
-           RESPONSIVE — 1440px+
-           ══════════════════════════════════════ */
-        @media (min-width: 1440px) {
-            .abertura, .mecanismo, .metodo, .objecoes, .oferta-sec, .manifesto {
-                padding-left: 14vw;
-                padding-right: 14vw;
-            }
-        }
-
-        /* ══════════════════════════════════════
-           REDUCED MOTION
-           ══════════════════════════════════════ */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-            html { scroll-behavior: auto; }
-            .reveal, .ab-title, .ab-sub, .ab-cta, .ab-proofs {
-                opacity: 1 !important;
-                transform: none !important;
-                filter: none !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
+
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1624871735228400');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
+
+  <title>Protocolo Fecha-Tudo — 15 minutos do primeiro "oi" ao Pix confirmado</title>
+  <meta name="description" content="Não é gatilho de escassez. É aritmética: cada conversa perdida hoje vai pesquisar 3 outras clínicas até sexta. Geralmente fecha na que respondeu melhor primeiro.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/boutique.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
-    <div class="cursor-dot" id="cursorDot"></div>
+<header class="site-header">
+  <a href="/" class="header-logo">fecha·tudo</a>
+  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+</header>
 
-    <main>
+<main>
 
-        <!-- ══════════════════════════════════════
-             S1 — ABERTURA
-             ══════════════════════════════════════ -->
-        <section class="abertura" id="abertura">
-            <div class="grid-bg" id="gridBg"></div>
-            <div class="ab-logo">Protocolo Fecha-Tudo</div>
+  <section class="hero" id="hero">
+    <p class="eyebrow hero__eyebrow">15 MINUTOS · DO PRIMEIRO "OI" AO PIX</p>
+    <h1 class="hero__headline">
+      Antes que a próxima cliente vá para a concorrência —<br>
+      <strong style="color:var(--accent);font-style:italic;font-weight:400;">aqui está o protocolo que ela esperava encontrar com você</strong>.
+    </h1>
+    <p class="hero__sub">
+      Não é gatilho de escassez de marketing. É aritmética simples: cada conversa perdida hoje é uma cliente que vai pesquisar mais três clínicas até sexta-feira. E geralmente fecha na que respondeu melhor primeiro.
+    </p>
+  </section>
 
-            <!-- Organic leaf SVG decoration -->
-            <div class="ab-leaf" aria-hidden="true">
-                <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M140 20 C200 40 260 120 240 200 C220 260 160 270 140 260 C120 270 60 260 40 200 C20 120 80 40 140 20Z" fill="currentColor" stroke="none" style="color: var(--primary)"/>
-                    <path d="M140 40 L140 250" stroke="var(--bg)" stroke-width="1.5" opacity=".3"/>
-                    <path d="M140 100 C160 90 200 100 210 130" stroke="var(--bg)" stroke-width="1" opacity=".2" fill="none"/>
-                    <path d="M140 140 C120 130 80 140 70 170" stroke="var(--bg)" stroke-width="1" opacity=".2" fill="none"/>
-                    <path d="M140 180 C165 170 200 185 205 210" stroke="var(--bg)" stroke-width="1" opacity=".2" fill="none"/>
-                </svg>
-            </div>
+  <section class="section" id="diagnostico">
+    <h2 class="section__title reveal">O que acontece com a próxima conversa que travar</h2>
+    <p class="section__sub reveal">Sua atendente respondeu "R$ 380" e a cliente sumiu. A timeline real começa agora.</p>
 
-            <h1 class="ab-title" id="abTitle">
-                Nao e sobre<br>
-                <span class="accent-word">vender.</span><br>
-                E sobre<br>conduzir.
-            </h1>
+    <div class="timeline-progress" style="margin-top:var(--sp-12);">
+      <div class="timeline-progress__step reveal">
+        <div class="timeline-progress__when">Agora · 19h47</div>
+        <div class="timeline-progress__what">Ela vê o preço, não responde, abre o Instagram. Sua mensagem some no meio de outras 30.</div>
+      </div>
+      <div class="timeline-progress__step reveal rd1">
+        <div class="timeline-progress__when">Em 3 dias</div>
+        <div class="timeline-progress__what">Ela pediu orçamento em 3 outras clínicas. Uma respondeu fazendo uma pergunta antes do preço. Ela respondeu de volta.</div>
+      </div>
+      <div class="timeline-progress__step reveal rd2">
+        <div class="timeline-progress__when">Em 1 semana</div>
+        <div class="timeline-progress__what">Ela fechou na que perguntou. Pagou R$ 420. Está na sua agenda? Não — está na de outra clínica.</div>
+      </div>
+    </div>
 
-            <p class="ab-sub" id="abSub">Cada conversa no WhatsApp e uma oportunidade de guiar alguem ate a decisao certa. O Protocolo ensina a ordem exata para isso acontecer — naturalmente, sem forcacao.</p>
+    <div class="container container--narrow prose" style="margin-top:var(--sp-12);">
+      <p class="reveal">Não tem como recuperar essa conversa. Tem como mudar a próxima — antes que ela aconteça do mesmo jeito amanhã às 11h.</p>
+    </div>
+  </section>
 
-            <a href="#oferta" class="ab-cta" id="abCta" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:48.00,currency:'BRL'});">
-                Quero aprender a conduzir
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+  <section class="section" id="mecanismo">
+    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
+    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
 
-            <div class="ab-proofs" id="abProofs">
-                <span class="ab-proof">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.76 3.57L13 5.28l-3 2.92.71 4.13L7 10.38 3.29 12.33 4 8.2 1 5.28l4.24-.71L7 1z" fill="var(--accent-strong)"/></svg>
-                    Scripts testados e validados
-                </span>
-                <span class="ab-proof">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    Metodo M.A.C.A. em 4 etapas
-                </span>
-                <span class="ab-proof">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="var(--primary)" stroke-width="1.2"/><path d="M7 4v3.5l2.5 1.5" stroke="var(--primary)" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    Resultado na primeira conversa
-                </span>
-            </div>
-        </section>
+    <div class="mecanismo-grid">
+      <div class="timeline-col timeline-col--sem">
+        <div class="timeline-label reveal">Sem protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
+      </div>
 
-        <!-- ══════════════════════════════════════
-             S2 — DOR
-             ══════════════════════════════════════ -->
-        <section class="dor" id="dor">
-            <div class="dor-divider" aria-hidden="true"></div>
+      <div class="timeline-col timeline-col--com">
+        <div class="timeline-label reveal">Com protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
+        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
+        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
+        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
+      </div>
+    </div>
+  </section>
 
-            <div class="dor-col dor-col--sem">
-                <h2 class="dor-title reveal">Quando voce<br>improvisa.</h2>
-                <ul class="dor-list">
-                    <li class="dor-item reveal">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                        Manda o preco no primeiro oi. Silencio absoluto depois.
-                    </li>
-                    <li class="dor-item reveal d1">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                        Oferece "qualquer horario". Ela nao escolhe nenhum.
-                    </li>
-                    <li class="dor-item reveal d2">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                        Cede o desconto antes de explicar o valor.
-                    </li>
-                    <li class="dor-item reveal d3">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                        Agenda sem sinal. Leva falta e perde o horario.
-                    </li>
-                    <li class="dor-item reveal d4">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-                        O dia inteiro respondendo mensagens. A agenda? Continua vazia.
-                    </li>
-                </ul>
-            </div>
+  <section class="section" id="protocolo">
+    <h2 class="section__title reveal">O método M.A.C.A.</h2>
+    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
 
-            <div class="dor-col dor-col--com">
-                <h2 class="dor-title reveal">Quando voce<br>conduz.</h2>
-                <ul class="dor-list">
-                    <li class="dor-item reveal">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l2.5 3L11 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        Pergunta antes de informar. Cria desejo, depois apresenta o valor.
-                    </li>
-                    <li class="dor-item reveal d1">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l2.5 3L11 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        Oferece dois horarios. Ela escolhe entre eles, nao entre ir ou nao.
-                    </li>
-                    <li class="dor-item reveal d2">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l2.5 3L11 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        Nao diz o preco: mostra o que esta incluso e o que ela ganha.
-                    </li>
-                    <li class="dor-item reveal d3">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l2.5 3L11 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        Fecha com sinal. Envia lembrete, nao confirmacao.
-                    </li>
-                    <li class="dor-item reveal d4">
-                        <span class="dor-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l2.5 3L11 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        Converte interesse em pagamento enquanto o cafe ainda esta quente.
-                    </li>
-                </ul>
-            </div>
-        </section>
+    <div class="protocolo-grid">
+      <div class="card protocolo-card reveal">
+        <span class="card-numeral">I</span>
+        <span class="badge card-step-badge">Min 1–3</span>
+        <div class="card-name">Mapeamento de Dor</div>
+        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
+      </div>
+      <div class="card protocolo-card reveal rd1">
+        <span class="card-numeral">II</span>
+        <span class="badge card-step-badge">Min 4–7</span>
+        <div class="card-name">Ancoragem de Valor</div>
+        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
+      </div>
+      <div class="card protocolo-card reveal rd2">
+        <span class="card-numeral">III</span>
+        <span class="badge card-step-badge">Min 8–11</span>
+        <div class="card-name">Comando de Escassez</div>
+        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
+      </div>
+      <div class="card protocolo-card reveal rd3">
+        <span class="card-numeral">IV</span>
+        <span class="badge card-step-badge">Min 12–15</span>
+        <div class="card-name">Agendamento Blindado</div>
+        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- ══════════════════════════════════════
-             S3 — MECANISMO
-             ══════════════════════════════════════ -->
-        <section class="mecanismo" id="mecanismo">
-            <div class="eyebrow mec-eyebrow reveal">A filosofia por tras</div>
-            <h2 class="mec-title reveal d1">Quem conduz a conversa<br>conduz a decisao.</h2>
+  <section class="section" id="incluso">
+    <div class="container container--narrow">
+      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
+      <ul class="list-check">
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
+      </ul>
+    </div>
+  </section>
 
-            <div class="mec-grid">
-                <div class="mec-card reveal d1">
-                    <div class="mec-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 3v16M5 8l6-5 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <h3 class="mec-card-title">Preco sem ancora e so numero</h3>
-                    <p class="mec-card-text">Quando o valor aparece antes do desejo, o cerebro compara com a opcao mais barata disponivel. Voce perde sem ter errado — so falou na hora errada.</p>
-                </div>
+  <section class="section" id="para-quem">
+    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
+    <div class="para-quem-grid">
+      <div class="para-quem-col para-quem-col--sim reveal">
+        <h3>É pra sua clínica se:</h3>
+        <ul>
+          <li>Você sente urgência em mudar mas não responde a "comprar agora ou nunca mais"</li>
+          <li>Prefere argumento aritmético a apelo emocional barato</li>
+          <li>Quer começar a corrigir já a partir da próxima conversa</li>
+          <li>Sabe que cada dia parado é cliente convertendo em outro lugar</li>
+        </ul>
+      </div>
+      <div class="para-quem-col para-quem-col--nao reveal rd1">
+        <h3>Não é pra você se:</h3>
+        <ul>
+          <li>Acha que ainda não é hora — vai começar quando estiver "menos corrido"</li>
+          <li>Procura solução mágica que se implementa sozinha</li>
+          <li>Não tem WhatsApp ativo na clínica</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <div class="mec-card reveal d2">
-                    <div class="mec-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 11c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7.5 11h7M11 7.5v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </div>
-                    <h3 class="mec-card-title">Especialista pergunta, balcao responde</h3>
-                    <p class="mec-card-text">A diferenca entre cobrar R$ 150 e R$ 550 pelo mesmo procedimento nao e tecnica — e quem faz a pergunta certa antes de dar qualquer informacao.</p>
-                </div>
+  <section class="oferta" id="oferta">
+    <div class="reveal">
+      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
+      <p class="oferta-preco">R$ 14,99</p>
+      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+    </div>
+    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
+    <div class="reveal">
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+    </div>
+    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
+    <p class="oferta-garantia reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      7 dias de garantia incondicional
+    </p>
+  </section>
 
-                <div class="mec-card reveal d3">
-                    <div class="mec-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M11 7v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <h3 class="mec-card-title">A janela de decisao fecha rapido</h3>
-                    <p class="mec-card-text">Depois que alguem demonstra interesse, voce tem minutos — nao horas. Cada segundo sem direcionamento e um passo para o "vou pensar" que nunca volta.</p>
-                </div>
-            </div>
-        </section>
+</main>
 
-        <!-- ══════════════════════════════════════
-             S4 — METODO M.A.C.A.
-             ══════════════════════════════════════ -->
-        <section class="metodo" id="metodo">
-            <div class="eyebrow met-eyebrow reveal">O metodo</div>
-            <h2 class="met-title reveal d1">M.A.C.A.<br>4 movimentos, nenhum improviso.</h2>
-
-            <div class="met-timeline">
-                <div class="met-step reveal">
-                    <div class="met-marker" aria-hidden="true"></div>
-                    <div class="met-step-label">M01 — Mapeamento</div>
-                    <h3 class="met-step-name">Mapeamento de Dor</h3>
-                    <div class="met-step-timing">Mensagens 1-2 / Minutos 1-3</div>
-                    <p class="met-step-text"><strong>Nunca fale preco antes de ouvir o problema dela.</strong> Quando ela descreve a propria urgencia em voz alta, ela amplifica o desejo de resolver. Voce escuta como especialista — nao como atendente de balcao. E a escuta que cria autoridade.</p>
-                </div>
-
-                <div class="met-step reveal d1">
-                    <div class="met-marker" aria-hidden="true"></div>
-                    <div class="met-step-label">M02 — Ancoragem</div>
-                    <h3 class="met-step-name">Ancoragem de Valor</h3>
-                    <div class="met-step-timing">Mensagens 3-4 / Minutos 4-7</div>
-                    <p class="met-step-text"><strong>O valor so aparece quando a ancora emocional ja esta la.</strong> Voce compara o investimento com o custo de continuar sem tratar — nao com o preco da concorrente. A referencia muda. O "caro" desaparece.</p>
-                </div>
-
-                <div class="met-step reveal d2">
-                    <div class="met-marker" aria-hidden="true"></div>
-                    <div class="met-step-label">M03 — Comando</div>
-                    <h3 class="met-step-name">Comando de Escassez</h3>
-                    <div class="met-step-timing">Mensagem 5 / Minutos 8-11</div>
-                    <p class="met-step-text"><strong>Dois horarios. Nunca "qualquer dia".</strong> A decisao deixa de ser "vou ou nao vou" e passa a ser "qual dos dois". Prazo implicito. Urgencia natural. Sem forcar nada — so conduzir.</p>
-                </div>
-
-                <div class="met-step reveal d3">
-                    <div class="met-marker" aria-hidden="true"></div>
-                    <div class="met-step-label">M04 — Agendamento</div>
-                    <h3 class="met-step-name">Agendamento Blindado</h3>
-                    <div class="met-step-timing">Mensagens 6-10 / Minutos 12-15</div>
-                    <p class="met-step-text"><strong>Sempre feche com sinal. Sempre envie lembrete, nunca confirmacao.</strong> Pedir confirmacao planta duvida. Lembrar refor ca compromisso. E a diferenca entre "ela nao veio" e "ela ja pagou antes de chegar".</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════
-             S5 — OBJECOES
-             ══════════════════════════════════════ -->
-        <section class="objecoes" id="objecoes">
-            <div class="eyebrow reveal">Mudanca de perspectiva</div>
-            <h2 class="obj-philosophy reveal d1">Toda objecao e uma pergunta disfarcada.</h2>
-            <p class="obj-subtitle reveal d2">Ela nao esta dizendo nao. Esta pedindo clareza, seguranca, ou um motivo melhor pra dizer sim. Quando voce entende isso, a conversa muda completamente.</p>
-
-            <div class="obj-grid">
-                <div class="obj-card-wrap reveal d1">
-                    <div class="obj-card">
-                        <div class="obj-face obj-front">
-                            <div class="obj-front-label">Objecao</div>
-                            <div class="obj-front-quote">"Ta caro<br>pra mim."</div>
-                            <div class="obj-front-hint">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                                Passe o mouse para ver a traducao
-                            </div>
-                        </div>
-                        <div class="obj-face obj-back">
-                            <div class="obj-back-label">O que ela realmente quer saber</div>
-                            <p class="obj-back-meaning">"Ainda nao entendi o que esta incluso e por que esse investimento vale a pena pra mim."</p>
-                            <p class="obj-back-script">"Posso te mostrar exatamente o que esta incluso e por que a maioria das clientes acha que valeu cada centavo?"</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="obj-card-wrap reveal d2">
-                    <div class="obj-card">
-                        <div class="obj-face obj-front">
-                            <div class="obj-front-label">Objecao</div>
-                            <div class="obj-front-quote">"Preciso falar<br>com meu marido."</div>
-                            <div class="obj-front-hint">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                                Passe o mouse para ver a traducao
-                            </div>
-                        </div>
-                        <div class="obj-face obj-back">
-                            <div class="obj-back-label">O que ela realmente quer saber</div>
-                            <p class="obj-back-meaning">"Quero me sentir segura nessa decisao e preciso de argumentos para justificar."</p>
-                            <p class="obj-back-script">"Faz total sentido. Quer que eu prepare um resumo com tudo que esta incluso pra facilitar essa conversa?"</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="obj-card-wrap reveal d3">
-                    <div class="obj-card">
-                        <div class="obj-face obj-front">
-                            <div class="obj-front-label">Objecao</div>
-                            <div class="obj-front-quote">"Vou pensar<br>e te aviso."</div>
-                            <div class="obj-front-hint">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2v8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                                Passe o mouse para ver a traducao
-                            </div>
-                        </div>
-                        <div class="obj-face obj-back">
-                            <div class="obj-back-label">O que ela realmente quer saber</div>
-                            <p class="obj-back-meaning">"Nao sei qual e o proximo passo e nao quero parecer impulsiva."</p>
-                            <p class="obj-back-script">"Claro! Tem alguma duvida especifica que eu possa resolver agora pra te ajudar nessa decisao?"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════
-             S6 — OFERTA
-             ══════════════════════════════════════ -->
-        <section class="oferta-sec" id="oferta">
-            <div class="eyebrow of-eyebrow reveal">O que voce recebe</div>
-            <h2 class="of-title reveal d1">Tudo o que voce precisa pra conduzir, nao improvisar.</h2>
-
-            <div class="of-grid">
-                <div class="of-card reveal">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Metodo M.A.C.A. Completo</div>
-                    <div class="of-card-desc">Os 4 movimentos com scripts palavra por palavra. Copie, cole e conduza.</div>
-                </div>
-
-                <div class="of-card reveal d1">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Matriz de Objecoes</div>
-                    <div class="of-card-desc">6 objecoes traduzidas com pivos e respostas prontas pra cada uma.</div>
-                </div>
-
-                <div class="of-card reveal d2">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Kit Anti-Vacuo</div>
-                    <div class="of-card-desc">5 mensagens de resgate com timing e intervalo exato entre cada uma.</div>
-                </div>
-
-                <div class="of-card reveal d3">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Check-list de Ouro</div>
-                    <div class="of-card-desc">9 Regras de Ouro + 6 Erros Fatais. Imprima e cole do lado do computador.</div>
-                </div>
-
-                <div class="of-card reveal d4">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Script de Redirecionamento</div>
-                    <div class="of-card-desc">Quando ela insiste no preco antes da hora, voce sabe exatamente o que dizer.</div>
-                </div>
-
-                <div class="of-card reveal d5">
-                    <span class="of-card-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                    <div class="of-card-name">Lembretes Anti No-Show</div>
-                    <div class="of-card-desc">3 lembretes na sequencia certa que eliminam faltas sem parecer insistente.</div>
-                </div>
-            </div>
-
-            <div class="of-divider" aria-hidden="true"></div>
-
-            <div class="of-center">
-                <h3 class="of-titulo reveal">Protocolo Fecha-Tudo</h3>
-                <div class="reveal d1">
-                    <span class="of-price-old">R$ 297</span>
-                    <span class="of-price-new" id="priceCounter">R$ 0</span>
-                </div>
-                <div class="reveal d2">
-                    <a href="https://checkout.ticto.app/OF37E6548" class="of-cta" onclick="fbq('track','InitiateCheckout',{value:48.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">
-                        Quero conduzir minhas conversas
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:middle;margin-left:8px" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-                <p class="of-garantia reveal d3">7 dias de garantia incondicional. Se nao funcionar na sua primeira conversa, devolucao total sem perguntas e sem burocracia.</p>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════
-             S7 — MANIFESTO
-             ══════════════════════════════════════ -->
-        <section class="manifesto" id="manifesto">
-            <div class="eyebrow manifesto-eyebrow reveal">Manifesto</div>
-
-            <p class="manifesto-text reveal d1">
-                Voce ja sabe o que faz.<br>
-                Voce ja entrega resultado.<br>
-                O que faltava era a ordem certa<br>
-                para a cliente enxergar isso<br>
-                antes de perguntar o preco.
-            </p>
-
-            <div class="manifesto-line reveal d2" aria-hidden="true"></div>
-
-            <p class="manifesto-sub reveal d3">Conduzir nao e manipular. E dar a clareza que a cliente precisa pra tomar a melhor decisao — pra ela e pra voce.</p>
-
-            <a href="https://checkout.ticto.app/OF37E6548" class="manifesto-cta reveal d4" onclick="fbq('track','InitiateCheckout',{value:48.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">
-                Comecar minha primeira conversa guiada
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:inline-block;vertical-align:middle;margin-left:6px" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>Protocolo Fecha-Tudo — Conducao de vendas para esteticistas</p>
-    </footer>
-
-    <script>
-    (function () {
-        'use strict';
-
-        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        /* ══════════════════════════════════════
-           CUSTOM CURSOR — Diamond becomes Circle
-           ══════════════════════════════════════ */
-        var dot = document.getElementById('cursorDot');
-        if (dot && window.matchMedia('(pointer: fine)').matches) {
-            var cx = 0, cy = 0, tx = 0, ty = 0;
-
-            document.addEventListener('mousemove', function (e) {
-                tx = e.clientX;
-                ty = e.clientY;
-            });
-
-            (function cursorLoop() {
-                cx += (tx - cx) * 0.14;
-                cy += (ty - cy) * 0.14;
-                dot.style.left = cx + 'px';
-                dot.style.top = cy + 'px';
-                requestAnimationFrame(cursorLoop);
-            })();
-
-            var hoverTargets = document.querySelectorAll('a, button, .of-card, .obj-card-wrap, .mec-card, .met-step');
-            hoverTargets.forEach(function (el) {
-                el.addEventListener('mouseenter', function () { dot.classList.add('hover'); });
-                el.addEventListener('mouseleave', function () { dot.classList.remove('hover'); });
-            });
-        } else if (dot) {
-            dot.style.display = 'none';
-        }
-
-        /* ══════════════════════════════════════
-           HERO ENTRANCE ANIMATION
-           ══════════════════════════════════════ */
-        var abTitle = document.getElementById('abTitle');
-        var abSub = document.getElementById('abSub');
-        var abCta = document.getElementById('abCta');
-        var abProofs = document.getElementById('abProofs');
-
-        if (!reduced) {
-            setTimeout(function () { if (abTitle) abTitle.classList.add('visible'); }, 150);
-            setTimeout(function () { if (abSub) abSub.classList.add('visible'); }, 150);
-            setTimeout(function () { if (abCta) abCta.classList.add('visible'); }, 150);
-            setTimeout(function () { if (abProofs) abProofs.classList.add('visible'); }, 150);
-        } else {
-            [abTitle, abSub, abCta, abProofs].forEach(function (el) {
-                if (el) el.classList.add('visible');
-            });
-        }
-
-        /* ══════════════════════════════════════
-           GRID BACKGROUND PARALLAX
-           ══════════════════════════════════════ */
-        var gridBg = document.getElementById('gridBg');
-        if (gridBg && !reduced) {
-            var gridTicking = false;
-            window.addEventListener('scroll', function () {
-                if (!gridTicking) {
-                    requestAnimationFrame(function () {
-                        var scrollY = window.scrollY;
-                        gridBg.style.transform = 'translateY(' + Math.min(scrollY * 0.12, 36) + 'px)';
-                        gridTicking = false;
-                    });
-                    gridTicking = true;
-                }
-            }, { passive: true });
-        }
-
-        /* ══════════════════════════════════════
-           SCROLL REVEAL — IntersectionObserver
-           ══════════════════════════════════════ */
-        if ('IntersectionObserver' in window && !reduced) {
-            var revealObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        revealObs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.08,
-                rootMargin: '-8% 0px'
-            });
-
-            document.querySelectorAll('.reveal').forEach(function (el) {
-                revealObs.observe(el);
-            });
-        } else {
-            document.querySelectorAll('.reveal').forEach(function (el) {
-                el.classList.add('revealed');
-            });
-        }
-
-        /* ══════════════════════════════════════
-           PRICE COUNTER ANIMATION
-           ══════════════════════════════════════ */
-        var priceEl = document.getElementById('priceCounter');
-        if (priceEl && 'IntersectionObserver' in window) {
-            var priceCounted = false;
-            var priceObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting && !priceCounted) {
-                        priceCounted = true;
-                        if (reduced) {
-                            priceEl.textContent = 'R$ 48,00';
-                            return;
-                        }
-                        var startTime = null;
-                        var duration = 1600;
-                        var target = 48;
-
-                        function countStep(timestamp) {
-                            if (!startTime) startTime = timestamp;
-                            var progress = Math.min((timestamp - startTime) / duration, 1);
-                            var eased = 1 - Math.pow(1 - progress, 3);
-                            priceEl.textContent = 'R$ ' + Math.round(eased * target);
-                            if (progress < 1) {
-                                requestAnimationFrame(countStep);
-                            }
-                        }
-                        requestAnimationFrame(countStep);
-                        priceObs.unobserve(priceEl);
-                    }
-                });
-            }, { threshold: 0.5 });
-            priceObs.observe(priceEl);
-        } else if (priceEl) {
-            priceEl.textContent = 'R$ 48,00';
-        }
-
-        /* ══════════════════════════════════════
-           SMOOTH ANCHOR SCROLLING
-           ══════════════════════════════════════ */
-        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                var targetEl = document.querySelector(this.getAttribute('href'));
-                if (targetEl) {
-                    e.preventDefault();
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    })();
-    </script>
-
-    <script>
-    console.log('%cScript de rastreio 4.0 by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: yellow; font-size: 20px;');
-    (function () {
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-        function setCookie(cookieName, cookieValue, expirationTime) {
-            var cookiePath = "/";
-            expirationTime = expirationTime * 1000;
-            var date = new Date();
-            var dateTimeNow = date.getTime();
-            date.setTime(dateTimeNow + expirationTime);
-            var expirationDate = date.toUTCString();
-            document.cookie = cookieName + "=" + cookieValue + "; expires=" + expirationDate + "; path=" + cookiePath;
-        }
-        function getCookieValue(name) {
-            const value = '; ' + document.cookie;
-            const parts = value.split('; ' + name + '=');
-            if (parts.length === 2) return parts.pop().split(';').shift();
-            return null;
-        }
-        const adParams = ['fbclid', 'gclid'];
-        const urlParams = new URLSearchParams(window.location.search);
-        let isAdClick = false;
-        adParams.forEach(function(param) { if (urlParams.has(param)) isAdClick = true; });
-        if (isAdClick) {
-            const utmSource = getParameterByName('utm_source');
-            const utmMedium = getParameterByName('utm_medium');
-            const utmCampaign = getParameterByName('utm_campaign');
-            const utmContent = getParameterByName('utm_content');
-            const utmTerm = getParameterByName('utm_term');
-            if (utmSource) setCookie('cookieUtmSource', utmSource, 63072000);
-            if (utmMedium) setCookie('cookieUtmMedium', utmMedium, 63072000);
-            if (utmCampaign) setCookie('cookieUtmCampaign', utmCampaign, 63072000);
-            if (utmContent) setCookie('cookieUtmContent', utmContent, 63072000);
-            if (utmTerm) setCookie('cookieUtmTerm', utmTerm, 63072000);
-        }
-        var parametros = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
-        var urlParamsCapt = new URLSearchParams(window.location.search);
-        var urlParamsCaptReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
-        var utms = {};
-        var cookieUtmSource = getCookieValue('cookieUtmSource');
-        var cookieUtmMedium = getCookieValue('cookieUtmMedium');
-        var cookieUtmCampaign = getCookieValue('cookieUtmCampaign');
-        var cookieUtmContent = getCookieValue('cookieUtmContent');
-        var cookieUtmTerm = getCookieValue('cookieUtmTerm');
-        parametros.forEach(function(el) {
-            if (el === "utm_source") {
-                utms[el] = urlParamsCapt.get(el) || (document.referrer ? (urlParamsCaptReferrer.get(el) || new URL(document.referrer).hostname) : "direto");
-            } else {
-                utms[el] = urlParamsCapt.get(el) || urlParamsCaptReferrer.get(el) || "";
-            }
-        });
-        var scks = Object.values(utms).filter(function(v) { return v !== ""; });
-        var currentSckValues = [];
-        if (urlParamsCapt.get('sck')) currentSckValues = urlParamsCapt.get('sck').split('|');
-        scks = scks.filter(function(v) { return currentSckValues.indexOf(v) === -1; });
-        var srcValues = [cookieUtmSource, cookieUtmMedium, cookieUtmCampaign, cookieUtmContent, cookieUtmTerm].filter(function(v) { return v !== null && v !== ""; });
-        var updateLinks = function(el, elURL) {
-            var elSearchParams = new URLSearchParams(elURL.search);
-            var modified = false;
-            urlParams.forEach(function(value, key) {
-                if (!elSearchParams.has(key)) { elSearchParams.append(key, value); modified = true; }
-            });
-            for (var key in utms) {
-                if (!elSearchParams.has(key)) { elSearchParams.append(key, utms[key]); modified = true; }
-            }
-            if (cookieUtmSource) elSearchParams.append('cookieUtmSource', cookieUtmSource);
-            if (cookieUtmMedium) elSearchParams.append('cookieUtmMedium', cookieUtmMedium);
-            if (cookieUtmCampaign) elSearchParams.append('cookieUtmCampaign', cookieUtmCampaign);
-            if (cookieUtmContent) elSearchParams.append('cookieUtmContent', cookieUtmContent);
-            if (cookieUtmTerm) elSearchParams.append('cookieUtmTerm', cookieUtmTerm);
-            if (!elSearchParams.has('sck') && scks.length > 0) { elSearchParams.append('sck', scks.join('|')); modified = true; }
-            if (!elSearchParams.has('src') && srcValues.length > 0) { elSearchParams.append('src', srcValues.join('|')); modified = true; }
-            if (modified) return elURL.origin + elURL.pathname + "?" + elSearchParams.toString();
-            return el.href;
-        };
-        document.querySelectorAll('a').forEach(function(el) {
-            try {
-                var elURL = new URL(el.href, window.location.origin);
-                if (!elURL.hash) el.href = updateLinks(el, elURL);
-            } catch (e) {
-                console.warn('Erro ao processar URL no link:', el.href);
-            }
-        });
-    })();
-    </script>
-
-    <script>
-    function preencherCamposUTM(form) {
-        var urlParams = new URLSearchParams(window.location.search);
-        var urlParamsReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
-        var utms = ['utm_campaign', 'utm_medium', 'utm_source', 'utm_content', 'utm_term'];
-        var utmSourceField = form.querySelector('[id^="form-field-utm_source"]');
-        if (utmSourceField) {
-            var utmSourceValue = urlParams.get('utm_source') || urlParamsReferrer.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : "direto");
-            utmSourceField.value = utmSourceValue;
-            if (utmSourceValue !== "direto") {
-                utms.forEach(function(utm) {
-                    if (utm !== 'utm_source') {
-                        var campo = form.querySelector('[id^="form-field-' + utm + '"]');
-                        if (campo) campo.value = urlParams.get(utm) || urlParamsReferrer.get(utm) || '';
-                    }
-                });
-            }
-        }
-        var campoSlug = form.querySelector('[id^="form-field-pagina_captura"]');
-        if (campoSlug) campoSlug.value = window.location.pathname.split('/')[1];
-    }
-    document.querySelectorAll('form').forEach(preencherCamposUTM);
-    console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD', 'font-size:20px;color:yellow;');
-    window.onload = function() { document.querySelectorAll('form').forEach(preencherCamposUTM); };
-    </script>
+<footer class="site-footer">
+  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+</footer>
 
 </body>
 </html>
