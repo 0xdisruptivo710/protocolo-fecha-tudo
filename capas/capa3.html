@@ -1,401 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>Protocolo Fecha-Tudo - Terra Glow</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
-
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    width: 1080px;
-    height: 720px;
-    margin: 0;
-    overflow: hidden;
-    background: #F5F0E1;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-  }
-
-  /* Grain texture overlay */
-  .grain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.4;
-    background-image:
-      repeating-conic-gradient(
-        rgba(44, 26, 14, 0.03) 0% 25%,
-        transparent 0% 50%
-      );
-    background-size: 3px 3px;
-  }
-
-  /* Organic circles */
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  .orb-1 {
-    width: 380px;
-    height: 380px;
-    top: -100px;
-    right: -40px;
-    background: radial-gradient(circle at 40% 50%, rgba(198, 123, 92, 0.12), rgba(198, 123, 92, 0.03) 70%, transparent);
-    border: 1.5px solid rgba(198, 123, 92, 0.1);
-  }
-
-  .orb-2 {
-    width: 280px;
-    height: 280px;
-    bottom: -60px;
-    left: -40px;
-    background: radial-gradient(circle at 60% 40%, rgba(122, 64, 64, 0.1), rgba(122, 64, 64, 0.02) 70%, transparent);
-    border: 1.5px solid rgba(122, 64, 64, 0.08);
-  }
-
-  .orb-3 {
-    width: 200px;
-    height: 200px;
-    top: 240px;
-    left: 80px;
-    background: radial-gradient(circle, rgba(198, 123, 92, 0.07), transparent 70%);
-    border: 1px solid rgba(198, 123, 92, 0.06);
-  }
-
-  .orb-4 {
-    width: 120px;
-    height: 120px;
-    top: 60px;
-    left: 320px;
-    background: rgba(198, 123, 92, 0.05);
-    border: 1px solid rgba(198, 123, 92, 0.06);
-  }
-
-  .orb-5 {
-    width: 160px;
-    height: 160px;
-    bottom: 80px;
-    right: 160px;
-    background: radial-gradient(circle, rgba(122, 64, 64, 0.06), transparent 70%);
-    border: 1px solid rgba(122, 64, 64, 0.05);
-  }
-
-  .orb-6 {
-    width: 80px;
-    height: 80px;
-    top: 160px;
-    right: 260px;
-    background: rgba(198, 123, 92, 0.06);
-    border: 1px solid rgba(198, 123, 92, 0.08);
-  }
-
-  .orb-7 {
-    width: 320px;
-    height: 320px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(198, 123, 92, 0.04), transparent 60%);
-  }
-
-  /* Horizontal botanical-style lines */
-  .botanical-line {
-    position: absolute;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(198, 123, 92, 0.15), transparent);
-  }
-
-  .botanical-line-1 {
-    top: 180px;
-    left: 10%;
-    width: 80%;
-  }
-
-  .botanical-line-2 {
-    bottom: 180px;
-    left: 10%;
-    width: 80%;
-  }
-
-  /* Content */
-  .content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 100px;
-  }
-
-  /* Top accent arch */
-  .arch {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 30px;
-    border: 1.5px solid rgba(198, 123, 92, 0.25);
-    border-bottom: none;
-    border-radius: 60px 60px 0 0;
-  }
-
-  /* Leaf-like decorative element */
-  .leaf-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-
-  .leaf {
-    width: 28px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid rgba(198, 123, 92, 0.3);
-  }
-
-  .leaf:nth-child(1) {
-    transform: rotate(-20deg);
-  }
-
-  .leaf:nth-child(2) {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #C67B5C;
-    opacity: 0.4;
-    border: none;
-  }
-
-  .leaf:nth-child(3) {
-    transform: rotate(20deg);
-  }
-
-  /* Badge */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 7px 22px;
-    border: 1px solid rgba(198, 123, 92, 0.2);
-    border-radius: 100px;
-    background: rgba(245, 240, 225, 0.6);
-    margin-bottom: 28px;
-  }
-
-  .badge-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #C67B5C;
-  }
-
-  /* Title */
-  .title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 1.08;
-    color: #2C1A0E;
-    margin-bottom: 4px;
-  }
-
-  .title-accent {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 60px;
-    line-height: 1.1;
-    color: #C67B5C;
-  }
-
-  /* Divider */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 28px 0;
-  }
-
-  .div-line {
-    width: 50px;
-    height: 1px;
-  }
-
-  .div-line-left {
-    background: linear-gradient(90deg, transparent, #C67B5C);
-    opacity: 0.35;
-  }
-
-  .div-line-right {
-    background: linear-gradient(90deg, #C67B5C, transparent);
-    opacity: 0.35;
-  }
-
-  .div-circle {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    border: 1.5px solid #C67B5C;
-    opacity: 0.4;
-  }
-
-  /* Subtitle */
-  .subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    color: #2C1A0E;
-    opacity: 0.55;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-  }
-
-  /* Bottom decorative element */
-  .bottom-decor {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .bottom-bar {
-    width: 24px;
-    height: 2px;
-    background: #C67B5C;
-    opacity: 0.2;
-    border-radius: 1px;
-  }
-
-  .bottom-bar:nth-child(2) {
-    width: 12px;
-    background: #7A4040;
-    opacity: 0.25;
-  }
-
-  .bottom-bar:nth-child(3) {
-    width: 24px;
-    background: #C67B5C;
-    opacity: 0.2;
-  }
-
-  /* Side accent dots */
-  .side-dots {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .side-dots-left {
-    left: 48px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .side-dots-right {
-    right: 48px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .side-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #C67B5C;
-    opacity: 0.15;
-  }
-
-  .side-dot:nth-child(2) {
-    opacity: 0.25;
-  }
-
-  .side-dot:nth-child(3) {
-    opacity: 0.15;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capa 3 · Cena 19h47</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/editorial.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <style>
+    body {
+      width: 1080px; height: 720px;
+      margin: 0; padding: 64px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg);
+      box-sizing: border-box;
+    }
+    .capa-headline {
+      font-family: var(--font-display);
+      font-size: 60px;
+      line-height: 1.1;
+      color: var(--ink);
+      max-width: 920px;
+    }
+    .capa-em {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 500;
+    }
+    .capa-sub {
+      font-family: var(--font-italic);
+      font-style: italic;
+      font-size: 24px;
+      color: var(--accent);
+      margin-top: 32px;
+      max-width: 760px;
+      line-height: 1.4;
+    }
+    .capa-row {
+      display: flex; justify-content: space-between; align-items: end;
+    }
+    .capa-preco {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .capa-meta {
+      font-size: 16px; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
-  <!-- Grain overlay -->
-  <div class="grain"></div>
-
-  <!-- Organic orbs -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
-  <div class="orb orb-5"></div>
-  <div class="orb orb-6"></div>
-  <div class="orb orb-7"></div>
-
-  <!-- Botanical lines -->
-  <div class="botanical-line botanical-line-1"></div>
-  <div class="botanical-line botanical-line-2"></div>
-
-  <!-- Side dots -->
-  <div class="side-dots side-dots-left">
-    <div class="side-dot"></div>
-    <div class="side-dot"></div>
-    <div class="side-dot"></div>
+  <div>
+    <p class="eyebrow" style="font-family:var(--font-italic);font-style:italic;color:var(--accent);">19H47 · TERÇA-FEIRA</p>
+    <h1 class="capa-headline">
+      A cliente perguntou o preço. A recepcionista respondeu <em class="capa-em">"R$ 380"</em>. Ela nunca mais voltou.
+    </h1>
+    <p class="capa-sub">Acontece todo santo dia. E ninguém treina sua equipe pra essa fração de segundo.</p>
   </div>
-  <div class="side-dots side-dots-right">
-    <div class="side-dot"></div>
-    <div class="side-dot"></div>
-    <div class="side-dot"></div>
-  </div>
-
-  <!-- Content -->
-  <div class="content">
-    <div class="arch"></div>
-
-    <div class="leaf-group">
-      <div class="leaf"></div>
-      <div class="leaf"></div>
-      <div class="leaf"></div>
-    </div>
-
-    <div class="badge">
-      <span class="badge-text">WhatsApp Scripts</span>
-    </div>
-
-    <h1 class="title">Protocolo</h1>
-    <div class="title-accent">Fecha-Tudo</div>
-
-    <div class="divider">
-      <div class="div-line div-line-left"></div>
-      <div class="div-circle"></div>
-      <div class="div-line div-line-right"></div>
-    </div>
-
-    <p class="subtitle">13 Scripts de Vendas para Esteticistas</p>
-
-    <div class="bottom-decor">
-      <div class="bottom-bar"></div>
-      <div class="bottom-bar"></div>
-      <div class="bottom-bar"></div>
-    </div>
+  <div class="capa-row">
+    <div class="capa-preco">R$ 14,99</div>
+    <div class="capa-meta">Acesso imediato · 7d garantia</div>
   </div>
 </body>
 </html>
