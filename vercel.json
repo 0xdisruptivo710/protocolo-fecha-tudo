@@ -1,3 +1,15 @@
 {
-  "cleanUrls": true
+  "redirects": [
+    { "source": "/pagina2.html", "destination": "/pagina2/", "permanent": true },
+    { "source": "/pagina3.html", "destination": "/pagina3/", "permanent": true },
+    { "source": "/pagina4.html", "destination": "/pagina4/", "permanent": true },
+    { "source": "/pagina5.html", "destination": "/pagina5/", "permanent": true },
+    { "source": "/pagina6.html", "destination": "/pagina6/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
 }
