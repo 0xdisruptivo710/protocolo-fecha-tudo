@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════
+   BASE — reset normalizado, defaults de body, helpers
+   ═══════════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, h4 { text-wrap: balance; color: var(--ink); font-family: var(--font-display); }
+p { text-wrap: pretty; max-width: var(--measure); }
+
+a { color: var(--accent); text-decoration: none; transition: opacity var(--dur-fast) var(--ease); }
+a:hover { opacity: 0.7; }
+
+/* ═══════ HELPERS ═══════ */
+.container { max-width: var(--container-max); margin: 0 auto; padding-left: var(--sp-6); padding-right: var(--sp-6); }
+.container--narrow { max-width: 720px; }
+.container--ultra { max-width: 560px; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-12);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.divider {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  margin: var(--sp-12) 0;
+}
+
+/* ═══════ REVEAL (ativado por site.js) ═══════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: 0.1s; }
+.rd2 { transition-delay: 0.2s; }
+.rd3 { transition-delay: 0.3s; }
+.rd4 { transition-delay: 0.4s; }
+.rd5 { transition-delay: 0.5s; }
+.rd6 { transition-delay: 0.6s; }
+
+/* ═══════ ACESSIBILIDADE — REDUCED MOTION ═══════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ═══════ FOCUS VISÍVEL ═══════ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
