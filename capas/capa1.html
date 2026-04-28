@@ -1,295 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>Protocolo Fecha-Tudo - Derma Rose</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap');
-
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    width: 1080px;
-    height: 720px;
-    margin: 0;
-    overflow: hidden;
-    background: #FDF2F8;
-    font-family: 'Jost', sans-serif;
-    position: relative;
-  }
-
-  /* Decorative circles */
-  .circle {
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  .circle-1 {
-    width: 420px;
-    height: 420px;
-    top: -120px;
-    right: -80px;
-    background: radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.12), rgba(139, 92, 246, 0.06));
-    border: 1.5px solid rgba(236, 72, 153, 0.1);
-  }
-
-  .circle-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -80px;
-    left: -60px;
-    background: radial-gradient(circle at 60% 60%, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.04));
-    border: 1.5px solid rgba(139, 92, 246, 0.08);
-  }
-
-  .circle-3 {
-    width: 180px;
-    height: 180px;
-    top: 50%;
-    right: 120px;
-    transform: translateY(-50%);
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.08), transparent);
-    border: 1px solid rgba(236, 72, 153, 0.07);
-  }
-
-  .circle-4 {
-    width: 90px;
-    height: 90px;
-    top: 80px;
-    left: 160px;
-    background: rgba(139, 92, 246, 0.06);
-    border: 1px solid rgba(139, 92, 246, 0.08);
-  }
-
-  .circle-5 {
-    width: 60px;
-    height: 60px;
-    bottom: 140px;
-    right: 220px;
-    background: rgba(236, 72, 153, 0.07);
-    border: 1px solid rgba(236, 72, 153, 0.1);
-  }
-
-  .circle-6 {
-    width: 240px;
-    height: 240px;
-    top: 280px;
-    left: 680px;
-    background: radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.05), transparent);
-  }
-
-  .circle-7 {
-    width: 140px;
-    height: 140px;
-    bottom: 40px;
-    left: 340px;
-    background: rgba(236, 72, 153, 0.04);
-    border: 1px solid rgba(236, 72, 153, 0.06);
-  }
-
-  /* Subtle dot pattern overlay */
-  .dot-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(236, 72, 153, 0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
-    pointer-events: none;
-  }
-
-  /* Main content */
-  .content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 80px;
-  }
-
-  /* Top accent line */
-  .accent-line-top {
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, #EC4899, #8B5CF6);
-    border-radius: 1px;
-  }
-
-  /* Badge */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 24px;
-    border: 1.5px solid rgba(236, 72, 153, 0.2);
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    margin-bottom: 36px;
-  }
-
-  .badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #EC4899;
-  }
-
-  .badge-text {
-    font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: #EC4899;
-  }
-
-  /* Title */
-  .title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    font-size: 66px;
-    line-height: 1.1;
-    color: #831843;
-    margin-bottom: 8px;
-    letter-spacing: -1px;
-  }
-
-  .title em {
-    font-style: italic;
-    font-weight: 700;
-    color: #EC4899;
-  }
-
-  /* Decorative divider */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 28px 0;
-  }
-
-  .divider-line {
-    width: 48px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.4), transparent);
-  }
-
-  .divider-diamond {
-    width: 8px;
-    height: 8px;
-    background: #EC4899;
-    transform: rotate(45deg);
-    opacity: 0.5;
-  }
-
-  /* Subtitle */
-  .subtitle {
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    font-size: 19px;
-    color: #831843;
-    opacity: 0.7;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-
-  /* Bottom accent */
-  .bottom-accent {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .bottom-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #EC4899;
-    opacity: 0.3;
-  }
-
-  .bottom-dot:nth-child(2) {
-    opacity: 0.5;
-    background: #8B5CF6;
-  }
-
-  .bottom-dot:nth-child(3) {
-    opacity: 0.3;
-  }
-
-  /* Soft glow behind title */
-  .glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
-    background: radial-gradient(ellipse, rgba(236, 72, 153, 0.06), transparent 70%);
-    pointer-events: none;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capa 1 · Diagnóstico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/clinical.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <style>
+    body {
+      width: 1080px; height: 720px;
+      margin: 0; padding: 64px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg);
+      box-sizing: border-box;
+    }
+    .capa-headline {
+      font-family: var(--font-display);
+      font-size: 56px;
+      line-height: 1.1;
+      color: var(--ink);
+      max-width: 880px;
+    }
+    .capa-em {
+      color: var(--alert);
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+    .capa-sub {
+      font-size: 22px;
+      color: var(--ink-soft);
+      max-width: 720px;
+      line-height: 1.5;
+      margin-top: 24px;
+    }
+    .capa-row {
+      display: flex; justify-content: space-between; align-items: end;
+    }
+    .capa-preco {
+      font-family: var(--font-mono);
+      font-size: 72px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .capa-meta {
+      font-size: 16px; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
-  <!-- Decorative circles -->
-  <div class="circle circle-1"></div>
-  <div class="circle circle-2"></div>
-  <div class="circle circle-3"></div>
-  <div class="circle circle-4"></div>
-  <div class="circle circle-5"></div>
-  <div class="circle circle-6"></div>
-  <div class="circle circle-7"></div>
-
-  <!-- Dot pattern -->
-  <div class="dot-pattern"></div>
-
-  <!-- Soft glow -->
-  <div class="glow"></div>
-
-  <!-- Main content -->
-  <div class="content">
-    <div class="accent-line-top"></div>
-
-    <div class="badge">
-      <div class="badge-dot"></div>
-      <span class="badge-text">WhatsApp Scripts</span>
-    </div>
-
-    <h1 class="title">Protocolo<br><em>Fecha-Tudo</em></h1>
-
-    <div class="divider">
-      <div class="divider-line"></div>
-      <div class="divider-diamond"></div>
-      <div class="divider-line"></div>
-    </div>
-
-    <p class="subtitle">13 Scripts de Vendas para Esteticistas</p>
-
-    <div class="bottom-accent">
-      <div class="bottom-dot"></div>
-      <div class="bottom-dot"></div>
-      <div class="bottom-dot"></div>
-    </div>
+  <div>
+    <p class="eyebrow" style="color:var(--accent);">DIAGNÓSTICO · 04/2026</p>
+    <h1 class="capa-headline">
+      Sua clínica perdeu <span class="capa-em">R$ 7.420</span> essa semana em conversas que morreram no WhatsApp.
+    </h1>
+    <p class="capa-sub">Documento operacional · 13 scripts · Método M.A.C.A.</p>
+  </div>
+  <div class="capa-row">
+    <div class="capa-preco">R$ 14,99</div>
+    <div class="capa-meta">Acesso imediato · 7d garantia</div>
   </div>
 </body>
 </html>
