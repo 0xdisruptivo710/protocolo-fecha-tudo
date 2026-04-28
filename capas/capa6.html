@@ -1,416 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>Protocolo Fecha-Tudo - Botanical Bloom</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    width: 1080px;
-    height: 720px;
-    margin: 0;
-    overflow: hidden;
-    background: #F7FAF5;
-    font-family: 'Outfit', sans-serif;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Soft gradient overlay */
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background:
-      radial-gradient(ellipse at 15% 80%, rgba(45,90,61,0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 85% 20%, rgba(232,180,184,0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, rgba(45,90,61,0.02) 0%, transparent 70%);
-    z-index: 0;
-  }
-
-  /* Large leaf shape - top right */
-  .leaf-tr {
-    position: absolute;
-    top: -30px;
-    right: 40px;
-    width: 220px;
-    height: 320px;
-    z-index: 1;
-  }
-  .leaf-tr::before {
-    content: '';
-    position: absolute;
-    width: 180px;
-    height: 280px;
-    border-radius: 80% 0 80% 0;
-    background: linear-gradient(135deg, rgba(45,90,61,0.06), rgba(45,90,61,0.02));
-    border: 1px solid rgba(45,90,61,0.08);
-    transform: rotate(15deg);
-  }
-  .leaf-tr::after {
-    content: '';
-    position: absolute;
-    top: 40px; left: 30px;
-    width: 140px;
-    height: 220px;
-    border-radius: 80% 0 80% 0;
-    border: 1px solid rgba(45,90,61,0.05);
-    transform: rotate(15deg);
-  }
-
-  /* Large leaf shape - bottom left */
-  .leaf-bl {
-    position: absolute;
-    bottom: -40px;
-    left: 20px;
-    width: 250px;
-    height: 350px;
-    z-index: 1;
-  }
-  .leaf-bl::before {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    border-radius: 0 80% 0 80%;
-    background: linear-gradient(315deg, rgba(45,90,61,0.06), rgba(45,90,61,0.01));
-    border: 1px solid rgba(45,90,61,0.08);
-    transform: rotate(-10deg);
-    bottom: 0;
-  }
-  .leaf-bl::after {
-    content: '';
-    position: absolute;
-    bottom: 30px; left: 40px;
-    width: 160px;
-    height: 240px;
-    border-radius: 0 80% 0 80%;
-    border: 1px solid rgba(45,90,61,0.05);
-    transform: rotate(-10deg);
-  }
-
-  /* Small leaf - top left */
-  .leaf-sm-tl {
-    position: absolute;
-    top: 60px;
-    left: 140px;
-    width: 60px;
-    height: 90px;
-    border-radius: 70% 0 70% 0;
-    background: rgba(45,90,61,0.04);
-    border: 1px solid rgba(45,90,61,0.08);
-    transform: rotate(-30deg);
-    z-index: 1;
-  }
-
-  /* Small leaf - bottom right */
-  .leaf-sm-br {
-    position: absolute;
-    bottom: 50px;
-    right: 120px;
-    width: 50px;
-    height: 80px;
-    border-radius: 70% 0 70% 0;
-    background: rgba(232,180,184,0.06);
-    border: 1px solid rgba(232,180,184,0.12);
-    transform: rotate(40deg);
-    z-index: 1;
-  }
-
-  /* Stem/branch lines */
-  .stem {
-    position: absolute;
-    z-index: 1;
-  }
-  .stem:nth-child(1) {
-    top: 100px; right: 180px;
-    width: 1px; height: 80px;
-    background: linear-gradient(to bottom, rgba(45,90,61,0.15), transparent);
-    transform: rotate(20deg);
-  }
-  .stem:nth-child(2) {
-    bottom: 80px; left: 250px;
-    width: 1px; height: 60px;
-    background: linear-gradient(to top, rgba(45,90,61,0.12), transparent);
-    transform: rotate(-15deg);
-  }
-
-  /* Flower/bloom circles */
-  .bloom {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  .bloom:nth-child(1) {
-    width: 14px; height: 14px;
-    border: 1.5px solid rgba(232,180,184,0.3);
-    top: 120px; right: 280px;
-  }
-  .bloom:nth-child(2) {
-    width: 8px; height: 8px;
-    background: rgba(232,180,184,0.15);
-    top: 90px; right: 310px;
-  }
-  .bloom:nth-child(3) {
-    width: 10px; height: 10px;
-    border: 1px solid rgba(232,180,184,0.25);
-    bottom: 140px; left: 340px;
-  }
-  .bloom:nth-child(4) {
-    width: 6px; height: 6px;
-    background: rgba(232,180,184,0.2);
-    bottom: 170px; left: 310px;
-  }
-  .bloom:nth-child(5) {
-    width: 18px; height: 18px;
-    border: 1px solid rgba(45,90,61,0.1);
-    top: 200px; left: 100px;
-  }
-  .bloom:nth-child(6) {
-    width: 12px; height: 12px;
-    border: 1.5px solid rgba(232,180,184,0.2);
-    bottom: 200px; right: 160px;
-  }
-
-  /* Petal dots scattered */
-  .petal-dot {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  .petal-dot:nth-child(1) { width: 4px; height: 4px; background: #2D5A3D; opacity: 0.12; top: 160px; left: 350px; }
-  .petal-dot:nth-child(2) { width: 3px; height: 3px; background: #E8B4B8; opacity: 0.25; top: 80px; left: 450px; }
-  .petal-dot:nth-child(3) { width: 5px; height: 5px; background: #2D5A3D; opacity: 0.08; bottom: 100px; right: 380px; }
-  .petal-dot:nth-child(4) { width: 3px; height: 3px; background: #E8B4B8; opacity: 0.2; bottom: 200px; right: 420px; }
-
-  /* Organic curved border frame */
-  .organic-frame {
-    position: absolute;
-    top: 35px; left: 35px; right: 35px; bottom: 35px;
-    border: 1px solid rgba(45,90,61,0.1);
-    border-radius: 4px;
-    z-index: 1;
-  }
-
-  /* Main content */
-  .content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    max-width: 700px;
-  }
-
-  /* Botanical divider top */
-  .botanical-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 26px;
-  }
-  .botanical-divider::before, .botanical-divider::after {
-    content: '';
-    width: 50px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #2D5A3D);
-  }
-  .botanical-divider::after {
-    background: linear-gradient(90deg, #2D5A3D, transparent);
-  }
-  /* CSS leaf icon in the divider */
-  .leaf-icon {
-    width: 12px;
-    height: 12px;
-    border-radius: 0 70% 0 70%;
-    background: rgba(45,90,61,0.15);
-    border: 1px solid rgba(45,90,61,0.3);
-    transform: rotate(45deg);
-  }
-
-  .label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #2D5A3D;
-    margin-bottom: 22px;
-    opacity: 0.7;
-  }
-
-  .title {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 64px;
-    font-weight: 600;
-    color: #2D5A3D;
-    line-height: 1.08;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-
-  .title-second {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 68px;
-    font-weight: 700;
-    color: #1A2E1A;
-    line-height: 1.08;
-    display: block;
-  }
-
-  /* Blush pink organic underline */
-  .pink-underline {
-    width: 180px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #E8B4B8, transparent);
-    margin: 18px auto 24px;
-    border-radius: 2px;
-  }
-
-  /* Botanical divider bottom */
-  .botanical-divider-sm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  .botanical-divider-sm .dot-green {
-    width: 4px;
-    height: 4px;
-    background: #2D5A3D;
-    border-radius: 50%;
-    opacity: 0.3;
-  }
-  .botanical-divider-sm .dot-pink {
-    width: 5px;
-    height: 5px;
-    background: #E8B4B8;
-    border-radius: 50%;
-    opacity: 0.5;
-  }
-  .botanical-divider-sm::before, .botanical-divider-sm::after {
-    content: '';
-    width: 30px;
-    height: 1px;
-    background: rgba(45,90,61,0.2);
-  }
-
-  .subtitle {
-    font-family: 'Outfit', sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    color: #1A2E1A;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    opacity: 0.75;
-  }
-
-  .subtitle strong {
-    font-weight: 600;
-    color: #2D5A3D;
-    opacity: 1;
-  }
-
-  /* Bottom botanical divider */
-  .botanical-divider-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 30px;
-  }
-  .botanical-divider-bottom::before, .botanical-divider-bottom::after {
-    content: '';
-    width: 50px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #2D5A3D);
-  }
-  .botanical-divider-bottom::after {
-    background: linear-gradient(90deg, #2D5A3D, transparent);
-  }
-  .botanical-divider-bottom .leaf-icon {
-    width: 10px;
-    height: 10px;
-    border-radius: 0 70% 0 70%;
-    background: rgba(232,180,184,0.2);
-    border: 1px solid rgba(232,180,184,0.4);
-    transform: rotate(45deg);
-  }
-
-  /* Additional organic shapes - large background petals */
-  .bg-petal {
-    position: absolute;
-    z-index: 0;
-  }
-  .bg-petal:nth-child(1) {
-    top: 50%;
-    left: 60px;
-    transform: translateY(-50%) rotate(-20deg);
-    width: 100px;
-    height: 160px;
-    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-    border: 1px solid rgba(45,90,61,0.06);
-  }
-  .bg-petal:nth-child(2) {
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%) rotate(25deg);
-    width: 90px;
-    height: 140px;
-    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-    border: 1px solid rgba(232,180,184,0.08);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capa 6 · Urgência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/boutique.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <style>
+    body {
+      width: 1080px; height: 720px;
+      margin: 0; padding: 80px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg); box-sizing: border-box;
+    }
+    .capa-headline {
+      font-family: var(--font-display);
+      font-size: 56px;
+      line-height: 1.05;
+      color: var(--ink);
+      max-width: 920px;
+    }
+    .capa-em { color: var(--accent); font-style: italic; font-weight: 400; }
+    .capa-sub {
+      font-family: var(--font-sub-display);
+      font-style: italic;
+      font-size: 26px;
+      color: var(--accent-2);
+      margin-top: 32px;
+      max-width: 760px;
+      line-height: 1.4;
+    }
+    .capa-row { display: flex; justify-content: space-between; align-items: end; }
+    .capa-preco {
+      font-family: var(--font-mono);
+      font-size: 56px;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .capa-meta {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
-  <div class="organic-frame"></div>
-
-  <div class="leaf-tr"></div>
-  <div class="leaf-bl"></div>
-  <div class="leaf-sm-tl"></div>
-  <div class="leaf-sm-br"></div>
-
-  <div class="stem"></div>
-  <div class="stem"></div>
-
-  <div class="bloom"></div>
-  <div class="bloom"></div>
-  <div class="bloom"></div>
-  <div class="bloom"></div>
-  <div class="bloom"></div>
-  <div class="bloom"></div>
-
-  <div class="petal-dot"></div>
-  <div class="petal-dot"></div>
-  <div class="petal-dot"></div>
-  <div class="petal-dot"></div>
-
-  <div class="bg-petal"></div>
-  <div class="bg-petal"></div>
-
-  <div class="content">
-    <div class="botanical-divider"><div class="leaf-icon"></div></div>
-    <div class="label">WhatsApp Scripts</div>
-    <div class="title">
-      Protocolo
-      <span class="title-second">Fecha-Tudo</span>
-    </div>
-    <div class="pink-underline"></div>
-    <div class="botanical-divider-sm">
-      <span class="dot-green"></span>
-      <span class="dot-pink"></span>
-      <span class="dot-green"></span>
-    </div>
-    <div class="subtitle"><strong>13</strong> Scripts de Vendas para Esteticistas</div>
-    <div class="botanical-divider-bottom"><div class="leaf-icon"></div></div>
+  <div>
+    <p class="eyebrow">15 MINUTOS · DO PRIMEIRO "OI" AO PIX</p>
+    <h1 class="capa-headline">
+      Antes que a próxima cliente vá pra concorrência — <em class="capa-em">aqui está o protocolo que ela esperava encontrar com você</em>.
+    </h1>
+    <p class="capa-sub">Não é escassez de marketing. É aritmética: ela vai pesquisar 3 clínicas até sexta.</p>
+  </div>
+  <div class="capa-row">
+    <div class="capa-preco">R$ 14,99</div>
+    <div class="capa-meta">Acesso imediato · 7d garantia</div>
   </div>
 </body>
 </html>
