@@ -1,1064 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
 
-    <!-- Meta Pixel Base Code — Protocolo Fecha-tudo -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1624871735228400');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Base Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1624871735228400');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
 
-    <title>Protocolo Fecha-Tudo — Por que duas esteticistas fecham resultados diferentes?</title>
-    <meta name="description" content="A diferença entre fechar e perder no WhatsApp não é talento — é a ordem das informações. Entenda o mecanismo.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0C0A09;
-            --bg-alt: #141210;
-            --surface: #1C1915;
-            --gold: #C9A84C;
-            --gold-dim: rgba(201,168,76,.10);
-            --gold-line: rgba(201,168,76,.25);
-            --white: #FAFAF9;
-            --white-soft: rgba(250,250,249,.85);
-            --muted: rgba(250,250,249,.45);
-            --faint: rgba(250,250,249,.2);
-            --wa-dark: #0B141A;
-            --wa-green: #005C4B;
-            --wa-header: #1F2C34;
-            --wa-in: #1F2C34;
-            --wa-out: #005C4B;
-            --ease: cubic-bezier(.25,.46,.45,.94);
-            --ease-spring: cubic-bezier(.16,1,.3,1);
-        }
+  <title>Protocolo Fecha-Tudo — Por que duas clínicas iguais faturam diferente?</title>
+  <meta name="description" content="Mesma cidade, mesma técnica, mesmo preço. Por que uma lota agenda e a outra não? A diferença começa nos primeiros 15 minutos depois do 'oi'.">
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            background: var(--bg); color: var(--white-soft);
-            font-family: 'Jost', system-ui, sans-serif;
-            font-weight: 400; line-height: 1.7; overflow-x: hidden;
-            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-        }
-
-        ::selection { background: rgba(201,168,76,.25); color: var(--white); }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: rgba(201,168,76,.3); border-radius: 2px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-
-        h1, h2, h3 { text-wrap: balance; }
-        p { text-wrap: pretty; }
-
-        /* ═══════ HEADER ═══════ */
-        .site-header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 24px 40px; background: transparent;
-            transition: background .4s var(--ease), padding .3s var(--ease);
-        }
-        .site-header.scrolled {
-            background: rgba(12,10,9,.95);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            padding: 16px 40px;
-        }
-        .header-logo {
-            font-family: 'Bodoni Moda', serif;
-            font-style: italic; font-weight: 500; font-size: 16px;
-            color: var(--muted); text-decoration: none;
-            transition: color .2s var(--ease);
-        }
-        .header-logo:hover { color: var(--gold); }
-        .header-cta {
-            font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 600;
-            letter-spacing: .12em; text-transform: uppercase;
-            color: var(--bg); background: var(--gold);
-            padding: 10px 28px; text-decoration: none; cursor: pointer;
-            transition: transform .2s var(--ease), opacity .2s;
-        }
-        .header-cta:hover { transform: translateY(-1px); opacity: .9; }
-
-        /* ═══════ HERO ═══════ */
-        .hero {
-            min-height: 100dvh; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; text-align: center;
-            padding: 140px 24px 100px; position: relative;
-        }
-        .hero::after {
-            content: ''; position: absolute; bottom: 0; left: 20%; right: 20%;
-            height: 1px; background: var(--gold-line);
-        }
-        .hero-headline {
-            font-family: 'Bodoni Moda', serif;
-            font-weight: 700; font-size: clamp(32px, 5.5vw, 68px);
-            line-height: 1.1; color: var(--white);
-            max-width: 900px; letter-spacing: -.02em;
-        }
-        .hero-word {
-            display: inline-block;
-            opacity: 0; transform: translateY(14px);
-            transition: opacity .5s var(--ease), transform .5s var(--ease);
-        }
-        .hero-word.visible { opacity: 1; transform: translateY(0); }
-        .hero-word--gold { color: var(--gold); }
-        .hero-sub {
-            margin-top: 36px; font-size: clamp(16px, 1.8vw, 19px);
-            color: var(--muted); max-width: 540px; line-height: 1.75;
-            opacity: 0; transform: translateY(8px);
-            transition: opacity .7s .3s var(--ease), transform .7s .3s var(--ease);
-        }
-        .hero-sub.visible { opacity: 1; transform: translateY(0); }
-
-        /* ═══════ EXPERIMENTO ═══════ */
-        .experimento { padding: 100px 24px 120px; }
-        .experimento-inner { max-width: 780px; margin: 0 auto; }
-        .chat-tabs {
-            display: flex; justify-content: center; gap: 0; margin-bottom: 40px;
-        }
-        .chat-tab {
-            font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500;
-            letter-spacing: .08em; text-transform: uppercase;
-            padding: 12px 32px; border: 1px solid var(--faint);
-            background: transparent; color: var(--muted);
-            cursor: pointer; transition: all .2s var(--ease);
-        }
-        .chat-tab:first-child { border-right: none; }
-        .chat-tab.active {
-            background: var(--gold); color: var(--bg);
-            border-color: var(--gold);
-        }
-        .chat-wrapper { position: relative; min-height: 380px; }
-        .chat-panel { display: none; }
-        .chat-panel.active { display: block; }
-
-        .chat-mockup {
-            border: 1px solid rgba(201,168,76,.15);
-            border-radius: 16px; overflow: hidden;
-            max-width: 400px; margin: 0 auto;
-            box-shadow: 0 24px 64px rgba(0,0,0,.4);
-        }
-        .chat-header-bar {
-            background: var(--wa-header); padding: 14px 16px;
-            display: flex; align-items: center; gap: 12px;
-        }
-        .chat-avatar {
-            width: 32px; height: 32px; border-radius: 50%;
-            background: rgba(201,168,76,.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; font-weight: 600; color: var(--gold); flex-shrink: 0;
-        }
-        .chat-contact-name { font-size: 14px; font-weight: 500; color: var(--white); }
-        .chat-contact-status { font-size: 11px; color: var(--muted); }
-        .chat-body {
-            background: var(--wa-dark); padding: 16px 12px;
-            display: flex; flex-direction: column; gap: 6px; min-height: 260px;
-        }
-        .msg {
-            max-width: 82%; padding: 8px 12px 4px; border-radius: 8px;
-            font-size: 13px; line-height: 1.45; color: #E4E6EB;
-        }
-        .msg-in { align-self: flex-start; background: var(--wa-in); border-top-left-radius: 2px; }
-        .msg-out { align-self: flex-end; background: var(--wa-out); border-top-right-radius: 2px; }
-        .msg-time {
-            display: block; text-align: right;
-            font-size: 10px; color: rgba(255,255,255,.35); margin-top: 2px;
-        }
-        .msg-checks { margin-left: 3px; }
-        .msg-checks--gray { color: rgba(255,255,255,.3); }
-        .msg-checks--blue { color: #53BDEB; }
-        .chat-silence {
-            text-align: center; padding: 24px 0 8px;
-            font-size: 12px; color: rgba(255,255,255,.2); font-style: italic;
-        }
-        .experimento-caption {
-            text-align: center; margin-top: 56px;
-            font-family: 'Bodoni Moda', serif; font-weight: 500;
-            font-size: clamp(20px, 3vw, 28px); color: var(--white);
-            max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.4;
-        }
-
-        /* ═══════ LOGICA ═══════ */
-        .logica { padding: 120px 24px; background: var(--bg-alt); }
-        .logica-inner { max-width: 640px; margin: 0 auto; }
-        .logica-inner p {
-            font-size: clamp(17px, 1.9vw, 20px); line-height: 1.9;
-            color: var(--white-soft); margin-bottom: 28px;
-        }
-        .logica-inner p:last-child { margin-bottom: 0; }
-        .tip {
-            position: relative; text-decoration: none; cursor: help;
-            border-bottom: 1px solid var(--gold-line);
-            transition: border-color .2s;
-        }
-        .tip:hover { border-color: var(--gold); }
-        .tip-box {
-            position: absolute; bottom: calc(100% + 10px);
-            left: 50%; transform: translateX(-50%) translateY(4px);
-            background: var(--gold); color: var(--bg);
-            padding: 10px 16px; border-radius: 4px;
-            font-size: 13px; font-weight: 500; line-height: 1.5;
-            white-space: nowrap; opacity: 0; pointer-events: none;
-            transition: opacity .2s, transform .2s; z-index: 20;
-        }
-        .tip-box::after {
-            content: ''; position: absolute; top: 100%; left: 50%;
-            transform: translateX(-50%);
-            border: 5px solid transparent; border-top-color: var(--gold);
-        }
-        .tip:hover .tip-box { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-        /* ═══════ MOVIMENTOS ═══════ */
-        .movimentos { padding: 120px 24px; }
-        .movimentos-header {
-            text-align: center; margin-bottom: 80px;
-        }
-        .movimentos-header h2 {
-            font-family: 'Bodoni Moda', serif; font-weight: 700;
-            font-size: clamp(32px, 5vw, 56px); color: var(--white);
-            letter-spacing: -.02em;
-        }
-        .movimentos-layout {
-            display: flex; gap: 64px; max-width: 920px;
-            margin: 0 auto; position: relative;
-        }
-        .mov-nav {
-            flex-shrink: 0; width: 60px; position: sticky;
-            top: 120px; align-self: flex-start;
-            display: flex; flex-direction: column; gap: 20px;
-        }
-        .mov-nav-btn {
-            font-family: 'Bodoni Moda', serif; font-size: 24px; font-weight: 500;
-            color: var(--faint); background: none; border: none;
-            cursor: pointer; padding: 8px 4px; text-align: center;
-            transition: color .2s; position: relative;
-        }
-        .mov-nav-btn::before {
-            content: ''; position: absolute; left: -2px; top: 50%;
-            transform: translateY(-50%); width: 2px; height: 0;
-            background: var(--gold); transition: height .2s;
-        }
-        .mov-nav-btn.active { color: var(--gold); }
-        .mov-nav-btn.active::before { height: 24px; }
-        .mov-nav-btn:hover:not(.active) { color: var(--muted); }
-        .mov-content { flex: 1; min-width: 0; }
-        .mov-section {
-            padding-bottom: 72px; margin-bottom: 40px;
-            border-bottom: 1px solid var(--faint);
-        }
-        .mov-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .mov-badge {
-            display: inline-block; font-size: 11px; font-weight: 600;
-            letter-spacing: .15em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 12px;
-        }
-        .mov-name {
-            font-family: 'Bodoni Moda', serif; font-weight: 600;
-            font-size: 24px; color: var(--white); margin-bottom: 6px;
-        }
-        .mov-desc {
-            font-size: 16px; line-height: 1.8;
-            color: var(--white-soft); margin-bottom: 24px;
-        }
-        .mov-script {
-            font-family: 'Jost', sans-serif; font-size: 15px;
-            font-weight: 400; font-style: italic; line-height: 1.7;
-            color: var(--white-soft); background: var(--gold-dim);
-            border-left: 2px solid var(--gold);
-            padding: 16px 20px; margin-bottom: 20px;
-        }
-        .mov-why {
-            font-size: 15px; color: var(--muted);
-            line-height: 1.7; font-style: italic;
-        }
-        .mov-why strong { font-weight: 600; font-style: normal; color: var(--gold); }
-
-        /* ═══════ INCLUSO ═══════ */
-        .incluso { background: var(--bg-alt); padding: 120px 24px; }
-        .incluso-inner { max-width: 700px; margin: 0 auto; }
-        .incluso-headline {
-            font-family: 'Bodoni Moda', serif; font-weight: 700;
-            font-size: clamp(28px, 4vw, 44px); color: var(--white);
-            margin-bottom: 56px; text-align: center;
-        }
-        .accordion-item { border-bottom: 1px solid var(--faint); }
-        .accordion-item:first-child { border-top: 1px solid var(--faint); }
-        .accordion-header {
-            width: 100%; display: flex; align-items: center;
-            justify-content: space-between; padding: 20px 0;
-            background: none; border: none; cursor: pointer;
-            font-family: 'Jost', sans-serif; font-size: 16px;
-            font-weight: 500; color: var(--white-soft); text-align: left;
-            transition: color .2s;
-        }
-        .accordion-header:hover { color: var(--gold); }
-        .accordion-icon {
-            flex-shrink: 0; width: 20px; height: 20px;
-            position: relative; margin-left: 16px;
-        }
-        .accordion-icon::before, .accordion-icon::after {
-            content: ''; position: absolute; background: var(--muted);
-            transition: transform .2s, opacity .2s;
-        }
-        .accordion-icon::before {
-            top: 50%; left: 3px; right: 3px; height: 1px; transform: translateY(-50%);
-        }
-        .accordion-icon::after {
-            left: 50%; top: 3px; bottom: 3px; width: 1px; transform: translateX(-50%);
-        }
-        .accordion-item.open .accordion-icon::after {
-            transform: translateX(-50%) rotate(90deg); opacity: 0;
-        }
-        .accordion-body { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease); }
-        .accordion-body-inner {
-            padding: 0 0 24px; font-size: 15px;
-            line-height: 1.8; color: var(--muted);
-        }
-        .accordion-body-inner ul { list-style: none; margin-top: 8px; }
-        .accordion-body-inner li {
-            padding: 4px 0 4px 20px; position: relative;
-        }
-        .accordion-body-inner li::before {
-            content: ''; position: absolute; left: 4px; top: 14px;
-            width: 6px; height: 1px; background: var(--gold);
-        }
-
-        /* ═══════ MATEMATICA ═══════ */
-        .matematica { padding: 120px 24px; }
-        .matematica-inner {
-            max-width: 640px; margin: 0 auto; text-align: center;
-        }
-        .matematica-intro {
-            font-family: 'Bodoni Moda', serif; font-weight: 500;
-            font-size: clamp(22px, 3vw, 32px); line-height: 1.4;
-            color: var(--white); margin-bottom: 48px;
-        }
-        .calc-input-group {
-            display: flex; align-items: center;
-            justify-content: center; gap: 12px; margin-bottom: 16px;
-        }
-        .calc-label { font-size: 16px; color: var(--muted); }
-        .calc-input {
-            font-family: 'Jost', sans-serif; font-size: 22px; font-weight: 600;
-            color: var(--gold); background: transparent;
-            border: none; border-bottom: 2px solid var(--gold-line);
-            padding: 8px 4px; width: 120px; text-align: center;
-            outline: none; transition: border-color .2s;
-            font-variant-numeric: tabular-nums;
-        }
-        .calc-input:focus { border-color: var(--gold); }
-        .calc-input::placeholder { color: var(--faint); }
-        .calc-presets {
-            display: flex; justify-content: center; gap: 8px; margin-bottom: 48px;
-        }
-        .calc-preset {
-            font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500;
-            padding: 6px 16px; background: transparent;
-            border: 1px solid var(--faint); color: var(--muted);
-            cursor: pointer; transition: all .2s;
-        }
-        .calc-preset:hover, .calc-preset.active {
-            background: var(--gold-dim); border-color: var(--gold); color: var(--gold);
-        }
-        .calc-results {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 20px; margin-bottom: 48px;
-        }
-        .calc-result {
-            padding: 28px 12px;
-            border: 1px solid var(--faint); transition: border-color .2s;
-        }
-        .calc-result-label {
-            font-size: 12px; font-weight: 500;
-            letter-spacing: .08em; text-transform: uppercase;
-            color: var(--muted); margin-bottom: 8px;
-        }
-        .calc-result-value {
-            font-family: 'Bodoni Moda', serif; font-size: clamp(24px, 3vw, 36px);
-            font-weight: 600; color: var(--gold);
-            font-variant-numeric: tabular-nums;
-        }
-        .calc-result-value.updated { animation: calcPop .2s var(--ease); }
-        @keyframes calcPop {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.04); }
-            100% { transform: scale(1); }
-        }
-        .matematica-conclusion {
-            font-size: 17px; line-height: 1.7;
-            color: var(--muted);
-        }
-        .matematica-conclusion strong { font-weight: 600; color: var(--gold); }
-
-        /* ═══════ OFERTA ═══════ */
-        .oferta {
-            padding: 120px 24px; text-align: center;
-            background: var(--bg-alt); position: relative;
-        }
-        .oferta::before {
-            content: ''; position: absolute; top: 0;
-            left: 20%; right: 20%; height: 1px;
-            background: var(--gold-line);
-        }
-        .oferta-eyebrow {
-            font-size: 11px; font-weight: 600;
-            letter-spacing: .2em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 20px;
-        }
-        .oferta-headline {
-            font-family: 'Bodoni Moda', serif; font-weight: 700;
-            font-size: clamp(28px, 4.5vw, 48px); color: var(--white);
-            margin-bottom: 8px; letter-spacing: -.01em;
-        }
-        .oferta-preco {
-            font-family: 'Bodoni Moda', serif; font-weight: 700;
-            font-size: clamp(48px, 7vw, 80px); color: var(--gold);
-            margin-bottom: 40px; font-variant-numeric: tabular-nums;
-        }
-        .cta-button {
-            display: inline-block; font-family: 'Jost', sans-serif;
-            font-size: 15px; font-weight: 600; letter-spacing: .06em;
-            text-transform: uppercase;
-            color: var(--bg); background: var(--gold);
-            padding: 18px 56px; text-decoration: none; cursor: pointer;
-            transition: transform .2s var(--ease), opacity .2s;
-        }
-        .cta-button:hover { transform: translateY(-1px); opacity: .9; }
-        .cta-button:active { transform: translateY(0); }
-        .cta-secondary {
-            display: inline-block; margin-top: 20px;
-            font-size: 14px; color: var(--muted); text-decoration: none;
-            border-bottom: 1px solid var(--faint);
-            padding-bottom: 2px; transition: color .2s, border-color .2s;
-        }
-        .cta-secondary:hover { color: var(--gold); border-color: var(--gold); }
-        .oferta-details {
-            margin-top: 48px; display: flex; flex-direction: column;
-            gap: 6px; align-items: center;
-        }
-        .oferta-detail {
-            font-size: 14px; color: var(--muted); line-height: 1.6;
-        }
-
-        /* ═══════ FOOTER ═══════ */
-        .site-footer {
-            padding: 40px 24px; text-align: center;
-            border-top: 1px solid var(--faint);
-        }
-        .site-footer p {
-            font-size: 12px; color: var(--faint); letter-spacing: .06em;
-        }
-
-        /* ═══════ REVEAL ═══════ */
-        .reveal {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity .7s var(--ease), transform .7s var(--ease);
-        }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
-
-        /* ═══════ REDUCED MOTION ═══════ */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-            html { scroll-behavior: auto; }
-            .hero-word, .hero-sub, .reveal { opacity: 1 !important; transform: none !important; }
-        }
-
-        /* ═══════ RESPONSIVE ═══════ */
-        @media (max-width: 768px) {
-            .site-header { padding: 16px 20px; }
-            .site-header.scrolled { padding: 12px 20px; }
-            .header-logo { font-size: 14px; }
-            .header-cta { font-size: 11px; padding: 8px 16px; }
-            .hero { padding: 100px 20px 60px; min-height: 85dvh; }
-            .experimento { padding: 60px 20px 80px; }
-            .chat-tab { font-size: 12px; padding: 10px 20px; }
-            .logica { padding: 80px 20px; }
-            .movimentos { padding: 80px 20px; }
-            .movimentos-layout { flex-direction: column; gap: 0; }
-            .mov-nav {
-                position: sticky; top: 54px;
-                flex-direction: row; width: 100%;
-                justify-content: center; gap: 0;
-                background: var(--bg); z-index: 10;
-                padding: 12px 0;
-                border-bottom: 1px solid var(--faint);
-            }
-            .mov-nav-btn { padding: 8px 20px; font-size: 20px; }
-            .mov-nav-btn::before { display: none; }
-            .mov-nav-btn.active { border-bottom: 2px solid var(--gold); }
-            .mov-content { padding-top: 32px; }
-            .mov-section { padding-bottom: 48px; margin-bottom: 24px; }
-            .incluso { padding: 80px 20px; }
-            .matematica { padding: 80px 20px; }
-            .calc-results { grid-template-columns: 1fr; gap: 12px; }
-            .calc-input-group { flex-direction: column; gap: 8px; }
-            .oferta { padding: 80px 20px; }
-            .cta-button { width: 100%; max-width: 360px; padding: 16px 36px; }
-        }
-
-        @media (max-width: 480px) {
-            .tip-box { white-space: normal; max-width: 220px; left: 0; transform: translateY(4px); }
-            .tip:hover .tip-box { transform: translateY(0); }
-            .tip-box::after { left: 20px; transform: none; }
-        }
-    </style>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/editorial.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
-    <header class="site-header" id="siteHeader">
-        <a href="#" class="header-logo">fecha·tudo</a>
-        <a href="#oferta" class="header-cta" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:28.00,currency:'BRL'});">Garantir acesso</a>
-    </header>
+<header class="site-header">
+  <a href="/" class="header-logo">fecha·tudo</a>
+  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+</header>
 
-    <main>
+<main>
 
-        <!-- ═══════ HERO ═══════ -->
-        <section class="hero">
-            <h1 class="hero-headline" id="heroHeadline">Por que duas esteticistas com a mesma técnica e o mesmo preço vendem de formas completamente diferentes no WhatsApp?</h1>
-            <p class="hero-sub" id="heroSub">Não é talento. Não é Instagram. É o que acontece nos três primeiros minutos de conversa.</p>
-        </section>
+  <section class="hero" id="hero">
+    <p class="eyebrow hero__eyebrow">UMA REPORTAGEM SOBRE DUAS CLÍNICAS</p>
+    <h1 class="hero__headline">
+      Mesma cidade. Mesma técnica. Mesmo preço.<br>
+      <em style="font-style:italic;color:var(--accent);font-weight:500;">Por que uma lota e a outra não?</em>
+    </h1>
+    <p class="hero__sub">
+      A diferença começa nos primeiros quinze minutos depois do "oi". E ninguém percebe porque acontece em silêncio, no privado do WhatsApp.
+    </p>
+  </section>
 
-        <!-- ═══════ EXPERIMENTO ═══════ -->
-        <section class="experimento reveal" id="experimento">
-            <div class="experimento-inner">
-                <div class="chat-tabs">
-                    <button class="chat-tab active" data-panel="padrao">Sem protocolo</button>
-                    <button class="chat-tab" data-panel="protocolo">Com protocolo</button>
-                </div>
+  <section class="section" id="diagnostico">
+    <div class="container">
+      <div class="compare-grid">
+        <div class="compare-col compare-col--a reveal">
+          <h3>Na clínica de cima</h3>
+          <p class="dropcap">Rita responde o preço em 2 segundos. Tem foto bonita no Instagram, agenda aberta na bio, equipe simpática. Anuncia tráfego pago. Recebe 60 conversas por semana. Fecha 9.</p>
+        </div>
+        <div class="compare-col reveal rd1">
+          <h3>Na clínica de baixo</h3>
+          <p class="dropcap">Bruna pergunta o que incomoda antes de qualquer número. Mesmo Instagram, mesma bio, mesma estética visual. Mesmo investimento em ads. Recebe 60 conversas por semana. Fecha 24.</p>
+        </div>
+      </div>
 
-                <div class="chat-wrapper">
-                    <div class="chat-panel active" id="panel-padrao">
-                        <div class="chat-mockup">
-                            <div class="chat-header-bar">
-                                <div class="chat-avatar">C</div>
-                                <div>
-                                    <div class="chat-contact-name">Cliente nova</div>
-                                    <div class="chat-contact-status">online</div>
-                                </div>
-                            </div>
-                            <div class="chat-body">
-                                <div class="msg msg-in">Oi, quanto custa o preenchimento labial?<span class="msg-time">14:21</span></div>
-                                <div class="msg msg-out">Olá! O preenchimento labial fica R$ 1.200 :)<span class="msg-time">14:23 <span class="msg-checks msg-checks--gray">✓✓</span></span></div>
-                                <div class="msg msg-out">Quer agendar um horário?<span class="msg-time">14:23 <span class="msg-checks msg-checks--gray">✓✓</span></span></div>
-                                <div class="chat-silence">visualizado · sem resposta</div>
-                            </div>
-                        </div>
-                    </div>
+      <p class="pullquote reveal">A diferença não é técnica. É a ordem em que a informação aparece.</p>
 
-                    <div class="chat-panel" id="panel-protocolo">
-                        <div class="chat-mockup">
-                            <div class="chat-header-bar">
-                                <div class="chat-avatar">C</div>
-                                <div>
-                                    <div class="chat-contact-name">Cliente nova</div>
-                                    <div class="chat-contact-status">online</div>
-                                </div>
-                            </div>
-                            <div class="chat-body">
-                                <div class="msg msg-in">Oi, quanto custa o preenchimento labial?<span class="msg-time">14:21</span></div>
-                                <div class="msg msg-out">Oi! Me conta, você já fez algum procedimento nos lábios antes?<span class="msg-time">14:22 <span class="msg-checks msg-checks--blue">✓✓</span></span></div>
-                                <div class="msg msg-in">Nunca fiz. Acho meus lábios muito finos<span class="msg-time">14:24</span></div>
-                                <div class="msg msg-out">Entendo. É uma das queixas mais comuns — e o impacto na autoestima é real. O preenchimento com ácido hialurônico fica R$ 1.200 e dura de 8 a 12 meses.<span class="msg-time">14:25 <span class="msg-checks msg-checks--blue">✓✓</span></span></div>
-                                <div class="msg msg-out">Tenho quinta às 14h ou sexta às 10h — qual fica melhor pra você?<span class="msg-time">14:26 <span class="msg-checks msg-checks--blue">✓✓</span></span></div>
-                                <div class="msg msg-in">Quinta!<span class="msg-time">14:27</span></div>
-                                <div class="msg msg-out">Perfeito! Pra confirmar sua vaga, o sinal é R$ 200 via Pix — já descontado do total. Mando a chave?<span class="msg-time">14:27 <span class="msg-checks msg-checks--blue">✓✓</span></span></div>
-                                <div class="msg msg-in">Pix enviado!<span class="msg-time">14:29</span></div>
-                                <div class="msg msg-out">Recebi! Te espero quinta às 14h<span class="msg-time">14:29 <span class="msg-checks msg-checks--blue">✓✓</span></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container container--narrow prose">
+        <p class="reveal">As duas usam Botox. As duas cobram R$ 380 por sessão de drenagem. As duas têm recepcionistas treinadas. <span class="em">A única coisa que diverge é o que acontece nos primeiros 4 minutos depois do "boa tarde, queria saber sobre drenagem".</span></p>
+        <p class="reveal">Rita despacha. Bruna ancora. Despachar é educado e rápido. Ancorar é educado e estratégico. Ambas levam o mesmo tempo. Só uma fecha 3x mais.</p>
+      </div>
+    </div>
+  </section>
 
-                <p class="experimento-caption reveal">A diferença não está no talento.<br>Está na ordem das informações.</p>
-            </div>
-        </section>
+  <section class="section" id="mecanismo">
+    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
+    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
 
-        <!-- ═══════ LÓGICA ═══════ -->
-        <section class="logica" id="logica">
-            <div class="logica-inner">
-                <p class="reveal">Tem um princípio simples que explica como o cérebro avalia preços: ele nunca julga um número sozinho. Sempre compara com outra <span class="tip">referência disponível<span class="tip-box">A primeira informação que o cérebro usa pra comparar.</span></span>.</p>
-                <p class="reveal">Quando o valor chega primeiro, a referência que ela tem é o preço mais barato que já viu. Quando o valor chega depois de um diagnóstico — depois que ela mesma descreveu o incômodo, depois que o <span class="tip">custo de não tratar<span class="tip-box">O peso emocional que ela verbalizou segundos antes.</span></span> ficou nítido — a referência muda. Passa a ser a dor que ela acabou de colocar em palavras.</p>
-                <p class="reveal">O número é idêntico. A <span class="tip">percepção<span class="tip-box">Preço é fato. Valor é contexto.</span></span> muda por completo.</p>
-                <p class="reveal">O Protocolo Fecha-Tudo organiza exatamente isso: a ordem em que cada informação aparece na conversa.</p>
-            </div>
-        </section>
+    <div class="mecanismo-grid">
+      <div class="timeline-col timeline-col--sem">
+        <div class="timeline-label reveal">Sem protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
+      </div>
 
-        <!-- ═══════ 4 MOVIMENTOS ═══════ -->
-        <section class="movimentos" id="movimentos">
-            <div class="movimentos-header reveal">
-                <h2>Os quatro movimentos</h2>
-            </div>
+      <div class="timeline-col timeline-col--com">
+        <div class="timeline-label reveal">Com protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
+        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
+        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
+        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
+      </div>
+    </div>
+  </section>
 
-            <div class="movimentos-layout">
-                <nav class="mov-nav" id="movNav">
-                    <button class="mov-nav-btn active" data-target="mov-1">I</button>
-                    <button class="mov-nav-btn" data-target="mov-2">II</button>
-                    <button class="mov-nav-btn" data-target="mov-3">III</button>
-                    <button class="mov-nav-btn" data-target="mov-4">IV</button>
-                </nav>
+  <section class="section" id="protocolo">
+    <h2 class="section__title reveal">O método M.A.C.A.</h2>
+    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
 
-                <div class="mov-content">
-                    <div class="mov-section reveal" id="mov-1">
-                        <div class="mov-badge">Min 1–3</div>
-                        <div class="mov-name">Mapeamento de Dor</div>
-                        <p class="mov-desc">Antes de qualquer número, ela fala sobre o que incomoda. Isso não é técnica de vendas — é o que qualquer profissional competente faz antes de recomendar algo.</p>
-                        <div class="mov-script">"Me conta: você já tentou algum procedimento pra isso antes?"</div>
-                        <p class="mov-why"><strong>Funciona porque:</strong> quando ela articula a própria dor, ela para de avaliar preço e começa a avaliar solução.</p>
-                    </div>
+    <div class="protocolo-grid">
+      <div class="card protocolo-card reveal">
+        <span class="card-numeral">I</span>
+        <span class="badge card-step-badge">Min 1–3</span>
+        <div class="card-name">Mapeamento de Dor</div>
+        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
+      </div>
+      <div class="card protocolo-card reveal rd1">
+        <span class="card-numeral">II</span>
+        <span class="badge card-step-badge">Min 4–7</span>
+        <div class="card-name">Ancoragem de Valor</div>
+        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
+      </div>
+      <div class="card protocolo-card reveal rd2">
+        <span class="card-numeral">III</span>
+        <span class="badge card-step-badge">Min 8–11</span>
+        <div class="card-name">Comando de Escassez</div>
+        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
+      </div>
+      <div class="card protocolo-card reveal rd3">
+        <span class="card-numeral">IV</span>
+        <span class="badge card-step-badge">Min 12–15</span>
+        <div class="card-name">Agendamento Blindado</div>
+        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="mov-section reveal" id="mov-2">
-                        <div class="mov-badge">Min 4–7</div>
-                        <div class="mov-name">Ancoragem de Valor</div>
-                        <p class="mov-desc">O investimento só aparece depois da âncora emocional. Sem ela, o preço compete com o concorrente mais barato. Com ela, compete com o peso de não resolver.</p>
-                        <div class="mov-script">"O que costuma acontecer é que isso vai ficando mais marcado com o tempo — e o impacto na autoestima é real."</div>
-                        <p class="mov-why"><strong>Funciona porque:</strong> o valor não muda — o que muda é a referência de comparação.</p>
-                    </div>
+  <section class="section" id="incluso">
+    <div class="container container--narrow">
+      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
+      <ul class="list-check">
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
+      </ul>
+    </div>
+  </section>
 
-                    <div class="mov-section reveal" id="mov-3">
-                        <div class="mov-badge">Min 8–11</div>
-                        <div class="mov-name">Comando de Escassez</div>
-                        <p class="mov-desc">Dois horários específicos. A pergunta muda de "vou ou não vou" pra "qual dos dois".</p>
-                        <div class="mov-script">"Quinta às 14h ou sexta às 10h — qual funciona melhor pra você?"</div>
-                        <p class="mov-why"><strong>Funciona porque:</strong> o cérebro processa "qual", não "se".</p>
-                    </div>
+  <section class="section" id="para-quem">
+    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
+    <div class="para-quem-grid">
+      <div class="para-quem-col para-quem-col--sim reveal">
+        <h3>É pra sua clínica se:</h3>
+        <ul>
+          <li>Você olha pra concorrente e não entende como ela cresceu mais que você</li>
+          <li>Sabe que ninguém ali tem técnica melhor — e isso te incomoda</li>
+          <li>Já tentou copiar criativo de anúncio sem mudar resultado</li>
+          <li>Suspeita que o gargalo é interno, mas não consegue ver onde</li>
+        </ul>
+      </div>
+      <div class="para-quem-col para-quem-col--nao reveal rd1">
+        <h3>Não é pra você se:</h3>
+        <ul>
+          <li>Acha que concorrência é só sorte ou orçamento maior</li>
+          <li>Já desistiu de comparar e está em piloto automático</li>
+          <li>Não usa WhatsApp como ponto principal de captação</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                    <div class="mov-section reveal" id="mov-4">
-                        <div class="mov-badge">Min 12–15</div>
-                        <div class="mov-name">Agendamento Blindado</div>
-                        <p class="mov-desc">Sinal via Pix pra confirmar a vaga. Quem paga sinal aparece. Na sequência: três lembretes na ordem certa.</p>
-                        <div class="mov-script">"Pra confirmar, a gente pede um sinal de R$[X] via Pix — é descontado do total."</div>
-                        <p class="mov-why"><strong>Funciona porque:</strong> comprometimento financeiro alinha comportamento futuro.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="oferta" id="oferta">
+    <div class="reveal">
+      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
+      <p class="oferta-preco">R$ 14,99</p>
+      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+    </div>
+    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
+    <div class="reveal">
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+    </div>
+    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
+    <p class="oferta-garantia reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      7 dias de garantia incondicional
+    </p>
+  </section>
 
-        <!-- ═══════ INCLUSO ═══════ -->
-        <section class="incluso" id="incluso">
-            <div class="incluso-inner">
-                <h2 class="incluso-headline reveal">O que vem no protocolo</h2>
+</main>
 
-                <div class="accordion-item reveal">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>13 scripts com texto pronto pra copiar</span>
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Scripts organizados nos 4 movimentos do protocolo, mais objeções, kit anti-vácuo e reativação:
-                            <ul>
-                                <li>Mapeamento de Dor — abertura e diagnóstico</li>
-                                <li>Ancoragem de Valor — contexto antes do preço</li>
-                                <li>Comando de Escassez — oferta de horários</li>
-                                <li>Agendamento Blindado — confirmação com sinal</li>
-                                <li>Abertura inbound e outbound</li>
-                                <li>Scripts de objeção + anti-vácuo + reativação</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item reveal">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>8 objeções com resposta exata</span>
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Cada objeção com script testado — o que dizer e o que evitar:
-                            <ul>
-                                <li>Tá caro</li>
-                                <li>Vou pensar</li>
-                                <li>Vou ver com meu marido</li>
-                                <li>Tô sem dinheiro agora</li>
-                                <li>Pesquisei outro lugar</li>
-                                <li>Vai doer?</li>
-                                <li>Já fiz e não gostei</li>
-                                <li>Faz desconto?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item reveal">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Kit Anti-Vácuo: 5 follow-ups que não parecem cobrança</span>
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            5 mensagens espaçadas em 48h pra reativar conversas travadas. Cada uma com lógica diferente — nenhuma soa insistente.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item reveal">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Reativação de pacientes que sumiram</span>
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Dois scripts separados: um pra 6 meses de inatividade, outro pra 1 ano ou mais. Abordagem diferente pra cada situação.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item reveal">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Guia de Respostas Rápidas no WhatsApp Business</span>
-                        <span class="accordion-icon"></span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Passo a passo pra configurar atalhos no WhatsApp Business com cada script já formatado.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════ MATEMATICA ═══════ -->
-        <section class="matematica" id="matematica">
-            <div class="matematica-inner">
-                <p class="matematica-intro reveal">Quanto vale uma sessão na sua clínica?<br>Quantas conversas travaram essa semana?<br>Faz a conta.</p>
-
-                <div class="reveal">
-                    <div class="calc-input-group">
-                        <label class="calc-label" for="calcInput">Valor de uma sessão: R$</label>
-                        <input type="number" id="calcInput" class="calc-input" placeholder="300" min="0" step="10">
-                    </div>
-                    <div class="calc-presets">
-                        <button class="calc-preset" data-value="300">R$ 300</button>
-                        <button class="calc-preset" data-value="500">R$ 500</button>
-                        <button class="calc-preset" data-value="800">R$ 800</button>
-                    </div>
-                </div>
-
-                <div class="calc-results reveal">
-                    <div class="calc-result">
-                        <div class="calc-result-label">3 vendas recuperadas</div>
-                        <div class="calc-result-value" id="calc3">R$ —</div>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-label">5 vendas</div>
-                        <div class="calc-result-value" id="calc5">R$ —</div>
-                    </div>
-                    <div class="calc-result">
-                        <div class="calc-result-label">Em um mês</div>
-                        <div class="calc-result-value" id="calc12">R$ —</div>
-                    </div>
-                </div>
-
-                <p class="matematica-conclusion reveal">O protocolo custa <strong>R$ 28,00</strong>. Uma única venda recuperada já paga.</p>
-            </div>
-        </section>
-
-        <!-- ═══════ OFERTA ═══════ -->
-        <section class="oferta" id="oferta">
-            <div class="reveal">
-                <p class="oferta-eyebrow">Acesso imediato</p>
-                <h2 class="oferta-headline">O texto certo. Na hora certa.</h2>
-                <p class="oferta-preco">R$ 28,00</p>
-            </div>
-
-            <div class="reveal">
-                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-button" onclick="fbq('track','InitiateCheckout',{value:28.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">Garantir acesso</a>
-                <br>
-                <a href="#incluso" class="cta-secondary">Ver o que está incluso</a>
-            </div>
-
-            <div class="oferta-details reveal">
-                <span class="oferta-detail">Acesso liberado em minutos</span>
-                <span class="oferta-detail">Funciona na próxima conversa que você abrir</span>
-                <span class="oferta-detail">Sem curso, sem vídeo — copie e use</span>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>Protocolo Fecha-Tudo — Scripts de vendas para esteticistas</p>
-    </footer>
-
-    <script>
-        (function () {
-            'use strict';
-            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            // Hero word-by-word
-            var headline = document.getElementById('heroHeadline');
-            var heroSub = document.getElementById('heroSub');
-            if (headline) {
-                var text = headline.textContent.trim();
-                headline.innerHTML = '';
-                var words = text.split(/\s+/);
-                var goldWords = ['completamente', 'diferentes'];
-                var spans = [];
-                words.forEach(function (word, i) {
-                    var span = document.createElement('span');
-                    span.className = 'hero-word';
-                    if (goldWords.indexOf(word.replace(/[?.!,]/g,'')) !== -1) span.classList.add('hero-word--gold');
-                    span.textContent = word;
-                    headline.appendChild(span);
-                    if (i < words.length - 1) headline.appendChild(document.createTextNode(' '));
-                    spans.push(span);
-                });
-                if (reduced) {
-                    spans.forEach(function(s){s.classList.add('visible');});
-                    if (heroSub) heroSub.classList.add('visible');
-                } else {
-                    spans.forEach(function(s,i){
-                        setTimeout(function(){s.classList.add('visible');}, 400 + i * 100);
-                    });
-                    if (heroSub) setTimeout(function(){heroSub.classList.add('visible');}, 400 + spans.length * 100 + 300);
-                }
-            }
-
-            // Chat toggle
-            document.querySelectorAll('.chat-tab').forEach(function(tab){
-                tab.addEventListener('click', function(){
-                    document.querySelectorAll('.chat-tab').forEach(function(t){t.classList.remove('active');});
-                    this.classList.add('active');
-                    document.querySelectorAll('.chat-panel').forEach(function(p){p.classList.remove('active');});
-                    document.getElementById('panel-' + this.getAttribute('data-panel')).classList.add('active');
-                });
-            });
-
-            // Scroll reveal
-            if ('IntersectionObserver' in window && !reduced) {
-                var obs = new IntersectionObserver(function(entries){
-                    entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);} });
-                }, {threshold:.1,rootMargin:'0px 0px -30px 0px'});
-                document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-            } else {
-                document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('revealed');});
-            }
-
-            // Sticky nav scroll spy
-            var movSections = document.querySelectorAll('.mov-section');
-            var movBtns = document.querySelectorAll('.mov-nav-btn');
-            if ('IntersectionObserver' in window && movSections.length) {
-                var navObs = new IntersectionObserver(function(entries){
-                    entries.forEach(function(e){
-                        if(e.isIntersecting){
-                            movBtns.forEach(function(b){b.classList.toggle('active',b.getAttribute('data-target')===e.target.id);});
-                        }
-                    });
-                },{threshold:.35,rootMargin:'-80px 0px -40% 0px'});
-                movSections.forEach(function(s){navObs.observe(s);});
-            }
-            movBtns.forEach(function(btn){
-                btn.addEventListener('click',function(){
-                    var t=document.getElementById(this.getAttribute('data-target'));
-                    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-                });
-            });
-
-            // Accordion
-            document.querySelectorAll('.accordion-header').forEach(function(h){
-                h.addEventListener('click',function(){
-                    var item=this.parentElement, body=item.querySelector('.accordion-body');
-                    var isOpen=item.classList.contains('open');
-                    this.setAttribute('aria-expanded', !isOpen);
-                    if(isOpen){
-                        body.style.maxHeight=body.scrollHeight+'px';
-                        body.offsetHeight;
-                        body.style.maxHeight='0';
-                        item.classList.remove('open');
-                    } else {
-                        item.classList.add('open');
-                        body.style.maxHeight=body.scrollHeight+'px';
-                        body.addEventListener('transitionend',function handler(){
-                            if(item.classList.contains('open')) body.style.maxHeight='none';
-                            body.removeEventListener('transitionend',handler);
-                        });
-                    }
-                });
-            });
-
-            // Calculator
-            var calcInput=document.getElementById('calcInput');
-            var c3=document.getElementById('calc3'),c5=document.getElementById('calc5'),c12=document.getElementById('calc12');
-            var presets=document.querySelectorAll('.calc-preset');
-            function fmt(v){return 'R$ '+v.toLocaleString('pt-BR');}
-            function pop(el){el.classList.remove('updated');void el.offsetWidth;el.classList.add('updated');}
-            function calc(val){
-                var v=parseFloat(val);
-                if(isNaN(v)||v<=0){c3.textContent='R$ —';c5.textContent='R$ —';c12.textContent='R$ —';return;}
-                c3.textContent=fmt(v*3);c5.textContent=fmt(v*5);c12.textContent=fmt(v*12);
-                pop(c3);pop(c5);pop(c12);
-            }
-            if(calcInput){
-                calcInput.addEventListener('input',function(){
-                    calc(this.value);
-                    presets.forEach(function(b){b.classList.toggle('active',b.getAttribute('data-value')===calcInput.value);});
-                });
-            }
-            presets.forEach(function(btn){
-                btn.addEventListener('click',function(){
-                    var v=this.getAttribute('data-value');
-                    calcInput.value=v; calc(v);
-                    presets.forEach(function(b){b.classList.remove('active');});
-                    this.classList.add('active');
-                });
-            });
-
-            // Header scroll
-            var header=document.getElementById('siteHeader'), ticking=false;
-            window.addEventListener('scroll',function(){
-                if(!ticking){requestAnimationFrame(function(){header.classList.toggle('scrolled',window.scrollY>60);ticking=false;});ticking=true;}
-            },{passive:true});
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(function(l){
-                l.addEventListener('click',function(e){
-                    var t=document.querySelector(this.getAttribute('href'));
-                    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
-                });
-            });
-        })();
-    </script>
-
-    <script>
-    console.log('%cScript de rastreio 4.0 by Comunidade Nova Ordem do Digital - Dericson Calari e Samuel Choairy', 'color: yellow; font-size: 20px;');
-    (function () {
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-        function setCookie(cookieName, cookieValue, expirationTime) {
-            var cookiePath = "/";
-            expirationTime = expirationTime * 1000;
-            var date = new Date();
-            var dateTimeNow = date.getTime();
-            date.setTime(dateTimeNow + expirationTime);
-            var expirationDate = date.toUTCString();
-            document.cookie = cookieName + "=" + cookieValue + "; expires=" + expirationDate + "; path=" + cookiePath;
-        }
-        function getCookieValue(name) {
-            const value = '; ' + document.cookie;
-            const parts = value.split('; ' + name + '=');
-            if (parts.length === 2) return parts.pop().split(';').shift();
-            return null;
-        }
-        const adParams = ['fbclid', 'gclid'];
-        const urlParams = new URLSearchParams(window.location.search);
-        let isAdClick = false;
-        adParams.forEach(function(param) { if (urlParams.has(param)) isAdClick = true; });
-        if (isAdClick) {
-            const utmSource = getParameterByName('utm_source');
-            const utmMedium = getParameterByName('utm_medium');
-            const utmCampaign = getParameterByName('utm_campaign');
-            const utmContent = getParameterByName('utm_content');
-            const utmTerm = getParameterByName('utm_term');
-            if (utmSource) setCookie('cookieUtmSource', utmSource, 63072000);
-            if (utmMedium) setCookie('cookieUtmMedium', utmMedium, 63072000);
-            if (utmCampaign) setCookie('cookieUtmCampaign', utmCampaign, 63072000);
-            if (utmContent) setCookie('cookieUtmContent', utmContent, 63072000);
-            if (utmTerm) setCookie('cookieUtmTerm', utmTerm, 63072000);
-        }
-        var parametros = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
-        var urlParamsCapt = new URLSearchParams(window.location.search);
-        var urlParamsCaptReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
-        var utms = {};
-        var cookieUtmSource = getCookieValue('cookieUtmSource');
-        var cookieUtmMedium = getCookieValue('cookieUtmMedium');
-        var cookieUtmCampaign = getCookieValue('cookieUtmCampaign');
-        var cookieUtmContent = getCookieValue('cookieUtmContent');
-        var cookieUtmTerm = getCookieValue('cookieUtmTerm');
-        parametros.forEach(function(el) {
-            if (el === "utm_source") {
-                utms[el] = urlParamsCapt.get(el) || (document.referrer ? (urlParamsCaptReferrer.get(el) || new URL(document.referrer).hostname) : "direto");
-            } else {
-                utms[el] = urlParamsCapt.get(el) || urlParamsCaptReferrer.get(el) || "";
-            }
-        });
-        var scks = Object.values(utms).filter(function(v) { return v !== ""; });
-        var currentSckValues = [];
-        if (urlParamsCapt.get('sck')) currentSckValues = urlParamsCapt.get('sck').split('|');
-        scks = scks.filter(function(v) { return currentSckValues.indexOf(v) === -1; });
-        var srcValues = [cookieUtmSource, cookieUtmMedium, cookieUtmCampaign, cookieUtmContent, cookieUtmTerm].filter(function(v) { return v !== null && v !== ""; });
-        var updateLinks = function(el, elURL) {
-            var elSearchParams = new URLSearchParams(elURL.search);
-            var modified = false;
-            urlParams.forEach(function(value, key) {
-                if (!elSearchParams.has(key)) { elSearchParams.append(key, value); modified = true; }
-            });
-            for (var key in utms) {
-                if (!elSearchParams.has(key)) { elSearchParams.append(key, utms[key]); modified = true; }
-            }
-            if (cookieUtmSource) elSearchParams.append('cookieUtmSource', cookieUtmSource);
-            if (cookieUtmMedium) elSearchParams.append('cookieUtmMedium', cookieUtmMedium);
-            if (cookieUtmCampaign) elSearchParams.append('cookieUtmCampaign', cookieUtmCampaign);
-            if (cookieUtmContent) elSearchParams.append('cookieUtmContent', cookieUtmContent);
-            if (cookieUtmTerm) elSearchParams.append('cookieUtmTerm', cookieUtmTerm);
-            if (!elSearchParams.has('sck') && scks.length > 0) { elSearchParams.append('sck', scks.join('|')); modified = true; }
-            if (!elSearchParams.has('src') && srcValues.length > 0) { elSearchParams.append('src', srcValues.join('|')); modified = true; }
-            if (modified) return elURL.origin + elURL.pathname + "?" + elSearchParams.toString();
-            return el.href;
-        };
-        document.querySelectorAll('a').forEach(function(el) {
-            try {
-                var elURL = new URL(el.href, window.location.origin);
-                if (!elURL.hash) el.href = updateLinks(el, elURL);
-            } catch (e) {
-                console.warn('Erro ao processar URL no link:', el.href);
-            }
-        });
-    })();
-    </script>
-    <script>
-    function preencherCamposUTM(form) {
-        var urlParams = new URLSearchParams(window.location.search);
-        var urlParamsReferrer = new URLSearchParams((document.referrer.split('?')[1]) || '');
-        var utms = ['utm_campaign', 'utm_medium', 'utm_source', 'utm_content', 'utm_term'];
-        var utmSourceField = form.querySelector('[id^="form-field-utm_source"]');
-        if (utmSourceField) {
-            var utmSourceValue = urlParams.get('utm_source') || urlParamsReferrer.get('utm_source') || (document.referrer ? new URL(document.referrer).hostname : "direto");
-            utmSourceField.value = utmSourceValue;
-            if (utmSourceValue !== "direto") {
-                utms.forEach(function(utm) {
-                    if (utm !== 'utm_source') {
-                        var campo = form.querySelector('[id^="form-field-' + utm + '"]');
-                        if (campo) campo.value = urlParams.get(utm) || urlParamsReferrer.get(utm) || '';
-                    }
-                });
-            }
-        }
-        var campoSlug = form.querySelector('[id^="form-field-pagina_captura"]');
-        if (campoSlug) campoSlug.value = window.location.pathname.split('/')[1];
-    }
-    document.querySelectorAll('form').forEach(preencherCamposUTM);
-    console.log('%cScript de rastreamento de vendas desenvolvido pela Comunidade NOD', 'font-size:20px;color:yellow;');
-    window.onload = function() { document.querySelectorAll('form').forEach(preencherCamposUTM); };
-    </script>
+<footer class="site-footer">
+  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+</footer>
 
 </body>
 </html>
