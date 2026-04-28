@@ -1,899 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
 
-    <!-- Meta Pixel Base Code — Protocolo Fecha-tudo -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1624871735228400');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Base Code -->
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1624871735228400');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
 
-    <title>Protocolo Fecha-Tudo — Scripts de Vendas para Esteticistas</title>
-    <meta name="description" content="13 scripts prontos para fechar mais clientes no WhatsApp. Para esteticistas e proprietárias de clínicas de estética.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #FDF2F8;
-            --bg-alt: #FBE8F1;
-            --surface: #FFFFFF;
-            --primary: #EC4899;
-            --primary-soft: #F9A8D4;
-            --primary-dim: rgba(236, 72, 153, .08);
-            --accent: #8B5CF6;
-            --accent-dim: rgba(139, 92, 246, .08);
-            --text: #831843;
-            --text-body: #6B2140;
-            --text-muted: #9F7A8A;
-            --border: #FBCFE8;
-            --border-strong: #F9A8D4;
-            --shadow-sm: 0 1px 3px rgba(131,24,67,.06);
-            --shadow-md: 0 8px 32px rgba(131,24,67,.08);
-            --shadow-lg: 0 24px 64px rgba(131,24,67,.1);
-            --ease: cubic-bezier(.25,.46,.45,.94);
-            --ease-spring: cubic-bezier(.16,1,.3,1);
-        }
+  <title>Protocolo Fecha-Tudo — O Padrão M.A.C.A. para Clínicas de Estética</title>
+  <meta name="description" content="O documento operacional que sua clínica abre amanhã, copia o script, e usa na próxima conversa do WhatsApp. Sem curso, sem treinamento, sem improviso.">
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            background: var(--bg);
-            color: var(--text-body);
-            font-family: 'Jost', system-ui, sans-serif;
-            font-weight: 400;
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        ::selection { background: rgba(236,72,153,.18); color: var(--text); }
-
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--primary-soft); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-
-        h1, h2, h3 { text-wrap: balance; }
-        p { text-wrap: pretty; }
-
-        /* ═══════ HEADER ═══════ */
-        .site-header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 20px 32px;
-            background: transparent;
-            transition: background .4s var(--ease), padding .3s var(--ease), box-shadow .4s var(--ease);
-        }
-        .site-header.scrolled {
-            background: rgba(253,242,248,.92);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            padding: 14px 32px;
-            box-shadow: 0 1px 0 rgba(236,72,153,.08);
-        }
-        .header-logo {
-            font-family: 'Playfair Display', serif;
-            font-style: italic; font-weight: 500; font-size: 16px;
-            color: var(--text-muted); text-decoration: none;
-            transition: color .2s var(--ease);
-        }
-        .header-logo:hover { color: var(--primary); }
-        .header-cta {
-            display: inline-block;
-            font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600;
-            letter-spacing: .06em; text-transform: uppercase;
-            color: #fff; background: var(--primary);
-            padding: 10px 24px; border-radius: 6px;
-            text-decoration: none; cursor: pointer;
-            transition: transform .2s var(--ease), box-shadow .2s var(--ease);
-        }
-        .header-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-        .header-cta:active { transform: translateY(0); }
-
-        /* ═══════ DECORATIVE ═══════ */
-        .deco-circle {
-            position: absolute; border-radius: 50%; pointer-events: none;
-            border: 1px solid var(--border);
-        }
-        .deco-dots {
-            position: absolute; pointer-events: none; opacity: .4;
-            background-image: radial-gradient(var(--primary-soft) 1px, transparent 1px);
-            background-size: 16px 16px;
-        }
-
-        /* ═══════ HERO ═══════ */
-        .hero {
-            min-height: 100dvh; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; text-align: center;
-            padding: 120px 24px 80px; position: relative; overflow: hidden;
-        }
-        .hero-deco-1 {
-            width: 400px; height: 400px; top: -120px; right: -100px;
-            background: var(--primary-dim);
-        }
-        .hero-deco-2 {
-            width: 280px; height: 280px; bottom: -60px; left: -80px;
-            background: var(--accent-dim);
-        }
-        .hero-deco-dots {
-            width: 200px; height: 200px; top: 20%; left: 5%;
-        }
-        .hero-eyebrow {
-            font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600;
-            letter-spacing: .2em; text-transform: uppercase;
-            color: var(--primary); margin-bottom: 24px;
-            opacity: 0; transform: translateY(8px);
-            transition: opacity .6s var(--ease), transform .6s var(--ease);
-        }
-        .hero-eyebrow.visible { opacity: 1; transform: translateY(0); }
-        .hero-headline {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(36px, 7vw, 80px);
-            line-height: 1.12; color: var(--text);
-            max-width: 850px; letter-spacing: -.01em;
-            position: relative; z-index: 1;
-        }
-        .hero-word {
-            display: inline-block;
-            opacity: 0; filter: blur(8px); transform: translateY(10px);
-            transition: opacity .6s var(--ease), filter .6s var(--ease), transform .6s var(--ease);
-        }
-        .hero-word.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
-        .hero-word--em {
-            color: var(--primary); font-style: italic;
-        }
-        .hero-sub {
-            margin-top: 32px; font-size: clamp(16px, 2vw, 19px);
-            color: var(--text-muted); max-width: 560px; line-height: 1.75;
-            position: relative; z-index: 1;
-            opacity: 0; transform: translateY(10px);
-            transition: opacity .7s .2s var(--ease), transform .7s .2s var(--ease);
-        }
-        .hero-sub.visible { opacity: 1; transform: translateY(0); }
-        .hero-scroll {
-            margin-top: 48px; display: flex; flex-direction: column;
-            align-items: center; gap: 8px; color: var(--text-muted);
-            font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
-            opacity: 0; transition: opacity .6s 1.5s var(--ease);
-        }
-        .hero-scroll.visible { opacity: 1; }
-        .hero-scroll-line {
-            width: 1px; height: 40px; background: var(--border-strong);
-            animation: scrollPulse 2s ease-in-out infinite;
-        }
-        @keyframes scrollPulse {
-            0%, 100% { opacity: .3; transform: scaleY(.6); }
-            50% { opacity: 1; transform: scaleY(1); }
-        }
-
-        /* ═══════ DIAGNOSTICO ═══════ */
-        .diagnostico {
-            padding: 120px 24px; position: relative;
-        }
-        .diagnostico-inner {
-            max-width: 680px; margin: 0 auto;
-        }
-        .diagnostico-deco {
-            width: 160px; height: 160px; top: 40px; right: 10%;
-        }
-        .diagnostico p {
-            font-size: clamp(17px, 2vw, 20px); line-height: 1.85;
-            color: var(--text-body); margin-bottom: 28px;
-        }
-        .diagnostico p:last-child { margin-bottom: 0; }
-        .emphasis { color: var(--primary); font-weight: 500; }
-
-        /* ═══════ MECANISMO ═══════ */
-        .mecanismo {
-            padding: 120px 24px; position: relative; overflow: hidden;
-        }
-        .mecanismo-headline {
-            text-align: center; font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(28px, 5vw, 48px);
-            color: var(--text); margin-bottom: 16px;
-        }
-        .mecanismo-sub {
-            text-align: center; font-size: 16px;
-            color: var(--text-muted); margin-bottom: 64px;
-            max-width: 480px; margin-left: auto; margin-right: auto;
-        }
-        .mecanismo-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            max-width: 900px; margin: 0 auto; gap: 32px;
-        }
-        .timeline-col {
-            padding: 40px 32px; border-radius: 12px;
-        }
-        .timeline-col--sem {
-            background: var(--surface); border: 1px solid var(--border);
-        }
-        .timeline-col--com {
-            background: var(--primary-dim); border: 1px solid rgba(236,72,153,.15);
-        }
-        .timeline-label {
-            font-size: 11px; font-weight: 600;
-            letter-spacing: .18em; text-transform: uppercase;
-            margin-bottom: 32px;
-        }
-        .timeline-col--sem .timeline-label { color: var(--text-muted); }
-        .timeline-col--com .timeline-label { color: var(--primary); }
-        .timeline-step {
-            display: flex; align-items: flex-start;
-            gap: 14px; margin-bottom: 20px; position: relative;
-        }
-        .timeline-step:last-child { margin-bottom: 0; }
-        .timeline-dot {
-            flex-shrink: 0; width: 10px; height: 10px;
-            border-radius: 50%; margin-top: 6px; position: relative;
-        }
-        .timeline-col--sem .timeline-dot {
-            background: var(--text-muted); opacity: .4;
-        }
-        .timeline-col--com .timeline-dot {
-            background: var(--primary);
-            box-shadow: 0 0 0 4px rgba(236,72,153,.15);
-        }
-        .timeline-step:not(:last-child) .timeline-dot::after {
-            content: ''; position: absolute;
-            top: 14px; left: 50%; transform: translateX(-50%);
-            width: 1px; height: 24px;
-        }
-        .timeline-col--sem .timeline-step:not(:last-child) .timeline-dot::after {
-            background: rgba(159,122,138,.15);
-        }
-        .timeline-col--com .timeline-step:not(:last-child) .timeline-dot::after {
-            background: rgba(236,72,153,.25);
-        }
-        .timeline-text { font-size: 15px; line-height: 1.5; }
-        .timeline-col--sem .timeline-text { color: var(--text-muted); }
-        .timeline-col--sem .timeline-step:last-child .timeline-text {
-            opacity: .5; font-style: italic;
-        }
-        .timeline-col--com .timeline-text {
-            color: var(--text-body); font-weight: 500;
-        }
-        .mecanismo-footer {
-            max-width: 640px; margin: 56px auto 0;
-            text-align: center;
-        }
-        .mecanismo-footer p {
-            font-size: clamp(15px, 1.7vw, 17px);
-            line-height: 1.8; color: var(--text-muted);
-        }
-
-        /* ═══════ PROTOCOLO ═══════ */
-        .protocolo {
-            background: var(--bg-alt); padding: 120px 24px; position: relative;
-        }
-        .protocolo-headline {
-            text-align: center; font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(28px, 5vw, 48px);
-            color: var(--text); margin-bottom: 16px;
-        }
-        .protocolo-sub {
-            text-align: center; font-size: 16px;
-            color: var(--text-muted); margin-bottom: 64px;
-            max-width: 420px; margin-left: auto; margin-right: auto;
-        }
-        .protocolo-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 20px; max-width: 880px; margin: 0 auto;
-        }
-        .protocolo-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 40px 32px;
-            position: relative; overflow: hidden; cursor: default;
-            transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
-        }
-        .protocolo-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-soft);
-        }
-        .card-numeral {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(72px, 10vw, 100px); font-weight: 400;
-            color: rgba(236,72,153,.06); position: absolute;
-            top: -8px; right: 12px; line-height: 1; pointer-events: none;
-            transition: color .2s var(--ease);
-        }
-        .protocolo-card:hover .card-numeral { color: rgba(236,72,153,.12); }
-        .card-step-badge {
-            display: inline-flex; align-items: center;
-            font-size: 11px; font-weight: 600;
-            letter-spacing: .12em; text-transform: uppercase;
-            color: var(--primary); background: var(--primary-dim);
-            padding: 4px 12px; border-radius: 4px;
-            margin-bottom: 16px;
-        }
-        .card-name {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: 20px;
-            color: var(--text); margin-bottom: 8px;
-        }
-        .card-desc {
-            font-size: 15px; line-height: 1.65;
-            color: var(--text-muted); font-style: italic;
-        }
-
-        /* ═══════ INCLUSO ═══════ */
-        .incluso {
-            padding: 120px 24px; position: relative;
-        }
-        .incluso-inner { max-width: 680px; margin: 0 auto; }
-        .incluso-headline {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(28px, 5vw, 44px);
-            color: var(--text); margin-bottom: 48px;
-        }
-        .incluso-list { list-style: none; }
-        .incluso-item {
-            display: flex; align-items: baseline;
-            gap: 16px; padding: 14px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .incluso-item:last-child { border-bottom: none; }
-        .incluso-icon {
-            flex-shrink: 0; width: 20px; height: 20px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .incluso-icon svg {
-            width: 16px; height: 16px; stroke: var(--primary);
-            stroke-width: 2; fill: none;
-        }
-        .incluso-text {
-            font-size: clamp(15px, 1.7vw, 17px);
-            line-height: 1.6; color: var(--text-body);
-        }
-        .incluso-footer {
-            margin-top: 48px; padding: 32px;
-            background: var(--primary-dim); border-radius: 12px;
-            border: 1px solid rgba(236,72,153,.1);
-        }
-        .incluso-footer p {
-            font-size: 16px; line-height: 1.7;
-            color: var(--text-body); font-style: italic;
-            text-align: center;
-        }
-
-        /* ═══════ PARA QUEM ═══════ */
-        .para-quem {
-            background: var(--bg-alt); padding: 120px 24px;
-        }
-        .para-quem-headline {
-            text-align: center; font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(28px, 5vw, 44px);
-            color: var(--text); margin-bottom: 64px;
-        }
-        .para-quem-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 24px; max-width: 880px; margin: 0 auto;
-        }
-        .para-quem-col {
-            background: var(--surface); border-radius: 12px;
-            padding: 40px 32px; border: 1px solid var(--border);
-        }
-        .para-quem-col h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: 20px; margin-bottom: 24px;
-        }
-        .para-quem-col--sim h3 { color: var(--primary); }
-        .para-quem-col--nao h3 { color: var(--text-muted); }
-        .para-quem-col ul { list-style: none; }
-        .para-quem-col li {
-            font-size: 15px; line-height: 1.6;
-            padding: 10px 0 10px 20px; position: relative;
-        }
-        .para-quem-col--sim li {
-            color: var(--text-body);
-            border-left: 2px solid var(--primary-soft);
-        }
-        .para-quem-col--nao li {
-            color: var(--text-muted);
-            border-left: 2px solid var(--border);
-        }
-
-        /* ═══════ OFERTA ═══════ */
-        .oferta {
-            padding: 120px 24px; text-align: center;
-            position: relative;
-        }
-        .oferta-badge {
-            display: inline-flex; align-items: center;
-            font-size: 11px; font-weight: 600;
-            letter-spacing: .15em; text-transform: uppercase;
-            color: var(--accent); background: var(--accent-dim);
-            padding: 6px 16px; border-radius: 4px;
-            margin-bottom: 24px;
-        }
-        .oferta-preco {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500; font-size: clamp(40px, 6vw, 64px);
-            color: var(--text); margin-bottom: 4px;
-            font-variant-numeric: tabular-nums;
-        }
-        .oferta-acesso {
-            font-size: 17px; color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-        .oferta-contexto {
-            font-size: 16px; font-style: italic;
-            color: var(--text-muted); max-width: 480px;
-            margin: 0 auto 40px; line-height: 1.7;
-        }
-        .cta-button {
-            display: inline-block;
-            font-family: 'Jost', sans-serif;
-            font-size: 16px; font-weight: 600;
-            letter-spacing: .03em;
-            color: #fff; background: var(--primary);
-            padding: 18px 48px; border-radius: 8px;
-            text-decoration: none; cursor: pointer;
-            transition: transform .2s var(--ease), box-shadow .2s var(--ease);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(236,72,153,.3);
-        }
-        .cta-button:active { transform: translateY(0); }
-        .oferta-pagamento {
-            margin-top: 20px; font-size: 13px;
-            color: var(--text-muted); letter-spacing: .02em;
-        }
-        .oferta-garantia {
-            margin-top: 16px; font-size: 13px;
-            color: var(--text-muted);
-        }
-        .oferta-garantia svg {
-            display: inline-block; vertical-align: middle;
-            width: 14px; height: 14px; stroke: var(--accent);
-            stroke-width: 2; fill: none; margin-right: 4px;
-        }
-
-        /* ═══════ FOOTER ═══════ */
-        .site-footer {
-            padding: 40px 24px; text-align: center;
-            border-top: 1px solid var(--border);
-        }
-        .site-footer p {
-            font-size: 12px; color: var(--text-muted);
-            letter-spacing: .04em;
-        }
-
-        /* ═══════ REVEAL ═══════ */
-        .reveal {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity .7s var(--ease), transform .7s var(--ease);
-        }
-        .reveal.revealed { opacity: 1; transform: translateY(0); }
-        .rd1 { transition-delay: .1s; }
-        .rd2 { transition-delay: .2s; }
-        .rd3 { transition-delay: .3s; }
-        .rd4 { transition-delay: .4s; }
-        .rd5 { transition-delay: .5s; }
-        .rd6 { transition-delay: .6s; }
-
-        .timeline-step.reveal { transform: translateX(-10px); }
-        .timeline-step.reveal.revealed { transform: translateX(0); }
-        .timeline-col--com .timeline-step.reveal { transform: translateX(10px); }
-        .timeline-col--com .timeline-step.reveal.revealed { transform: translateX(0); }
-
-        /* ═══════ REDUCED MOTION ═══════ */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-            html { scroll-behavior: auto; }
-            .hero-word, .hero-sub, .hero-eyebrow, .hero-scroll, .reveal {
-                opacity: 1 !important; transform: none !important;
-                filter: none !important;
-            }
-        }
-
-        /* ═══════ RESPONSIVE ═══════ */
-        @media (max-width: 768px) {
-            .site-header { padding: 16px 20px; }
-            .site-header.scrolled { padding: 12px 20px; }
-            .header-logo { font-size: 14px; }
-            .header-cta { font-size: 11px; padding: 8px 16px; }
-            .hero { padding: 100px 20px 60px; min-height: 85dvh; }
-            .hero-deco-1 { width: 200px; height: 200px; top: -60px; right: -60px; }
-            .hero-deco-2 { width: 140px; height: 140px; }
-            .hero-deco-dots { display: none; }
-            .diagnostico { padding: 80px 20px; }
-            .mecanismo { padding: 80px 20px; }
-            .mecanismo-grid { grid-template-columns: 1fr; gap: 16px; }
-            .timeline-col { padding: 32px 24px; }
-            .protocolo { padding: 80px 20px; }
-            .protocolo-grid { grid-template-columns: 1fr; gap: 16px; }
-            .protocolo-card { padding: 32px 24px; }
-            .incluso { padding: 80px 20px; }
-            .para-quem { padding: 80px 20px; }
-            .para-quem-grid { grid-template-columns: 1fr; gap: 16px; }
-            .oferta { padding: 80px 20px; }
-            .cta-button { padding: 16px 36px; font-size: 15px; width: 100%; max-width: 360px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-headline { font-size: clamp(30px, 9vw, 42px); }
-            .card-numeral { font-size: 64px; }
-        }
-    </style>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/themes/boutique.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
-    <header class="site-header" id="siteHeader">
-        <a href="#" class="header-logo">fecha·tudo</a>
-        <a href="#oferta" class="header-cta" onclick="fbq('track','ViewContent',{content_name:'Protocolo Fecha-tudo',value:28.00,currency:'BRL'});">Garantir acesso</a>
-    </header>
+<header class="site-header">
+  <a href="#" class="header-logo">fecha·tudo</a>
+  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+</header>
 
-    <main>
+<main>
 
-        <!-- ═══════ HERO ═══════ -->
-        <section class="hero" id="hero">
-            <div class="deco-circle hero-deco-1"></div>
-            <div class="deco-circle hero-deco-2"></div>
-            <div class="deco-dots hero-deco-dots"></div>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="hero">
+    <p class="eyebrow hero__eyebrow">MÉTODO M.A.C.A. · PARA CLÍNICAS DE ESTÉTICA</p>
+    <h1 class="hero__headline">
+      Sua clínica não tem problema de tráfego.<br>
+      Tem <strong style="color:var(--accent);font-style:italic;font-weight:400;">conversa que morre</strong> antes do agendamento.
+    </h1>
+    <p class="hero__sub">
+      O Protocolo Fecha-Tudo é o documento operacional que sua equipe abre amanhã, copia o script, e usa na próxima conversa do WhatsApp. Sem curso. Sem treinamento. Sem improviso.
+    </p>
+  </section>
 
-            <p class="hero-eyebrow" id="heroEyebrow">Protocolo para Esteticistas</p>
+  <!-- ═══════ DIAGNÓSTICO ═══════ -->
+  <section class="section" id="diagnostico">
+    <div class="container container--narrow prose">
+      <p class="reveal">São quinze conversas por semana que travam no preço. Multiplica por 4 semanas. Multiplica pelo seu ticket médio.</p>
+      <p class="reveal">É o salário de uma recepcionista que está saindo pelo ralo do WhatsApp — e ninguém vê acontecer porque acontece em silêncio, no privado, depois do "quanto custa?".</p>
+      <p class="reveal">A culpa não é da sua atendente. <span class="em">É da sequência em que ela apresenta a informação.</span> Quando o número chega antes do contexto, o cérebro da cliente não tem âncora pra avaliar. A única coisa que ela faz é comparar com a opção mais barata que conhece. E sua clínica perde antes de ter chance de mostrar diferencial.</p>
+    </div>
+  </section>
 
-            <h1 class="hero-headline" id="heroHeadline">
-                É domingo à noite. Cinco conversas no check cinza.
-            </h1>
+  <!-- ═══════ MECANISMO ═══════ -->
+  <section class="section" id="mecanismo">
+    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
+    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
 
-            <p class="hero-sub" id="heroSub">
-                Você já sabe o que vem depois. A dúvida sobre o preço. A sensação de que deveria ter conduzido diferente.
-            </p>
+    <div class="mecanismo-grid">
+      <div class="timeline-col timeline-col--sem">
+        <div class="timeline-label reveal">Sem protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
+      </div>
 
-            <div class="hero-scroll" id="heroScroll">
-                <span>Descubra por quê</span>
-                <div class="hero-scroll-line"></div>
-            </div>
-        </section>
+      <div class="timeline-col timeline-col--com">
+        <div class="timeline-label reveal">Com protocolo</div>
+        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
+        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
+        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
+        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
+        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
+        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- ═══════ DIAGNÓSTICO ═══════ -->
-        <section class="diagnostico" id="diagnostico">
-            <div class="deco-circle diagnostico-deco"></div>
-            <div class="diagnostico-inner">
-                <p class="reveal">
-                    Você passou a semana inteira respondendo "quanto custa" no WhatsApp. Mandou o valor. Mostrou resultado. Fez de tudo pra convencer. E no fim, fechou uma fração do que podia.
-                </p>
-                <p class="reveal">
-                    A culpa não é do seu preço. Nem da sua técnica.
-                </p>
-                <p class="reveal">
-                    O problema é mais simples — e justamente por isso tão difícil de perceber: <span class="emphasis">quando o número chega antes do contexto, o cérebro da cliente não tem âncora nenhuma pra avaliar.</span> A única coisa que ela faz é comparar com a opção mais barata que conhece. E você perde antes de ter chance de mostrar seu diferencial.
-                </p>
-            </div>
-        </section>
+  <!-- ═══════ PROTOCOLO M.A.C.A. ═══════ -->
+  <section class="section" id="protocolo">
+    <h2 class="section__title reveal">O método M.A.C.A.</h2>
+    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
 
-        <!-- ═══════ MECANISMO ═══════ -->
-        <section class="mecanismo" id="mecanismo">
-            <h2 class="mecanismo-headline reveal">Não foi o preço. Foi a ordem.</h2>
-            <p class="mecanismo-sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
+    <div class="protocolo-grid">
+      <div class="card protocolo-card reveal">
+        <span class="card-numeral">I</span>
+        <span class="badge card-step-badge">Min 1–3</span>
+        <div class="card-name">Mapeamento de Dor</div>
+        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
+      </div>
+      <div class="card protocolo-card reveal rd1">
+        <span class="card-numeral">II</span>
+        <span class="badge card-step-badge">Min 4–7</span>
+        <div class="card-name">Ancoragem de Valor</div>
+        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
+      </div>
+      <div class="card protocolo-card reveal rd2">
+        <span class="card-numeral">III</span>
+        <span class="badge card-step-badge">Min 8–11</span>
+        <div class="card-name">Comando de Escassez</div>
+        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
+      </div>
+      <div class="card protocolo-card reveal rd3">
+        <span class="card-numeral">IV</span>
+        <span class="badge card-step-badge">Min 12–15</span>
+        <div class="card-name">Agendamento Blindado</div>
+        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
+      </div>
+    </div>
+  </section>
 
-            <div class="mecanismo-grid">
-                <div class="timeline-col timeline-col--sem">
-                    <div class="timeline-label reveal">Sem protocolo</div>
-                    <div class="timeline-step reveal rd1">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Pergunta chega</span>
-                    </div>
-                    <div class="timeline-step reveal rd2">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Preço enviado direto</span>
-                    </div>
-                    <div class="timeline-step reveal rd3">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">...silêncio</span>
-                    </div>
-                </div>
+  <!-- ═══════ INCLUSO ═══════ -->
+  <section class="section" id="incluso">
+    <div class="container container--narrow">
+      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
+      <ul class="list-check">
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
+        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
+      </ul>
+    </div>
+  </section>
 
-                <div class="timeline-col timeline-col--com">
-                    <div class="timeline-label reveal">Com protocolo</div>
-                    <div class="timeline-step reveal rd1">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Pergunta chega</span>
-                    </div>
-                    <div class="timeline-step reveal rd2">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Diagnóstico da queixa</span>
-                    </div>
-                    <div class="timeline-step reveal rd3">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Âncora de valor</span>
-                    </div>
-                    <div class="timeline-step reveal rd4">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Preço apresentado</span>
-                    </div>
-                    <div class="timeline-step reveal rd5">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Horário oferecido</span>
-                    </div>
-                    <div class="timeline-step reveal rd6">
-                        <div class="timeline-dot"></div>
-                        <span class="timeline-text">Sinal confirmado</span>
-                    </div>
-                </div>
-            </div>
+  <!-- ═══════ PARA QUEM ═══════ -->
+  <section class="section" id="para-quem">
+    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
+    <div class="para-quem-grid">
+      <div class="para-quem-col para-quem-col--sim reveal">
+        <h3>Funciona pra sua clínica se:</h3>
+        <ul>
+          <li>Sua equipe responde no WhatsApp e você sente que perde venda no privado</li>
+          <li>Atendentes diferentes dão respostas diferentes pra mesma pergunta</li>
+          <li>Agenda fura porque ninguém cobra sinal</li>
+          <li>Você quer padronizar atendimento sem fazer treinamento longo</li>
+        </ul>
+      </div>
+      <div class="para-quem-col para-quem-col--nao reveal rd1">
+        <h3>Não é pra você se:</h3>
+        <ul>
+          <li>Já tem um SOP de atendimento documentado e funcionando</li>
+          <li>Prefere comprar sistema/software de WhatsApp automatizado</li>
+          <li>Procura curso em vídeo ou consultoria 1:1</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-            <div class="mecanismo-footer reveal">
-                <p>
-                    Não é técnica de vendas. É a ordem natural de como qualquer decisão acontece. Você só precisa da sequência certa — e do texto pronto antes de abrir o WhatsApp.
-                </p>
-            </div>
-        </section>
+  <!-- ═══════ OFERTA ═══════ -->
+  <section class="oferta" id="oferta">
+    <div class="reveal">
+      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
+      <p class="oferta-preco">R$ 14,99</p>
+      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+    </div>
+    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
+    <div class="reveal">
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+    </div>
+    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
+    <p class="oferta-garantia reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      7 dias de garantia incondicional
+    </p>
+  </section>
 
-        <!-- ═══════ PROTOCOLO ═══════ -->
-        <section class="protocolo" id="protocolo">
-            <h2 class="protocolo-headline reveal">O método M.A.C.A.</h2>
-            <p class="protocolo-sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
+</main>
 
-            <div class="protocolo-grid">
-                <div class="protocolo-card reveal">
-                    <span class="card-numeral">I</span>
-                    <div class="card-step-badge">Min 1–3</div>
-                    <div class="card-name">Mapeamento de Dor</div>
-                    <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar na conversa."</p>
-                </div>
-
-                <div class="protocolo-card reveal rd1">
-                    <span class="card-numeral">II</span>
-                    <div class="card-step-badge">Min 4–7</div>
-                    <div class="card-name">Ancoragem de Valor</div>
-                    <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
-                </div>
-
-                <div class="protocolo-card reveal rd2">
-                    <span class="card-numeral">III</span>
-                    <div class="card-step-badge">Min 8–11</div>
-                    <div class="card-name">Comando de Escassez</div>
-                    <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
-                </div>
-
-                <div class="protocolo-card reveal rd3">
-                    <span class="card-numeral">IV</span>
-                    <div class="card-step-badge">Min 12–15</div>
-                    <div class="card-name">Agendamento Blindado</div>
-                    <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════ INCLUSO ═══════ -->
-        <section class="incluso" id="incluso">
-            <div class="incluso-inner">
-                <h2 class="incluso-headline reveal">O que você recebe</h2>
-
-                <ul class="incluso-list">
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">13 scripts completos com texto pronto e lógica por trás de cada um</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Aberturas pra quando a cliente chega até você e pra quando você vai até ela</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Diagnóstico + ancoragem de valor na sequência certa</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Resposta exata pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Confirmação de agendamento com sinal via Pix</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">3 lembretes anti no-show que funcionam de verdade</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Kit Anti-Vácuo: 5 scripts pra reativar conversas que travaram</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Reativação de pacientes que sumiram há 6 meses ou 1 ano</span>
-                    </li>
-                    <li class="incluso-item reveal">
-                        <span class="incluso-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span class="incluso-text">Guia de Respostas Rápidas no WhatsApp Business</span>
-                    </li>
-                </ul>
-
-                <div class="incluso-footer reveal">
-                    <p>
-                        Sem curso. Sem vídeo. Sem módulo. É um documento que você abre, copia o script e usa na próxima conversa — hoje mesmo.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════ PARA QUEM ═══════ -->
-        <section class="para-quem" id="para-quem">
-            <h2 class="para-quem-headline reveal">Pra quem é (e pra quem não é)</h2>
-
-            <div class="para-quem-grid">
-                <div class="para-quem-col para-quem-col--sim reveal">
-                    <h3>Funciona pra você se:</h3>
-                    <ul>
-                        <li>Perde mais vendas pelo WhatsApp do que no atendimento presencial</li>
-                        <li>Já deu desconto sem querer porque travou na hora da objeção</li>
-                        <li>Agenda sem cobrar sinal e a cliente some</li>
-                        <li>Quer abrir o WhatsApp com o texto pronto em mãos</li>
-                    </ul>
-                </div>
-
-                <div class="para-quem-col para-quem-col--nao reveal rd1">
-                    <h3>Não é pra você se:</h3>
-                    <ul>
-                        <li>Já tem um processo que funciona e converte bem</li>
-                        <li>Prefere aprender por vídeo-aula</li>
-                        <li>Procura um sistema de vendas automatizado</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════ OFERTA ═══════ -->
-        <section class="oferta" id="oferta">
-            <div class="reveal">
-                <span class="oferta-badge">Acesso imediato</span>
-                <p class="oferta-preco">R$ 28,00</p>
-                <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
-            </div>
-
-            <p class="oferta-contexto reveal">
-                Uma única venda recuperada já paga o protocolo inteiro.<br>Na segunda, você tá no lucro.
-            </p>
-
-            <div class="reveal">
-                <a href="https://checkout.ticto.app/OCC46FBCB" class="cta-button" onclick="fbq('track','InitiateCheckout',{value:28.00,currency:'BRL',content_name:'Protocolo Fecha-tudo',content_type:'product'});">Quero garantir meu acesso</a>
-            </div>
-
-            <p class="oferta-pagamento reveal">
-                Pix, cartão ou boleto — acesso liberado em minutos.
-            </p>
-
-            <p class="oferta-garantia reveal">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                7 dias de garantia incondicional
-            </p>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>Protocolo Fecha-Tudo — Scripts de vendas para esteticistas</p>
-    </footer>
-
-    <script>
-        (function () {
-            'use strict';
-
-            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            // Hero eyebrow
-            var eyebrow = document.getElementById('heroEyebrow');
-            if (eyebrow && !prefersReduced) {
-                setTimeout(function () { eyebrow.classList.add('visible'); }, 200);
-            } else if (eyebrow) { eyebrow.classList.add('visible'); }
-
-            // Hero word-by-word with blur
-            var headline = document.getElementById('heroHeadline');
-            var heroSub = document.getElementById('heroSub');
-            var heroScroll = document.getElementById('heroScroll');
-
-            if (headline) {
-                var text = headline.textContent.trim();
-                headline.innerHTML = '';
-                var words = text.split(/\s+/);
-                var emWords = ['check', 'cinza.'];
-                var spans = [];
-
-                words.forEach(function (word, i) {
-                    var span = document.createElement('span');
-                    span.className = 'hero-word';
-                    if (emWords.indexOf(word) !== -1 || emWords.indexOf(word.replace(/[.,!?]/g, '')) !== -1) {
-                        span.classList.add('hero-word--em');
-                    }
-                    span.textContent = word;
-                    headline.appendChild(span);
-                    if (i < words.length - 1) headline.appendChild(document.createTextNode(' '));
-                    spans.push(span);
-                });
-
-                if (prefersReduced) {
-                    spans.forEach(function (s) { s.classList.add('visible'); });
-                    if (heroSub) heroSub.classList.add('visible');
-                    if (heroScroll) heroScroll.classList.add('visible');
-                } else {
-                    var delay = 160;
-                    var start = 500;
-                    spans.forEach(function (span, i) {
-                        setTimeout(function () { span.classList.add('visible'); }, start + i * delay);
-                    });
-                    if (heroSub) {
-                        setTimeout(function () { heroSub.classList.add('visible'); }, start + spans.length * delay + 400);
-                    }
-                    if (heroScroll) {
-                        setTimeout(function () { heroScroll.classList.add('visible'); }, start + spans.length * delay + 900);
-                    }
-                }
-            }
-
-            // Scroll reveal
-            if ('IntersectionObserver' in window && !prefersReduced) {
-                var observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('revealed');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-                document.querySelectorAll('.reveal').forEach(function (el) {
-                    observer.observe(el);
-                });
-            } else {
-                document.querySelectorAll('.reveal').forEach(function (el) {
-                    el.classList.add('revealed');
-                });
-            }
-
-            // Header scroll
-            var header = document.getElementById('siteHeader');
-            var ticking = false;
-            function updateHeader() {
-                if (window.scrollY > 60) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                ticking = false;
-            }
-            window.addEventListener('scroll', function () {
-                if (!ticking) { requestAnimationFrame(updateHeader); ticking = true; }
-            }, { passive: true });
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    var target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-
-        })();
-    </script>
+<footer class="site-footer">
+  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+</footer>
 
 </body>
 </html>
