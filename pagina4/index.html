@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
 
+  <!-- PIXEL/GTM AQUI -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -18,165 +20,454 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
 
-  <title>Protocolo Fecha-Tudo — Sua clínica não tem problema de tráfego</title>
-  <meta name="description" content="Você pode dobrar o investimento em ads e não mover faturamento. Porque o gargalo não está no anúncio. Está no privado, depois do clique. Reconfigure o problema.">
-
+  <title>Não é Tráfego Pago. É a Próxima Conversa que Vai Morrer no "Quanto Custa".</title>
+  <meta name="description" content="Você não tem problema de marketing. Tem problema de processo comercial. O lead chega — sua atendente é que não sabe converter. Reframing + protocolo de correção.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/themes/clinical.css">
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    .reframe-list {
+      max-width: 720px;
+      margin: var(--sp-12) auto var(--sp-8);
+      display: flex; flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .reframe-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: var(--sp-4);
+      padding: var(--sp-5);
+      background: var(--surface);
+      border: 1px solid var(--rule-soft);
+      border-radius: var(--r-md);
+      text-align: left;
+    }
+    .reframe-cross {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: var(--fs-15);
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--alert);
+      text-decoration-thickness: 1.5px;
+    }
+    .reframe-arrow {
+      color: var(--accent);
+      font-size: var(--fs-22);
+      font-family: var(--font-display);
+    }
+    .reframe-real {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: var(--fs-16);
+      color: var(--ink);
+    }
+    @media (max-width:640px){
+      .reframe-row { grid-template-columns: 1fr; gap: var(--sp-2); text-align: center; }
+      .reframe-arrow { transform: rotate(90deg); }
+    }
+  </style>
   <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-  <a href="/" class="header-logo">fecha·tudo</a>
-  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+  <a href="/" class="header-logo">fecha<span class="header-logo__dot"></span>tudo</a>
+  <a href="#oferta" class="btn btn--header" data-event="cta_click" data-position="header" onclick="PFT.trackViewContent()">Quero por R$ 47</a>
 </header>
 
 <main>
 
   <section class="hero" id="hero">
-    <p class="eyebrow hero__eyebrow">RECONFIGURAÇÃO</p>
-    <h1 class="hero__headline">
-      O problema da sua clínica <strong style="color:var(--alert);font-weight:600;">não é tráfego</strong>.<br>
-      É a próxima conversa que sua atendente vai perder.
-    </h1>
-    <p class="hero__sub">
-      Você pode dobrar o investimento em ads e não mover faturamento. Porque o gargalo não está no anúncio. Está no privado, depois do clique.
-    </p>
-  </section>
+    <div class="hero__bg-orb hero__bg-orb--rose" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow eyebrow--center hero__eyebrow">Reframing · Diagnóstico Honesto</p>
+      <h1 class="hero__headline">
+        Não é tráfego pago.<br>
+        É a <em>próxima conversa</em> que vai morrer no "quanto custa?".
+      </h1>
+      <p class="hero__sub">
+        Você gasta R$ 1.500/mês em anúncio buscando lead. O lead chega. Sua atendente responde "R$ 1.800 + qualquer dúvida" — e o lead morre. Aí você culpa o tráfego, contrata outra agência, paga social media. <strong>O problema não estava lá. Estava no privado.</strong>
+      </p>
 
-  <section class="section" id="diagnostico">
-    <div class="container container--narrow prose">
-      <p class="reveal"><strong style="color:var(--ink);">Premissa que parece óbvia:</strong> "Se eu tenho mais visitas, vou ter mais venda."</p>
-      <p class="reveal"><strong style="color:var(--ink);">Dado da operação real:</strong> uma clínica com 30% de taxa de fechamento no WhatsApp, ao dobrar o investimento em ads (de R$ 3.000 pra R$ 6.000/mês), passa a fechar não 60 mas 120 conversas — e <span class="em">o número de venda só sobe 30% porque a taxa não muda</span>. O resto vira lixo de conversa. Pior: você paga 2x para gerar a mesma fração de venda.</p>
-      <p class="reveal"><strong style="color:var(--ink);">Conclusão:</strong> não é tráfego. É a sequência de mensagens que a sua atendente envia depois que o lead clica no anúncio. <span class="em">Cada 1% de aumento na taxa de fechamento do WhatsApp vale mais que 30% de aumento no orçamento de mídia paga.</span></p>
-      <p class="reveal">A matemática inverte a hierarquia do problema. O gargalo está em outro lugar do funil — onde quase ninguém olha porque não tem dashboard.</p>
-    </div>
-  </section>
-
-  <section class="section" id="mecanismo">
-    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
-    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
-
-    <div class="mecanismo-grid">
-      <div class="timeline-col timeline-col--sem">
-        <div class="timeline-label reveal">Sem protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
+      <div class="reframe-list reveal">
+        <div class="reframe-row">
+          <span class="reframe-cross">"Meu Instagram não engaja"</span>
+          <span class="reframe-arrow">→</span>
+          <span class="reframe-real">Sua atendente perde lead engajado no privado.</span>
+        </div>
+        <div class="reframe-row">
+          <span class="reframe-cross">"Tô investindo errado em anúncio"</span>
+          <span class="reframe-arrow">→</span>
+          <span class="reframe-real">Anúncio funciona. Conversão é que não.</span>
+        </div>
+        <div class="reframe-row">
+          <span class="reframe-cross">"As pessoas só querem o menor preço"</span>
+          <span class="reframe-arrow">→</span>
+          <span class="reframe-real">Pessoas pagam o preço — só não pagam sem contexto.</span>
+        </div>
+        <div class="reframe-row">
+          <span class="reframe-cross">"Preciso de mais lead"</span>
+          <span class="reframe-arrow">→</span>
+          <span class="reframe-real">Precisa fechar os leads que já entram.</span>
+        </div>
       </div>
 
-      <div class="timeline-col timeline-col--com">
-        <div class="timeline-label reveal">Com protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
-        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
-        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
-        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
+      <div class="hero__cta-row">
+        <a href="#oferta" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="hero">Resolver o problema real — R$ 47</a>
+        <p class="hero__micro"><span>⚡ Acesso imediato</span><span>·</span><span>🛡 Garantia 7 dias</span></p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="protocolo">
-    <h2 class="section__title reveal">O método M.A.C.A.</h2>
-    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
-
-    <div class="protocolo-grid">
-      <div class="card protocolo-card reveal">
-        <span class="card-numeral">I</span>
-        <span class="badge card-step-badge">Min 1–3</span>
-        <div class="card-name">Mapeamento de Dor</div>
-        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
-      </div>
-      <div class="card protocolo-card reveal rd1">
-        <span class="card-numeral">II</span>
-        <span class="badge card-step-badge">Min 4–7</span>
-        <div class="card-name">Ancoragem de Valor</div>
-        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
-      </div>
-      <div class="card protocolo-card reveal rd2">
-        <span class="card-numeral">III</span>
-        <span class="badge card-step-badge">Min 8–11</span>
-        <div class="card-name">Comando de Escassez</div>
-        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
-      </div>
-      <div class="card protocolo-card reveal rd3">
-        <span class="card-numeral">IV</span>
-        <span class="badge card-step-badge">Min 12–15</span>
-        <div class="card-name">Agendamento Blindado</div>
-        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
-      </div>
+  <section class="section section--alt" id="promessa">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">O inimigo errado</p>
+      <h2 class="section__title">Você está atacando <em>o problema errado</em> se</h2>
     </div>
-  </section>
-
-  <section class="section" id="incluso">
-    <div class="container container--narrow">
-      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
-      <ul class="list-check">
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
+    <div class="promessa">
+      <ul class="promessa__list">
+        <li class="promessa__item reveal">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Trocou de agência 3 vezes em 12 meses pensando que ia melhorar a entrada.</span>
+        </li>
+        <li class="promessa__item reveal rd1">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Aumentou o orçamento de Meta Ads e resultado não mudou — só ficou mais caro o lead que continua morrendo.</span>
+        </li>
+        <li class="promessa__item reveal rd2">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Fez curso de Reels, copywriting, branding, posicionamento — gastou tempo onde não estava o gargalo.</span>
+        </li>
+        <li class="promessa__item reveal rd3">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Acha que precisa "se reposicionar como premium" — mas o problema não é posicionamento. É operação.</span>
+        </li>
+        <li class="promessa__item reveal rd4">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Nunca conferiu, mensagem por mensagem, como sua atendente realmente responde quando o lead pergunta o preço.</span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="section" id="para-quem">
-    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
-    <div class="para-quem-grid">
-      <div class="para-quem-col para-quem-col--sim reveal">
-        <h3>É pra sua clínica se:</h3>
-        <ul>
-          <li>Já investiu mais em ads e viu o ROI cair em vez de subir</li>
-          <li>Sente que tá pagando pra trazer leads pra um buraco</li>
-          <li>Quer atacar conversão antes de subir tráfego de novo</li>
-          <li>Confia mais em matemática operacional que em "guru de marketing"</li>
+  <section class="section" id="mecanismo">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">O inimigo certo</p>
+      <h2 class="section__title">M.I.A. — atacando <em>onde dói</em></h2>
+    </div>
+    <div class="mia">
+      <p class="mia__lead reveal">
+        Marketing leva o lead até a porta. <strong>O atendimento é quem fecha</strong>. Toda clínica que está estagnada já tem tráfego suficiente — só não converte. A M.I.A. ataca exatamente esse ponto: a sequência de mensagens que faz o lead já-conquistado-pelo-tráfego virar paciente fidelizada-pelo-atendimento.
+      </p>
+      <div class="mia__pillars">
+        <article class="pillar reveal">
+          <div class="pillar__num">i</div>
+          <h3 class="pillar__title">Pare de comprar mais lead</h3>
+          <p class="pillar__desc">O custo por lead na estética dobrou em 18 meses. A solução não é gastar mais — é fechar o que entra. Conversão é alavanca de 4-5×.</p>
+        </article>
+        <article class="pillar reveal rd1">
+          <div class="pillar__num">ii</div>
+          <h3 class="pillar__title">Documente o atendimento</h3>
+          <p class="pillar__desc">Toda clínica madura tem SOP de atendimento. As que improvisam responde-cada-uma-de-um-jeito perdem dinheiro em silêncio. Documento padroniza.</p>
+        </article>
+        <article class="pillar reveal rd2">
+          <div class="pillar__num">iii</div>
+          <h3 class="pillar__title">Treine sem treinamento</h3>
+          <p class="pillar__desc">Atendente nova entra, lê o documento, copia, cola. Em 1 dia de operação está no mesmo nível da veterana. Sem custo de treinamento, sem rotatividade machucando.</p>
+        </article>
+      </div>
+      <blockquote class="mia__quote reveal">
+        <p>Você não precisa de mais um curso de marketing. Precisa de <em>um documento operacional</em> que sua equipe abre amanhã e usa na próxima conversa.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="publico">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Pra quem o reframing serve</p>
+      <h2 class="section__title">Funciona se você <em>parou de</em>...</h2>
+    </div>
+    <div class="publico">
+      <div class="publico__col publico__col--sim reveal">
+        <h3 class="publico__title"><span class="publico__icon">✓</span> Você tá pronta se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Já cansou de pagar agência sem ver resultado real no caixa.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Está disposta a olhar pro próprio WhatsApp e auditar com sinceridade.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Tem pelo menos 30-50 conversas/mês entrando (lead já existe — falta só fechar).</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Quer parar de procurar a "estratégia mágica" e começar a aplicar processo simples.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Sente que sua clínica funcionaria se "alguém arrumasse o atendimento".</li>
         </ul>
       </div>
-      <div class="para-quem-col para-quem-col--nao reveal rd1">
-        <h3>Não é pra você se:</h3>
-        <ul>
-          <li>Não roda tráfego pago e não pretende rodar</li>
-          <li>Já tem taxa de fechamento ≥ 50% no WhatsApp</li>
-          <li>Procura serviço de gestão de tráfego (não somos isso)</li>
+      <div class="publico__col publico__col--nao reveal rd1">
+        <h3 class="publico__title"><span class="publico__icon">✕</span> Não é pra você se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Continua acreditando que "é só investir mais em anúncio que resolve".</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Não tem 0 lead entrando — aí o problema é outro (reposicionamento de produto).</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Já tem 80%+ de conversão de WhatsApp em agendamento. Aí já tá ótimo.</li>
         </ul>
+      </div>
+    </div>
+    <p class="publico__close reveal">
+      O inimigo não tá no Instagram, no Reels, na concorrente. Tá <em>no seu privado</em>, na sequência de mensagens que sua atendente envia.
+    </p>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A operação correta</p>
+      <h2 class="section__title">4 movimentos · ataque <em>no lugar certo</em></h2>
+    </div>
+    <div class="pilares">
+      <article class="pilar-card reveal">
+        <div class="pilar-card__icon">🧲</div>
+        <h3 class="pilar-card__title">Captura imediata</h3>
+        <p class="pilar-card__desc">Resposta em até 5 minutos com gancho — não com preço. O lead que entrou pelo anúncio fica engajado em vez de comparar.</p>
+      </article>
+      <article class="pilar-card reveal rd1">
+        <div class="pilar-card__icon">🩺</div>
+        <h3 class="pilar-card__title">Diagnóstico clínico</h3>
+        <p class="pilar-card__desc">3 perguntas que transformam "quanto custa?" em "quero entender o que te incomoda". Reframing imediato da conversa.</p>
+      </article>
+      <article class="pilar-card reveal rd2">
+        <div class="pilar-card__icon">💎</div>
+        <h3 class="pilar-card__title">Ancoragem premium</h3>
+        <p class="pilar-card__desc">Apresentação do protocolo (Sculptra, Ultraformer, harmonização) com framing de investimento clínico — não compra impulsiva.</p>
+      </article>
+      <article class="pilar-card reveal rd3">
+        <div class="pilar-card__icon">✅</div>
+        <h3 class="pilar-card__title">Fechamento blindado</h3>
+        <p class="pilar-card__desc">Dupla opção + sinal via Pix + lembrete sequenciado. Não há "vou pensar". Há "qual horário funciona melhor pra você?".</p>
+      </article>
+    </div>
+    <div class="text-center reveal" style="margin-top:var(--sp-12);">
+      <a href="#oferta" class="btn btn--cta" data-event="cta_click" data-position="pilares">Atacar o problema certo</a>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="beneficios">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A nova operação</p>
+      <h2 class="section__title">O que <em>desaparece</em> da sua rotina</h2>
+    </div>
+    <div class="beneficios">
+      <article class="beneficio reveal">
+        <h3 class="beneficio__title">Some a desculpa</h3>
+        <p class="beneficio__desc">Para de culpar tráfego, agência, Meta. Você sabe exatamente onde a venda acontece — e onde ela não acontece.</p>
+      </article>
+      <article class="beneficio reveal rd1">
+        <h3 class="beneficio__title">Some o desperdício</h3>
+        <p class="beneficio__desc">Não desperdiça mais R$ 1.500/mês de tráfego pago em lead que vai morrer no privado por falta de processo.</p>
+      </article>
+      <article class="beneficio reveal rd2">
+        <h3 class="beneficio__title">Some o caos</h3>
+        <p class="beneficio__desc">Não tem mais "cada atendente responde de um jeito". Sai do improviso. Padroniza. Audita. Melhora.</p>
+      </article>
+      <article class="beneficio reveal rd3">
+        <h3 class="beneficio__title">Some o medo</h3>
+        <p class="beneficio__desc">Para de ter medo de aumentar tráfego com receio de "perder mais ainda". Confia no funil.</p>
+      </article>
+    </div>
+    <p class="beneficios__close reveal">
+      Quando a operação tá afiada, o tráfego deixa de ser problema — vira <em>combustível</em>.
+    </p>
+  </section>
+
+  <section class="section" id="prova">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">As que pararam de culpar tráfego</p>
+      <h2 class="section__title">Atacaram o <em>problema certo</em></h2>
+    </div>
+    <div class="depoimentos">
+      <article class="depoimento reveal">
+        <p class="depoimento__quote">Eu trocava de agência todo trimestre achando que era marketing. O Protocolo me mostrou que o problema era operação. Em 6 semanas dobrei conversão sem mexer no anúncio.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">G</div>
+          <div>
+            <span class="depoimento__nome">Gabriela Nunes</span>
+            <span class="depoimento__cargo">Dona de clínica · Porto Alegre</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd1">
+        <p class="depoimento__quote">Cortei R$ 800/mês de tráfego e mantive o mesmo faturamento. Sobra de R$ 9.600/ano só por parar de jogar lead fora no privado.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">V</div>
+          <div>
+            <span class="depoimento__nome">Vanessa Aragão</span>
+            <span class="depoimento__cargo">Esteticista · Natal</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd2">
+        <p class="depoimento__quote">Achava que precisava me reposicionar como clínica premium. Era só padronizar o jeito de responder. Resultado em 30 dias: ticket médio subiu 40%.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">S</div>
+          <div>
+            <span class="depoimento__nome">Sabrina Martins</span>
+            <span class="depoimento__cargo">Biomédica esteta · Belém</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="prova__anchor reveal">
+      O reframing é uma curva — depois que você vê, não consegue mais <em>desver</em>.
+    </p>
+  </section>
+
+  <section class="section section--deep" id="oferta">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A oferta</p>
+      <h2 class="section__title">O documento que <em>termina a confusão</em></h2>
+    </div>
+    <div class="oferta-wrap">
+      <div class="stack">
+        <div class="stack-item reveal">
+          <div class="stack-item__icon">🎬</div>
+          <div>
+            <div class="stack-item__title">Vídeo-aulas Completas</div>
+            <div class="stack-item__desc">Diagnóstico do funil + correção operacional. Você vê onde o lead morre e como recuperar.</div>
+          </div>
+          <div class="stack-item__price">R$ 197</div>
+        </div>
+        <div class="stack-item reveal rd1">
+          <div class="stack-item__icon">📄</div>
+          <div>
+            <div class="stack-item__title">PDF · 13 Scripts Prontos</div>
+            <div class="stack-item__desc">A operação inteira documentada. Sua equipe abre amanhã e usa na próxima conversa.</div>
+          </div>
+          <div class="stack-item__price">R$ 97</div>
+        </div>
+        <div class="stack-item reveal rd2">
+          <div class="stack-item__icon">🚨</div>
+          <div>
+            <div class="stack-item__title">Kit Anti-Vácuo</div>
+            <div class="stack-item__desc">Recupera lead que sumiu no funil — antes de gastar mais em tráfego pra repor.</div>
+          </div>
+          <div class="stack-item__price">R$ 47</div>
+        </div>
+        <div class="stack-item reveal rd3">
+          <div class="stack-item__icon">🗺️</div>
+          <div>
+            <div class="stack-item__title">Infográfico do Método</div>
+            <div class="stack-item__desc">Visualização do funil correto — colado na parede da sala de atendimento.</div>
+          </div>
+          <div class="stack-item__price">R$ 27</div>
+        </div>
+      </div>
+      <div class="stack-total reveal">
+        <span class="stack-total__label">Valor total real</span>
+        <span class="stack-total__value">R$ 368</span>
+      </div>
+
+      <div class="preco-card reveal">
+        <div class="preco-card__selo" aria-label="Garantia 7 dias">
+          <span>Garantia</span><strong>7 dias</strong><small>100% de volta</small>
+        </div>
+        <div class="preco__pre">Lançamento — preço promocional</div>
+        <div class="preco__de">de R$ 158</div>
+        <div class="preco__por">
+          <span class="preco__moeda">R$</span><span class="preco__valor">47</span>
+        </div>
+        <div class="preco__parcela">ou <strong>5× de R$ 10,15</strong> no cartão</div>
+        <p class="preco__contexto">
+          R$ 47 pra resolver o problema que R$ 18.000/ano de tráfego não resolveu. ROI mais sincero do mercado.
+        </p>
+        <div class="preco__cta-row">
+          <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl btn--cta--full" data-event="cta_click" data-position="preco">
+            Resolver o problema certo — R$ 47
+          </a>
+          <div class="preco__selos">
+            <span>🔒 Compra segura</span><span>💳 Pix · cartão · boleto</span><span>⚡ Acesso imediato</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="oferta" id="oferta">
-    <div class="reveal">
-      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
-      <p class="oferta-preco">R$ 14,99</p>
-      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+  <section class="section section--alt" id="garantia">
+    <div class="garantia reveal">
+      <div class="garantia__shield" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h3 class="garantia__title">7 dias pra confirmar o reframing</h3>
+        <p class="garantia__text">Aplica os scripts e mede a conversão da semana. Se a sua taxa de fechamento não subir significativamente sem mudar nada de tráfego, eu devolvo 100%. O risco é meu.</p>
+      </div>
     </div>
-    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
-    <div class="reveal">
-      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Antes de continuar gastando</p>
+      <h2 class="section__title">Dúvidas sobre <em>onde está o problema</em></h2>
     </div>
-    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
-    <p class="oferta-garantia reveal">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      7 dias de garantia incondicional
-    </p>
+    <div class="faq">
+      <details class="faq__item reveal">
+        <summary class="faq__q">E se eu realmente precisar de mais lead também?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Provavelmente vai precisar — depois. Mas com conversão de 70% em vez de 30%, você precisa de menos da metade dos leads atuais pro mesmo faturamento. Resolve operação primeiro, escala tráfego depois.</div>
+      </details>
+      <details class="faq__item reveal rd1">
+        <summary class="faq__q">Como saber se meu problema é tráfego ou conversão?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Conta simples: divida vendas/mês por leads/mês. Se der menos de 35%, o problema é conversão (operação). Se der mais de 60%, é volume de tráfego. Maioria das clínicas estagnadas tá no primeiro grupo.</div>
+      </details>
+      <details class="faq__item reveal rd2">
+        <summary class="faq__q">Já paguei agência. Vai dar conflito com elas?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Não — agência cuida da entrada, o Protocolo cuida do funil. Operam em camadas diferentes. Aliás, agência boa adora cliente que tem operação — sai do "vendedor de lead" e vira parceira de growth.</div>
+      </details>
+      <details class="faq__item reveal rd3">
+        <summary class="faq__q">Quanto tempo até parar de "culpar o tráfego"?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">2 semanas. Tempo de aplicar o script, ver a conversão subir e perceber que o problema não estava lá fora — estava dentro. É um realinhamento mental que segura a próxima decisão de investimento.</div>
+      </details>
+      <details class="faq__item reveal rd4">
+        <summary class="faq__q">Funciona pra clínica que vende ticket alto (Sculptra, harmonização)?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Funciona melhor — quanto maior o ticket, mais a paciente compara, mais o atendimento determina o fechamento. Clínicas premium são as que mais reformulam operação.</div>
+      </details>
+      <details class="faq__item reveal rd5">
+        <summary class="faq__q">Acesso é vitalício?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Sim. Pagamento único, sem mensalidade. Material liberado na hora.</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="fechamento" id="fechamento">
+    <div class="fechamento__inner">
+      <h2 class="fechamento__title">Pare de atacar <em>o inimigo errado</em></h2>
+      <div class="fechamento__lines">
+        <p class="fechamento__line reveal">Você pode continuar gastando R$ 1.500/mês em mais tráfego.</p>
+        <p class="fechamento__line reveal rd1">Trocar de agência mais uma vez.</p>
+        <p class="fechamento__line reveal rd2">Pagar mais um curso de Reels — esperando que dessa vez funcione.</p>
+        <p class="fechamento__line reveal rd3">Ou pode <strong>resolver o problema real</strong> por R$ 47.</p>
+      </div>
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="fechamento">
+        Resolver agora — R$ 47
+      </a>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+  <p class="site-footer__brand">fecha<span class="site-footer__brand-dot">·</span>tudo</p>
+  <p class="site-footer__disclaimer">Material complementar a estratégias de tráfego — não substitui investimento em mídia paga, mas torna o investimento existente significativamente mais rentável.</p>
+  <nav class="site-footer__links" aria-label="Rodapé">
+    <a href="mailto:contato@fechatudo.com.br">Suporte</a><a href="#">Termos</a><a href="#">Privacidade</a>
+  </nav>
+  <p class="site-footer__copy">© 2026 Protocolo Fecha-Tudo</p>
 </footer>
+
+<aside class="sticky-cta" aria-label="Compra rápida">
+  <div class="sticky-cta__label">
+    <span>Inimigo errado custa caro</span>
+    <strong>R$ 47 acerta o alvo</strong>
+  </div>
+  <a href="https://checkout.ticto.app/OCC46FBCB" class="sticky-cta__btn" data-event="cta_click" data-position="sticky">Resolver agora</a>
+</aside>
 
 </body>
 </html>

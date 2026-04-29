@@ -1,8 +1,39 @@
 /* ═══════════════════════════════════════════════════
-   TOKENS PRIMITIVOS — neutros, herdados por todos os temas
+   TOKENS — Sistema unificado "Estética Premium"
+   Paleta: off-white quente · wine · champagne · ink
+   Tipografia: Playfair Display + Inter
    ═══════════════════════════════════════════════════ */
 :root {
-  /* Escala tipográfica modular (1.250 — major third) */
+  /* ─── PALETA ─── */
+  --bg:            #FAF7F2;  /* off-white quente */
+  --bg-alt:        #FFFFFF;  /* seções alternadas */
+  --bg-deep:       #F2EBE0;  /* acento warm bege */
+  --surface:       #FFFFFF;  /* cards */
+  --surface-tint:  #F7F1E7;  /* tinted card */
+
+  --ink:           #1F1B16;  /* headings */
+  --ink-soft:      #2A2622;  /* body */
+  --muted:         #6B6259;  /* secundário */
+  --rule:          #E5DED2;  /* linhas/bordas */
+  --rule-soft:     #EFE9DD;
+
+  --accent:        #C5345A;  /* wine — CTA */
+  --accent-deep:   #9E2748;  /* hover */
+  --accent-tint:   #F4E4E9;  /* fundo soft */
+
+  --gold:          #B8860B;  /* champagne — preço */
+  --gold-deep:     #8C6708;
+  --gold-tint:     #F8EFD7;
+
+  --success:       #2E7D5B;
+  --success-tint:  #E1F0E8;
+  --alert:         #B83A3A;
+
+  /* ─── TIPOGRAFIA ─── */
+  --font-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+
+  /* Escala (1.25 — major third) */
   --fs-12: 0.75rem;
   --fs-13: 0.8125rem;
   --fs-14: 0.875rem;
@@ -11,49 +42,80 @@
   --fs-17: 1.0625rem;
   --fs-18: 1.125rem;
   --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
   --fs-24: 1.5rem;
   --fs-28: 1.75rem;
   --fs-32: 2rem;
+  --fs-36: 2.25rem;
   --fs-40: 2.5rem;
   --fs-48: 3rem;
+  --fs-56: 3.5rem;
   --fs-64: 4rem;
   --fs-80: 5rem;
+  --fs-96: 6rem;
 
-  /* Espaçamento (4px base) */
+  /* ─── ESPAÇAMENTO (4px base) ─── */
   --sp-1: 0.25rem;
   --sp-2: 0.5rem;
   --sp-3: 0.75rem;
   --sp-4: 1rem;
   --sp-5: 1.25rem;
   --sp-6: 1.5rem;
+  --sp-7: 1.75rem;
   --sp-8: 2rem;
   --sp-10: 2.5rem;
   --sp-12: 3rem;
+  --sp-14: 3.5rem;
   --sp-16: 4rem;
   --sp-20: 5rem;
   --sp-24: 6rem;
+  --sp-28: 7rem;
   --sp-32: 8rem;
 
-  /* Raios */
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 12px;
-  --r-xl: 16px;
+  /* ─── RAIOS ─── */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-2xl: 32px;
   --r-full: 9999px;
 
-  /* Motion */
-  --ease: cubic-bezier(.25,.46,.45,.94);
+  /* ─── SHADOWS premium ─── */
+  --shadow-xs: 0 1px 2px rgba(31,27,22,0.04);
+  --shadow-sm: 0 2px 8px rgba(31,27,22,0.06);
+  --shadow-md: 0 8px 24px rgba(31,27,22,0.08);
+  --shadow-lg: 0 20px 60px rgba(31,27,22,0.12);
+  --shadow-wine: 0 12px 36px rgba(197,52,90,0.22);
+  --shadow-gold: 0 0 0 1px rgba(184,134,11,0.30), 0 12px 32px rgba(184,134,11,0.12);
+
+  /* ─── MOTION ─── */
+  --ease:        cubic-bezier(.25,.46,.45,.94);
   --ease-spring: cubic-bezier(.16,1,.3,1);
+  --ease-emp:    cubic-bezier(.65,0,.35,1);
   --dur-fast: 0.2s;
   --dur-base: 0.4s;
   --dur-slow: 0.7s;
+  --dur-xslow: 1.1s;
 
-  /* Layout */
-  --container-max: 1100px;
+  /* ─── LAYOUT ─── */
+  --container-max: 1140px;
+  --container-narrow: 720px;
+  --container-ultra: 560px;
   --measure: 65ch;
   --measure-narrow: 50ch;
 
-  /* Z */
+  /* ─── Z ─── */
+  --z-sticky: 40;
   --z-header: 50;
   --z-overlay: 100;
+  --z-toast: 200;
+}
+
+/* ─── GRADIENTES utilitários ─── */
+:root {
+  --grad-warm: radial-gradient(ellipse at top, #FFF5EB 0%, var(--bg) 60%);
+  --grad-rose: linear-gradient(135deg, #F8E8EC 0%, #FAF7F2 50%, #F8EFD7 100%);
+  --grad-ink: linear-gradient(180deg, #1F1B16 0%, #2A2017 100%);
+  --grad-cta: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
 }

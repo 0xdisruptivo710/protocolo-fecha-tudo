@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
 
+  <!-- PIXEL/GTM AQUI -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -18,180 +20,508 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
 
-  <title>Protocolo Fecha-Tudo — 15 minutos do primeiro "oi" ao Pix confirmado</title>
-  <meta name="description" content="Não é gatilho de escassez. É aritmética: cada conversa perdida hoje vai pesquisar 3 outras clínicas até sexta. Geralmente fecha na que respondeu melhor primeiro.">
-
+  <title>Antes que a Próxima Cliente Vá pra Concorrente — Você Tem 15 Minutos</title>
+  <meta name="description" content="A próxima conversa do seu WhatsApp vai entrar nas próximas horas. Vai virar agendamento ou vai virar mais um vácuo? 15 minutos de protocolo decidem. R$ 47, acesso imediato.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/themes/boutique.css">
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    .urgencia-meter {
+      max-width: 620px;
+      margin: var(--sp-12) auto var(--sp-8);
+      padding: var(--sp-8);
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-md);
+    }
+    .urgencia-meter__label {
+      font-family: var(--font-body);
+      font-size: var(--fs-12);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--alert);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: var(--sp-4);
+      display: flex; align-items: center; justify-content: center; gap: var(--sp-2);
+    }
+    .urgencia-meter__label::before {
+      content: ''; width: 8px; height: 8px;
+      background: var(--alert); border-radius: 50%;
+      animation: pulse-dot 1.4s var(--ease) infinite;
+    }
+    .urgencia-meter__quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(var(--fs-18), 2.4vw, var(--fs-24));
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: var(--sp-6);
+    }
+    .urgencia-meter__rows {
+      display: flex; flex-direction: column;
+      gap: var(--sp-3);
+      margin-top: var(--sp-6);
+      padding-top: var(--sp-6);
+      border-top: 1px solid var(--rule-soft);
+    }
+    .urgencia-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: var(--fs-15);
+      color: var(--ink-soft);
+    }
+    .urgencia-row strong {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--alert);
+      font-variant-numeric: tabular-nums;
+    }
+    /* Step list 15 min */
+    .timeline-15 {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column;
+      gap: 0;
+    }
+    .tline-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--sp-5);
+      padding: var(--sp-5) 0;
+      border-bottom: 1px solid var(--rule-soft);
+      position: relative;
+    }
+    .tline-step:last-child { border-bottom: 0; }
+    .tline-min {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+      font-size: var(--fs-22);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+    .tline-action {
+      font-size: var(--fs-15);
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+    .tline-action strong { color: var(--ink); font-weight: 600; }
+    @media (max-width:640px){
+      .tline-step { grid-template-columns: 60px 1fr; gap: var(--sp-3); }
+      .tline-min { font-size: var(--fs-18); }
+    }
+  </style>
   <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-  <a href="/" class="header-logo">fecha·tudo</a>
-  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+  <a href="/" class="header-logo">fecha<span class="header-logo__dot"></span>tudo</a>
+  <a href="#oferta" class="btn btn--header" data-event="cta_click" data-position="header" onclick="PFT.trackViewContent()">Quero por R$ 47</a>
 </header>
 
 <main>
 
   <section class="hero" id="hero">
-    <p class="eyebrow hero__eyebrow">15 MINUTOS · DO PRIMEIRO "OI" AO PIX</p>
-    <h1 class="hero__headline">
-      Antes que a próxima cliente vá para a concorrência —<br>
-      <strong style="color:var(--accent);font-style:italic;font-weight:400;">aqui está o protocolo que ela esperava encontrar com você</strong>.
-    </h1>
-    <p class="hero__sub">
-      Não é gatilho de escassez de marketing. É aritmética simples: cada conversa perdida hoje é uma cliente que vai pesquisar mais três clínicas até sexta-feira. E geralmente fecha na que respondeu melhor primeiro.
-    </p>
-  </section>
+    <div class="hero__bg-orb hero__bg-orb--rose" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow eyebrow--center hero__eyebrow">A Próxima Conversa · Que Já Está a Caminho</p>
+      <h1 class="hero__headline">
+        Antes que a próxima<br>
+        vá pra concorrente — <em>você tem 15 minutos</em>.
+      </h1>
+      <p class="hero__sub">
+        Não é manipulação de timer. É realidade do seu WhatsApp: <strong>nas próximas horas alguém vai mandar mensagem</strong> perguntando o preço de um procedimento. Se sua atendente responder do jeito de sempre, ela vira mais um vácuo. O Protocolo Fecha-Tudo são os 15 minutos exatos pra mudar essa próxima conversa.
+      </p>
 
-  <section class="section" id="diagnostico">
-    <h2 class="section__title reveal">O que acontece com a próxima conversa que travar</h2>
-    <p class="section__sub reveal">Sua atendente respondeu "R$ 380" e a cliente sumiu. A timeline real começa agora.</p>
-
-    <div class="timeline-progress" style="margin-top:var(--sp-12);">
-      <div class="timeline-progress__step reveal">
-        <div class="timeline-progress__when">Agora · 19h47</div>
-        <div class="timeline-progress__what">Ela vê o preço, não responde, abre o Instagram. Sua mensagem some no meio de outras 30.</div>
-      </div>
-      <div class="timeline-progress__step reveal rd1">
-        <div class="timeline-progress__when">Em 3 dias</div>
-        <div class="timeline-progress__what">Ela pediu orçamento em 3 outras clínicas. Uma respondeu fazendo uma pergunta antes do preço. Ela respondeu de volta.</div>
-      </div>
-      <div class="timeline-progress__step reveal rd2">
-        <div class="timeline-progress__when">Em 1 semana</div>
-        <div class="timeline-progress__what">Ela fechou na que perguntou. Pagou R$ 420. Está na sua agenda? Não — está na de outra clínica.</div>
-      </div>
-    </div>
-
-    <div class="container container--narrow prose" style="margin-top:var(--sp-12);">
-      <p class="reveal">Não tem como recuperar essa conversa. Tem como mudar a próxima — antes que ela aconteça do mesmo jeito amanhã às 11h.</p>
-    </div>
-  </section>
-
-  <section class="section" id="mecanismo">
-    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
-    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
-
-    <div class="mecanismo-grid">
-      <div class="timeline-col timeline-col--sem">
-        <div class="timeline-label reveal">Sem protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
+      <div class="urgencia-meter reveal">
+        <div class="urgencia-meter__label">Acontecendo agora</div>
+        <p class="urgencia-meter__quote">
+          "Oi! Vi seu post do bioestimulador. Quanto custa?"
+        </p>
+        <div class="urgencia-meter__rows">
+          <div class="urgencia-row">
+            <span>Conversas como essa que entram por dia (média)</span>
+            <strong>9</strong>
+          </div>
+          <div class="urgencia-row">
+            <span>Quantas viram agendamento sem protocolo</span>
+            <strong>3</strong>
+          </div>
+          <div class="urgencia-row">
+            <span>Quantas <em>poderiam</em> virar com protocolo</span>
+            <strong>7</strong>
+          </div>
+          <div class="urgencia-row">
+            <span>Vendas perdidas hoje (até essa hora)</span>
+            <strong>4</strong>
+          </div>
+        </div>
       </div>
 
-      <div class="timeline-col timeline-col--com">
-        <div class="timeline-label reveal">Com protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
-        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
-        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
-        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
+      <div class="hero__cta-row">
+        <a href="#oferta" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="hero">Pegar o protocolo agora — R$ 47</a>
+        <p class="hero__micro"><span>⚡ Acesso imediato</span><span>·</span><span>🛡 Garantia 7 dias</span></p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="protocolo">
-    <h2 class="section__title reveal">O método M.A.C.A.</h2>
-    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
-
-    <div class="protocolo-grid">
-      <div class="card protocolo-card reveal">
-        <span class="card-numeral">I</span>
-        <span class="badge card-step-badge">Min 1–3</span>
-        <div class="card-name">Mapeamento de Dor</div>
-        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
-      </div>
-      <div class="card protocolo-card reveal rd1">
-        <span class="card-numeral">II</span>
-        <span class="badge card-step-badge">Min 4–7</span>
-        <div class="card-name">Ancoragem de Valor</div>
-        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
-      </div>
-      <div class="card protocolo-card reveal rd2">
-        <span class="card-numeral">III</span>
-        <span class="badge card-step-badge">Min 8–11</span>
-        <div class="card-name">Comando de Escassez</div>
-        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
-      </div>
-      <div class="card protocolo-card reveal rd3">
-        <span class="card-numeral">IV</span>
-        <span class="badge card-step-badge">Min 12–15</span>
-        <div class="card-name">Agendamento Blindado</div>
-        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
-      </div>
+  <section class="section section--alt" id="promessa">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A urgência é real</p>
+      <h2 class="section__title">A próxima cliente <em>já está</em>...</h2>
     </div>
-  </section>
-
-  <section class="section" id="incluso">
-    <div class="container container--narrow">
-      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
-      <ul class="list-check">
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
+    <div class="promessa">
+      <ul class="promessa__list">
+        <li class="promessa__item reveal">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Olhando seu Instagram agora — comparando com outras 3 clínicas que ela seguiu hoje.</span>
+        </li>
+        <li class="promessa__item reveal rd1">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">A 1 toque de mandar a primeira mensagem pro seu WhatsApp.</span>
+        </li>
+        <li class="promessa__item reveal rd2">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Decidindo se vale ou não perguntar o preço (medo de ser cobrada por algo que não vai entender).</span>
+        </li>
+        <li class="promessa__item reveal rd3">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Com o cartão na mão pra fazer o Pix do sinal — pra <em>quem responder primeiro com profissionalismo</em>.</span>
+        </li>
+        <li class="promessa__item reveal rd4">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">A poucas horas de fechar com você — ou com sua concorrente que já tem o script.</span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="section" id="para-quem">
-    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
-    <div class="para-quem-grid">
-      <div class="para-quem-col para-quem-col--sim reveal">
-        <h3>É pra sua clínica se:</h3>
-        <ul>
-          <li>Você sente urgência em mudar mas não responde a "comprar agora ou nunca mais"</li>
-          <li>Prefere argumento aritmético a apelo emocional barato</li>
-          <li>Quer começar a corrigir já a partir da próxima conversa</li>
-          <li>Sabe que cada dia parado é cliente convertendo em outro lugar</li>
+  <section class="section" id="mecanismo">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">15 minutos · minuto a minuto</p>
+      <h2 class="section__title">O que acontece <em>do "oi" ao Pix</em></h2>
+    </div>
+    <div class="mia">
+      <p class="mia__lead reveal">
+        15 minutos não é metáfora. É o tempo médio de uma conversa fechada com sucesso pelo Protocolo. Cada minuto cumpre uma função clínica específica — exatamente como um protocolo de cabine. Aqui tá a divisão:
+      </p>
+
+      <div class="timeline-15">
+        <div class="tline-step reveal">
+          <div class="tline-min">0–2 min</div>
+          <div class="tline-action"><strong>Captura.</strong> Resposta com gancho — sem dar preço. Faz a paciente parar o scroll e responder.</div>
+        </div>
+        <div class="tline-step reveal rd1">
+          <div class="tline-min">2–6 min</div>
+          <div class="tline-action"><strong>Diagnóstico.</strong> 3 perguntas que mapeiam queixa, urgência e orçamento. A paciente revela o que importa.</div>
+        </div>
+        <div class="tline-step reveal rd2">
+          <div class="tline-min">6–9 min</div>
+          <div class="tline-action"><strong>Ancoragem.</strong> Apresentação do protocolo (Sculptra, Botox, harmonização) com framing clínico. Valor antes do preço.</div>
+        </div>
+        <div class="tline-step reveal rd3">
+          <div class="tline-min">9–12 min</div>
+          <div class="tline-action"><strong>Fechamento.</strong> Dupla opção de horário ("terça às 14h ou quarta às 10h?"). Paciente escolhe.</div>
+        </div>
+        <div class="tline-step reveal rd4">
+          <div class="tline-min">12–15 min</div>
+          <div class="tline-action"><strong>Sinal via Pix.</strong> R$ 50 a R$ 100 pra confirmar agendamento. Conversa termina com cadeira blindada.</div>
+        </div>
+      </div>
+
+      <blockquote class="mia__quote reveal" style="margin-top:var(--sp-12);">
+        <p>Quem aplica os 15 minutos certos fecha. Quem improvisa, perde — pra concorrente que aplicou.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="publico">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A urgência é tua</p>
+      <h2 class="section__title">Você <em>precisa disso agora</em> se</h2>
+    </div>
+    <div class="publico">
+      <div class="publico__col publico__col--sim reveal">
+        <h3 class="publico__title"><span class="publico__icon">✓</span> Não dá pra esperar se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Hoje vão entrar pelo menos 5 conversas no seu WhatsApp.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Sua concorrente está ativa — também recebe as mesmas pacientes que comparam.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Cada vácuo dói (você lembra dele à noite, não esquece).</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Tá com paciente "quase fechando" parada esperando você responder — e o tempo está jogando contra.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Quer começar a aplicar na <em>próxima mensagem</em> — não daqui a uma semana.</li>
         </ul>
       </div>
-      <div class="para-quem-col para-quem-col--nao reveal rd1">
-        <h3>Não é pra você se:</h3>
-        <ul>
-          <li>Acha que ainda não é hora — vai começar quando estiver "menos corrido"</li>
-          <li>Procura solução mágica que se implementa sozinha</li>
-          <li>Não tem WhatsApp ativo na clínica</li>
+      <div class="publico__col publico__col--nao reveal rd1">
+        <h3 class="publico__title"><span class="publico__icon">✕</span> Pode esperar se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Sua agenda já está lotada pros próximos 60 dias e você tá fechando.</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Não vai abrir o WhatsApp essa semana.</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Já tem documento operacional que sua equipe segue.</li>
         </ul>
+      </div>
+    </div>
+    <p class="publico__close reveal">
+      A urgência não é fabricada. É da rotina — <em>todo dia</em> entra mensagem nova.
+    </p>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A próxima conversa, refeita</p>
+      <h2 class="section__title">4 movimentos · que cabem nos <em>próximos 15min</em></h2>
+    </div>
+    <div class="pilares">
+      <article class="pilar-card reveal">
+        <div class="pilar-card__icon">🧲</div>
+        <h3 class="pilar-card__title">Captura imediata</h3>
+        <p class="pilar-card__desc">A próxima paciente que mandar "oi" recebe resposta com gancho — não com preço. Você sente a conversa ficar viva.</p>
+      </article>
+      <article class="pilar-card reveal rd1">
+        <div class="pilar-card__icon">🩺</div>
+        <h3 class="pilar-card__title">Diagnóstico expresso</h3>
+        <p class="pilar-card__desc">3 perguntas em 4 minutos. A paciente revela a queixa e você ganha munição pra ancoragem.</p>
+      </article>
+      <article class="pilar-card reveal rd2">
+        <div class="pilar-card__icon">💎</div>
+        <h3 class="pilar-card__title">Ancoragem técnica</h3>
+        <p class="pilar-card__desc">Apresenta o protocolo (bioestimulador, Ultraformer, Botox) com vocabulário do nicho — preço perde peso na decisão.</p>
+      </article>
+      <article class="pilar-card reveal rd3">
+        <div class="pilar-card__icon">✅</div>
+        <h3 class="pilar-card__title">Fechamento com Pix</h3>
+        <p class="pilar-card__desc">Dupla opção, sinal via Pix, sequência de lembretes. Conversa que entrou às 19h pode estar agendada e blindada às 19h15.</p>
+      </article>
+    </div>
+    <div class="text-center reveal" style="margin-top:var(--sp-12);">
+      <a href="#oferta" class="btn btn--cta" data-event="cta_click" data-position="pilares">Estar pronta pra próxima — R$ 47</a>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="beneficios">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Daqui a 24h, com o protocolo</p>
+      <h2 class="section__title">O que <em>já é diferente</em> amanhã</h2>
+    </div>
+    <div class="beneficios">
+      <article class="beneficio reveal">
+        <h3 class="beneficio__title">A próxima conversa fecha</h3>
+        <p class="beneficio__desc">Não a do mês que vem. A próxima que entrar — porque o script já está aberto, copiado, pronto.</p>
+      </article>
+      <article class="beneficio reveal rd1">
+        <h3 class="beneficio__title">As pendentes desbloqueiam</h3>
+        <p class="beneficio__desc">Aquelas conversas que estão "no vácuo" hoje — Kit Anti-Vácuo aplica nelas amanhã e algumas voltam a responder.</p>
+      </article>
+      <article class="beneficio reveal rd2">
+        <h3 class="beneficio__title">Sua atendente respira</h3>
+        <p class="beneficio__desc">Para de "inventar resposta na hora" e passa a seguir o roteiro. A pressão sai. O resultado aparece.</p>
+      </article>
+      <article class="beneficio reveal rd3">
+        <h3 class="beneficio__title">Você dorme melhor</h3>
+        <p class="beneficio__desc">Não fica mais imaginando "será que perdi essa pelo preço?". Aplicou o método. O resto é com a paciente.</p>
+      </article>
+    </div>
+    <p class="beneficios__close reveal">
+      A diferença <em>começa hoje à noite</em> — não depende de mais nada que você precisa fazer antes.
+    </p>
+  </section>
+
+  <section class="section" id="prova">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Aplicaram na próxima conversa</p>
+      <h2 class="section__title">Resultado <em>nas primeiras 24h</em></h2>
+    </div>
+    <div class="depoimentos">
+      <article class="depoimento reveal">
+        <p class="depoimento__quote">Comprei à noite. Apliquei o script no primeiro lead que entrou na manhã seguinte — fechou agendamento de R$ 1.500 com sinal de R$ 100 via Pix. O Protocolo se pagou em 8 horas.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">K</div>
+          <div>
+            <span class="depoimento__nome">Karla Bittencourt</span>
+            <span class="depoimento__cargo">Esteticista · Fortaleza</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd1">
+        <p class="depoimento__quote">Tinha 7 conversas pendentes esperando resposta. Apliquei o script nas 7 no mesmo dia. Em 48h fechei 3 — uma delas era harmonização de R$ 2.400 que eu já dava como perdida.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">B</div>
+          <div>
+            <span class="depoimento__nome">Bárbara Almeida</span>
+            <span class="depoimento__cargo">Biomédica esteta · São José</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd2">
+        <p class="depoimento__quote">A primeira mensagem que mandei seguindo o protocolo, a paciente respondeu "nossa, gostei do atendimento, quero agendar". Foi a venda mais fácil dos últimos 3 meses.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">I</div>
+          <div>
+            <span class="depoimento__nome">Isabela Carvalho</span>
+            <span class="depoimento__cargo">Fisio dermatofuncional · Joinville</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="prova__anchor reveal">
+      Cada hora que você adia, é uma conversa aplicada com o método antigo. <strong>Resultado é ação imediata.</strong>
+    </p>
+  </section>
+
+  <section class="section section--deep" id="oferta">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A oferta · Disponível agora</p>
+      <h2 class="section__title">Pegar agora · aplicar <em>na próxima conversa</em></h2>
+    </div>
+    <div class="oferta-wrap">
+      <div class="stack">
+        <div class="stack-item reveal">
+          <div class="stack-item__icon">🎬</div>
+          <div>
+            <div class="stack-item__title">Vídeo-aulas Completas</div>
+            <div class="stack-item__desc">Você pode pular direto pro vídeo de "aplicação imediata" e aplicar nas próximas 2 horas.</div>
+          </div>
+          <div class="stack-item__price">R$ 197</div>
+        </div>
+        <div class="stack-item reveal rd1">
+          <div class="stack-item__icon">📄</div>
+          <div>
+            <div class="stack-item__title">PDF · 13 Scripts Prontos</div>
+            <div class="stack-item__desc">Abre, copia, cola na próxima mensagem. Não precisa estudar antes — é literal copia-e-cola.</div>
+          </div>
+          <div class="stack-item__price">R$ 97</div>
+        </div>
+        <div class="stack-item reveal rd2">
+          <div class="stack-item__icon">🚨</div>
+          <div>
+            <div class="stack-item__title">Kit Anti-Vácuo</div>
+            <div class="stack-item__desc">Aplica nas conversas paradas <em>hoje</em>. Algumas voltam — você fecha sem investir nada.</div>
+          </div>
+          <div class="stack-item__price">R$ 47</div>
+        </div>
+        <div class="stack-item reveal rd3">
+          <div class="stack-item__icon">🗺️</div>
+          <div>
+            <div class="stack-item__title">Infográfico do Método</div>
+            <div class="stack-item__desc">Imprime e cola do lado do telefone. Consulta visual instantânea no meio da conversa.</div>
+          </div>
+          <div class="stack-item__price">R$ 27</div>
+        </div>
+      </div>
+      <div class="stack-total reveal">
+        <span class="stack-total__label">Valor total real</span>
+        <span class="stack-total__value">R$ 368</span>
+      </div>
+
+      <div class="preco-card reveal">
+        <div class="preco-card__selo" aria-label="Garantia 7 dias">
+          <span>Garantia</span><strong>7 dias</strong><small>100% de volta</small>
+        </div>
+        <div class="preco__pre">Disponível agora · sem espera</div>
+        <div class="preco__de">de R$ 158</div>
+        <div class="preco__por">
+          <span class="preco__moeda">R$</span><span class="preco__valor">47</span>
+        </div>
+        <div class="preco__parcela">ou <strong>5× de R$ 10,15</strong> no cartão</div>
+        <p class="preco__contexto">
+          R$ 47 agora, acesso em 30 segundos, aplica na próxima mensagem que entrar. Você sai daqui com material — não com planejamento de futuro.
+        </p>
+        <div class="preco__cta-row">
+          <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl btn--cta--full" data-event="cta_click" data-position="preco">
+            Pegar agora — R$ 47
+          </a>
+          <div class="preco__selos">
+            <span>🔒 Compra segura</span><span>💳 Pix · cartão · boleto</span><span>⚡ Acesso imediato</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="oferta" id="oferta">
-    <div class="reveal">
-      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
-      <p class="oferta-preco">R$ 14,99</p>
-      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+  <section class="section section--alt" id="garantia">
+    <div class="garantia reveal">
+      <div class="garantia__shield" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h3 class="garantia__title">7 dias pra ver a próxima virar Pix</h3>
+        <p class="garantia__text">Aplica em uma semana. Se nenhuma das conversas fechar com Pix usando o protocolo, eu devolvo tudo. Não gasta o sábado, não responde questionário — eu devolvo direto.</p>
+      </div>
     </div>
-    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
-    <div class="reveal">
-      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Antes da próxima entrar</p>
+      <h2 class="section__title">Dúvidas <em>de quem precisa hoje</em></h2>
     </div>
-    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
-    <p class="oferta-garantia reveal">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      7 dias de garantia incondicional
-    </p>
+    <div class="faq">
+      <details class="faq__item reveal">
+        <summary class="faq__q">Em quanto tempo eu recebo o material?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Pix entra em segundos, acesso liberado automaticamente. Você recebe email com login da área de membros — vídeo-aulas, PDFs e bônus disponíveis na hora. Pode aplicar na próxima conversa hoje.</div>
+      </details>
+      <details class="faq__item reveal rd1">
+        <summary class="faq__q">Preciso assistir tudo antes de aplicar?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Não. O PDF dos scripts é stand-alone — abre, copia, cola. Os vídeos aprofundam, mas você pode aplicar primeiro e estudar depois. A urgência é a próxima mensagem.</div>
+      </details>
+      <details class="faq__item reveal rd2">
+        <summary class="faq__q">E se eu não conseguir aplicar hoje?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Tudo bem — material fica liberado pra sempre. Mas o ideal é aplicar enquanto ainda está fresco. Quem aplica nas primeiras 24h vê resultado nas primeiras 48h.</div>
+      </details>
+      <details class="faq__item reveal rd3">
+        <summary class="faq__q">Funciona pro WhatsApp Business?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Sim — e tem orientações específicas pra configurar respostas rápidas no Business. Sua atendente economiza ainda mais tempo aplicando o script.</div>
+      </details>
+      <details class="faq__item reveal rd4">
+        <summary class="faq__q">Vai funcionar pra Botox, Sculptra, harmonização (ticket alto)?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Sim — tem variação específica pra ticket acima de R$ 1.500 com framing clínico mais elaborado. Funciona melhor em ticket alto, na verdade.</div>
+      </details>
+      <details class="faq__item reveal rd5">
+        <summary class="faq__q">Qual o tempo de retorno?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">A primeira venda recuperada com o script paga o material 30+ vezes. Maioria das clínicas recupera o investimento em menos de 24h aplicando na primeira conversa.</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="fechamento" id="fechamento">
+    <div class="fechamento__inner">
+      <h2 class="fechamento__title">A próxima mensagem está <em>chegando</em></h2>
+      <div class="fechamento__lines">
+        <p class="fechamento__line reveal">Pode ser daqui a 10 minutos. Daqui a 2 horas. Mas vai chegar.</p>
+        <p class="fechamento__line reveal rd1">Vai ser respondida com o método antigo — e provavelmente vai morrer.</p>
+        <p class="fechamento__line reveal rd2">Ou vai ser respondida com o protocolo — e provavelmente vai virar Pix.</p>
+        <p class="fechamento__line reveal rd3">Você decide qual cenário acontece <strong>nas próximas horas</strong>.</p>
+      </div>
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="fechamento">
+        Estar pronta pra próxima — R$ 47
+      </a>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+  <p class="site-footer__brand">fecha<span class="site-footer__brand-dot">·</span>tudo</p>
+  <p class="site-footer__disclaimer">Material entregue digitalmente após confirmação do pagamento. Acesso liberado em segundos. Tempo de aplicação dos scripts depende da disponibilidade de cada clínica.</p>
+  <nav class="site-footer__links" aria-label="Rodapé">
+    <a href="mailto:contato@fechatudo.com.br">Suporte</a><a href="#">Termos</a><a href="#">Privacidade</a>
+  </nav>
+  <p class="site-footer__copy">© 2026 Protocolo Fecha-Tudo</p>
 </footer>
+
+<aside class="sticky-cta" aria-label="Compra rápida">
+  <div class="sticky-cta__label">
+    <span>Próxima conversa: minutos</span>
+    <strong>R$ 47 · acesso já</strong>
+  </div>
+  <a href="https://checkout.ticto.app/OCC46FBCB" class="sticky-cta__btn" data-event="cta_click" data-position="sticky">Estar pronta</a>
+</aside>
 
 </body>
 </html>

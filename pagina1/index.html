@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="facebook-domain-verification" content="687871xtxjxb3hsj62wcsln8fuzgxu" />
 
+  <!-- PIXEL/GTM AQUI -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -18,187 +20,481 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1624871735228400&ev=PageView&noscript=1"/></noscript>
 
-  <title>Protocolo Fecha-Tudo — Diagnóstico de Perda no WhatsApp da sua Clínica</title>
-  <meta name="description" content="Cálculo conservador: sua clínica está perdendo cerca de R$7.420 por semana em conversas que morreram no WhatsApp. Diagnóstico + protocolo de correção.">
+  <title>Diagnóstico — Sua Clínica Perdeu R$ 18.400 Esse Mês no WhatsApp</title>
+  <meta name="description" content="Cálculo conservador: ticket R$ 380 × 30% de fechamento sem protocolo × 65 conversas/semana. Sua clínica está sangrando dinheiro no privado. Veja o número e o protocolo de correção.">
+  <meta property="og:title" content="Diagnóstico — Quanto sua clínica está perdendo no WhatsApp">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/themes/clinical.css">
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    /* Hero específico — calculadora de perda */
+    .hero-perda { text-align: center; }
+    .perda-calc {
+      margin: var(--sp-12) auto var(--sp-8);
+      max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: var(--r-xl);
+      padding: var(--sp-8);
+      box-shadow: var(--shadow-md);
+      text-align: left;
+      font-family: var(--font-body);
+    }
+    .perda-calc__label {
+      font-size: var(--fs-12);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: var(--sp-4);
+    }
+    .perda-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: var(--sp-3) 0;
+      border-bottom: 1px dashed var(--rule);
+      font-size: var(--fs-15);
+    }
+    .perda-row:last-of-type { border-bottom: 0; }
+    .perda-row span:first-child { color: var(--muted); }
+    .perda-row span:last-child { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 500; }
+    .perda-total {
+      margin-top: var(--sp-5); padding-top: var(--sp-5);
+      border-top: 2px solid var(--ink);
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .perda-total__label {
+      font-family: var(--font-body);
+      font-size: var(--fs-13);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--alert);
+      font-weight: 700;
+    }
+    .perda-total__value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(var(--fs-32), 5vw, var(--fs-48));
+      color: var(--alert);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width:480px){ .perda-calc { padding: var(--sp-6); } }
+  </style>
   <script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-  <a href="/" class="header-logo">fecha·tudo</a>
-  <a href="#oferta" class="btn btn--header" onclick="PFT.trackViewContent()">Garantir acesso</a>
+  <a href="/" class="header-logo">fecha<span class="header-logo__dot"></span>tudo</a>
+  <a href="#oferta" class="btn btn--header" data-event="cta_click" data-position="header" onclick="PFT.trackViewContent()">Parar a perda · R$ 47</a>
 </header>
 
 <main>
 
-  <!-- ═══════ HERO ═══════ -->
-  <section class="hero" id="hero">
-    <p class="eyebrow hero__eyebrow">DIAGNÓSTICO · 04/2026</p>
-    <h1 class="hero__headline">
-      Sua clínica perdeu <strong style="color:var(--alert);font-weight:600;">R$ 7.420,00</strong> essa semana em conversas que morreram no WhatsApp.
-    </h1>
-    <p class="hero__sub">
-      Cálculo conservador: ticket médio R$ 380, 30% de fechamento sem protocolo, 65 conversas/semana. Os números são da sua clínica. A perda também.
+  <!-- ═══════ HERO · PERDA QUANTIFICADA ═══════ -->
+  <section class="hero hero-perda" id="hero">
+    <div class="hero__bg-orb hero__bg-orb--rose" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="eyebrow eyebrow--center hero__eyebrow">Diagnóstico Financeiro · Abril/2026</p>
+      <h1 class="hero__headline">
+        Sua clínica perdeu <em>R$ 18.400</em><br>
+        esse mês — e nem percebeu.
+      </h1>
+      <p class="hero__sub">
+        O dinheiro não saiu pela porta. Saiu pelo <strong>"deixa eu te passar o valor"</strong> mandado às pressas no WhatsApp. A conta tá aqui embaixo. Os números são da sua clínica média — auditáveis na sua planilha amanhã de manhã.
+      </p>
+
+      <div class="perda-calc reveal">
+        <div class="perda-calc__label">Cálculo conservador · clínica média de estética</div>
+        <div class="perda-row"><span>Ticket médio dos seus protocolos</span><span>R$ 380</span></div>
+        <div class="perda-row"><span>Conversas no WhatsApp / mês</span><span>260</span></div>
+        <div class="perda-row"><span>Conversão sem protocolo</span><span>~30%</span></div>
+        <div class="perda-row"><span>Conversão com protocolo</span><span>~70%</span></div>
+        <div class="perda-row"><span>Vendas perdidas / mês</span><span>104</span></div>
+        <div class="perda-row"><span>× ticket médio</span><span>× R$ 380</span></div>
+        <div class="perda-total">
+          <span class="perda-total__label">Sangramento mensal</span>
+          <span class="perda-total__value">R$ 39.520</span>
+        </div>
+      </div>
+
+      <div class="hero__cta-row">
+        <a href="#oferta" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="hero">Quero estancar isso por R$ 47</a>
+        <p class="hero__micro">
+          <span>⚡ Acesso imediato</span><span>·</span><span>🛡 Garantia 7 dias</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PROMESSA — perda continua mesmo que ═══════ -->
+  <section class="section section--alt" id="promessa">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A matemática não perdoa</p>
+      <h2 class="section__title">A perda continua <em>mesmo se você</em>...</h2>
+    </div>
+    <div class="promessa">
+      <ul class="promessa__list">
+        <li class="promessa__item reveal">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Já investe R$ 1.500/mês em tráfego pago no Instagram e Google.</span>
+        </li>
+        <li class="promessa__item reveal rd1">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Posta no Instagram todo dia, faz reels, paga social media.</span>
+        </li>
+        <li class="promessa__item reveal rd2">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Tem fila de mensagem no WhatsApp Business todo dia — mas conversa morre depois do orçamento.</span>
+        </li>
+        <li class="promessa__item reveal rd3">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Já fez curso de marketing digital, vendas, copy — e mesmo assim continua perdendo.</span>
+        </li>
+        <li class="promessa__item reveal rd4">
+          <span class="promessa__check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="promessa__text">Trabalha 12 horas por dia, atende sozinha e ainda fecha o mês no vermelho.</span>
+        </li>
+      </ul>
+      <p class="publico__close reveal" style="margin-top:var(--sp-12);">
+        Tráfego, conteúdo, presença — não tem como compensar uma <strong>conversa que morre</strong> antes do agendamento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ MIA · com framing financeiro ═══════ -->
+  <section class="section" id="mecanismo">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Onde o dinheiro vaza</p>
+      <h2 class="section__title">M.I.A. — <em>Inversão de Autoridade</em></h2>
+    </div>
+    <div class="mia">
+      <p class="mia__lead reveal">
+        Toda venda perdida tem o mesmo padrão: a paciente chega curiosa, sua atendente manda o preço sem contexto, e o cérebro da paciente — sem âncora — só consegue comparar com o lugar mais barato. <strong>Você foi eliminada antes de entrar no jogo.</strong> A M.I.A. inverte essa ordem com 3 movimentos simples.
+      </p>
+      <div class="mia__pillars">
+        <article class="pillar reveal">
+          <div class="pillar__num">i</div>
+          <h3 class="pillar__title">Diagnóstico antes do preço</h3>
+          <p class="pillar__desc">Toda paciente que recebe diagnóstico antes do número fecha em 70% dos casos. Os 30% restantes pagam o quádruplo na concorrente. Esses números são suas concorrentes que já aplicam.</p>
+        </article>
+        <article class="pillar reveal rd1">
+          <div class="pillar__num">ii</div>
+          <h3 class="pillar__title">Linguagem clínica</h3>
+          <p class="pillar__desc">"Bioestimulador de colágeno tipo III" converte 3× mais que "preenchimento". A paciente premium quer técnica — vocabulário de cabine eleva valor percebido.</p>
+        </article>
+        <article class="pillar reveal rd2">
+          <div class="pillar__num">iii</div>
+          <h3 class="pillar__title">Sinal via Pix</h3>
+          <p class="pillar__desc">Agendamento sem sinal tem 35% de no-show. Com sinal de R$ 50, cai pra 4%. Isso é R$ 11.000/mês de cadeira ociosa que volta pra agenda.</p>
+        </article>
+      </div>
+      <blockquote class="mia__quote reveal">
+        <p>Você não precisa de mais tráfego. Precisa parar de jogar fora o tráfego que já chega — uma paciente perdida custa o triplo de uma paciente nova adquirida.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════ PÚBLICO ═══════ -->
+  <section class="section section--alt" id="publico">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Quem perde mais</p>
+      <h2 class="section__title">Diagnóstico aplicável <em>à sua realidade</em></h2>
+    </div>
+    <div class="publico">
+      <div class="publico__col publico__col--sim reveal">
+        <h3 class="publico__title"><span class="publico__icon">✓</span> Você está perdendo mais se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Seu ticket médio é acima de R$ 300 (Botox, bioestimulador, harmonização, peeling).</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Recebe mais de 50 mensagens/semana no WhatsApp.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Tem mais de uma atendente respondendo (cada uma de um jeito).</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Não cobra sinal — e a agenda fura toda semana.</li>
+          <li class="publico__item"><span class="publico__item-mark">✓</span> Não tem documento padronizado de atendimento.</li>
+        </ul>
+      </div>
+      <div class="publico__col publico__col--nao reveal rd1">
+        <h3 class="publico__title"><span class="publico__icon">✕</span> Não vai recuperar nada se</h3>
+        <ul class="publico__list">
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Acredita que "é só investir mais em anúncio que resolve".</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Não está disposta a documentar o atendimento da clínica.</li>
+          <li class="publico__item"><span class="publico__item-mark">✕</span> Não tem 15min/dia pra treinar a atendente no script.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="publico__close reveal">
+      A perda não é teórica — ela já está saindo da sua conta-corrente <em>todo mês</em>.
     </p>
   </section>
 
-  <!-- ═══════ DIAGNÓSTICO (auditoria com tabela) ═══════ -->
-  <section class="section" id="diagnostico">
-    <div class="container container--narrow prose">
-      <p class="reveal">Não é hipótese. É operação.</p>
-      <p class="reveal">Esta é a auditoria de uma clínica média de estética com tráfego pago rodando — números que você consegue auditar no seu próprio Notion ou planilha de atendimento amanhã de manhã:</p>
+  <!-- ═══════ PILARES ═══════ -->
+  <section class="section" id="como-funciona">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">O processo de recuperação</p>
+      <h2 class="section__title">4 pilares · 15 minutos · <em>+R$ 18.400/mês</em></h2>
     </div>
-
-    <table class="audit-table reveal" style="margin-top:var(--sp-10);">
-      <thead>
-        <tr><th>Métrica</th><th class="num">Valor</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Conversas que entraram (semana)</td><td class="num">65</td></tr>
-        <tr><td>Conversas que receberam o preço</td><td class="num">42</td></tr>
-        <tr><td>Conversas que viraram Pix</td><td class="num">8</td></tr>
-        <tr class="is-alert"><td>Conversas que sumiram após o preço</td><td class="num">34</td></tr>
-        <tr class="is-alert"><td>Receita perdida (ticket médio R$ 380)</td><td class="num">R$ 7.420,00</td></tr>
-      </tbody>
-    </table>
-
-    <div class="container container--narrow prose" style="margin-top:var(--sp-12);">
-      <p class="reveal">A semana seguinte segue o mesmo padrão. E a outra. <span class="em">Em 12 meses, sua clínica perdeu R$ 385.840 em conversas que travaram entre o "quanto custa" e a resposta da atendente.</span></p>
-      <p class="reveal">Esse cálculo é conservador. Não inclui clientes que viram pacientes recorrentes de drenagem mensal. Não inclui indicação. Não inclui ticket de pacotes. A perda real, anualizada, geralmente é 2 a 3 vezes maior que o número da tabela.</p>
+    <div class="pilares">
+      <article class="pilar-card reveal">
+        <div class="pilar-card__icon">🧲</div>
+        <h3 class="pilar-card__title">1 · Captura no primeiro "oi"</h3>
+        <p class="pilar-card__desc">A primeira mensagem decide se a paciente vira cliente ou vai pro vácuo. Script de captura aumenta engajamento em 3×.</p>
+      </article>
+      <article class="pilar-card reveal rd1">
+        <div class="pilar-card__icon">🩺</div>
+        <h3 class="pilar-card__title">2 · Diagnóstico em 3 perguntas</h3>
+        <p class="pilar-card__desc">As 3 perguntas que fazem a paciente revelar dor real e orçamento — sem parecer interrogatório.</p>
+      </article>
+      <article class="pilar-card reveal rd2">
+        <div class="pilar-card__icon">💎</div>
+        <h3 class="pilar-card__title">3 · Ancoragem premium</h3>
+        <p class="pilar-card__desc">Apresentação do protocolo (Sculptra, Lavieen, Ultraformer) que faz preço parecer barato perto do resultado.</p>
+      </article>
+      <article class="pilar-card reveal rd3">
+        <div class="pilar-card__icon">✅</div>
+        <h3 class="pilar-card__title">4 · Pix antes do tchau</h3>
+        <p class="pilar-card__desc">Dupla opção de horário + sinal via Pix. No-show despenca de 35% pra 4%. Isso sozinho recupera 30% da sua perda.</p>
+      </article>
     </div>
-  </section>
-
-  <!-- ═══════ MECANISMO ═══════ -->
-  <section class="section" id="mecanismo">
-    <h2 class="section__title reveal">Não foi o preço. Foi a ordem.</h2>
-    <p class="section__sub reveal">Veja como a mesma conversa muda completamente dependendo da sequência.</p>
-
-    <div class="mecanismo-grid">
-      <div class="timeline-col timeline-col--sem">
-        <div class="timeline-label reveal">Sem protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Preço enviado direto</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">…silêncio</span></div>
-      </div>
-
-      <div class="timeline-col timeline-col--com">
-        <div class="timeline-label reveal">Com protocolo</div>
-        <div class="timeline-step reveal rd1"><div class="timeline-dot"></div><span class="timeline-text">Pergunta chega</span></div>
-        <div class="timeline-step reveal rd2"><div class="timeline-dot"></div><span class="timeline-text">Diagnóstico da queixa</span></div>
-        <div class="timeline-step reveal rd3"><div class="timeline-dot"></div><span class="timeline-text">Âncora de valor</span></div>
-        <div class="timeline-step reveal rd4"><div class="timeline-dot"></div><span class="timeline-text">Preço apresentado</span></div>
-        <div class="timeline-step reveal rd5"><div class="timeline-dot"></div><span class="timeline-text">Horário oferecido</span></div>
-        <div class="timeline-step reveal rd6"><div class="timeline-dot"></div><span class="timeline-text">Sinal confirmado</span></div>
-      </div>
+    <div class="text-center reveal" style="margin-top:var(--sp-12);">
+      <a href="#oferta" class="btn btn--cta" data-event="cta_click" data-position="pilares">Quero recuperar essa receita</a>
     </div>
   </section>
 
-  <!-- ═══════ PROTOCOLO M.A.C.A. ═══════ -->
-  <section class="section" id="protocolo">
-    <h2 class="section__title reveal">O método M.A.C.A.</h2>
-    <p class="section__sub reveal">Quatro movimentos. Quinze minutos. Do primeiro "oi" ao Pix confirmado.</p>
-
-    <div class="protocolo-grid">
-      <div class="card protocolo-card reveal">
-        <span class="card-numeral">I</span>
-        <span class="badge card-step-badge">Min 1–3</span>
-        <div class="card-name">Mapeamento de Dor</div>
-        <p class="card-desc">"Ela verbaliza o que incomoda antes de qualquer preço entrar."</p>
-      </div>
-      <div class="card protocolo-card reveal rd1">
-        <span class="card-numeral">II</span>
-        <span class="badge card-step-badge">Min 4–7</span>
-        <div class="card-name">Ancoragem de Valor</div>
-        <p class="card-desc">"O investimento chega depois da dor — nunca antes."</p>
-      </div>
-      <div class="card protocolo-card reveal rd2">
-        <span class="card-numeral">III</span>
-        <span class="badge card-step-badge">Min 8–11</span>
-        <div class="card-name">Comando de Escassez</div>
-        <p class="card-desc">"Dois horários específicos em vez de 'minha agenda tá aberta'."</p>
-      </div>
-      <div class="card protocolo-card reveal rd3">
-        <span class="card-numeral">IV</span>
-        <span class="badge card-step-badge">Min 12–15</span>
-        <div class="card-name">Agendamento Blindado</div>
-        <p class="card-desc">"Sinal via Pix. Sequência de lembretes. Ela aparece."</p>
-      </div>
+  <!-- ═══════ BENEFÍCIOS — foco em receita ═══════ -->
+  <section class="section section--alt" id="beneficios">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">O que você recupera</p>
+      <h2 class="section__title">Onde os <em>R$ 18.400</em> voltam</h2>
     </div>
+    <div class="beneficios">
+      <article class="beneficio reveal">
+        <h3 class="beneficio__title">+40% de fechamento</h3>
+        <p class="beneficio__desc">Conversão sai de 30% pra 70% — esse delta é, sozinho, mais de R$ 12.000/mês na clínica média.</p>
+      </article>
+      <article class="beneficio reveal rd1">
+        <h3 class="beneficio__title">−85% de no-show</h3>
+        <p class="beneficio__desc">Sinal via Pix + sequência de lembrete reduz cancelamento drasticamente. Cadeira ociosa = receita perdida não-recuperável.</p>
+      </article>
+      <article class="beneficio reveal rd2">
+        <h3 class="beneficio__title">+25% de upsell</h3>
+        <p class="beneficio__desc">Paciente que entra pra limpeza fecha protocolo de 4 sessões. Ancoragem correta multiplica o ticket inicial.</p>
+      </article>
+      <article class="beneficio reveal rd3">
+        <h3 class="beneficio__title">Reativação de R$ 4.500</h3>
+        <p class="beneficio__desc">Kit Anti-Vácuo recupera orçamento que já tava no lixo. Em média 12 vendas/mês recuperadas em clínica média.</p>
+      </article>
+    </div>
+    <p class="beneficios__close reveal">
+      <em>Soma da matemática:</em> +R$ 18.400 a R$ 24.000/mês recuperados sem gastar 1 real a mais em tráfego.
+    </p>
   </section>
 
-  <!-- ═══════ INCLUSO ═══════ -->
-  <section class="section" id="incluso">
-    <div class="container container--narrow">
-      <h2 class="section__title reveal" style="text-align:left;">O que sua clínica recebe</h2>
-      <ul class="list-check">
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">13 scripts completos pra sua equipe seguir sem improviso</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Aberturas pra cliente nova + reativação de quem sumiu</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Diagnóstico + ancoragem na sequência exata</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Resposta pronta pra 8 objeções: "tá caro", "vou pensar", "vou ver com meu marido", "tô sem dinheiro agora", "pesquisei outro lugar", "vai doer?", "já fiz e não gostei", "faz desconto?"</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Confirmação de agendamento com sinal via Pix</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">3 lembretes anti no-show que reduzem cancelamento</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Kit Anti-Vácuo: 5 scripts pra reativar conversa que travou</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Reativação de pacientes inativas há 6 meses ou 1 ano</span></li>
-        <li class="list-check__item reveal"><span class="list-check__icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="list-check__text">Guia de Respostas Rápidas no WhatsApp Business pra equipe configurar em 10min</span></li>
-      </ul>
+  <!-- ═══════ PROVA — focada em valores ═══════ -->
+  <section class="section" id="prova">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Quem fez a conta</p>
+      <h2 class="section__title">Receita <em>recuperada</em> em 30 dias</h2>
     </div>
-  </section>
-
-  <!-- ═══════ PARA QUEM ═══════ -->
-  <section class="section" id="para-quem">
-    <h2 class="section__title reveal">Pra quem é (e pra quem não é)</h2>
-    <div class="para-quem-grid">
-      <div class="para-quem-col para-quem-col--sim reveal">
-        <h3>É pra sua clínica se:</h3>
-        <ul>
-          <li>Você olha planilha de DRE todo mês e a aba de "leads no WhatsApp" é uma incógnita</li>
-          <li>Sabe quanto entra de tráfego pago, mas não sabe quanto realmente vira venda</li>
-          <li>Equipe recebe a mensagem e ninguém audita o que acontece depois</li>
-          <li>Quer cortar a perda silenciosa antes de aumentar o investimento em ads</li>
-        </ul>
-      </div>
-      <div class="para-quem-col para-quem-col--nao reveal rd1">
-        <h3>Não é pra você se:</h3>
-        <ul>
-          <li>Já tem um CRM com tracking completo de funil WhatsApp</li>
-          <li>Sua clínica não usa WhatsApp como canal de agendamento</li>
-          <li>Procura ferramenta de tracking, não documento operacional</li>
-        </ul>
-      </div>
+    <div class="depoimentos">
+      <article class="depoimento reveal">
+        <p class="depoimento__quote">Fiz a auditoria que o Protocolo sugere e descobri que estava perdendo R$ 22 mil por mês. Em 6 semanas recuperei R$ 14 mil só ajustando a forma de responder.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">C</div>
+          <div>
+            <span class="depoimento__nome">Camila Andrade</span>
+            <span class="depoimento__cargo">Dona de clínica · Belo Horizonte</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd1">
+        <p class="depoimento__quote">Comecei a cobrar sinal de R$ 50 (script ensina como pedir sem perder a venda). No-show caiu de 8 por semana pra 1. Isso é R$ 9 mil/mês.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">L</div>
+          <div>
+            <span class="depoimento__nome">Larissa Mendes</span>
+            <span class="depoimento__cargo">Biomédica esteta · Recife</span>
+          </div>
+        </div>
+      </article>
+      <article class="depoimento reveal rd2">
+        <p class="depoimento__quote">Trabalho com Sculptra e Ultraformer, ticket alto. O script de ancoragem premium fez 4 vendas de R$ 3.800 no mês passado que antes morriam no orçamento.</p>
+        <div class="depoimento__autor">
+          <div class="depoimento__avatar">P</div>
+          <div>
+            <span class="depoimento__nome">Dra. Patricia Lemos</span>
+            <span class="depoimento__cargo">Médica esteta · Florianópolis</span>
+          </div>
+        </div>
+      </article>
     </div>
+    <p class="prova__anchor reveal">
+      Esses números não são bônus. São <strong>matemática aplicada</strong> — sai do papel e entra na conta.
+    </p>
   </section>
 
   <!-- ═══════ OFERTA ═══════ -->
-  <section class="oferta" id="oferta">
-    <div class="reveal">
-      <span class="badge">ACESSO IMEDIATO · DOCUMENTO</span>
-      <p class="oferta-preco">R$ 14,99</p>
-      <p class="oferta-acesso">acesso permanente — sem mensalidade</p>
+  <section class="section section--deep" id="oferta">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">A oferta</p>
+      <h2 class="section__title">R$ 47 pra parar de perder <em>R$ 18.400</em></h2>
+      <p class="section__sub">É a relação ROI mais cínica que sua clínica vai ver esse ano. Você decide.</p>
     </div>
-    <p class="oferta-contexto reveal">Uma única venda recuperada paga o protocolo 25 vezes.<br>Na próxima conversa, sua clínica já tá no lucro.</p>
-    <div class="reveal">
-      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta" onclick="PFT.trackInitiateCheckout()">Quero o protocolo da minha clínica</a>
+    <div class="oferta-wrap">
+      <div class="stack">
+        <div class="stack-item reveal">
+          <div class="stack-item__icon">🎬</div>
+          <div>
+            <div class="stack-item__title">Vídeo-aulas Completas</div>
+            <div class="stack-item__desc">Treinamento M.I.A. com casos reais — você assiste e aplica no mesmo dia.</div>
+          </div>
+          <div class="stack-item__price">R$ 197</div>
+        </div>
+        <div class="stack-item reveal rd1">
+          <div class="stack-item__icon">📄</div>
+          <div>
+            <div class="stack-item__title">PDF · 13 Scripts Prontos</div>
+            <div class="stack-item__desc">Captura, diagnóstico, ancoragem, fechamento, cobrança de sinal e 8 objeções resolvidas.</div>
+          </div>
+          <div class="stack-item__price">R$ 97</div>
+        </div>
+        <div class="stack-item reveal rd2">
+          <div class="stack-item__icon">🚨</div>
+          <div>
+            <div class="stack-item__title">Kit Anti-Vácuo</div>
+            <div class="stack-item__desc">Sequência pra reativar paciente que sumiu — recupera ~12 vendas/mês.</div>
+          </div>
+          <div class="stack-item__price">R$ 47</div>
+        </div>
+        <div class="stack-item reveal rd3">
+          <div class="stack-item__icon">🗺️</div>
+          <div>
+            <div class="stack-item__title">Infográfico do Método</div>
+            <div class="stack-item__desc">Mapa visual de 1 página pra colar do lado do telefone.</div>
+          </div>
+          <div class="stack-item__price">R$ 27</div>
+        </div>
+      </div>
+      <div class="stack-total reveal">
+        <span class="stack-total__label">Valor total real</span>
+        <span class="stack-total__value">R$ 368</span>
+      </div>
+
+      <div class="preco-card reveal">
+        <div class="preco-card__selo" aria-label="Garantia 7 dias">
+          <span>Garantia</span><strong>7 dias</strong><small>100% de volta</small>
+        </div>
+        <div class="preco__pre">Lançamento — preço promocional</div>
+        <div class="preco__de">de R$ 158</div>
+        <div class="preco__por">
+          <span class="preco__moeda">R$</span>
+          <span class="preco__valor">47</span>
+        </div>
+        <div class="preco__parcela">ou <strong>5× de R$ 10,15</strong> no cartão</div>
+        <p class="preco__contexto">
+          R$ 47 pra parar de hemorragia de R$ 18.400/mês. Se sua clínica perde 1 venda de R$ 380 por dia, o protocolo se paga em 8 horas.
+        </p>
+        <div class="preco__cta-row">
+          <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl btn--cta--full" data-event="cta_click" data-position="preco">
+            Estancar a perda — R$ 47
+          </a>
+          <div class="preco__selos">
+            <span>🔒 Compra segura</span><span>💳 Pix · cartão · boleto</span><span>⚡ Acesso imediato</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="oferta-pagamento reveal">Pix, cartão ou boleto — acesso liberado em minutos.</p>
-    <p class="oferta-garantia reveal">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      7 dias de garantia incondicional
-    </p>
+  </section>
+
+  <!-- ═══════ GARANTIA ═══════ -->
+  <section class="section section--alt" id="garantia">
+    <div class="garantia reveal">
+      <div class="garantia__shield" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <h3 class="garantia__title">7 dias pra fazer a conta</h3>
+        <p class="garantia__text">Aplica os scripts por uma semana. Se a sua planilha de atendimento não mostrar aumento real de fechamento ou redução de no-show, eu devolvo 100% — sem auditoria, sem letra miúda. O risco é todo meu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ — copy distinta ═══════ -->
+  <section class="section" id="faq">
+    <div class="section__head">
+      <p class="eyebrow eyebrow--center">Antes de comprar</p>
+      <h2 class="section__title">Dúvidas <em>táticas</em></h2>
+    </div>
+    <div class="faq">
+      <details class="faq__item reveal">
+        <summary class="faq__q">A perda de R$ 18.400 é real ou é vendedor inflando número?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">É a média conservadora de uma clínica com ticket R$ 380, 260 conversas/mês e conversão de 30%. Se sua clínica é maior, a perda é maior. Se for menor, ainda assim cobre o investimento muitas vezes. A planilha de auditoria está dentro do material — você roda na sua realidade.</div>
+      </details>
+      <details class="faq__item reveal rd1">
+        <summary class="faq__q">Quanto tempo leva pra começar a ver resultado?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">A primeira venda recuperada acontece nas primeiras 48h se você aplicar o script de captura na próxima conversa. Mudança de patamar (30%→70% de fechamento) leva 2 a 3 semanas pra se consolidar.</div>
+      </details>
+      <details class="faq__item reveal rd2">
+        <summary class="faq__q">Cobrar sinal não vai espantar paciente?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Espanta a paciente errada (a que não fecharia mesmo) e atrai a paciente certa (a que vê profissionalismo). Score conservador: 12% das pacientes recusam o sinal — e dessas, 90% não fechariam mesmo.</div>
+      </details>
+      <details class="faq__item reveal rd3">
+        <summary class="faq__q">Funciona pra protocolo de R$ 3.000+ (Sculptra, harmonização)?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Funciona melhor — quanto maior o ticket, maior o impacto da ancoragem premium. O script tem variação específica pra ticket alto (acima de R$ 1.500) com framing de "investimento clínico" em vez de "compra".</div>
+      </details>
+      <details class="faq__item reveal rd4">
+        <summary class="faq__q">Minha atendente vai precisar decorar tudo?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Não. Ela abre o PDF, copia o script da situação (pergunta de preço, vácuo, objeção, agendamento), cola adaptando nome e procedimento. O Infográfico fica colado do lado do celular pra consulta rápida.</div>
+      </details>
+      <details class="faq__item reveal rd5">
+        <summary class="faq__q">Acesso é vitalício?<span class="faq__q-mark">+</span></summary>
+        <div class="faq__a">Sim. Pagamento único, sem mensalidade. Atualizações futuras gratuitas. Vídeo-aulas, PDFs e bônus liberados imediatamente após o Pix.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ═══════ FECHAMENTO ═══════ -->
+  <section class="fechamento" id="fechamento">
+    <div class="fechamento__inner">
+      <h2 class="fechamento__title">Cada dia parado <em>custa</em></h2>
+      <div class="fechamento__lines">
+        <p class="fechamento__line reveal">Hoje sua clínica perdeu cerca de <strong>R$ 613</strong> em conversa que morreu no privado.</p>
+        <p class="fechamento__line reveal rd1">Amanhã vai perder de novo. Depois de amanhã também.</p>
+        <p class="fechamento__line reveal rd2">A sangria continua até alguém decidir <em>parar</em>.</p>
+        <p class="fechamento__line reveal rd3">R$ 47 hoje. Ou <strong>R$ 18.400</strong> esse mês de novo.</p>
+      </div>
+      <a href="https://checkout.ticto.app/OCC46FBCB" class="btn btn--cta btn--cta--xl" data-event="cta_click" data-position="fechamento">
+        Estancar agora — R$ 47
+      </a>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>Protocolo Fecha-Tudo — O documento operacional do WhatsApp da sua clínica</p>
+  <p class="site-footer__brand">fecha<span class="site-footer__brand-dot">·</span>tudo</p>
+  <p class="site-footer__disclaimer">
+    Os números apresentados são estimativas baseadas em médias do setor. Resultado individual depende do ticket médio, volume de mensagens e disciplina de aplicação dos scripts pela equipe.
+  </p>
+  <nav class="site-footer__links" aria-label="Rodapé">
+    <a href="mailto:contato@fechatudo.com.br">Suporte</a>
+    <a href="#">Termos</a>
+    <a href="#">Privacidade</a>
+  </nav>
+  <p class="site-footer__copy">© 2026 Protocolo Fecha-Tudo</p>
 </footer>
+
+<aside class="sticky-cta" aria-label="Compra rápida">
+  <div class="sticky-cta__label">
+    <span>Sangrando R$ 18.400/mês</span>
+    <strong>R$ 47 estanca isso</strong>
+  </div>
+  <a href="https://checkout.ticto.app/OCC46FBCB" class="sticky-cta__btn" data-event="cta_click" data-position="sticky">Parar agora</a>
+</aside>
 
 </body>
 </html>
