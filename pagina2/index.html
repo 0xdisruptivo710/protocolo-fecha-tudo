@@ -1,0 +1,1597 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#15120F" />
+<title>Protocolo Fecha-Tudo, o método MACA por Felipe</title>
+<meta name="description" content="O método aplicado por Felipe em 70+ clínicas no Brasil. Para esteticistas que querem ser escolhidas pela autoridade, não pelo preço." />
+<meta property="og:title" content="Protocolo Fecha-Tudo, método MACA por Felipe" />
+<meta property="og:description" content="O protocolo que Felipe aplica em 70+ clínicas. Atendimento de WhatsApp em 15 minutos." />
+<meta property="og:type" content="product" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F5F1EA'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-size='62' font-style='italic' text-anchor='middle' fill='%239A4A2E'%3EF%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap" />
+
+<style>
+/* ============================================================
+   PROTOCOLO FECHA-TUDO, PÁGINA B (Estúdio do Estrategista)
+   Editorial, layout de revista, autoridade quieta
+   ============================================================ */
+
+:root {
+  --paper: #F5F1EA;
+  --paper-soft: #EAE3D6;
+  --paper-tinted: #EFE8DA;
+  --ink: #1A1714;
+  --ink-soft: #322C25;
+  --ink-mute: #544D43;
+  --ink-faint: #847A6C;
+  --rule: rgba(26, 23, 20, 0.14);
+  --rule-soft: rgba(26, 23, 20, 0.08);
+
+  --pigment: #9A4A2E;
+  --pigment-deep: #763925;
+  --pigment-soft: #E8D6CE;
+
+  --charcoal: #15120F;
+  --charcoal-soft: #221E1A;
+  --charcoal-ink: #EFEBE3;
+  --charcoal-mute: rgba(239, 235, 227, 0.62);
+
+  --whatsapp: #128C7E;
+  --whatsapp-bright: #25D366;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --container: 1240px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*::selection { background: var(--pigment); color: var(--paper); }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 1.5px solid var(--pigment);
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--ink); color: var(--paper); padding: 12px 20px; z-index: 100; }
+.skip-link:focus { left: 12px; top: 12px; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+/* ============== TYPOGRAPHY ============== */
+
+.display, h1.hero__head {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 1.04;
+  font-size: clamp(48px, 7.6vw, 96px);
+}
+.display em, h1.hero__head em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--pigment);
+}
+
+.h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  line-height: 1.08;
+  font-size: clamp(34px, 4.6vw, 56px);
+}
+.h2 em { font-style: italic; color: var(--pigment); }
+
+.h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-size: clamp(24px, 2.8vw, 32px);
+}
+.h3 em { font-style: italic; color: var(--pigment); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pigment);
+}
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--pigment);
+}
+
+.lede {
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  font-weight: 400;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ============== BUTTONS ============== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 32px;
+  border-radius: var(--radius-md);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: -0.005em;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  transition: transform 220ms var(--ease-out), background 240ms var(--ease-out), color 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
+  position: relative;
+  white-space: nowrap;
+}
+.btn--xl { padding: 22px 40px; font-size: 16.5px; }
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  background: var(--pigment);
+  box-shadow: 0 18px 36px -16px rgba(154, 74, 46, 0.5);
+}
+.btn--primary:active { transform: scale(0.98); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.btn--outline:hover { background: var(--ink); color: var(--paper); }
+.btn--outline:active { transform: scale(0.98); }
+
+.btn--whatsapp {
+  background: transparent;
+  color: var(--whatsapp);
+  box-shadow: inset 0 0 0 1px rgba(18, 140, 126, 0.4);
+}
+.btn--whatsapp:hover {
+  background: var(--whatsapp-bright);
+  color: #FFF;
+  box-shadow: inset 0 0 0 1px var(--whatsapp-bright);
+  transform: translateY(-2px);
+}
+.btn--whatsapp:active { transform: scale(0.98); }
+
+.btn__arrow { transition: transform 220ms var(--ease-out); }
+.btn:hover .btn__arrow { transform: translateX(3px); }
+
+/* ============== TOPBAR ============== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 241, 234, 0.92);
+  backdrop-filter: saturate(160%) blur(8px);
+  -webkit-backdrop-filter: saturate(160%) blur(8px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.topbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 18px;
+}
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.brand em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--pigment);
+}
+.brand__small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-left: 4px;
+}
+
+.topbar .btn { padding: 12px 22px; font-size: 13.5px; }
+
+/* ============== HERO ============== */
+
+.hero {
+  padding-top: clamp(48px, 7vw, 96px);
+  padding-bottom: clamp(64px, 8vw, 120px);
+  position: relative;
+  overflow: hidden;
+}
+.hero__row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 18px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.hero__row-meta span { position: relative; }
+.hero__row-meta span + span::before {
+  content: "·";
+  margin-right: 14px;
+  color: var(--pigment);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 72px);
+  align-items: center;
+}
+@media (min-width: 940px) {
+  .hero__grid {
+    grid-template-columns: 5fr 6fr;
+  }
+}
+
+.hero__head { margin-bottom: 32px; }
+.hero__sub {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+.hero__sub strong { color: var(--ink); font-weight: 600; }
+
+.hero__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.hero__sig {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ink-mute);
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  max-width: 480px;
+}
+.hero__sig-mark {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--pigment);
+  line-height: 1;
+}
+
+/* Hero photo (turtleneck) */
+.hero__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--paper-soft);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: contrast(1.04) saturate(0.92);
+  transform: scale(1.02);
+  transition: transform 1200ms var(--ease-out);
+}
+.hero__media.is-revealed .hero__photo { transform: scale(1); }
+
+.hero__photo-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 24px;
+  background: linear-gradient(180deg, rgba(21, 18, 15, 0) 0%, rgba(21, 18, 15, 0.85) 70%);
+  color: var(--paper);
+}
+.hero__photo-cap-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero__photo-cap-role {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-mute);
+  font-weight: 600;
+}
+
+/* Reveal animation specific to hero photo (clip-path) */
+.hero__media-clip {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  transform-origin: right;
+  animation: clip-reveal 900ms var(--ease-strong) 200ms forwards;
+}
+@keyframes clip-reveal {
+  to { transform: scaleX(0); }
+}
+
+/* ============== AUTHORITY STRIP ============== */
+
+.authority {
+  background: var(--paper-soft);
+  border-block: 1px solid var(--rule-soft);
+  padding-block: 36px;
+}
+.authority__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.authority__lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--ink-soft);
+  max-width: 32ch;
+}
+.authority__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2vw, 28px);
+  align-items: center;
+}
+.authority__item {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.authority__item + .authority__item::before {
+  content: "·";
+  color: var(--pigment);
+  margin-right: clamp(14px, 2vw, 28px);
+  font-size: 18px;
+}
+
+/* ============== SECTION SHARED ============== */
+
+.section { padding-block: clamp(96px, 12vw, 168px); position: relative; }
+.section--alt { background: var(--paper-tinted); }
+.section--charcoal { background: var(--charcoal); color: var(--charcoal-ink); }
+
+.section__head {
+  max-width: 720px;
+  margin-bottom: clamp(56px, 7vw, 88px);
+}
+.section__head--center { margin-inline: auto; text-align: center; }
+.section__head--center .eyebrow { justify-content: center; }
+.section__head--center .lede { margin-inline: auto; }
+.section__head .eyebrow { margin-bottom: 24px; }
+.section__head .h2 { margin-bottom: 24px; }
+
+/* ============== SOBRE FELIPE (MAGAZINE LAYOUT) ============== */
+
+.sobre {
+  background: var(--paper);
+}
+.sobre__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+@media (min-width: 940px) {
+  .sobre__grid { grid-template-columns: 5fr 7fr; }
+}
+
+.sobre__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+.sobre__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: contrast(1.02);
+}
+.sobre__media-tag {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px 14px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.sobre__col-r { padding-top: clamp(0px, 4vw, 48px); }
+.sobre__col-r .h2 { margin-bottom: 32px; max-width: 16ch; }
+
+.sobre__bio {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin-bottom: 18px;
+}
+.sobre__bio strong { color: var(--ink); font-weight: 600; }
+.sobre__bio em { color: var(--pigment); font-style: italic; }
+
+.sobre__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.sobre__stat { padding-right: 16px; }
+.sobre__stat + .sobre__stat { border-left: 1px solid var(--rule); padding-left: 24px; }
+.sobre__stat-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(36px, 4.5vw, 52px);
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.sobre__stat-num em { font-style: italic; color: var(--pigment); font-weight: 500; }
+.sobre__stat-lbl {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ============== INTERLUDE PULL QUOTE ============== */
+
+.interlude {
+  padding-block: clamp(64px, 8vw, 112px);
+  background: var(--paper-tinted);
+  border-block: 1px solid var(--rule-soft);
+}
+.interlude__quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 28ch;
+  margin-inline: auto;
+  text-align: center;
+  letter-spacing: -0.012em;
+}
+.interlude__quote em { color: var(--pigment); font-style: italic; }
+.interlude__attr {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+/* ============== METODO MACA (with photo background) ============== */
+
+.maca {
+  background: var(--charcoal);
+  color: var(--charcoal-ink);
+  position: relative;
+  overflow: hidden;
+}
+.maca__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.maca__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% center;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.32;
+}
+.maca__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--charcoal) 30%, rgba(21, 18, 15, 0.4) 100%);
+}
+.maca .container { position: relative; z-index: 1; }
+.maca .h2 { color: var(--charcoal-ink); }
+.maca .h2 em { color: var(--pigment); font-style: italic; }
+.maca .lede { color: var(--charcoal-mute); }
+.maca .eyebrow { color: var(--pigment); }
+.maca .eyebrow::before { background: var(--pigment); }
+
+.maca__list {
+  margin-top: clamp(48px, 6vw, 72px);
+  max-width: 720px;
+}
+.maca__row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding-block: clamp(28px, 3.5vw, 40px);
+  border-top: 1px solid rgba(239, 235, 227, 0.15);
+}
+.maca__row:last-child { border-bottom: 1px solid rgba(239, 235, 227, 0.15); }
+.maca__row-letter {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(56px, 7vw, 88px);
+  line-height: 0.85;
+  color: var(--pigment);
+  letter-spacing: -0.02em;
+}
+.maca__row-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  color: var(--charcoal-ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.maca__row-body {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--charcoal-mute);
+  max-width: 56ch;
+}
+
+/* ============== PROBLEMA (editorial) ============== */
+
+.problema {
+  background: var(--paper-soft);
+}
+.problema__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: clamp(48px, 6vw, 72px);
+}
+@media (min-width: 800px) {
+  .problema__grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+}
+.problema__item {
+  border-top: 1px solid var(--ink);
+  padding-top: 28px;
+}
+.problema__item-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--pigment);
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.problema__item-head {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: -0.005em;
+}
+.problema__item-body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-mute);
+}
+
+/* ============== OFERTA (editorial stack) ============== */
+
+.oferta {
+  background: var(--paper);
+}
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  max-width: 1080px;
+  margin-inline: auto;
+  align-items: start;
+}
+@media (min-width: 940px) {
+  .stack { grid-template-columns: 7fr 5fr; }
+}
+
+.stack__items {
+  border-top: 1px solid var(--ink);
+}
+.stack__items-head {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-block: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.stack__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding-block: 24px;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.stack__row-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: var(--ink);
+  line-height: 1.25;
+}
+.stack__row-name span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-top: 6px;
+  line-height: 1.55;
+  max-width: 44ch;
+}
+.stack__row-price {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ink-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--pigment);
+  text-decoration-thickness: 1px;
+}
+
+.stack__sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: 24px;
+  border-bottom: 2px solid var(--ink);
+}
+.stack__sum-lbl {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.stack__sum-val {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--ink-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--pigment);
+  text-decoration-thickness: 1px;
+}
+
+.stack__cta {
+  position: sticky;
+  top: 100px;
+  border: 1px solid var(--ink);
+  padding: clamp(28px, 3.5vw, 40px);
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.stack__cta-head {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pigment);
+}
+.stack__cta-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.012em;
+}
+.stack__cta-name em { font-style: italic; color: var(--pigment); }
+
+.stack__cta-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  border-block: 1px solid var(--rule);
+  padding-block: 24px;
+  margin-block: 8px;
+}
+.stack__cta-price-currency {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink-mute);
+}
+.stack__cta-price-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(56px, 7vw, 80px);
+  line-height: 0.9;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.stack__cta-price-cents {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--pigment);
+  align-self: flex-start;
+  line-height: 1;
+}
+.stack__cta-pay {
+  font-size: 13px;
+  color: var(--ink-mute);
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.stack__cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack__cta-assurances {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-top: 8px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+.stack__cta-assurances span { display: inline-flex; align-items: center; gap: 8px; }
+.stack__cta-assurances svg { color: var(--pigment); }
+
+/* ============== GARANTIA ============== */
+
+.garantia {
+  background: var(--paper-tinted);
+  padding-block: clamp(72px, 9vw, 120px);
+}
+.garantia__inner {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+.garantia__mark {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(72px, 10vw, 120px);
+  line-height: 1;
+  color: var(--pigment);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+.garantia .h3 { margin-bottom: 18px; }
+.garantia p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-mute);
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* ============== DEPOIMENTOS (editorial) ============== */
+
+.depo { background: var(--paper); }
+.depo__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 64px);
+  margin-top: clamp(48px, 6vw, 72px);
+}
+@media (min-width: 880px) { .depo__grid { grid-template-columns: repeat(3, 1fr); } }
+
+.depo__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ink);
+  position: relative;
+}
+.depo__card::before {
+  content: "\201C";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 64px;
+  color: var(--pigment);
+  line-height: 1;
+}
+.depo__text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.55;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  padding-top: 28px;
+  flex: 1;
+}
+.depo__text em { font-style: italic; color: var(--pigment); }
+.depo__sig {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+.depo__sig-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.depo__sig-role {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ============== FAQ ============== */
+
+.faq__list {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid var(--ink);
+}
+.faq__item {
+  border-bottom: 1px solid var(--rule);
+}
+.faq__q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  background: transparent;
+  border: 0;
+  padding: 28px 0;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.7vw, 21px);
+  color: var(--ink);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.faq__q:hover { color: var(--pigment); }
+.faq__sign {
+  flex-shrink: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--pigment);
+  transition: transform 280ms var(--ease-out);
+  line-height: 1;
+}
+.faq__item[open] .faq__sign { transform: rotate(45deg); }
+.faq__a {
+  padding: 0 0 28px 0;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--ink-mute);
+  max-width: 60ch;
+}
+
+/* ============== FECHAMENTO ============== */
+
+.fechamento {
+  background: var(--charcoal);
+  color: var(--charcoal-ink);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.fechamento::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(154, 74, 46, 0.32) 0%, transparent 55%);
+  pointer-events: none;
+}
+.fechamento__inner {
+  position: relative;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.fechamento .display { color: var(--charcoal-ink); margin-bottom: 32px; }
+.fechamento .display em { color: var(--pigment); font-style: italic; }
+.fechamento__sub {
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.65;
+  color: var(--charcoal-mute);
+  max-width: 56ch;
+  margin: 0 auto 40px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+.fechamento__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  max-width: 380px;
+  margin-inline: auto;
+}
+.fechamento .btn--primary {
+  background: var(--paper);
+  color: var(--ink);
+}
+.fechamento .btn--primary:hover { background: var(--pigment); color: var(--paper); }
+.fechamento .btn--whatsapp {
+  background: rgba(37, 211, 102, 0.08);
+  color: #95E2B5;
+  box-shadow: inset 0 0 0 1px rgba(37, 211, 102, 0.36);
+}
+.fechamento .btn--whatsapp:hover { background: var(--whatsapp-bright); color: #FFF; }
+.fechamento__assurances {
+  margin-top: 32px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-mute);
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.fechamento__assurances span { position: relative; }
+.fechamento__assurances span + span::before { content: "·"; color: var(--pigment); margin-right: 24px; }
+
+/* ============== FOOTER ============== */
+
+.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--rule-soft);
+  padding-block: 36px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+.footer strong { color: var(--ink); font-weight: 600; }
+.footer em { font-style: italic; color: var(--pigment); }
+
+/* ============== REVEAL ANIMATIONS ============== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ============== REDUCED MOTION ============== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .hero__media-clip { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<a href="#oferta" class="skip-link">Pular para a oferta</a>
+
+<header class="topbar" role="banner">
+  <div class="container topbar__row">
+    <a href="#topo" class="brand" aria-label="Protocolo Fecha-Tudo, ir ao topo">
+      <span>Protocolo<em> Fecha-Tudo</em></span>
+      <span class="brand__small">por Felipe</span>
+    </a>
+    <a href="#oferta"
+       class="btn btn--primary"
+       data-event="cta_click"
+       data-position="topbar"
+       aria-label="Ir para a oferta">
+      A oferta
+      <svg class="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</header>
+
+<a id="topo" tabindex="-1"></a>
+
+<!-- ============== HERO ============== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero__row-meta">
+      <span>Edição de lançamento</span>
+      <span>Método MACA</span>
+      <span>Pagamento único</span>
+    </div>
+
+    <div class="hero__grid">
+      <div>
+        <h1 id="hero-title" class="hero__head">
+          O método que <em>70 clínicas</em> aplicam, condensado em 15 minutos de WhatsApp.
+        </h1>
+        <p class="hero__sub">
+          Felipe não vende curso. <strong>Comanda uma agência que atende as franquias que você admira</strong>, Face Doctor, Botoclinic, Studio Mines, Smile Skin, e idealizou o Aios CRM. O Protocolo Fecha-Tudo é o que ele aplica todo dia, agora copia-e-cola.
+        </p>
+        <div class="hero__cta-row">
+          <a href="#oferta"
+             class="btn btn--primary btn--xl"
+             data-event="cta_click"
+             data-position="hero"
+             aria-label="Conhecer o método">
+            Conhecer o método
+            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
+             class="btn btn--whatsapp"
+             target="_blank" rel="noopener noreferrer"
+             data-event="whatsapp_click"
+             data-position="hero"
+             aria-label="Saber mais no WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            Saber mais no WhatsApp
+          </a>
+        </div>
+        <div class="hero__sig">
+          <span class="hero__sig-mark" aria-hidden="true">F</span>
+          <span>Felipe, idealizador. 10 anos no mercado de estética. 70+ clínicas atendidas pela agência. Criador do Aios CRM.</span>
+        </div>
+      </div>
+
+      <div class="hero__media is-revealed">
+        <img src="../assets/felipe-portrait.jpg" alt="Felipe, retrato editorial" class="hero__photo" loading="eager" fetchpriority="high" />
+        <div class="hero__media-clip" aria-hidden="true"></div>
+        <div class="hero__photo-cap">
+          <div class="hero__photo-cap-name">Felipe</div>
+          <div class="hero__photo-cap-role">Estrategista digital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== AUTHORITY STRIP ============== -->
+<section class="authority" aria-label="Clínicas atendidas">
+  <div class="container">
+    <div class="authority__row">
+      <p class="authority__lead">Mesmo método aplicado em clínicas que você reconhece</p>
+      <div class="authority__list">
+        <span class="authority__item">Face Doctor</span>
+        <span class="authority__item">Botoclinic</span>
+        <span class="authority__item">Studio Mines</span>
+        <span class="authority__item">Smile Skin</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SOBRE FELIPE ============== -->
+<section class="section sobre" aria-labelledby="sobre-title">
+  <div class="container">
+    <div class="sobre__grid">
+      <div class="sobre__media reveal">
+        <img src="../assets/felipe-studio.jpg" alt="Felipe, estúdio" loading="lazy" />
+        <div class="sobre__media-tag">Sobre quem entrega</div>
+      </div>
+
+      <div class="sobre__col-r reveal">
+        <span class="eyebrow">O estrategista</span>
+        <h2 id="sobre-title" class="h2" style="margin-top:24px;">Felipe, <em>10 anos</em> conduzindo clínicas que você admira.</h2>
+
+        <p class="sobre__bio">Estrategista digital há mais de uma década no mercado de estética. <strong>Comanda uma agência de marketing que atende mais de 70 clínicas no Brasil</strong>, das pequenas operações de bairro às franquias premium que viraram referência: Face Doctor, Botoclinic, Studio Mines, Smile Skin.</p>
+
+        <p class="sobre__bio">É <strong>idealizador do Aios CRM</strong>, plataforma de relacionamento usada hoje por dezenas de clínicas em todo o país. Dá treinamentos comerciais focados em <em>follow-up, atendimento e IA aplicada a vendas</em>, e já teve clínicas próprias, então conhece o problema dos dois lados do balcão.</p>
+
+        <p class="sobre__bio">O Método MACA não é teoria de curso. É exatamente o que ele aplica nos clientes da agência todo dia, condensado em um protocolo que cabe em 15 minutos de WhatsApp e que você passa a aplicar a partir do próximo orçamento que cair na sua tela.</p>
+
+        <div class="sobre__stats">
+          <div class="sobre__stat">
+            <div class="sobre__stat-num">10<em>+</em></div>
+            <div class="sobre__stat-lbl">Anos no<br>mercado</div>
+          </div>
+          <div class="sobre__stat">
+            <div class="sobre__stat-num">70<em>+</em></div>
+            <div class="sobre__stat-lbl">Clínicas<br>atendidas</div>
+          </div>
+          <div class="sobre__stat">
+            <div class="sobre__stat-num"><em>1</em></div>
+            <div class="sobre__stat-lbl">Plataforma<br>idealizada</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTERLUDE PULL QUOTE ============== -->
+<section class="interlude" aria-label="Pull quote">
+  <div class="container">
+    <p class="interlude__quote">A maioria das esteticistas <em>não perde por preço</em>. Perde por roteiro.</p>
+    <p class="interlude__attr">Felipe</p>
+  </div>
+</section>
+
+<!-- ============== METODO MACA ============== -->
+<section class="section maca" id="metodo" aria-labelledby="maca-title">
+  <div class="maca__bg" aria-hidden="true">
+    <img src="../assets/felipe-noir.jpg" alt="" />
+  </div>
+  <div class="container">
+    <div class="section__head reveal" style="max-width: 600px;">
+      <span class="eyebrow">O método</span>
+      <h2 id="maca-title" class="h2"><em>Método MACA</em>, quatro movimentos para fechar sem implorar.</h2>
+      <p class="lede" style="color: var(--charcoal-mute);">Sem timer falso, sem agressividade, sem resposta automática. Você dirige cada virada da conversa, a cliente sente o cuidado, e a agenda fecha por escolha real.</p>
+    </div>
+
+    <div class="maca__list reveal">
+      <div class="maca__row">
+        <div class="maca__row-letter" aria-hidden="true">M</div>
+        <div>
+          <div class="maca__row-name">Mensagem de entrada</div>
+          <p class="maca__row-body">Em vez de devolver um número quando vier o "quanto custa?", você responde com uma pergunta calibrada que retira a cliente do modo catálogo e a coloca no modo diagnóstico. A conversa muda de natureza no terceiro segundo.</p>
+        </div>
+      </div>
+
+      <div class="maca__row">
+        <div class="maca__row-letter" aria-hidden="true">A</div>
+        <div>
+          <div class="maca__row-name">Ancoragem de valor</div>
+          <p class="maca__row-body">Antes que o número apareça, ela enxerga o problema dela em alta resolução. Quando o preço chega, já parece pequeno comparado à dor evitada. O valor antecede o algarismo, e por isso se sustenta.</p>
+        </div>
+      </div>
+
+      <div class="maca__row">
+        <div class="maca__row-letter" aria-hidden="true">C</div>
+        <div>
+          <div class="maca__row-name">Condução firme</div>
+          <p class="maca__row-body">Você dirige cada virada da conversa com firmeza profissional, não com agressividade. Cada mensagem tem objetivo, e o objetivo é trazê-la pra agenda. Sem implorar, sem desconto, sem urgência fabricada.</p>
+        </div>
+      </div>
+
+      <div class="maca__row">
+        <div class="maca__row-letter" aria-hidden="true">A</div>
+        <div>
+          <div class="maca__row-name">Agendamento real</div>
+          <p class="maca__row-body">Você apresenta a próxima janela honesta da agenda. Ela escolhe entrar ou ficar de fora, e a decisão é tomada na conversa, não na semana seguinte. Sem "vou pensar e te falo" sem volta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEMA (editorial) ============== -->
+<section class="section problema" aria-labelledby="problema-title">
+  <div class="container">
+    <div class="section__head reveal" style="max-width: 640px;">
+      <span class="eyebrow">Por que some</span>
+      <h2 id="problema-title" class="h2">Não é a sua cliente. É o <em>roteiro</em> que ainda não foi reescrito.</h2>
+      <p class="lede">Você manda o preço, ela responde "vou pensar e te falo", e some. A cliente não desapareceu por mal-educação ou por dinheiro. Sumiu porque a conversa terminou nela, não em você.</p>
+    </div>
+
+    <div class="problema__grid reveal">
+      <article class="problema__item">
+        <div class="problema__item-num">i.</div>
+        <h3 class="problema__item-head">Preço sem ancoragem é commodity.</h3>
+        <p class="problema__item-body">Quando o número chega solto, ela compara com a concorrência mais barata e segue navegando. O preço só sustenta o que veio antes dele.</p>
+      </article>
+
+      <article class="problema__item">
+        <div class="problema__item-num">ii.</div>
+        <h3 class="problema__item-head">A iniciativa migra pra cliente.</h3>
+        <p class="problema__item-body">"Vou pensar" é o sinal de que você perdeu o leme. Quem dirige a conversa fecha. Quem aguarda o retorno, aguarda pra sempre.</p>
+      </article>
+
+      <article class="problema__item">
+        <div class="problema__item-num">iii.</div>
+        <h3 class="problema__item-head">Desconto não corrige método.</h3>
+        <p class="problema__item-body">Você dá desconto pra fechar e ela some igual, agora com você cobrando menos. O desconto trata o sintoma sem curar o que adoece.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== OFERTA ============== -->
+<section class="section oferta" id="oferta" aria-labelledby="oferta-title">
+  <div class="container">
+    <div class="section__head section__head--center reveal" style="margin-bottom: clamp(56px, 7vw, 80px);">
+      <span class="eyebrow">A edição completa</span>
+      <h2 id="oferta-title" class="h2">Tudo o que vai pra <em>sua mão</em>, no acesso vitalício.</h2>
+      <p class="lede" style="margin-inline:auto;">Pagamento único. Sem mensalidade. Sem upsell. Sem upgrade que segura conteúdo essencial atrás de uma segunda compra.</p>
+    </div>
+
+    <div class="stack">
+      <div class="stack__items reveal">
+        <div class="stack__items-head">Componentes do Protocolo</div>
+
+        <div class="stack__row">
+          <div class="stack__row-name">Scripts MACA copia-e-cola
+            <span>Quatro sequências completas, uma por movimento, adaptáveis a facial, corporal, depilação, harmonização e pós-operatório.</span></div>
+          <div class="stack__row-price">R$ 197</div>
+        </div>
+
+        <div class="stack__row">
+          <div class="stack__row-name">Treinamento em vídeo, narrado por Felipe
+            <span>Aplicação do método mostrada diretamente, sem tangentes. Audível no celular durante o intervalo entre clientes.</span></div>
+          <div class="stack__row-price">R$ 97</div>
+        </div>
+
+        <div class="stack__row">
+          <div class="stack__row-name">Kit Antivácuo
+            <span>Sequência específica para reativar quem sumiu nos últimos quatro meses. Texto pronto, instruções de uso por etapa.</span></div>
+          <div class="stack__row-price">R$ 47</div>
+        </div>
+
+        <div class="stack__row">
+          <div class="stack__row-name">Infográfico de bolso
+            <span>O método inteiro condensado em uma imagem para deixar salva no celular durante a conversa de orçamento.</span></div>
+          <div class="stack__row-price">R$ 27</div>
+        </div>
+
+        <div class="stack__sum">
+          <span class="stack__sum-lbl">Valor cheio se vendido em separado</span>
+          <span class="stack__sum-val">R$ 368</span>
+        </div>
+      </div>
+
+      <div class="stack__cta reveal">
+        <div class="stack__cta-head">Edição de lançamento</div>
+        <h3 class="stack__cta-name">Protocolo <em>Fecha-Tudo</em></h3>
+
+        <div class="stack__cta-price" aria-label="R$ 24,90">
+          <span class="stack__cta-price-currency">R$</span>
+          <span class="stack__cta-price-num">24</span>
+          <span class="stack__cta-price-cents">,90</span>
+        </div>
+
+        <div class="stack__cta-pay">Pagamento único. Acesso vitalício.</div>
+
+        <div class="stack__cta-buttons">
+          <a href="https://checkout.ticto.app/OCC46FBCB"
+             class="btn btn--primary btn--xl"
+             data-event="cta_click"
+             data-position="oferta"
+             aria-label="Adquirir Protocolo Fecha-Tudo por R$ 24,90">
+            Quero adquirir agora
+            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
+             class="btn btn--whatsapp"
+             target="_blank" rel="noopener noreferrer"
+             data-event="whatsapp_click"
+             data-position="oferta"
+             aria-label="Saber mais no WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            Saber mais no WhatsApp
+          </a>
+        </div>
+
+        <div class="stack__cta-assurances">
+          <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Acesso imediato após o pagamento</span>
+          <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Garantia incondicional de 7 dias</span>
+          <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Sem mensalidade, sem upsell</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== GARANTIA ============== -->
+<section class="garantia" aria-labelledby="garantia-title">
+  <div class="container">
+    <div class="garantia__inner reveal">
+      <div class="garantia__mark" aria-hidden="true">7</div>
+      <h3 id="garantia-title" class="h3">Aplica, testa, sente. Sete dias para mudar de ideia <em>sem precisar justificar</em>.</h3>
+      <p>Você tem sete dias contados do acesso. Aplica o método em pelo menos uma conversa real, vê o resultado, e decide. Se em qualquer momento dentro desse prazo perceber que não é pra você, basta responder o e-mail de boas-vindas dizendo "não foi", e devolvemos cada centavo. Sem perguntar motivo, sem segunda chance pra te enrolar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DEPOIMENTOS ============== -->
+<section class="section depo" aria-labelledby="depo-title">
+  <div class="container">
+    <div class="section__head reveal" style="max-width: 640px;">
+      <span class="eyebrow">Quem aplicou</span>
+      <h2 id="depo-title" class="h2">Resultado em <em>uma semana</em>, não em uma jornada de um ano.</h2>
+    </div>
+
+    <div class="depo__grid reveal">
+      <article class="depo__card">
+        <p class="depo__text">Eu travava sempre no "quanto custa?". Mandava o preço e via a cliente sumir. Apliquei o script de abertura e o de ancoragem na mesma semana, fechei <em>R$ 1.800 sem desconto</em>, e ainda agendei retorno.</p>
+        <div class="depo__sig">
+          <div class="depo__sig-name">Mariana V.</div>
+          <div class="depo__sig-role">Esteticista facial · Curitiba/PR</div>
+        </div>
+      </article>
+
+      <article class="depo__card">
+        <p class="depo__text">O Kit Antivácuo é cirúrgico. Mandei a sequência pra <em>23 clientes que tinham sumido</em> nos últimos quatro meses. Voltaram nove. Fechei seis. Faturei R$ 11 mil de gente que eu já tinha dado por perdida.</p>
+        <div class="depo__sig">
+          <div class="depo__sig-name">Bruna F.</div>
+          <div class="depo__sig-role">Biomédica esteta · Goiânia/GO</div>
+        </div>
+      </article>
+
+      <article class="depo__card">
+        <p class="depo__text">Eu sou do tipo cética. Comprei mais por curiosidade. <em>Apliquei o método MACA inteiro em quatro dias</em>, fechei três orçamentos que eu sabia que iam sumir. Mudou o meu antes-e-depois.</p>
+        <div class="depo__sig">
+          <div class="depo__sig-name">Larissa T.</div>
+          <div class="depo__sig-role">Fisio dermatofuncional · Recife/PE</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="section section--alt" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section__head section__head--center reveal" style="max-width: 600px;">
+      <span class="eyebrow">Antes de comprar</span>
+      <h2 id="faq-title" class="h2">As dúvidas que costumam <em>aparecer</em>, respondidas.</h2>
+    </div>
+
+    <div class="faq__list reveal">
+      <details class="faq__item">
+        <summary class="faq__q">
+          Em quanto tempo se vê resultado?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">A maioria aplica o script de abertura na próxima conversa que cair no WhatsApp e fecha pelo menos um orçamento dentro da primeira semana. Não é "transformação em 30 dias", é mudança no próximo "quanto custa?".</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          Funciona pra quem não entende nada de vendas?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">Sim. O material foi pensado especificamente pra esteticista que entende muito de pele e zero de vendas. Os scripts são copia-e-cola, com instrução de quando usar cada um. Se você consegue mandar mensagem no WhatsApp, consegue aplicar.</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          Funciona pra qualquer tipo de procedimento?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">Sim: facial, corporal, pós-operatório, depilação, micropigmentação, drenagem, harmonização. O método é sobre como conduzir a conversa, não sobre qual procedimento se vende. Esteticistas, biomédicas estetas e fisios dermatofuncionais aplicam igual.</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          Preciso ter Instagram ou anúncios rodando?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">Não. O protocolo trabalha o que acontece depois que a pessoa já caiu no seu WhatsApp, venha ela do Instagram, indicação, anúncio ou panfleto. Você não precisa virar influencer. Precisa fechar quem já chegou em você.</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          E se eu não gostar do material?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">Sete dias de garantia incondicional. Aplica, testa, sente. Se não for pra você, basta responder o e-mail de boas-vindas com "não foi", e devolvemos 100% sem precisar de motivo.</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          Como recebo o acesso?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">Acesso imediato após confirmação do pagamento. Você recebe um e-mail com link para a área de membros, o PDF dos scripts, o Kit Antivácuo e o infográfico, tudo baixável. Pode usar no celular, computador ou tablet.</div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          O preço de R$ 24,90 é por quanto tempo?
+          <span class="faq__sign" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">É o preço promocional de lançamento. Sem timer falso, mas o valor sobe quando o estoque inicial de cadastros for atingido. Quem entra agora trava o preço e mantém o acesso vitalício, sem mensalidade.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FECHAMENTO ============== -->
+<section class="section fechamento" aria-labelledby="fech-title">
+  <div class="container">
+    <div class="fechamento__inner">
+      <span class="eyebrow" style="color: var(--pigment);">A escolha é sua</span>
+      <h2 id="fech-title" class="display" style="margin-top: 24px;">Continuar competindo por preço, ou cobrar pela <em>autoridade</em>.</h2>
+      <p class="fechamento__sub">Por R$ 24,90, menos do que o custo de um almoço, você troca a forma como conduz cada orçamento. E se em sete dias não fizer sentido, eu devolvo cada centavo. O risco é meu.</p>
+
+      <div class="fechamento__buttons">
+        <a href="https://checkout.ticto.app/OCC46FBCB"
+           class="btn btn--primary btn--xl"
+           data-event="cta_click"
+           data-position="fechamento"
+           aria-label="Adquirir Protocolo Fecha-Tudo por R$ 24,90">
+          Quero adquirir por R$ 24,90
+          <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
+           class="btn btn--whatsapp"
+           target="_blank" rel="noopener noreferrer"
+           data-event="whatsapp_click"
+           data-position="fechamento"
+           aria-label="Saber mais no WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          Saber mais no WhatsApp
+        </a>
+      </div>
+
+      <div class="fechamento__assurances">
+        <span>Acesso imediato</span>
+        <span>Garantia 7 dias</span>
+        <span>Pagamento único</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <p><strong>Protocolo Fecha-Tudo</strong>, <em>Método MACA</em> por Felipe</p>
+    <p style="margin-top: 6px;">Produto digital. Resultados variam de acordo com a aplicação. © 2026. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if (href === '#' || href.length < 2) return;
+      var t = document.querySelector(href);
+      if (!t) return;
+      e.preventDefault();
+      var top = t.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      t.setAttribute('tabindex', '-1');
+      setTimeout(function(){ t.focus({ preventScroll: true }); }, 320);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
