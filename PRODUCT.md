@@ -15,7 +15,7 @@ Estão divididas em dois perfis emocionais que disparam jornadas distintas:
 
 ## Product Purpose
 
-**Protocolo Fecha-Tudo** é um produto digital (R$ 24,90, pagamento único, acesso vitalício) que entrega scripts copia-e-cola para cada momento da conversa de orçamento no WhatsApp. O framework é o **Método MACA** — sequência de 4 movimentos (abertura, ancoragem, condução, agendamento) que transforma "quanto custa?" em paciente fechada de ticket alto em até 15 minutos.
+**Protocolo Fecha-Tudo** é um produto digital (R$ 44,90, pagamento único, acesso vitalício) que entrega scripts copia-e-cola para cada momento da conversa de orçamento no WhatsApp. O framework é o **Método MACA** — sequência de 4 movimentos (abertura, ancoragem, condução, agendamento) que transforma "quanto custa?" em paciente fechada de ticket alto em até 15 minutos.
 
 O objetivo: parar de perder o orçamento que já chegou. Não é sobre atrair, é sobre converter. Diferente da maioria dos infoprodutos para esteticistas (que ensinam Instagram, conteúdo, anúncios), o Fecha-Tudo ataca exclusivamente o gargalo do WhatsApp.
 

@@ -1,6 +1,6 @@
 # Protocolo Fecha-Tudo
 
-Duas landing pages para o **Protocolo Fecha-Tudo**, método MACA por Felipe. Mesmo produto, mesma oferta (R$ 24,90, pagamento único, checkout Ticto), dois registros estéticos opostos para testar A/B de criativo e página.
+Duas landing pages para o **Protocolo Fecha-Tudo**, método MACA por Felipe. Mesmo produto, mesma oferta (R$ 44,90, pagamento único, checkout Ticto), dois registros estéticos opostos para testar A/B de criativo e página.
 
 ## Estrutura
 
