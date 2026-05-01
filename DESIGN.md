@@ -141,7 +141,7 @@ Escala (1.25):
 
 - **CTA primário**: fundo `--ink`, texto `--paper`, padding 20px 36px, sem sombra (sem cliché de info-produto), seta tipográfica `→` mais fina, transição em color/border 200ms
 - **CTA WhatsApp**: outline `--pigment`, texto `--pigment`, hover preenche
-- **Bloco autoridade**: barra horizontal de logos com nomes em texto (`Face Doctor · Botoclinic · Studio Mines · Smile Skin`), separados por `·` em `--ink-mute`
+- **Bloco autoridade**: barra horizontal de logos com nomes em texto (`Face Doctor · Botoclinic · Estúdio Mais · Smile Skin · Best Laser · Gio Laser · Dr. Colágeno`), separados por `·` em `--ink-mute`
 - **Card de autoridade Felipe**: layout magazine (foto + bloco texto), borda fina apenas no topo
 - **Pull quote**: serif itálico, indent à esquerda, fio vertical `--pigment` 2px
 

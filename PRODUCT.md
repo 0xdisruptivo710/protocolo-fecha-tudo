@@ -27,7 +27,7 @@ A página inteira repousa sobre uma figura: **Felipe**, idealizador do Método M
 
 - 10+ anos no mercado de estética
 - Estrategista digital com 70+ clínicas atendidas no Brasil
-- Atende franquias premium (Face Doctor, Botoclinic, Studio Mines, Smile Skin)
+- Atende franquias premium (Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser, Dr. Colágeno)
 - Idealizador do Aios CRM (plataforma de relacionamento para clínicas)
 - Especialista em follow-up, atendimento e IA aplicada a vendas
 - Já teve clínicas próprias durante a jornada
@@ -70,7 +70,7 @@ Três palavras:
 1. **Felipe é a prova.** Em qualquer dúvida de hierarquia, a foto e os números dele ganham peso. Tudo o mais existe pra emoldurá-lo.
 2. **Códigos do mercado, produção fora dele.** Cada página assume os códigos visuais do segmento que mira (info-produto / consultoria), mas a produção (fotografia, tipografia, calibração de cor, ritmo de espaço) está um nível acima do padrão de mercado.
 3. **Operacional, não motivacional.** A página vende um SCRIPT, não uma transformação. Toda copy fala em movimentos, sequência, mensagem, conversa. Nunca em "jornada", "potencial" ou "sonho".
-4. **Logos de franquias antes de promessas.** Antes da página afirmar nada sobre o método, ela mostra prova social pesada (Face Doctor, Botoclinic, Studio Mines, Smile Skin como clientes da agência do Felipe). Quem chega cético é desarmado em 5 segundos.
+4. **Logos de franquias antes de promessas.** Antes da página afirmar nada sobre o método, ela mostra prova social pesada (Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser, Dr. Colágeno como clientes da agência do Felipe). Quem chega cético é desarmado em 5 segundos.
 5. **Uma única ação por seção.** Cada bloco resolve uma objeção e empurra pra um destino: oferta (#oferta) ou WhatsApp (saber mais). Sem labirinto de links.
 
 ## Accessibility & Inclusion

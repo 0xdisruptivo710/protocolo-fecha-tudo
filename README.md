@@ -35,7 +35,7 @@ Cada `index.html` é autocontido: HTML + CSS + JS inline, sem build, sem depend�
 
 - 10+ anos no mercado de estética
 - Estrategista digital, agência atende 70+ clínicas
-- Clientes: Face Doctor, Botoclinic, Studio Mines, Smile Skin
+- Clientes: Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser, Dr. Colágeno
 - Idealizador do Aios CRM
 - Treinamentos comerciais: follow-up, atendimento, IA aplicada a vendas
 
