@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#1B1814" />
-<title>Protocolo Fecha-Tudo, pare de perder 8 de cada 10 orçamentos no WhatsApp</title>
-<meta name="description" content="O método MACA aplicado por Felipe em 70+ clínicas no Brasil. Script de 15 minutos para esteticistas que querem parar de perder orçamento no WhatsApp." />
+<title>Protocolo Fecha-Tudo · Pare de perder 8 em 10 orçamentos no WhatsApp</title>
+<meta name="description" content="Método MACA por Felipe, estrategista de 70+ clínicas. Quatro movimentos de WhatsApp que tiram a cliente do 'vou pensar e te falo' e fecham em 15 minutos. R$ 44,90, pagamento único." />
 <meta property="og:title" content="Protocolo Fecha-Tudo, método MACA pra esteticistas" />
 <meta property="og:description" content="O script que 70+ clínicas já aplicam pra fechar orçamento no WhatsApp. Pagamento único." />
 <meta property="og:type" content="product" />
@@ -13,8 +13,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 
 <style>
 /* ============================================================
@@ -1164,6 +1164,345 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .hero__alert { animation: none; }
 }
 
+/* ============================================================
+   REFINAMENTO PREMIUM — CAMADA DE POLISH
+   Tipografia mono, texturas, sombras direcionais, motion polidos
+   ============================================================ */
+
+/* Grain texture sobre toda a página, fixed pseudo-element */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.65 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+}
+/* Garantir que o conteúdo principal fique acima do grain */
+.topbar, main, body > * { position: relative; z-index: 2; }
+.topbar { z-index: 50; }
+
+/* Mono utility para números (preços, métricas, tempos) */
+.mono {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
+}
+
+/* Letterpress refinado no highlight do hero */
+.hero__head em {
+  box-shadow:
+    0 4px 0 0 rgba(0, 0, 0, 0.18),
+    inset 0 -2px 0 0 rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+
+/* Vinheta cinematográfica no hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 100% at 50% 40%, transparent 40%, rgba(34, 30, 24, 0.05) 100%);
+  z-index: 0;
+}
+.hero > .container { position: relative; z-index: 1; }
+
+/* Pequeno selo "FECHA-TUDO 2026" rotacionado canto do hero (desktop) */
+.hero__media {
+  box-shadow:
+    0 32px 64px -24px rgba(34, 30, 24, 0.35),
+    0 0 0 1px rgba(34, 30, 24, 0.04);
+}
+
+/* Hero alert (eyebrow) com micro-acabamento */
+.hero__alert {
+  box-shadow:
+    inset 0 -2px 0 0 rgba(0, 0, 0, 0.15),
+    0 2px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Stats: tabular nums + linha de tick no número */
+.stat__num {
+  font-feature-settings: "tnum", "lnum";
+  position: relative;
+  display: inline-block;
+}
+.stat__num::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  background: var(--alert);
+  margin-top: 8px;
+  transition: width 480ms var(--ease-out);
+}
+.stat:hover .stat__num::after { width: 64px; }
+
+/* Logo bar: edge fade gradiente para suavizar a passagem */
+.franchises { position: relative; }
+.franchises::before,
+.franchises::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(60px, 10vw, 140px);
+  z-index: 2;
+  pointer-events: none;
+}
+.franchises::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-alt) 0%, rgba(240, 235, 224, 0) 100%);
+}
+.franchises::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-alt) 0%, rgba(240, 235, 224, 0) 100%);
+}
+
+/* Problema items: número massive, ghost glow, hover sutil */
+.problema__item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 320ms var(--ease-out), background 320ms var(--ease-out);
+}
+.problema__item:hover {
+  transform: translateY(-3px);
+  background: #312B23;
+}
+.problema__item-num {
+  font-size: clamp(56px, 7vw, 88px);
+  margin-bottom: -2px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum", "lnum";
+}
+.problema__item::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(230, 52, 38, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* MACA: depth shadow nas letras gigantes + hover */
+.maca__letters span {
+  text-shadow: 0 3px 0 rgba(34, 30, 24, 0.08);
+  transition: transform 380ms var(--ease-out);
+  cursor: default;
+}
+.maca__letters span:hover { transform: translateY(-6px); }
+
+/* MACA steps: fio gradiente revelando no top no hover */
+.maca__step { position: relative; }
+.maca__step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--alert) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 420ms var(--ease-out);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.maca__step:hover::after { transform: scaleX(1); }
+
+/* Felipe: noise overlay sobre o bloco dark */
+.felipe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.8 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.felipe > .container { position: relative; z-index: 1; }
+
+.felipe__stat-num {
+  font-feature-settings: "tnum", "lnum";
+  letter-spacing: -0.015em;
+}
+
+/* Stack: ribbon "HOJE" acima do preço final */
+.stack__cta-price { position: relative; }
+.stack__cta-price::before {
+  content: "Hoje, no lançamento";
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Stack rows: indentação micro no hover */
+.stack__row {
+  transition: padding-left 280ms var(--ease-out), border-color 280ms var(--ease-out);
+  border-radius: 4px;
+}
+.stack__row:hover {
+  padding-left: 12px;
+  border-bottom-color: var(--alert);
+}
+.stack__row:hover .stack__row-name { color: var(--alert); }
+
+/* Stack price com mono pra textura */
+.stack__row-price,
+.stack__sum-val {
+  font-feature-settings: "tnum", "lnum";
+  letter-spacing: -0.01em;
+}
+.stack__cta-price-num,
+.stack__cta-price-cents {
+  font-feature-settings: "tnum", "lnum";
+  letter-spacing: -0.02em;
+}
+
+/* Garantia: padrão hatched no selo */
+.garantia__seal {
+  background-image:
+    linear-gradient(135deg, transparent 47%, rgba(0,0,0,0.06) 47%, rgba(0,0,0,0.06) 53%, transparent 53%),
+    linear-gradient(var(--accent), var(--accent));
+  background-size: 10px 10px, 100% 100%;
+  transition: transform 460ms var(--ease-out);
+}
+.garantia__seal:hover { transform: rotate(-3deg) scale(1.04); }
+
+/* Garantia seal número com mono */
+.garantia__seal-num {
+  font-feature-settings: "tnum", "lnum";
+  letter-spacing: -0.02em;
+}
+
+/* Depoimentos: aspas decorativas + hover lift */
+.depo__card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 320ms var(--ease-out), box-shadow 320ms var(--ease-out), border-color 320ms var(--ease-out);
+}
+.depo__card::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  font-family: 'Anton', sans-serif;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.16;
+  pointer-events: none;
+}
+.depo__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 56px -22px rgba(34, 30, 24, 0.14);
+  border-color: var(--ink-muted);
+}
+
+/* FAQ animation reveal */
+.faq__a {
+  animation: faq-fade 320ms var(--ease-out);
+}
+@keyframes faq-fade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fechamento: noise overlay extra atmosférico */
+.fechamento::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.8 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* Magnetic CTA hover (controlado por JS via data-magnetic) */
+[data-magnetic] {
+  transition: transform 360ms var(--ease-out), background 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  will-change: transform;
+}
+
+/* Sticky CTA mobile: brilho refinado */
+.sticky-cta {
+  box-shadow: 0 -12px 28px -8px rgba(0, 0, 0, 0.28);
+  border-top: 0;
+}
+.sticky-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--alert) 0%, var(--accent) 50%, var(--alert) 100%);
+}
+
+/* Topbar: estado scrolled */
+.topbar {
+  transition: padding 240ms var(--ease-out), background 240ms var(--ease-out);
+}
+.topbar.is-scrolled {
+  background: rgba(250, 247, 242, 0.96);
+  box-shadow: 0 1px 0 0 rgba(34, 30, 24, 0.08);
+}
+
+/* Botão primário: highlight de borda interna sutil */
+.btn--primary {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 50%),
+    var(--accent);
+}
+
+/* Hero photo: very subtle parallax-like float */
+@keyframes photo-float {
+  0%, 100% { transform: scale(1.02) translateY(0); }
+  50% { transform: scale(1.02) translateY(-6px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__photo {
+    animation: photo-float 7s var(--ease-out) infinite;
+  }
+  .hero__media:hover .hero__photo { animation-play-state: paused; transform: scale(1.05); }
+}
+
+/* Selection refinado em superfície dark */
+.problema *::selection,
+.felipe *::selection,
+.fechamento *::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Estilização melhor do checkmark assurance icons */
+.hero__assurances svg,
+.stack__cta-assurances svg,
+.fechamento__assurances svg {
+  background: rgba(230, 52, 38, 0.12);
+  padding: 3px;
+  border-radius: 999px;
+  box-sizing: content-box;
+}
+.stack__cta-assurances svg,
+.fechamento__assurances svg {
+  background: rgba(242, 199, 68, 0.12);
+}
+
 </style>
 </head>
 <body>
@@ -1194,20 +1533,21 @@ button { font: inherit; color: inherit; cursor: pointer; }
   <div class="container">
     <div class="hero__grid">
       <div>
-        <span class="hero__alert" aria-label="Alerta para esteticistas">Atenção esteticista</span>
+        <span class="hero__alert" aria-label="Para esteticistas que perdem orçamento no WhatsApp">Para esteticistas que perdem orçamento no WhatsApp</span>
         <h1 id="hero-title" class="hero__head">
-          8 em 10 orçamentos somem no <em>seu WhatsApp</em>. O Felipe sabe por quê.
+          8 em 10 orçamentos somem depois do "vou pensar e te falo". Cada um vale <em>R$ 300 a R$ 2.000</em> que você não cobrou.
         </h1>
         <p class="hero__sub">
-          Idealizador do <strong>Método MACA</strong> e estrategista de <strong>70+ clínicas no Brasil</strong>, Felipe entrega a sequência exata de mensagens que tira a cliente do "vou pensar e te falo" e fecha em 15 minutos. Copia, cola, aplica no próximo orçamento.
+          O <strong>Método MACA</strong> é a sequência exata de quatro mensagens que tira a cliente do vácuo e fecha em <strong>15 minutos</strong> de conversa. Copia, cola, aplica no próximo orçamento.
         </p>
         <div class="hero__cta-row">
           <a href="#oferta"
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="hero"
-             aria-label="Quero parar de perder orçamento">
-            Quero parar de perder orçamento
+             data-magnetic
+             aria-label="Quero parar de perder por R$ 44,90">
+            Quero parar de perder · R$ 44,90
             <svg class="btn__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -1286,18 +1626,18 @@ button { font: inherit; color: inherit; cursor: pointer; }
     <div class="problema__grid reveal">
       <div class="problema__item">
         <div class="problema__item-num">01</div>
-        <div class="problema__item-head">Você responde "quanto custa?" com um número.</div>
-        <p class="problema__item-body">Sem ancoragem, sem contexto, sem caminho. Ela recebe um valor solto e compara com a concorrência. Você virou commodity.</p>
+        <div class="problema__item-head">O preço chegou sozinho.</div>
+        <p class="problema__item-body">Sem ancoragem, sem contexto, sem caminho. Ela recebe um valor solto, compara com a concorrência mais barata, e você virou commodity em três segundos.</p>
       </div>
       <div class="problema__item">
         <div class="problema__item-num">02</div>
-        <div class="problema__item-head">A conversa termina nela, não em você.</div>
-        <p class="problema__item-body">"Vou pensar e te falo" é o sinal de que a iniciativa migrou pra cliente. Quem dirige a conversa fecha. Quem espera, espera pra sempre.</p>
+        <div class="problema__item-head">A conversa terminou nela.</div>
+        <p class="problema__item-body">"Vou pensar e te falo" é o sinal de que a iniciativa migrou. Quem dirige a conversa fecha. Quem espera, espera pra sempre.</p>
       </div>
       <div class="problema__item">
         <div class="problema__item-num">03</div>
-        <div class="problema__item-head">Você dá desconto pra fechar, e mesmo assim some.</div>
-        <p class="problema__item-body">Desconto não resolve falta de método. Resolve falta de método e ainda destrói sua margem. A cliente vai sumir igual, agora com você cobrando menos.</p>
+        <div class="problema__item-head">O desconto não resolveu.</div>
+        <p class="problema__item-body">Você baixou o preço pra fechar e ela sumiu igual, agora com você cobrando menos. Desconto não corrige falta de método. Corrige falta de método e ainda destrói sua margem.</p>
       </div>
     </div>
   </div>
@@ -1395,8 +1735,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
         </div>
 
         <div class="stack__row">
-          <div class="stack__row-name">Treinamento em vídeo
-            <span>Felipe explica a aplicação do método. Direto, sem encheção. Assiste no celular.</span></div>
+          <div class="stack__row-name">Aula de Aplicação com Felipe
+            <span>Vídeo de treinamento direto, sem encheção. Assiste no celular entre clientes.</span></div>
           <div class="stack__row-price">R$ 97</div>
         </div>
 
@@ -1407,8 +1747,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
         </div>
 
         <div class="stack__row">
-          <div class="stack__row-name">Infográfico de bolso
-            <span>O método inteiro em 1 imagem pra deixar salva no celular durante a conversa.</span></div>
+          <div class="stack__row-name">Mapa de Bolso MACA
+            <span>O método inteiro em uma imagem pra deixar salva no celular durante a conversa.</span></div>
           <div class="stack__row-price">R$ 27</div>
         </div>
 
@@ -1435,6 +1775,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="oferta"
+             data-magnetic
              aria-label="Quero o protocolo agora por R$ 44,90">
             Quero o protocolo agora
             <svg class="btn__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1556,7 +1897,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
           Em quanto tempo vou ver resultado?
           <span class="faq__sign" aria-hidden="true">+</span>
         </summary>
-        <div class="faq__a">A maioria das esteticistas aplica o script de abertura na próxima conversa que cair no WhatsApp e fecha pelo menos um orçamento que antes ficaria no vácuo dentro da primeira semana. Não é "transformação em 30 dias", é mudança no próximo "quanto custa?".</div>
+        <div class="faq__a">A maioria aplica o script de abertura na próxima conversa que cair no WhatsApp e fecha pelo menos um orçamento que antes ficaria no vácuo dentro da primeira semana. Não é "transformação em 30 dias". É mudança no próximo "quanto custa?".</div>
       </details>
 
       <details class="faq__item">
@@ -1615,7 +1956,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   <div class="container">
     <div class="fechamento__inner">
       <span class="eyebrow" style="color: var(--alert);">A escolha é sua</span>
-      <h2 id="fech-title" class="display">Continuar perdendo, ou aplicar <em>ainda hoje</em>.</h2>
+      <h2 id="fech-title" class="display">Continuar perdendo, ou <em>fechar a próxima</em>.</h2>
       <p class="fechamento__sub">Por R$ 44,90, menos do que você gasta em um almoço, você troca a próxima conversa de orçamento por uma venda fechada. Se em 7 dias não fizer sentido, eu devolvo. O risco é meu.</p>
 
       <div class="fechamento__buttons">
@@ -1623,6 +1964,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
            class="btn btn--primary btn--xl"
            data-event="cta_click"
            data-position="fechamento"
+           data-magnetic
            aria-label="Quero o protocolo agora por R$ 44,90">
           Quero o protocolo por R$ 44,90
           <svg class="btn__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1712,6 +2054,69 @@ button { font: inherit; color: inherit; cursor: pointer; }
       setTimeout(function(){ t.focus({ preventScroll: true }); }, 320);
     });
   });
+
+  // Topbar scrolled state
+  var topbar = document.querySelector('.topbar');
+  if (topbar) {
+    var onScroll = function() {
+      if (window.scrollY > 12) topbar.classList.add('is-scrolled');
+      else topbar.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Magnetic CTA hover (sutil, respeitando reduced motion)
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('[data-magnetic]').forEach(function(el){
+      var pull = 8;
+      el.addEventListener('mousemove', function(e){
+        var rect = el.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width - 0.5) * pull;
+        var y = ((e.clientY - rect.top) / rect.height - 0.5) * pull;
+        el.style.transform = 'translate(' + x.toFixed(2) + 'px, ' + y.toFixed(2) + 'px)';
+      });
+      el.addEventListener('mouseleave', function(){
+        el.style.transform = '';
+      });
+    });
+  }
+
+  // Number counter on stats visible
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var parseTarget = function(text) {
+      var m = text.match(/^(\+?)(\d+)(.*)$/);
+      if (!m) return null;
+      return { prefix: m[1], num: parseInt(m[2], 10), suffix: m[3] };
+    };
+    var animateNum = function(el, target) {
+      var dur = 1100;
+      var start = performance.now();
+      var step = function(now) {
+        var t = Math.min(1, (now - start) / dur);
+        var eased = 1 - Math.pow(1 - t, 4);
+        var val = Math.round(target.num * eased);
+        el.firstChild.nodeValue = target.prefix + val + target.suffix;
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    var countIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var text = el.textContent.trim();
+        var target = parseTarget(text);
+        if (target) {
+          el.firstChild.nodeValue = target.prefix + '0' + target.suffix;
+          animateNum(el, target);
+        }
+        countIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(function(el){ countIO.observe(el); });
+  }
 })();
 </script>
 

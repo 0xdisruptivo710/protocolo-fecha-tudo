@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#15120F" />
-<title>Protocolo Fecha-Tudo, o método MACA por Felipe</title>
-<meta name="description" content="O método aplicado por Felipe em 70+ clínicas no Brasil. Para esteticistas que querem ser escolhidas pela autoridade, não pelo preço." />
+<title>Protocolo Fecha-Tudo · O Método MACA por Felipe</title>
+<meta name="description" content="Pare de competir por preço, cobre pela autoridade. O método que Felipe aplica nas franquias premium da estética brasileira, condensado em quatro movimentos de WhatsApp. R$ 44,90, pagamento único." />
 <meta property="og:title" content="Protocolo Fecha-Tudo, método MACA por Felipe" />
 <meta property="og:description" content="O protocolo que Felipe aplica em 70+ clínicas. Atendimento de WhatsApp em 15 minutos." />
 <meta property="og:type" content="product" />
@@ -13,8 +13,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
 <style>
 /* ============================================================
@@ -1100,6 +1100,358 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .hero__media-clip { display: none; }
 }
 
+/* ============================================================
+   REFINAMENTO EDITORIAL — CAMADA DE POLISH
+   Atmosfera de papel, mono em metadata, fios editoriais,
+   pull-quote refinado, micro-motion restrained.
+   ============================================================ */
+
+/* Grain texture subtle sobre toda a página (paper feel) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.025;
+  mix-blend-mode: multiply;
+}
+.topbar, body > * { position: relative; z-index: 2; }
+.topbar { z-index: 50; }
+
+/* Mono utility para metadata, byline, captions */
+.mono, .meta-mono {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  font-feature-settings: "tnum";
+  letter-spacing: 0.02em;
+}
+
+/* Eyebrow editorial: prefixo de signature */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+
+/* Hero: vinheta editorial subtle */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 100% at 50% 40%, transparent 50%, rgba(26, 23, 20, 0.04) 100%);
+  z-index: 0;
+}
+.hero > .container { position: relative; z-index: 1; }
+
+/* Hero meta line refinado, mono pequeno */
+.hero__row-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+}
+
+/* Hero media: sombra direcional warm + outline sutil */
+.hero__media {
+  box-shadow:
+    0 32px 64px -28px rgba(26, 23, 20, 0.32),
+    0 0 0 1px rgba(26, 23, 20, 0.06);
+}
+
+/* Hero head em: pigment com underline customizada serif */
+.hero__head em {
+  position: relative;
+  display: inline-block;
+}
+.hero__head em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 6px;
+  background: var(--pigment);
+  opacity: 0.18;
+  z-index: -1;
+}
+
+/* Logo bar editorial: fios laterais */
+.franquias, .pull-quote, .felipe__bio {
+  position: relative;
+}
+
+/* Pull-quote: fio vertical pigment + dropcap-like */
+blockquote, .pull-quote-block {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--pigment);
+}
+
+/* Tabular numerals em preços e métricas */
+.felipe__stat-num,
+.stack__cta-price-num,
+.stack__cta-price-cents,
+.stack__row-price,
+.stack__sum-val,
+.garantia__seal-num,
+.stat__num {
+  font-feature-settings: "tnum", "lnum";
+  letter-spacing: -0.01em;
+}
+
+/* Felipe stats: mono no label */
+.felipe__stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Felipe bio: dropcap discreto no primeiro parágrafo */
+.felipe__bio:first-of-type::first-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.2em;
+  font-weight: 700;
+  font-style: italic;
+  float: left;
+  line-height: 0.9;
+  padding-right: 8px;
+  padding-top: 4px;
+  color: var(--pigment);
+}
+
+/* Diagnostico: texto-lede editorial mais espaçado */
+.problema .lede {
+  max-width: 60ch;
+  font-size: clamp(19px, 2.1vw, 23px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.problema .lede::first-line {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* MACA: indicador de letra grande com pigment underline */
+.maca__step {
+  position: relative;
+  transition: transform 320ms var(--ease-out);
+}
+.maca__step:hover {
+  transform: translateY(-2px);
+}
+.maca__step::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 1.5px;
+  background: var(--pigment);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 460ms var(--ease-out), width 460ms var(--ease-out);
+}
+.maca__step:hover::after { transform: scaleX(1); width: 64px; }
+
+/* Stack: ribbon editorial "Edição de lançamento" */
+.stack__cta-price { position: relative; }
+.stack__cta-price::before {
+  content: "Edição de lançamento";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pigment);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Stack rows: hover com cor de pigment, mais editorial */
+.stack__row {
+  transition: padding-left 320ms var(--ease-out), border-color 320ms var(--ease-out);
+}
+.stack__row:hover {
+  padding-left: 10px;
+  border-bottom-color: var(--pigment) !important;
+}
+.stack__row:hover .stack__row-name {
+  color: var(--pigment);
+}
+
+/* Garantia seal editorial — hatched lines diagonais */
+.garantia__seal {
+  background-image:
+    linear-gradient(135deg, transparent 47%, rgba(26,23,20,0.05) 47%, rgba(26,23,20,0.05) 53%, transparent 53%),
+    linear-gradient(var(--paper), var(--paper));
+  background-size: 12px 12px, 100% 100%;
+  border: 1.5px solid var(--ink) !important;
+  transition: transform 460ms var(--ease-out);
+}
+.garantia__seal:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+/* Depo card: pull-quote aspas Playfair italic grande */
+.depo__card {
+  position: relative;
+  transition: transform 340ms var(--ease-out), box-shadow 340ms var(--ease-out);
+  overflow: hidden;
+}
+.depo__card::before {
+  content: "“" !important;
+  position: absolute;
+  top: -32px;
+  left: 16px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 180px;
+  line-height: 1;
+  color: var(--pigment);
+  opacity: 0.10;
+  pointer-events: none;
+}
+.depo__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px -22px rgba(26, 23, 20, 0.12);
+}
+
+/* Depo card compact — versão menor pra 2ª linha de testimonials */
+.depo__card--compact {
+  padding: 24px !important;
+}
+.depo__card--compact::before {
+  font-size: 110px;
+  top: -22px;
+  opacity: 0.08;
+}
+.depo__card--compact .depo__text {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Felipe block: noise texture muito subtle */
+.felipe { position: relative; }
+.felipe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.02;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.felipe > .container { position: relative; z-index: 1; }
+
+/* Felipe foto: borda fina editorial */
+.felipe__media {
+  box-shadow:
+    0 24px 48px -28px rgba(26, 23, 20, 0.28),
+    0 0 0 1px rgba(26, 23, 20, 0.08);
+}
+
+/* FAQ animation reveal editorial */
+.faq__a {
+  animation: faq-fade-edit 360ms var(--ease-out);
+}
+@keyframes faq-fade-edit {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fechamento: noise overlay extra atmosférico */
+.fechamento { position: relative; }
+.fechamento::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.7 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+}
+
+/* Magnetic CTA editorial (mais sutil — 5px de pull) */
+[data-magnetic] {
+  transition: transform 380ms var(--ease-out), background 220ms var(--ease-out), box-shadow 220ms var(--ease-out), color 220ms var(--ease-out);
+  will-change: transform;
+}
+
+/* Topbar editorial scrolled state */
+.topbar {
+  transition: padding 240ms var(--ease-out), background 240ms var(--ease-out), border-color 240ms var(--ease-out);
+}
+.topbar.is-scrolled {
+  background: rgba(245, 241, 234, 0.97);
+  border-bottom-color: var(--rule);
+}
+
+/* Section divider editorial: small dot ornament before eyebrow */
+.section__head .eyebrow::after {
+  content: " ·";
+  color: var(--pigment);
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+/* Selection dark — em felipe e fechamento */
+.felipe *::selection,
+.fechamento *::selection {
+  background: var(--pigment);
+  color: var(--paper);
+}
+
+/* Refined CTA primary — micro highlight */
+.btn--primary {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 50%),
+    var(--ink);
+}
+
+/* Sticky CTA mobile (se existir): linha pigment no top */
+.sticky-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--pigment);
+}
+
+/* Assurance checkmarks com fundo discreto */
+.hero__assurances svg,
+.stack__cta-assurances svg,
+.fechamento__assurances svg {
+  background: rgba(154, 74, 46, 0.08);
+  padding: 3px;
+  border-radius: 999px;
+  box-sizing: content-box;
+}
+
+/* Container do hero meta com fios laterais editorial */
+.hero__row-meta {
+  position: relative;
+  display: inline-flex !important;
+  padding: 6px 0;
+  border-block: 1px solid var(--rule);
+}
+.hero__row-meta span {
+  position: relative;
+}
+.hero__row-meta span:not(:last-child)::after {
+  content: "·";
+  margin: 0 12px;
+  color: var(--pigment);
+}
+
 </style>
 </head>
 <body>
@@ -1129,26 +1481,26 @@ button { font: inherit; color: inherit; cursor: pointer; }
 <section class="hero" aria-labelledby="hero-title">
   <div class="container">
     <div class="hero__row-meta">
-      <span>Edição de lançamento</span>
       <span>Método MACA</span>
-      <span>Pagamento único</span>
+      <span>por Felipe</span>
     </div>
 
     <div class="hero__grid">
       <div>
         <h1 id="hero-title" class="hero__head">
-          O método que <em>70 clínicas</em> aplicam, condensado em 15 minutos de WhatsApp.
+          Você não precisa de mais clientes. Precisa cobrar como <em>referência</em>.
         </h1>
         <p class="hero__sub">
-          Felipe não vende curso. <strong>Comanda uma agência que atende as franquias que você admira</strong>, Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser, Dr. Colágeno, e idealizou o Aios CRM. O Protocolo Fecha-Tudo é o que ele aplica todo dia, agora copia-e-cola.
+          Quem fecha orçamento alto não tem o melhor protocolo de pele. Tem o <strong>melhor protocolo de conversa</strong>. Felipe atende Face Doctor, Botoclinic e Estúdio Mais, e condensou o que aplica nessas franquias em <strong>quatro movimentos de WhatsApp</strong>.
         </p>
         <div class="hero__cta-row">
           <a href="#oferta"
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="hero"
-             aria-label="Conhecer o método">
-            Conhecer o método
+             data-magnetic
+             aria-label="Ler o método">
+            Ler o método
             <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
@@ -1156,9 +1508,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
              target="_blank" rel="noopener noreferrer"
              data-event="whatsapp_click"
              data-position="hero"
-             aria-label="Saber mais no WhatsApp">
+             aria-label="Falar com Felipe no WhatsApp">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-            Saber mais no WhatsApp
+            Falar com Felipe no WhatsApp
           </a>
         </div>
         <div class="hero__sig">
@@ -1208,7 +1560,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
       <div class="sobre__col-r reveal">
         <span class="eyebrow">O estrategista</span>
-        <h2 id="sobre-title" class="h2" style="margin-top:24px;">Felipe, <em>10 anos</em> conduzindo clínicas que você admira.</h2>
+        <h2 id="sobre-title" class="h2" style="margin-top:24px;">Felipe. <em>10 anos</em> atendendo as clínicas que você admira.</h2>
 
         <p class="sobre__bio">Estrategista digital há mais de uma década no mercado de estética. <strong>Comanda uma agência de marketing que atende mais de 70 clínicas no Brasil</strong>, das pequenas operações de bairro às franquias premium que viraram referência: Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser e Dr. Colágeno.</p>
 
@@ -1294,30 +1646,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 <!-- ============== PROBLEMA (editorial) ============== -->
 <section class="section problema" aria-labelledby="problema-title">
   <div class="container">
-    <div class="section__head reveal" style="max-width: 640px;">
-      <span class="eyebrow">Por que some</span>
-      <h2 id="problema-title" class="h2">Não é a sua cliente. É o <em>roteiro</em> que ainda não foi reescrito.</h2>
-      <p class="lede">Você manda o preço, ela responde "vou pensar e te falo", e some. A cliente não desapareceu por mal-educação ou por dinheiro. Sumiu porque a conversa terminou nela, não em você.</p>
-    </div>
-
-    <div class="problema__grid reveal">
-      <article class="problema__item">
-        <div class="problema__item-num">i.</div>
-        <h3 class="problema__item-head">Preço sem ancoragem é commodity.</h3>
-        <p class="problema__item-body">Quando o número chega solto, ela compara com a concorrência mais barata e segue navegando. O preço só sustenta o que veio antes dele.</p>
-      </article>
-
-      <article class="problema__item">
-        <div class="problema__item-num">ii.</div>
-        <h3 class="problema__item-head">A iniciativa migra pra cliente.</h3>
-        <p class="problema__item-body">"Vou pensar" é o sinal de que você perdeu o leme. Quem dirige a conversa fecha. Quem aguarda o retorno, aguarda pra sempre.</p>
-      </article>
-
-      <article class="problema__item">
-        <div class="problema__item-num">iii.</div>
-        <h3 class="problema__item-head">Desconto não corrige método.</h3>
-        <p class="problema__item-body">Você dá desconto pra fechar e ela some igual, agora com você cobrando menos. O desconto trata o sintoma sem curar o que adoece.</p>
-      </article>
+    <div class="section__head reveal" style="max-width: 720px;">
+      <span class="eyebrow">Diagnóstico</span>
+      <h2 id="problema-title" class="h2">O preço solto vira <em>commodity</em>.</h2>
+      <p class="lede">A cliente não some por mal-educação ou falta de dinheiro. Some porque o preço chegou sozinho, sem ancoragem, sem caminho. Sem método, a conversa termina nela, não em você. E desconto não corrige roteiro: ela some igual, agora com você cobrando menos.</p>
     </div>
   </div>
 </section>
@@ -1342,8 +1674,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
         </div>
 
         <div class="stack__row">
-          <div class="stack__row-name">Treinamento em vídeo, narrado por Felipe
-            <span>Aplicação do método mostrada diretamente, sem tangentes. Audível no celular durante o intervalo entre clientes.</span></div>
+          <div class="stack__row-name">Aula de aplicação, narrada por Felipe
+            <span>Aplicação do método mostrada diretamente, sem tangentes. Audível no celular entre clientes.</span></div>
           <div class="stack__row-price">R$ 97</div>
         </div>
 
@@ -1354,7 +1686,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
         </div>
 
         <div class="stack__row">
-          <div class="stack__row-name">Infográfico de bolso
+          <div class="stack__row-name">Mapa de Bolso MACA
             <span>O método inteiro condensado em uma imagem para deixar salva no celular durante a conversa de orçamento.</span></div>
           <div class="stack__row-price">R$ 27</div>
         </div>
@@ -1382,6 +1714,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="oferta"
+             data-magnetic
              aria-label="Adquirir Protocolo Fecha-Tudo por R$ 44,90">
             Quero adquirir agora
             <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1426,15 +1759,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
       <h2 id="depo-title" class="h2">Resultado em <em>uma semana</em>, não em uma jornada de um ano.</h2>
     </div>
 
-    <div class="depo__grid reveal">
-      <article class="depo__card">
-        <p class="depo__text">Eu travava sempre no "quanto custa?". Mandava o preço e via a cliente sumir. Apliquei o script de abertura e o de ancoragem na mesma semana, fechei <em>R$ 1.800 sem desconto</em>, e ainda agendei retorno.</p>
-        <div class="depo__sig">
-          <div class="depo__sig-name">Mariana V.</div>
-          <div class="depo__sig-role">Esteticista facial · Curitiba/PR</div>
-        </div>
-      </article>
-
+    <div class="depo__grid reveal" style="grid-template-columns: 1fr; max-width: 760px; margin-inline: auto;">
       <article class="depo__card">
         <p class="depo__text">O Kit Antivácuo é cirúrgico. Mandei a sequência pra <em>23 clientes que tinham sumido</em> nos últimos quatro meses. Voltaram nove. Fechei seis. Faturei R$ 11 mil de gente que eu já tinha dado por perdida.</p>
         <div class="depo__sig">
@@ -1442,9 +1767,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
           <div class="depo__sig-role">Biomédica esteta · Goiânia/GO</div>
         </div>
       </article>
+    </div>
 
-      <article class="depo__card">
-        <p class="depo__text">Eu sou do tipo cética. Comprei mais por curiosidade. <em>Apliquei o método MACA inteiro em quatro dias</em>, fechei três orçamentos que eu sabia que iam sumir. Mudou o meu antes-e-depois.</p>
+    <div class="depo__grid reveal" style="margin-top: 32px;">
+      <article class="depo__card depo__card--compact">
+        <p class="depo__text">Eu travava sempre no "quanto custa?". Apliquei o script de abertura e o de ancoragem na mesma semana, fechei <em>R$ 1.800 sem desconto</em>, e ainda agendei retorno.</p>
+        <div class="depo__sig">
+          <div class="depo__sig-name">Mariana V.</div>
+          <div class="depo__sig-role">Esteticista facial · Curitiba/PR</div>
+        </div>
+      </article>
+
+      <article class="depo__card depo__card--compact">
+        <p class="depo__text">Eu sou do tipo cética. Apliquei o método MACA inteiro em <em>quatro dias</em>, fechei três orçamentos que eu sabia que iam sumir. Mudou o meu antes-e-depois.</p>
         <div class="depo__sig">
           <div class="depo__sig-name">Larissa T.</div>
           <div class="depo__sig-role">Fisio dermatofuncional · Recife/PE</div>
@@ -1535,6 +1870,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
            class="btn btn--primary btn--xl"
            data-event="cta_click"
            data-position="fechamento"
+           data-magnetic
            aria-label="Adquirir Protocolo Fecha-Tudo por R$ 44,90">
           Quero adquirir por R$ 44,90
           <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1593,6 +1929,42 @@ button { font: inherit; color: inherit; cursor: pointer; }
       setTimeout(function(){ t.focus({ preventScroll: true }); }, 320);
     });
   });
+
+  // Topbar scrolled state
+  var topbar = document.querySelector('.topbar');
+  if (topbar) {
+    var onScroll = function() {
+      if (window.scrollY > 12) topbar.classList.add('is-scrolled');
+      else topbar.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Hero photo reveal (clip-path animation)
+  var heroMedia = document.querySelector('.hero__media');
+  if (heroMedia) {
+    requestAnimationFrame(function(){
+      setTimeout(function(){ heroMedia.classList.add('is-revealed'); }, 120);
+    });
+  }
+
+  // Magnetic CTA hover (editorial: pull mais sutil, 5px)
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('[data-magnetic]').forEach(function(el){
+      var pull = 5;
+      el.addEventListener('mousemove', function(e){
+        var rect = el.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width - 0.5) * pull;
+        var y = ((e.clientY - rect.top) / rect.height - 0.5) * pull;
+        el.style.transform = 'translate(' + x.toFixed(2) + 'px, ' + y.toFixed(2) + 'px)';
+      });
+      el.addEventListener('mouseleave', function(){
+        el.style.transform = '';
+      });
+    });
+  }
 })();
 </script>
 
