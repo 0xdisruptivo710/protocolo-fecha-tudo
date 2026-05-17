@@ -3,108 +3,83 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#0A0908" />
-<title>FECHA-TUDO.SH · MACA PROTOCOL · v1.0</title>
-<meta name="description" content="8 em 10 orcamentos retornam NULL. Perda media: R$ 300 ~ 2.000 por conversa. Protocolo de 4 movimentos em 15 minutos de WhatsApp. R$ 44,90, pagamento unico." />
-<meta property="og:title" content="FECHA-TUDO.SH · MACA PROTOCOL" />
-<meta property="og:description" content="O metodo que para de perder. 4 movimentos. 15 minutos. WhatsApp." />
+<meta name="theme-color" content="#FAF7F2" />
+<title>Protocolo Fecha-Tudo · Método MACA para esteticistas</title>
+<meta name="description" content="8 em 10 orçamentos somem depois do 'vou pensar e te falo'. O Protocolo Fecha-Tudo é o método de 4 movimentos que conduz a conversa do WhatsApp até a paciente fechada. R$ 44,90, pagamento único." />
+<meta property="og:title" content="Protocolo Fecha-Tudo · Método MACA" />
+<meta property="og:description" content="O método que para de perder o orçamento que já chegou. 4 movimentos. 15 minutos. WhatsApp." />
 <meta property="og:type" content="product" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0908'/%3E%3Ctext x='50' y='66' font-family='ui-monospace,monospace' font-size='58' font-weight='700' text-anchor='middle' fill='%2300FF66'%3E_%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23F2C744'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23221E18'%3EF%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" />
 
 <style>
 /* ============================================================
-   FECHA-TUDO.SH · PROTOCOLO FECHA-TUDO · PAGINA A
-   Brutalist Terminal · dark, mono, phosphor, ASCII
+   PROTOCOLO FECHA-TUDO · PAGINA A
+   Info-produto cinematografico · light, quente, premium
    ============================================================ */
 
 :root {
-  --bg: #0A0908;
-  --bg-2: #14110F;
-  --bg-3: #1C1814;
-  --ink: #F5F1E8;
-  --ink-mute: #8B8275;
-  --ink-faint: #5C5448;
+  --bg: #FAF7F2;
+  --bg-warm: #F2EDE3;
+  --bg-3: #EDE6D9;
 
-  --phosphor: #00FF66;
-  --phosphor-dim: #00B847;
-  --phosphor-soft: rgba(0, 255, 102, 0.12);
+  --ink: #221E18;
+  --ink-soft: #5C544A;
+  --ink-faint: #8A8073;
 
-  --alert: #FF2D2D;
-  --alert-dim: #B81F1F;
-  --alert-soft: rgba(255, 45, 45, 0.10);
+  --alert: #E63426;
+  --alert-deep: #A4231A;
+  --alert-soft: rgba(230, 52, 38, 0.08);
 
-  --amber: #FFB000;
-  --amber-dim: #C28800;
+  --accent: #F2C744;
+  --accent-deep: #D9A82A;
+  --accent-soft: rgba(242, 199, 68, 0.18);
 
-  --whatsapp: #25D366;
+  --surface-dark: #1B1814;
+  --surface-dark-2: #262019;
+  --surface-dark-ink: #F4EFE8;
+  --surface-dark-mute: #A89E8E;
 
-  --rule: rgba(245, 241, 232, 0.12);
-  --rule-soft: rgba(245, 241, 232, 0.06);
-  --rule-strong: rgba(245, 241, 232, 0.24);
+  --whatsapp: #128C7E;
+  --whatsapp-bright: #25D366;
 
-  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --container: 1280px;
+  --logo-bar: #EFEAE2;
+
+  --rule: rgba(34, 30, 24, 0.14);
+  --rule-soft: rgba(34, 30, 24, 0.07);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --container: 1180px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-*::selection { background: var(--phosphor); color: var(--bg); }
+*::selection { background: var(--accent); color: var(--ink); }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  background: var(--bg);
-}
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--bg); }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-  font-size: 15px;
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
   font-weight: 400;
-  font-feature-settings: "ss01", "tnum";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  position: relative;
   overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 100;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 102, 0.015) 0,
-      rgba(0, 255, 102, 0.015) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-}
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 99;
-  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.45) 100%);
 }
 
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; }
 
-:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--alert); outline-offset: 3px; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.skip-link { position: absolute; left: -9999px; top: 0; background: var(--phosphor); color: var(--bg); padding: 12px 20px; z-index: 200; font-weight: 700; }
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--ink); color: var(--bg); padding: 12px 20px; z-index: 200; font-weight: 600; }
 .skip-link:focus { left: 12px; top: 12px; }
 
 .container {
@@ -114,50 +89,18 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   padding-inline: clamp(20px, 4vw, 40px);
 }
 
-/* ============== TICKER ============== */
+/* ============== ANNOUNCE BAR ============== */
 
-.ticker {
-  background: var(--bg-2);
-  border-bottom: 1px solid var(--rule);
-  padding-block: 10px;
-  overflow: hidden;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--phosphor);
-  position: relative;
-  z-index: 60;
+.announce {
+  background: var(--surface-dark);
+  color: var(--surface-dark-ink);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 16px;
+  letter-spacing: 0.01em;
 }
-.ticker__track {
-  display: flex;
-  gap: 0;
-  white-space: nowrap;
-  animation: ticker 38s linear infinite;
-  width: max-content;
-}
-.ticker__track:hover { animation-play-state: paused; }
-.ticker__item {
-  padding-inline: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-.ticker__item::before {
-  content: "·";
-  color: var(--alert);
-  margin-right: 4px;
-}
-.ticker__item:first-child,
-.ticker__item.is-head {
-  color: var(--alert);
-  font-weight: 600;
-}
-.ticker__item.is-head::before { content: "▶"; }
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+.announce strong { color: var(--accent); font-weight: 700; }
 
 /* ============== TOPBAR ============== */
 
@@ -165,10 +108,10 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 9, 8, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--rule);
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule-soft);
 }
 .topbar__row {
   display: flex;
@@ -181,21 +124,40 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
-.brand__mark { color: var(--phosphor); font-size: 18px; }
-.brand__cursor {
-  display: inline-block;
-  width: 0.5em;
-  height: 1em;
-  background: var(--phosphor);
-  vertical-align: -0.12em;
-  animation: blink 1s steps(1) infinite;
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  line-height: 1;
 }
-@keyframes blink { 50% { opacity: 0; } }
+
+.topbar__nav {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin-inline: auto;
+}
+@media (min-width: 880px) { .topbar__nav { display: inline-flex; } }
+.topbar__nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 200ms var(--ease-out), background 200ms var(--ease-out);
+}
+.topbar__nav a:hover { color: var(--ink); background: var(--bg-warm); }
 
 /* ============== BUTTONS ============== */
 
@@ -204,859 +166,652 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 20px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: 0;
+  padding: 16px 28px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  border-radius: 12px;
   border: 2px solid transparent;
   background: transparent;
   color: var(--ink);
   cursor: pointer;
-  transition: background 200ms var(--ease-out), color 200ms var(--ease-out), transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out), color 200ms var(--ease-out), border-color 200ms var(--ease-out);
   white-space: nowrap;
-  position: relative;
 }
-.btn--xl { padding: 18px 28px; font-size: 15px; }
+.btn--xl { padding: 21px 38px; font-size: 16px; }
+.btn__arrow { transition: transform 200ms var(--ease-out); }
+.btn:hover .btn__arrow { transform: translateX(4px); }
 
 .btn--primary {
-  background: var(--phosphor);
-  color: var(--bg);
-  border-color: var(--phosphor);
-  font-weight: 700;
+  background: var(--accent);
+  color: var(--ink);
+  box-shadow: 0 6px 0 var(--accent-deep);
 }
-.btn--primary::before { content: "▶ "; }
-.btn--primary:hover {
-  background: transparent;
-  color: var(--phosphor);
-  box-shadow: inset 0 0 0 2px var(--phosphor), 0 0 24px rgba(0, 255, 102, 0.35);
-}
-.btn--primary:active { transform: scale(0.98); }
+.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 8px 0 #b88c1f; }
+.btn--primary:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-deep); }
+.topbar .btn--primary { box-shadow: 0 4px 0 var(--accent-deep); padding: 11px 20px; font-size: 14px; }
+.topbar .btn--primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-deep); }
 
 .btn--whatsapp {
   background: transparent;
   color: var(--whatsapp);
-  border: 2px solid rgba(37, 211, 102, 0.4);
+  border-color: rgba(18, 140, 126, 0.35);
 }
-.btn--whatsapp:hover {
-  border-color: var(--whatsapp);
-  background: rgba(37, 211, 102, 0.08);
-}
+.btn--whatsapp:hover { border-color: var(--whatsapp); background: rgba(18, 140, 126, 0.07); }
 
-.topbar .btn { padding: 10px 16px; font-size: 12px; }
+.btn--dark { background: var(--ink); color: var(--bg); }
+.btn--dark:hover { background: #000; }
 
-/* ============== TOPBAR NAV ============== */
+.btn--light-ghost { color: var(--surface-dark-ink); border-color: rgba(244, 239, 232, 0.3); }
+.btn--light-ghost:hover { border-color: var(--surface-dark-ink); background: rgba(244, 239, 232, 0.07); }
 
-.topbar__nav {
-  display: none;
-  align-items: center;
-  gap: 2px;
-  margin-inline: auto;
-}
-@media (min-width: 860px) { .topbar__nav { display: inline-flex; } }
-.topbar__nav a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-mute);
-  padding: 7px 11px;
-  letter-spacing: 0.04em;
-  transition: color 200ms var(--ease-out);
-}
-.topbar__nav a::before { content: "/"; color: var(--phosphor-dim); margin-right: 3px; }
-.topbar__nav a:hover { color: var(--phosphor); }
-
-/* ============== TERMINAL TYPOGRAPHY ============== */
-
-.cmd {
-  color: var(--phosphor);
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 500;
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-.cmd::before { content: "$"; color: var(--phosphor-dim); font-weight: 600; }
-.cmd--gt::before { content: ">"; }
-.cmd--c::before { content: "//"; color: var(--ink-mute); }
+/* ============== TYPOGRAPHY ============== */
 
 .eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-mute);
-  display: inline-block;
-  margin-bottom: 14px;
+  color: var(--alert);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
 }
+.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--alert); display: inline-block; }
 
 .display {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-  font-size: clamp(28px, 5.6vw, 56px);
-  line-height: 1.04;
-  letter-spacing: -0.02em;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
   text-transform: uppercase;
   color: var(--ink);
 }
 .display em { font-style: normal; color: var(--alert); }
-.display strong {
-  font-weight: 700;
-  background: var(--phosphor);
-  color: var(--bg);
-  padding: 0 0.18em;
-}
+.display mark { background: var(--accent); color: var(--ink); padding: 0 0.1em; }
 
 .h2 {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-  font-size: clamp(22px, 3.4vw, 36px);
-  line-height: 1.12;
-  letter-spacing: -0.012em;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4.4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--ink);
 }
-.h2 em { font-style: normal; color: var(--phosphor); }
+.h2 em { font-style: normal; color: var(--alert); }
+.h2--light { color: var(--surface-dark-ink); }
+.h2--light em { color: var(--accent); }
 
 .lede {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-mute);
-  max-width: 64ch;
+  font-size: clamp(17px, 1.5vw, 19px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 60ch;
 }
-.lede strong { color: var(--ink); font-weight: 500; }
-
-/* ============== BOOT / HERO ============== */
-
-.boot { padding-block: clamp(36px, 5vw, 64px); position: relative; }
-.boot__head {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--phosphor);
-  letter-spacing: 0.16em;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.boot__head .blink { color: var(--ink); animation: blink 1s steps(1) infinite; }
-
-.boot__rule {
-  font-family: 'IBM Plex Mono', monospace;
-  color: var(--phosphor-dim);
-  font-size: 13px;
-  line-height: 1;
-  margin-bottom: 28px;
-  white-space: nowrap;
-  overflow: hidden;
-  user-select: none;
-  opacity: 0.7;
-}
-
-.boot__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(32px, 5vw, 56px);
-  align-items: center;
-}
-@media (min-width: 980px) {
-  .boot__grid { grid-template-columns: 1.5fr 1fr; }
-}
-
-.boot__head-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-block: 24px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(15px, 1.8vw, 18px);
-  color: var(--ink);
-}
-
-.boot__cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-block: 28px 24px;
-}
-
-.boot__meta {
-  display: grid;
-  gap: 4px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-mute);
-  letter-spacing: 0.04em;
-}
-.boot__meta span strong { color: var(--phosphor); font-weight: 500; }
-
-.boot__photo {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  background: var(--bg-2);
-  border: 1px solid var(--rule);
-  overflow: hidden;
-}
-.boot__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.2) brightness(0.85);
-  mix-blend-mode: screen;
-  opacity: 0.85;
-}
-.boot__photo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(10,9,8,0.4) 70%, rgba(10,9,8,0.95) 100%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 102, 0.04) 0,
-      rgba(0, 255, 102, 0.04) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-  z-index: 1;
-}
-.boot__photo-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  z-index: 2;
-  font-family: 'IBM Plex Mono', monospace;
-}
-.boot__photo-tag-role {
-  color: var(--alert);
-  font-weight: 700;
-  margin-bottom: 4px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.boot__photo-tag-name {
-  color: var(--ink);
-  font-size: 18px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-}
-.boot__photo-stamp {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 2;
-  background: var(--alert);
-  color: var(--ink);
-  padding: 4px 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
+.lede strong { color: var(--ink); font-weight: 600; }
 
 /* ============== SECTIONS ============== */
 
-.section { padding-block: clamp(56px, 8vw, 110px); position: relative; }
-.section--alt { background: var(--bg-2); }
-.section__head { margin-bottom: clamp(32px, 4vw, 48px); }
+.section { padding-block: clamp(64px, 9vw, 130px); }
+.section--warm { background: var(--bg-warm); }
+.section--dark { background: var(--surface-dark); color: var(--surface-dark-ink); }
+.section__head { max-width: 720px; margin-bottom: clamp(36px, 4.5vw, 56px); }
+
+/* ============== HERO ============== */
+
+.hero { padding-block: clamp(44px, 6vw, 84px); }
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(36px, 5vw, 60px);
+  align-items: center;
+}
+@media (min-width: 940px) { .hero__grid { grid-template-columns: 1.15fr 1fr; } }
+
+.hero__sub {
+  margin-top: 24px;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+.hero__sub strong { color: var(--ink); font-weight: 600; }
+
+.hero__cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.hero__meta span { display: inline-flex; align-items: center; gap: 7px; }
+.hero__meta span::before {
+  content: "";
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent-deep);
+  display: inline-block;
+}
+
+.hero__photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-3);
+  box-shadow: 0 24px 60px -28px rgba(34, 30, 24, 0.5);
+}
+.hero__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.35) contrast(1.05) brightness(1.02);
+}
+.hero__photo::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(34,30,24,0) 45%, rgba(34,30,24,0.62) 100%);
+}
+.hero__photo-tag {
+  position: absolute;
+  left: 18px; bottom: 18px; right: 18px;
+}
+.hero__photo-tag-role {
+  display: inline-block;
+  background: var(--alert);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.hero__photo-tag-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+/* ============== LOGO BAR ============== */
+
+.logobar { background: var(--logo-bar); padding-block: 22px; overflow: hidden; }
+.logobar__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+.logobar__track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.logobar__item {
+  padding-inline: 30px;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 /* ============== STATS ============== */
 
 .stats__list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 15px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--rule);
-  padding: clamp(20px, 3vw, 32px);
-  background: var(--bg-2);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
 }
 .stats__row {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 18px;
-  padding-block: 6px;
-  align-items: baseline;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: clamp(18px, 2.4vw, 26px) clamp(20px, 3vw, 32px);
+  border-bottom: 1px solid var(--rule-soft);
 }
+.stats__row:last-child { border-bottom: 0; }
 .stats__num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 700;
-  color: var(--phosphor);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(34px, 4.6vw, 50px);
   line-height: 1;
-  letter-spacing: -0.02em;
-  font-feature-settings: "tnum";
+  color: var(--alert);
 }
-.stats__lbl {
-  color: var(--ink-mute);
-  font-size: 13px;
-  line-height: 1.5;
-}
+.stats__lbl { font-size: 15px; color: var(--ink-soft); line-height: 1.45; }
 
 /* ============== DIAGNOSIS ============== */
 
 .diagnosis__list {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin-top: 32px;
-  border-left: 2px solid var(--alert);
-  padding-left: clamp(20px, 3vw, 32px);
-}
-.diagnosis__item {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.diagnosis__item {
+  background: var(--bg);
+  padding: clamp(24px, 3vw, 36px);
+  display: grid;
+  gap: 10px;
 }
 .diagnosis__id {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--alert);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  color: var(--accent-deep);
+  line-height: 1;
 }
-.diagnosis__head {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-}
-.diagnosis__body {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-mute);
-  max-width: 60ch;
-}
+.diagnosis__head { font-size: 19px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+.diagnosis__body { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); max-width: 62ch; }
 
 /* ============== PROTOCOL / MACA ============== */
 
 .protocol__list {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
   border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
 }
 .protocol__step {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  border-bottom: 1px solid var(--rule);
-  transition: background 240ms var(--ease-out);
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: background 220ms var(--ease-out);
 }
 .protocol__step:last-child { border-bottom: 0; }
-.protocol__step:hover { background: var(--bg-2); }
-
+.protocol__step:hover { background: var(--bg-warm); }
 .protocol__letter {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(48px, 6vw, 72px);
-  font-weight: 700;
-  color: var(--phosphor);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(48px, 6vw, 76px);
   line-height: 1;
-  padding: 22px 0 22px 22px;
+  color: var(--accent-deep);
+  padding: clamp(20px, 2.6vw, 30px) 0 clamp(20px, 2.6vw, 30px) clamp(20px, 2.6vw, 28px);
 }
 .protocol__step:nth-child(2) .protocol__letter,
 .protocol__step:nth-child(4) .protocol__letter { color: var(--alert); }
-
 .protocol__content {
-  padding: 22px clamp(20px, 3vw, 32px) 22px 12px;
+  padding: clamp(20px, 2.6vw, 30px) clamp(20px, 3vw, 32px) clamp(20px, 2.6vw, 30px) 4px;
   display: grid;
-  gap: 8px;
+  gap: 7px;
 }
 .protocol__name {
-  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  letter-spacing: 0.08em;
-  color: var(--phosphor);
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--alert);
 }
-.protocol__desc {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--ink);
-  max-width: 70ch;
-}
+.protocol__desc { font-size: 16px; line-height: 1.6; color: var(--ink-soft); max-width: 66ch; }
+.protocol__desc strong { color: var(--ink); font-weight: 600; }
 
-/* ============== TREE / O QUE VEM INSTALADO ============== */
+/* ============== FEATURES ============== */
 
-.tree__grid {
+.features__grid {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--rule);
   border: 1px solid var(--rule);
-  margin-top: 32px;
+  border-radius: 14px;
+  overflow: hidden;
 }
-@media (min-width: 680px) { .tree__grid { grid-template-columns: 1fr 1fr; } }
-.tree__cell {
-  padding: clamp(20px, 2.8vw, 30px);
-  border-bottom: 1px solid var(--rule);
-  transition: background 240ms var(--ease-out);
+@media (min-width: 680px) { .features__grid { grid-template-columns: 1fr 1fr; } }
+.features__cell {
+  background: var(--bg);
+  padding: clamp(22px, 2.8vw, 32px);
+  transition: background 220ms var(--ease-out);
 }
-@media (min-width: 680px) {
-  .tree__cell:nth-child(odd) { border-right: 1px solid var(--rule); }
-  .tree__cell:nth-last-child(-n+2) { border-bottom: 0; }
+.features__cell:hover { background: var(--accent-soft); }
+.features__num {
+  font-family: 'Anton', sans-serif;
+  font-size: 26px;
+  color: var(--accent-deep);
+  line-height: 1;
+  margin-bottom: 10px;
 }
-@media (max-width: 679px) {
-  .tree__cell:last-child { border-bottom: 0; }
-}
-.tree__cell:hover { background: var(--bg); }
-.tree__name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--phosphor);
-  margin-bottom: 8px;
-  letter-spacing: -0.005em;
-}
-.tree__name::before { content: "├─ "; color: var(--ink-faint); }
-.tree__cell:nth-last-child(-n+1) .tree__name::before,
-.tree__cell:last-child .tree__name::before { content: "└─ "; }
-.tree__desc {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--ink-mute);
-  max-width: 46ch;
-}
+.features__name { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 7px; letter-spacing: -0.01em; }
+.features__desc { font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 44ch; }
 
-/* ============== WHOAMI / FELIPE ============== */
+/* ============== FELIPE / DARK ============== */
 
-.whoami__grid {
+.felipe__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(32px, 4vw, 56px);
   align-items: start;
 }
-@media (min-width: 940px) {
-  .whoami__grid { grid-template-columns: 1.1fr 1fr; }
-}
+@media (min-width: 920px) { .felipe__grid { grid-template-columns: 1fr 1.1fr; } }
 
-.whoami__data {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--ink-mute);
-}
-.whoami__data .row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
-  padding-block: 8px;
-  border-bottom: 1px dashed var(--rule);
-}
-.whoami__data .row:last-of-type { border-bottom: 0; }
-@media (min-width: 600px) {
-  .whoami__data .row { grid-template-columns: 200px 1fr; gap: 18px; align-items: baseline; }
-}
-.whoami__data .key {
-  color: var(--phosphor);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-.whoami__data .val { color: var(--ink); font-weight: 400; }
-.whoami__data .val strong { color: var(--ink); font-weight: 600; }
-.whoami__data .note {
-  margin-top: 24px;
-  color: var(--ink-mute);
-  font-size: 14px;
-  line-height: 1.65;
-  max-width: 60ch;
-}
-.whoami__data .note strong { color: var(--phosphor); font-weight: 500; }
-
-.whoami__photo {
+.felipe__photo {
   position: relative;
   aspect-ratio: 4 / 5;
-  background: var(--bg-2);
-  border: 1px solid var(--rule);
+  border-radius: 14px;
   overflow: hidden;
+  background: var(--surface-dark-2);
 }
-.whoami__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.15);
-  mix-blend-mode: screen;
-  opacity: 0.78;
+.felipe__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3) contrast(1.05); }
+
+.felipe__data { display: flex; flex-direction: column; }
+.felipe__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  padding-block: 13px;
+  border-bottom: 1px solid rgba(244, 239, 232, 0.12);
 }
-.whoami__photo::after {
-  content: "FELIPE";
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(28px, 4vw, 42px);
+@media (min-width: 560px) {
+  .felipe__row { grid-template-columns: 160px 1fr; gap: 18px; align-items: baseline; }
+}
+.felipe__key {
+  font-size: 12px;
   font-weight: 700;
-  color: var(--phosphor);
-  letter-spacing: 0.04em;
-  z-index: 2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
+.felipe__val { color: var(--surface-dark-ink); font-size: 16px; }
+.felipe__note {
+  margin-top: 22px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--surface-dark-mute);
+  max-width: 58ch;
+}
+.felipe__note strong { color: var(--accent); font-weight: 600; }
 
 /* ============== OFERTA ============== */
 
-.oferta { background: var(--bg-2); }
-
-.ls__list {
-  display: flex;
-  flex-direction: column;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14.5px;
-  border: 1px solid var(--rule);
-  background: var(--bg);
-  padding: clamp(20px, 3vw, 32px);
+.offer__stack {
+  background: var(--surface-dark);
+  border-radius: 16px;
+  padding: clamp(22px, 3vw, 36px);
+  color: var(--surface-dark-ink);
 }
-.ls__row {
+.offer__row {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
-  padding-block: 14px;
-  border-bottom: 1px dashed var(--rule);
+  padding-block: 16px;
+  border-bottom: 1px solid rgba(244, 239, 232, 0.12);
   align-items: baseline;
 }
-.ls__row:last-of-type { border-bottom: 0; }
-.ls__row-name { color: var(--ink); font-weight: 500; }
-.ls__row-name span {
+.offer__row-name { font-weight: 600; font-size: 16px; }
+.offer__row-name span {
   display: block;
-  color: var(--ink-mute);
-  font-size: 12.5px;
-  margin-top: 4px;
   font-weight: 400;
+  font-size: 14px;
+  color: var(--surface-dark-mute);
+  margin-top: 4px;
   max-width: 56ch;
 }
-.ls__row-price {
-  color: var(--ink-mute);
-  font-weight: 500;
+.offer__row-price {
+  font-weight: 600;
+  color: var(--surface-dark-mute);
   text-decoration: line-through;
   text-decoration-color: var(--alert);
-  text-decoration-thickness: 1.5px;
-  font-feature-settings: "tnum";
+  text-decoration-thickness: 2px;
+  white-space: nowrap;
 }
-
-.ls__sum {
+.offer__sum {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
-  padding-top: 20px;
-  margin-top: 8px;
-  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  margin-top: 4px;
   align-items: baseline;
 }
-.ls__sum-lbl {
-  color: var(--ink-mute);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.ls__sum-val {
-  font-weight: 600;
-  color: var(--ink-mute);
+.offer__sum-lbl { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--surface-dark-mute); }
+.offer__sum-val {
+  font-weight: 700;
+  color: var(--surface-dark-mute);
   text-decoration: line-through;
   text-decoration-color: var(--alert);
-  font-feature-settings: "tnum";
+  text-decoration-thickness: 2px;
 }
 
-.ls__final {
-  margin-top: 32px;
-  padding: clamp(28px, 3.5vw, 44px);
+.offer__final {
+  margin-top: 24px;
   background: var(--bg);
-  border: 2px solid var(--phosphor);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: clamp(26px, 3.4vw, 42px);
   display: grid;
-  gap: 18px;
+  gap: 16px;
   position: relative;
 }
-.ls__final::before {
-  content: "// HOJE, NO LANÇAMENTO";
+.offer__final-flag {
   position: absolute;
-  top: -10px;
-  left: 16px;
-  padding: 0 8px;
-  background: var(--bg-2);
-  color: var(--phosphor);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-}
-.ls__final-name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-.ls__final-price {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  color: var(--phosphor);
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-}
-.ls__final-price-currency { font-size: 16px; }
-.ls__final-price-num { font-size: clamp(48px, 8vw, 80px); line-height: 0.9; letter-spacing: -0.02em; font-feature-settings: "tnum"; }
-.ls__final-price-cents { font-size: clamp(20px, 3vw, 28px); align-self: flex-start; line-height: 1; }
-.ls__final-pay {
-  font-family: 'JetBrains Mono', monospace;
+  top: -14px; left: 24px;
+  background: var(--alert);
+  color: #fff;
   font-size: 12px;
-  color: var(--ink-mute);
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 6px;
 }
-.ls__final-buttons { display: flex; flex-direction: column; gap: 10px; }
-@media (min-width: 540px) { .ls__final-buttons { flex-direction: row; flex-wrap: wrap; } }
-
-.ls__final-assurances {
+.offer__final-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.offer__final-price { display: flex; align-items: baseline; gap: 4px; color: var(--ink); }
+.offer__final-currency { font-family: 'Anton', sans-serif; font-size: 24px; }
+.offer__final-num { font-family: 'Anton', sans-serif; font-size: clamp(64px, 10vw, 104px); line-height: 0.86; }
+.offer__final-cents { font-family: 'Anton', sans-serif; font-size: clamp(26px, 3.4vw, 38px); align-self: flex-start; }
+.offer__final-pay { font-size: 15px; color: var(--ink-soft); font-weight: 500; }
+.offer__final-buttons { display: flex; flex-direction: column; gap: 10px; }
+@media (min-width: 540px) { .offer__final-buttons { flex-direction: row; flex-wrap: wrap; } }
+.offer__final-assurances {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-mute);
-  margin-top: 6px;
+  gap: 7px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
 }
-.ls__final-assurances span::before {
-  content: "[✓] ";
-  color: var(--phosphor);
-  font-weight: 700;
+.offer__final-assurances span { display: flex; align-items: center; gap: 9px; }
+.offer__final-assurances span::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23221E18' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
-.ls__final-secure {
-  margin-top: 4px;
+.offer__secure {
+  margin-top: 2px;
   padding-top: 16px;
-  border-top: 1px dashed var(--rule);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  border-top: 1px solid var(--rule);
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--ink-faint);
   display: flex;
   flex-wrap: wrap;
   gap: 6px 14px;
   align-items: center;
 }
-.ls__final-secure strong {
-  color: var(--phosphor);
-  font-weight: 600;
-}
-.ls__final-secure span::before { content: "· "; color: var(--ink-faint); }
-.ls__final-secure span:first-of-type::before { content: ""; }
+.offer__secure strong { color: var(--ink); font-weight: 700; }
+.offer__secure span:not(:last-child)::after { content: "·"; color: var(--accent-deep); margin-left: 14px; }
 
 /* ============== GUARANTEE ============== */
 
 .guarantee__box {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(24px, 3vw, 40px);
+  gap: clamp(24px, 3vw, 44px);
   align-items: center;
+  background: var(--bg);
   border: 1px solid var(--rule);
-  padding: clamp(28px, 4vw, 48px);
-  background: var(--bg-2);
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 52px);
 }
-@media (min-width: 720px) {
-  .guarantee__box { grid-template-columns: auto 1fr; }
-}
+@media (min-width: 680px) { .guarantee__box { grid-template-columns: auto 1fr; } }
 .guarantee__seal {
-  width: clamp(120px, 14vw, 160px);
-  height: clamp(120px, 14vw, 160px);
-  border: 2px solid var(--phosphor);
+  width: clamp(124px, 16vw, 168px);
+  height: clamp(124px, 16vw, 168px);
+  border-radius: 50%;
+  background: var(--accent);
   display: grid;
   place-items: center;
   text-align: center;
-  font-family: 'IBM Plex Mono', monospace;
-  color: var(--phosphor);
-  line-height: 1;
-  padding: 16px;
-  position: relative;
-}
-.guarantee__seal-num { font-size: clamp(48px, 6vw, 64px); font-weight: 700; letter-spacing: -0.02em; }
-.guarantee__seal-lbl { font-size: 12px; letter-spacing: 0.18em; margin-top: 6px; text-transform: uppercase; }
-.guarantee__seal::before {
-  content: "[ ";
-  position: absolute;
-  top: 50%;
-  left: -16px;
-  transform: translateY(-50%);
-  color: var(--phosphor);
-  font-size: 20px;
-}
-.guarantee__seal::after {
-  content: " ]";
-  position: absolute;
-  top: 50%;
-  right: -16px;
-  transform: translateY(-50%);
-  color: var(--phosphor);
-  font-size: 20px;
-}
-.guarantee__txt p {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--ink-mute);
-  max-width: 56ch;
-}
-.guarantee__txt p strong { color: var(--ink); font-weight: 500; }
-
-/* ============== LOGS / TESTIMONIALS ============== */
-
-.logs__list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 32px;
-}
-.logs__entry {
-  border: 1px solid var(--rule);
-  background: var(--bg-2);
-  padding: 20px clamp(20px, 3vw, 28px);
-  font-family: 'IBM Plex Mono', monospace;
-  transition: border-color 240ms var(--ease-out);
-}
-.logs__entry:hover { border-color: var(--phosphor); }
-.logs__entry-meta {
-  font-size: 12px;
-  color: var(--phosphor);
-  letter-spacing: 0.04em;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.logs__entry-meta::before { content: "[ "; }
-.logs__entry-meta::after { content: " ]"; }
-.logs__entry-text {
-  font-size: 14.5px;
-  line-height: 1.65;
   color: var(--ink);
+  box-shadow: 0 10px 0 var(--accent-deep);
 }
-.logs__entry-text strong { color: var(--phosphor); font-weight: 500; }
+.guarantee__seal-num { font-family: 'Anton', sans-serif; font-size: clamp(48px, 6vw, 66px); line-height: 0.9; }
+.guarantee__seal-lbl { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.guarantee__txt p { font-size: 16.5px; line-height: 1.65; color: var(--ink-soft); max-width: 56ch; }
+.guarantee__txt p strong { color: var(--ink); font-weight: 600; }
 
-.logs__entry--ph {
-  border-style: dashed;
-  border-color: var(--rule-strong);
-  background: transparent;
+/* ============== PROOF ============== */
+
+.proof__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
-.logs__entry--ph:hover { border-color: var(--amber); }
-.logs__entry--ph .logs__entry-meta { color: var(--amber); }
-.logs__entry--ph .logs__entry-text { color: var(--ink-mute); }
-.logs__note {
-  margin-top: 16px;
-  font-family: 'JetBrains Mono', monospace;
+@media (min-width: 720px) { .proof__list { grid-template-columns: repeat(3, 1fr); } }
+.proof__slot {
+  border: 2px dashed var(--rule);
+  border-radius: 14px;
+  padding: clamp(22px, 2.8vw, 30px);
+  background: var(--bg);
+}
+.proof__slot-label {
   font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--alert);
+  margin-bottom: 12px;
+}
+.proof__slot-text { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+.proof__note {
+  margin-top: 20px;
+  font-size: 13px;
   color: var(--ink-faint);
-  letter-spacing: 0.04em;
+  font-weight: 500;
 }
 
 /* ============== FAQ ============== */
 
 .faq__list {
-  margin-top: 32px;
   border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
-.faq__item { border-bottom: 1px solid var(--rule); margin-block: -1px; }
-.faq__item:last-of-type { border-bottom: 0; }
+.faq__item { border-bottom: 1px solid var(--rule); }
 .faq__q {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 18px 0;
+  padding: 22px 4px;
   text-align: left;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 17px;
   color: var(--ink);
   cursor: pointer;
   list-style: none;
+  letter-spacing: -0.01em;
 }
 .faq__q::-webkit-details-marker { display: none; }
-.faq__q::before {
-  content: "?";
-  color: var(--phosphor);
-  margin-right: 12px;
-  font-weight: 700;
-}
-.faq__q:hover { color: var(--phosphor); }
+.faq__q:hover { color: var(--alert); }
 .faq__sign {
   flex-shrink: 0;
-  width: 22px;
-  text-align: center;
-  color: var(--phosphor);
-  font-weight: 700;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 260ms var(--ease-out);
+}
+.faq__item[open] .faq__sign { transform: rotate(45deg); }
+.faq__a {
+  padding: 0 4px 24px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 70ch;
+}
+
+/* ============== EXIT / DARK CLOSE ============== */
+
+.exit__inner { max-width: 700px; margin-inline: auto; text-align: center; }
+.exit__options {
+  display: grid;
+  gap: 12px;
+  margin-block: 32px;
+  text-align: left;
+}
+.exit__opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(244, 239, 232, 0.16);
   font-size: 16px;
 }
-.faq__item[open] .faq__sign { color: var(--alert); }
-.faq__sign::before { content: "+"; }
-.faq__item[open] .faq__sign::before { content: "-"; }
-.faq__a {
-  padding: 0 0 22px 28px;
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--ink-mute);
-  max-width: 70ch;
-  font-family: 'IBM Plex Mono', monospace;
+.exit__opt-tag {
+  flex-shrink: 0;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
 }
-
-/* ============== EXIT / FECHAMENTO ============== */
-
-.exit__inner { max-width: 720px; margin-inline: auto; }
-.exit__options {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-block: 32px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 17px;
-}
-.exit__options span { display: flex; align-items: center; gap: 12px; }
-.exit__options strong { color: var(--phosphor); font-weight: 600; font-size: 14px; }
-.exit__options .a { color: var(--ink-mute); }
-.exit__options .b { color: var(--ink); font-weight: 500; }
-
-.exit__line {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: var(--ink-mute);
-  margin-bottom: 28px;
-  letter-spacing: 0.02em;
-}
-.exit__buttons { display: flex; flex-direction: column; gap: 12px; }
+.exit__opt--a { color: var(--surface-dark-mute); }
+.exit__opt--a .exit__opt-tag { background: var(--surface-dark-2); color: var(--surface-dark-mute); }
+.exit__opt--b { color: var(--surface-dark-ink); border-color: rgba(242, 199, 68, 0.5); }
+.exit__opt--b .exit__opt-tag { background: var(--accent); color: var(--ink); }
+.exit__line { font-size: 15px; color: var(--surface-dark-mute); margin-bottom: 26px; }
+.exit__buttons { display: flex; flex-direction: column; gap: 12px; justify-content: center; }
 @media (min-width: 540px) { .exit__buttons { flex-direction: row; flex-wrap: wrap; } }
 
-.exit__eof {
-  margin-top: 48px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-faint);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.exit__eof::after {
-  content: "";
-  display: inline-block;
-  width: 0.5em;
-  height: 1em;
-  background: var(--phosphor);
-  vertical-align: -0.1em;
-  margin-left: 6px;
-  animation: blink 1s steps(1) infinite;
-}
-
-/* ============== STICKY CTA MOBILE ============== */
+/* ============== STICKY CTA ============== */
 
 .sticky-cta {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   z-index: 60;
-  background: var(--bg-2);
-  border-top: 2px solid var(--phosphor);
+  background: var(--bg);
+  border-top: 2px solid var(--accent);
   padding: 10px clamp(14px, 4vw, 20px);
   display: flex;
   align-items: center;
@@ -1064,45 +819,37 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   gap: 14px;
   transform: translateY(100%);
   transition: transform 280ms var(--ease-out);
-  box-shadow: 0 -16px 32px -16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -14px 30px -16px rgba(34, 30, 24, 0.3);
 }
 .sticky-cta.is-visible { transform: translateY(0); }
-.sticky-cta__txt {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-mute);
-  flex: 1;
-  line-height: 1.3;
-}
+.sticky-cta__txt { font-size: 13px; color: var(--ink-soft); flex: 1; line-height: 1.3; }
 .sticky-cta__txt strong {
   display: block;
-  color: var(--phosphor);
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 2px;
-  letter-spacing: 0.04em;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
 }
-.sticky-cta .btn { padding: 10px 16px; font-size: 12px; }
+.sticky-cta .btn { padding: 12px 18px; font-size: 14px; }
 @media (min-width: 900px) { .sticky-cta { display: none; } }
 
 /* ============== FOOTER ============== */
 
 .footer {
   border-top: 1px solid var(--rule);
-  padding-block: 24px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  padding-block: 28px;
+  padding-bottom: 96px;
+  font-size: 13px;
   color: var(--ink-faint);
   text-align: center;
-  padding-bottom: 96px;
-  letter-spacing: 0.04em;
 }
-.footer strong { color: var(--ink); font-weight: 500; }
-@media (min-width: 900px) { .footer { padding-bottom: 24px; } }
+.footer strong { color: var(--ink-soft); font-weight: 600; }
+@media (min-width: 900px) { .footer { padding-bottom: 28px; } }
 
 /* ============== REVEAL ============== */
 
-.reveal { opacity: 0; transform: translateY(8px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1112,165 +859,155 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .ticker__track { animation: none; }
+  .logobar__track { animation: none; }
   .reveal { opacity: 1; transform: none; }
-  .brand__cursor, .exit__eof::after, .boot__head .blink { animation: none; }
 }
-
 </style>
 </head>
 <body>
 
-<a href="#oferta" class="skip-link">// Pular para a oferta</a>
+<a href="#oferta" class="skip-link">Pular para a oferta</a>
 
-<div class="ticker" role="region" aria-label="Em produção em">
-  <div class="ticker__track" aria-hidden="true">
-    <span class="ticker__item is-head">DEPLOYED IN PRODUCTION</span>
-    <span class="ticker__item">face-doctor</span>
-    <span class="ticker__item">botoclinic</span>
-    <span class="ticker__item">estudio-mais</span>
-    <span class="ticker__item">smile-skin</span>
-    <span class="ticker__item">best-laser</span>
-    <span class="ticker__item">gio-laser</span>
-    <span class="ticker__item">dr-colageno</span>
-    <span class="ticker__item">+ 70 clinicas BR</span>
-    <span class="ticker__item is-head">DEPLOYED IN PRODUCTION</span>
-    <span class="ticker__item">face-doctor</span>
-    <span class="ticker__item">botoclinic</span>
-    <span class="ticker__item">estudio-mais</span>
-    <span class="ticker__item">smile-skin</span>
-    <span class="ticker__item">best-laser</span>
-    <span class="ticker__item">gio-laser</span>
-    <span class="ticker__item">dr-colageno</span>
-    <span class="ticker__item">+ 70 clinicas BR</span>
-  </div>
+<div class="announce">
+  Edição de lançamento — <strong>R$ 44,90</strong> à vista, com acesso vitalício.
 </div>
 
 <header class="topbar" role="banner">
   <div class="container topbar__row">
-    <a href="#topo" class="brand" aria-label="fecha-tudo.sh, ir ao topo">
-      <span class="brand__mark">_</span>
-      <span>fecha-tudo<span class="brand__cursor" aria-hidden="true"></span></span>
+    <a href="#topo" class="brand" aria-label="Protocolo Fecha-Tudo, ir ao topo">
+      <span class="brand__mark" aria-hidden="true">F</span>
+      <span>Protocolo Fecha-Tudo</span>
     </a>
     <nav class="topbar__nav" aria-label="Seções da página">
-      <a href="#diagnostico">diagnóstico</a>
-      <a href="#protocolo">protocolo</a>
-      <a href="#instalado">o que vem</a>
-      <a href="#felipe">felipe</a>
-      <a href="#faq">faq</a>
+      <a href="#diagnostico">O problema</a>
+      <a href="#protocolo">O método</a>
+      <a href="#conteudo">O que vem</a>
+      <a href="#felipe">Felipe</a>
+      <a href="#faq">Perguntas</a>
     </nav>
     <a href="#oferta"
        class="btn btn--primary"
        data-event="cta_click"
-       data-position="topbar"
-       aria-label="Inicializar protocolo">
-      INICIALIZAR
+       data-position="topbar">
+      Garantir acesso
     </a>
   </div>
 </header>
 
 <a id="topo" tabindex="-1"></a>
 
-<section class="boot" aria-labelledby="boot-title">
+<section class="hero" aria-labelledby="hero-title">
   <div class="container">
-    <div class="boot__head" aria-hidden="true">
-      <span>[ FECHA-TUDO.SH</span>
-      <span>/ v1.0</span>
-      <span>/ MACA PROTOCOL ]</span>
-      <span class="blink">_</span>
-    </div>
-    <div class="boot__rule" aria-hidden="true">───────────────────────────────────────────────────────────────────────────────────────────────────</div>
-
-    <div class="boot__grid">
+    <div class="hero__grid">
       <div>
-        <h1 id="boot-title" class="display">
-          8 em 10 orçamentos retornam <em>NULL</em>.<br>
-          Cada um vale <strong>R$ 300 a R$ 2.000</strong> que você não cobrou.
+        <span class="eyebrow">Protocolo Fecha-Tudo · Método MACA</span>
+
+        <h1 id="hero-title" class="display">
+          8 em 10 orçamentos <em>somem</em> depois do <mark>"vou pensar"</mark>.
         </h1>
 
-        <div class="boot__head-stats" aria-hidden="true">
-          <span>&gt; o método que para de perder</span>
-          <span>&gt; 4 movimentos · 15 minutos · whatsapp</span>
-        </div>
+        <p class="hero__sub">
+          Cada um valia entre <strong>R$ 300 e R$ 2.000</strong> que você não chegou a cobrar. O Protocolo Fecha-Tudo conduz a conversa do WhatsApp até a paciente fechada, em 4 movimentos e 15 minutos.
+        </p>
 
-        <div class="boot__cta-row">
+        <div class="hero__cta-row">
           <a href="#oferta"
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="hero"
-             aria-label="Inicializar protocolo por R$ 44,90">
-            INICIALIZAR · R$ 44,90
+             aria-label="Quero o protocolo por R$ 44,90">
+            Quero o protocolo · R$ 44,90 <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
           <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
              class="btn btn--whatsapp btn--xl"
              target="_blank" rel="noopener noreferrer"
              data-event="whatsapp_click"
              data-position="hero">
-            wa.me/+lead
+            Falar no WhatsApp
           </a>
         </div>
 
-        <div class="boot__meta">
-          <span>STATUS: <strong>deploy-ready</strong></span>
-          <span>LICENÇA: vitalícia, pagamento único</span>
-          <span>GARANTIA: 7d, sem-pergunta</span>
+        <div class="hero__meta">
+          <span>Acesso vitalício</span>
+          <span>Pagamento único</span>
+          <span>Garantia de 7 dias</span>
         </div>
       </div>
 
-      <div class="boot__photo">
-        <img src="../assets/felipe-noir.jpg" alt="Felipe, idealizador do Método MACA, retrato em preto e branco" loading="eager" fetchpriority="high" />
-        <span class="boot__photo-stamp" aria-hidden="true">REC · v1.0</span>
-        <div class="boot__photo-tag">
-          <div class="boot__photo-tag-role">// operador</div>
-          <div class="boot__photo-tag-name">FELIPE G.</div>
+      <div class="hero__photo">
+        <img src="../assets/felipe-noir.jpg" alt="Felipe Granemann, idealizador do Método MACA" loading="eager" fetchpriority="high" />
+        <div class="hero__photo-tag">
+          <span class="hero__photo-tag-role">Idealizador do Método MACA</span>
+          <div class="hero__photo-tag-name">Felipe Granemann</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="logobar" aria-label="Clínicas onde o método é aplicado">
+  <div class="logobar__label">Método aplicado nas clínicas que viraram referência</div>
+  <div class="logobar__track" aria-hidden="true">
+    <span class="logobar__item">Face Doctor</span>
+    <span class="logobar__item">Botoclinic</span>
+    <span class="logobar__item">Estúdio Mais</span>
+    <span class="logobar__item">Smile Skin</span>
+    <span class="logobar__item">Best Laser</span>
+    <span class="logobar__item">Gio Laser</span>
+    <span class="logobar__item">Dr. Colágeno</span>
+    <span class="logobar__item">+ 70 clínicas no Brasil</span>
+    <span class="logobar__item">Face Doctor</span>
+    <span class="logobar__item">Botoclinic</span>
+    <span class="logobar__item">Estúdio Mais</span>
+    <span class="logobar__item">Smile Skin</span>
+    <span class="logobar__item">Best Laser</span>
+    <span class="logobar__item">Gio Laser</span>
+    <span class="logobar__item">Dr. Colágeno</span>
+    <span class="logobar__item">+ 70 clínicas no Brasil</span>
   </div>
 </section>
 
 <section class="section" aria-label="Indicadores do método">
   <div class="container">
-    <div class="cmd cmd--gt">stats --week</div>
     <div class="stats__list reveal">
       <div class="stats__row">
         <div class="stats__num">8/10</div>
-        <div class="stats__lbl">sumiram após "vou pensar e te falo"</div>
+        <div class="stats__lbl">orçamentos somem depois do "vou pensar e te falo"</div>
       </div>
       <div class="stats__row">
         <div class="stats__num">15min</div>
-        <div class="stats__lbl">duração de uma conversa que fecha com o método</div>
+        <div class="stats__lbl">é o que dura uma conversa que fecha com o método</div>
       </div>
       <div class="stats__row">
         <div class="stats__num">04</div>
-        <div class="stats__lbl">movimentos do método: abertura, ancoragem, condução, agendamento</div>
+        <div class="stats__lbl">movimentos: abertura, ancoragem, condução, agendamento</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="diagnostico" aria-labelledby="diag-title">
+<section class="section section--warm" id="diagnostico" aria-labelledby="diag-title">
   <div class="container">
     <div class="section__head reveal">
-      <div class="cmd cmd--gt">diagnosis</div>
-      <h2 id="diag-title" class="h2">a cliente não sumiu.<br>o <em>roteiro</em> falhou.</h2>
+      <span class="eyebrow">O diagnóstico</span>
+      <h2 id="diag-title" class="h2">A cliente não sumiu. O <em>roteiro</em> falhou.</h2>
     </div>
 
     <div class="diagnosis__list reveal">
       <div class="diagnosis__item">
-        <div class="diagnosis__id">[01] preço_solto.exec</div>
-        <h3 class="diagnosis__head">número sem ancoragem retorna null.</h3>
-        <p class="diagnosis__body">ela comparou com a concorrência em três segundos. você virou commodity. o preço só sustenta o que veio antes dele.</p>
+        <div class="diagnosis__id">01</div>
+        <h3 class="diagnosis__head">Preço sem ancoragem vira comparação.</h3>
+        <p class="diagnosis__body">Você manda o número, ela compara com a concorrência em três segundos e você virou só mais um orçamento. O preço só sustenta o que veio antes dele.</p>
       </div>
       <div class="diagnosis__item">
-        <div class="diagnosis__id">[02] iniciativa.lost</div>
-        <h3 class="diagnosis__head">"vou pensar e te falo" = transferência de controle.</h3>
-        <p class="diagnosis__body">quem dirige a conversa fecha. quem aguarda o retorno, aguarda forever. iniciativa não volta sozinha.</p>
+        <div class="diagnosis__id">02</div>
+        <h3 class="diagnosis__head">"Vou pensar e te falo" é perda de controle.</h3>
+        <p class="diagnosis__body">Quem conduz a conversa fecha. Quem espera o retorno, espera pra sempre. A iniciativa não volta sozinha pra sua mão.</p>
       </div>
       <div class="diagnosis__item">
-        <div class="diagnosis__id">[03] desconto.broken</div>
-        <h3 class="diagnosis__head">desconto não corrige falta de método.</h3>
-        <p class="diagnosis__body">ela some igual, agora você cobra menos. trata o sintoma sem curar o que adoece. perde duas vezes na mesma conversa.</p>
+        <div class="diagnosis__id">03</div>
+        <h3 class="diagnosis__head">Desconto não conserta falta de método.</h3>
+        <p class="diagnosis__body">Ela some do mesmo jeito, só que agora você ganhou menos. Trata o sintoma sem curar a causa, e perde duas vezes na mesma conversa.</p>
       </div>
     </div>
   </div>
@@ -1279,332 +1016,340 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 <section class="section" id="protocolo" aria-labelledby="protocol-title">
   <div class="container">
     <div class="section__head reveal">
-      <div class="cmd cmd--gt">protocol.maca</div>
-      <h2 id="protocol-title" class="h2">quatro movimentos.<br><em>quinze minutos.</em></h2>
-      <p class="lede" style="margin-top:18px;">sem timer falso, sem agressividade. você dirige a conversa, a cliente sente, a agenda fecha.</p>
+      <span class="eyebrow">O Método MACA</span>
+      <h2 id="protocol-title" class="h2">Quatro movimentos. <em>Quinze minutos.</em></h2>
+      <p class="lede" style="margin-top:16px;">Sem timer falso, sem agressividade. Você conduz a conversa, a cliente sente o cuidado, e a agenda fecha.</p>
     </div>
 
     <div class="protocol__list reveal">
       <div class="protocol__step">
-        <div class="protocol__letter">M</div>
+        <div class="protocol__letter" aria-hidden="true">M</div>
         <div class="protocol__content">
-          <div class="protocol__name">mensagem_de_entrada</div>
-          <p class="protocol__desc">em vez de devolver número, devolve pergunta calibrada. cliente sai do modo catálogo, entra no modo diagnóstico. conversa muda de natureza no terceiro segundo.</p>
+          <div class="protocol__name">Mensagem de entrada</div>
+          <p class="protocol__desc">Em vez de devolver um número, você devolve uma pergunta calibrada. A cliente sai do modo catálogo e entra no modo diagnóstico já na terceira mensagem.</p>
         </div>
       </div>
       <div class="protocol__step">
-        <div class="protocol__letter">A</div>
+        <div class="protocol__letter" aria-hidden="true">A</div>
         <div class="protocol__content">
-          <div class="protocol__name">ancoragem_de_valor</div>
-          <p class="protocol__desc">antes do preço aparecer, ela enxerga o problema dela em alta resolução. valor antes do algarismo. quando o número chega, parece pequeno comparado à dor evitada.</p>
+          <div class="protocol__name">Ancoragem de valor</div>
+          <p class="protocol__desc">Antes do preço aparecer, ela enxerga o próprio problema em alta resolução. Quando o número chega, parece pequeno perto da dor evitada.</p>
         </div>
       </div>
       <div class="protocol__step">
-        <div class="protocol__letter">C</div>
+        <div class="protocol__letter" aria-hidden="true">C</div>
         <div class="protocol__content">
-          <div class="protocol__name">condução_firme</div>
-          <p class="protocol__desc">sem implorar, sem agressividade, sem urgência fabricada. cada mensagem com objetivo. o objetivo é fechar.</p>
+          <div class="protocol__name">Condução firme</div>
+          <p class="protocol__desc">Sem implorar, sem agressividade, sem urgência fabricada. Cada mensagem com um objetivo só: <strong>fechar</strong>.</p>
         </div>
       </div>
       <div class="protocol__step">
-        <div class="protocol__letter">A</div>
+        <div class="protocol__letter" aria-hidden="true">A</div>
         <div class="protocol__content">
-          <div class="protocol__name">agendamento_real</div>
-          <p class="protocol__desc">próxima janela honesta da agenda. ela escolhe entrar ou ficar de fora. fecha na hora ou nunca.</p>
+          <div class="protocol__name">Agendamento real</div>
+          <p class="protocol__desc">Você apresenta a próxima janela honesta da agenda. Ela escolhe entrar ou ficar de fora. Fecha na hora, não na semana que vem.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="felipe" aria-labelledby="who-title">
+<section class="section section--warm" id="conteudo" aria-labelledby="content-title">
   <div class="container">
-    <div class="section__head reveal" style="margin-bottom:32px;">
-      <div class="cmd cmd--gt">whoami</div>
-      <h2 id="who-title" class="h2">felipe granemann.<br>10 anos · 70+ clínicas · <em>1 método.</em></h2>
+    <div class="section__head reveal">
+      <span class="eyebrow">O que vem no protocolo</span>
+      <h2 id="content-title" class="h2">Pronto pra <em>copiar e colar</em>.</h2>
+      <p class="lede" style="margin-top:16px;">Não é teoria nem aula motivacional. São as sequências prontas que você cola na conversa, uma pra cada momento do orçamento.</p>
     </div>
 
-    <div class="whoami__grid">
-      <div class="whoami__data reveal">
-        <div class="row"><div class="key">NOME</div><div class="val">Felipe Granemann</div></div>
-        <div class="row"><div class="key">FUNÇÃO</div><div class="val">estrategista digital, mercado de estética</div></div>
-        <div class="row"><div class="key">EXPERIÊNCIA</div><div class="val">10+ anos no setor</div></div>
-        <div class="row"><div class="key">AGÊNCIA</div><div class="val">70+ clínicas atendidas no Brasil</div></div>
-        <div class="row"><div class="key">DEPLOYMENTS</div><div class="val">face-doctor, botoclinic, estúdio-mais, smile-skin, best-laser, gio-laser, dr-colágeno</div></div>
-        <div class="row"><div class="key">IDEALIZOU</div><div class="val">Aios CRM (plataforma de relacionamento)</div></div>
-        <div class="row"><div class="key">EXPERTISE</div><div class="val">follow-up, atendimento, IA aplicada a vendas</div></div>
-        <div class="row"><div class="key">EXTRA</div><div class="val">já operou clínicas próprias. conhece os dois lados.</div></div>
+    <div class="features__grid reveal">
+      <div class="features__cell">
+        <div class="features__num">01</div>
+        <div class="features__name">Aberturas calibradas</div>
+        <p class="features__desc">Respostas pro "quanto custa?" que tiram a cliente do modo catálogo e abrem o diagnóstico.</p>
+      </div>
+      <div class="features__cell">
+        <div class="features__num">02</div>
+        <div class="features__name">Ancoragens de valor</div>
+        <p class="features__desc">Sequências que fazem a cliente enxergar o tamanho do problema antes do número aparecer.</p>
+      </div>
+      <div class="features__cell">
+        <div class="features__num">03</div>
+        <div class="features__name">Contornos de objeção</div>
+        <p class="features__desc">Scripts prontos pro "vou pensar", "tá caro" e "depois te falo", sem forçar e sem desconto.</p>
+      </div>
+      <div class="features__cell">
+        <div class="features__num">04</div>
+        <div class="features__name">Reativação Antivácuo</div>
+        <p class="features__desc">Sequência pra acordar quem sumiu nos últimos quatro meses e trazer de volta pra conversa.</p>
+      </div>
+      <div class="features__cell">
+        <div class="features__num">05</div>
+        <div class="features__name">Perguntas de diagnóstico</div>
+        <p class="features__desc">Perguntas que geram autoridade, conexão e desejo de fechar ainda no WhatsApp.</p>
+      </div>
+      <div class="features__cell">
+        <div class="features__num">06</div>
+        <div class="features__name">Fechamento de agenda</div>
+        <p class="features__desc">Condução firme até a janela marcada, com objetivo claro em cada mensagem.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p class="note">
-          <strong>// protocol.maca não é teoria de curso.</strong> é o que ele roda nos clientes da agência todo dia, condensado em um protocolo que cabe em 15 minutos de WhatsApp. agora copy-paste.
+<section class="section section--dark" id="felipe" aria-labelledby="who-title">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Quem está por trás</span>
+      <h2 id="who-title" class="h2 h2--light">Felipe Granemann. 10 anos, 70+ clínicas, <em>1 método.</em></h2>
+    </div>
+
+    <div class="felipe__grid">
+      <div class="felipe__photo reveal">
+        <img src="../assets/felipe-studio.jpg" alt="Felipe Granemann em retrato de estúdio" loading="lazy" />
+      </div>
+
+      <div class="felipe__data reveal">
+        <div class="felipe__row"><div class="felipe__key">Função</div><div class="felipe__val">Estrategista digital no mercado de estética</div></div>
+        <div class="felipe__row"><div class="felipe__key">Experiência</div><div class="felipe__val">Mais de 10 anos no setor</div></div>
+        <div class="felipe__row"><div class="felipe__key">Agência</div><div class="felipe__val">70+ clínicas atendidas no Brasil</div></div>
+        <div class="felipe__row"><div class="felipe__key">Clientes</div><div class="felipe__val">Face Doctor, Botoclinic, Estúdio Mais, Smile Skin, Best Laser, Gio Laser, Dr. Colágeno</div></div>
+        <div class="felipe__row"><div class="felipe__key">Idealizou</div><div class="felipe__val">Aios CRM, plataforma de relacionamento para clínicas</div></div>
+        <div class="felipe__row"><div class="felipe__key">Expertise</div><div class="felipe__val">Follow-up, atendimento e IA aplicada a vendas</div></div>
+        <div class="felipe__row"><div class="felipe__key">Bastidor</div><div class="felipe__val">Já operou clínicas próprias. Conhece os dois lados do balcão.</div></div>
+
+        <p class="felipe__note">
+          <strong>O Método MACA não é teoria de curso.</strong> É o que Felipe aplica nos clientes da agência todo dia, condensado em um protocolo que cabe em 15 minutos de WhatsApp. Agora pronto pra copiar e colar.
         </p>
       </div>
-
-      <div class="whoami__photo reveal">
-        <img src="../assets/felipe-studio.jpg" alt="Felipe em retrato de estúdio" loading="lazy" />
-      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="instalado" aria-labelledby="tree-title">
+<section class="section" id="oferta" aria-labelledby="oferta-title">
   <div class="container">
-    <div class="section__head reveal" style="max-width: 660px;">
-      <div class="cmd cmd--gt">tree PROTOCOLO_FECHA-TUDO/</div>
-      <h2 id="tree-title" class="h2">o que vem <em>instalado</em>.</h2>
-      <p class="lede" style="margin-top:18px;">não é teoria nem aula motivacional. são as sequências exatas que você cola na conversa, uma pra cada momento do orçamento.</p>
+    <div class="section__head reveal">
+      <span class="eyebrow">A oferta completa</span>
+      <h2 id="oferta-title" class="h2">Tudo o que vai pra <em>sua mão</em>.</h2>
+      <p class="lede" style="margin-top:16px;">Acesso vitalício. Pagamento único. Sem mensalidade e sem upsell escondido.</p>
     </div>
 
-    <div class="tree__grid reveal">
-      <div class="tree__cell">
-        <div class="tree__name">aberturas_calibradas</div>
-        <p class="tree__desc">respostas pro "quanto custa?" que tiram a cliente do modo catálogo e abrem o diagnóstico.</p>
-      </div>
-      <div class="tree__cell">
-        <div class="tree__name">ancoragens_de_valor</div>
-        <p class="tree__desc">sequências que fazem a cliente enxergar o tamanho do problema antes de o número aparecer.</p>
-      </div>
-      <div class="tree__cell">
-        <div class="tree__name">contornos_de_objecao</div>
-        <p class="tree__desc">scripts prontos pro "vou pensar", "tá caro" e "depois te falo", sem forçar e sem desconto.</p>
-      </div>
-      <div class="tree__cell">
-        <div class="tree__name">reativacao_antivacuo</div>
-        <p class="tree__desc">sequência pra acordar quem sumiu nos últimos quatro meses e trazer de volta pra conversa.</p>
-      </div>
-      <div class="tree__cell">
-        <div class="tree__name">perguntas_de_diagnostico</div>
-        <p class="tree__desc">perguntas que geram autoridade, conexão e desejo de fechar ainda dentro do WhatsApp.</p>
-      </div>
-      <div class="tree__cell">
-        <div class="tree__name">fechamento_de_agenda</div>
-        <p class="tree__desc">condução firme até a janela marcada, com objetivo claro em cada mensagem: a agenda.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section oferta" id="oferta" aria-labelledby="oferta-title">
-  <div class="container">
-    <div class="section__head reveal" style="max-width: 640px;">
-      <div class="cmd cmd--gt">ls -la PROTOCOLO_FECHA-TUDO/</div>
-      <h2 id="oferta-title" class="h2">conteúdo do <em>pacote</em></h2>
-      <p class="lede" style="margin-top:18px;">acesso vitalício. pagamento único. sem mensalidade, sem upsell escondido.</p>
-    </div>
-
-    <div class="ls__list reveal">
-      <div class="ls__row">
-        <div class="ls__row-name">scripts_maca/
-          <span>4 sequências copy-paste, uma por movimento. adaptáveis a facial, corporal, depilação, harmonização.</span>
+    <div class="offer__stack reveal">
+      <div class="offer__row">
+        <div class="offer__row-name">Scripts MACA
+          <span>4 sequências copia-e-cola, uma por movimento. Adaptáveis a facial, corporal, depilação e harmonização.</span>
         </div>
-        <div class="ls__row-price">R$ 197</div>
+        <div class="offer__row-price">R$ 197</div>
       </div>
-      <div class="ls__row">
-        <div class="ls__row-name">aula_aplicacao_felipe.mp4
-          <span>treino direto, sem encheção. audível no celular entre clientes.</span>
+      <div class="offer__row">
+        <div class="offer__row-name">Aula de aplicação com Felipe
+          <span>Treino direto, sem encheção. Dá pra ouvir no celular entre uma cliente e outra.</span>
         </div>
-        <div class="ls__row-price">R$ 97</div>
+        <div class="offer__row-price">R$ 97</div>
       </div>
-      <div class="ls__row">
-        <div class="ls__row-name">kit_antivacuo/
-          <span>sequência pra reativar quem sumiu nos últimos 4 meses. plug-and-play.</span>
+      <div class="offer__row">
+        <div class="offer__row-name">Kit Antivácuo
+          <span>Sequência pra reativar quem sumiu nos últimos 4 meses. É só adaptar e enviar.</span>
         </div>
-        <div class="ls__row-price">R$ 47</div>
+        <div class="offer__row-price">R$ 47</div>
       </div>
-      <div class="ls__row">
-        <div class="ls__row-name">mapa_bolso_maca.png
-          <span>método inteiro em 1 imagem. salve no celular, use durante a conversa.</span>
+      <div class="offer__row">
+        <div class="offer__row-name">Mapa de Bolso MACA
+          <span>O método inteiro em uma imagem. Salve no celular e consulte durante a conversa.</span>
         </div>
-        <div class="ls__row-price">R$ 27</div>
+        <div class="offer__row-price">R$ 27</div>
       </div>
-      <div class="ls__sum">
-        <div class="ls__sum-lbl">TOTAL_SE_VENDIDO_SEPARADO</div>
-        <div class="ls__sum-val">R$ 368</div>
+      <div class="offer__sum">
+        <div class="offer__sum-lbl">Valor se comprado em separado</div>
+        <div class="offer__sum-val">R$ 368</div>
       </div>
     </div>
 
-    <div class="ls__final reveal">
-      <div class="ls__final-name">protocolo_fecha-tudo</div>
-      <div class="ls__final-price">
-        <span class="ls__final-price-currency">R$</span>
-        <span class="ls__final-price-num">44</span>
-        <span class="ls__final-price-cents">,90</span>
+    <div class="offer__final reveal">
+      <span class="offer__final-flag">Preço de lançamento</span>
+      <div class="offer__final-name">Protocolo Fecha-Tudo</div>
+      <div class="offer__final-price">
+        <span class="offer__final-currency">R$</span>
+        <span class="offer__final-num">44</span>
+        <span class="offer__final-cents">,90</span>
       </div>
-      <div class="ls__final-pay">pagamento único · acesso vitalício</div>
+      <div class="offer__final-pay">Pagamento único · Acesso vitalício</div>
 
-      <div class="ls__final-buttons">
+      <div class="offer__final-buttons">
         <a href="https://checkout.ticto.app/OCC46FBCB"
            class="btn btn--primary btn--xl"
            data-event="cta_click"
            data-position="oferta"
-           aria-label="Executar checkout por R$ 44,90">
-          EXECUTAR CHECKOUT
+           aria-label="Quero o protocolo por R$ 44,90">
+          Quero o protocolo <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
         <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
            class="btn btn--whatsapp btn--xl"
            target="_blank" rel="noopener noreferrer"
            data-event="whatsapp_click"
            data-position="oferta">
-          wa.me/+lead
+          Falar no WhatsApp
         </a>
       </div>
 
-      <div class="ls__final-assurances">
-        <span>acesso imediato após o pagamento</span>
-        <span>garantia incondicional de 7 dias</span>
-        <span>sem mensalidade, sem upsell</span>
+      <div class="offer__final-assurances">
+        <span>Acesso imediato após o pagamento</span>
+        <span>Garantia incondicional de 7 dias</span>
+        <span>Sem mensalidade e sem upsell</span>
       </div>
 
-      <div class="ls__final-secure" aria-label="Pagamento seguro">
-        <span><strong>[secure]</strong> checkout ticto</span>
-        <span>ssl</span>
-        <span>cartão</span>
-        <span>pix</span>
-        <span>boleto</span>
+      <div class="offer__secure" aria-label="Pagamento seguro">
+        <span><strong>Pagamento seguro</strong></span>
+        <span>Checkout Ticto</span>
+        <span>Cartão</span>
+        <span>Pix</span>
+        <span>Boleto</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="guar-title">
+<section class="section section--warm" aria-labelledby="guar-title">
   <div class="container">
-    <div class="section__head reveal" style="margin-bottom:32px;">
-      <div class="cmd cmd--gt">garantia --duration 7d --refund unconditional</div>
-      <h2 id="guar-title" class="h2">aplica. testa. <em>devolve.</em></h2>
+    <div class="section__head reveal">
+      <span class="eyebrow">Garantia de 7 dias</span>
+      <h2 id="guar-title" class="h2">Aplica. Testa. Se não for, <em>devolvemos.</em></h2>
     </div>
 
     <div class="guarantee__box reveal">
-      <div class="guarantee__seal">
+      <div class="guarantee__seal" aria-hidden="true">
         <div>
-          <div class="guarantee__seal-num">07</div>
+          <div class="guarantee__seal-num">7</div>
           <div class="guarantee__seal-lbl">dias</div>
         </div>
       </div>
       <div class="guarantee__txt">
-        <p>você tem <strong>sete dias</strong> contados do acesso. aplica os scripts em pelo menos uma conversa real, vê funcionar (ou não), e decide. não funcionou? responde <strong>"não foi"</strong> ao e-mail de boas-vindas, devolvemos cada centavo. <strong>zero perguntas.</strong></p>
+        <p>Você tem <strong>sete dias</strong> contados do acesso. Aplica os scripts em pelo menos uma conversa real, vê funcionar (ou não), e decide. Não funcionou? Responde <strong>"não foi"</strong> ao e-mail de boas-vindas e devolvemos cada centavo. <strong>Sem perguntar o motivo.</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" aria-labelledby="logs-title">
+<section class="section" aria-labelledby="proof-title">
   <div class="container">
-    <div class="section__head reveal" style="margin-bottom:24px;">
-      <div class="cmd">tail -f operadoras.log</div>
-      <h2 id="logs-title" class="h2">resultado em <em>uma semana</em>.</h2>
+    <div class="section__head reveal">
+      <span class="eyebrow">Quem já aplicou</span>
+      <h2 id="proof-title" class="h2">Resultado em uma <em>semana</em>.</h2>
     </div>
 
-    <div class="logs__list reveal">
-      <article class="logs__entry logs__entry--ph">
-        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
-        <p class="logs__entry-text">&gt; espaço para o primeiro depoimento real do lançamento. substituir por print ou texto de cliente antes de publicar.</p>
-      </article>
-      <article class="logs__entry logs__entry--ph">
-        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
-        <p class="logs__entry-text">&gt; espaço para o segundo depoimento real. nome, cidade e especialidade ajudam a sustentar a prova.</p>
-      </article>
-      <article class="logs__entry logs__entry--ph">
-        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
-        <p class="logs__entry-text">&gt; espaço para o terceiro depoimento real, de preferência com número fechado na conversa.</p>
-      </article>
+    <div class="proof__list reveal">
+      <div class="proof__slot">
+        <div class="proof__slot-label">Relato 01</div>
+        <p class="proof__slot-text">Espaço reservado para o primeiro depoimento real de uma esteticista, coletado após o lançamento.</p>
+      </div>
+      <div class="proof__slot">
+        <div class="proof__slot-label">Relato 02</div>
+        <p class="proof__slot-text">Espaço reservado para o segundo depoimento. Nome, cidade e especialidade ajudam a sustentar a prova.</p>
+      </div>
+      <div class="proof__slot">
+        <div class="proof__slot-label">Relato 03</div>
+        <p class="proof__slot-text">Espaço reservado para o terceiro depoimento, de preferência com um número fechado na conversa.</p>
+      </div>
     </div>
-    <p class="logs__note">// nenhum depoimento foi inventado. estes slots aguardam relatos reais coletados após o lançamento.</p>
+    <p class="proof__note">Nenhum depoimento foi inventado. Estes espaços aguardam relatos reais coletados após o lançamento.</p>
   </div>
 </section>
 
-<section class="section" id="faq" aria-labelledby="faq-title">
+<section class="section section--warm" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <div class="section__head reveal" style="max-width: 640px;">
-      <div class="cmd cmd--gt">faq</div>
-      <h2 id="faq-title" class="h2">perguntas <em>antes de comprar</em>.</h2>
+    <div class="section__head reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 id="faq-title" class="h2">Antes de <em>comprar</em>.</h2>
     </div>
 
     <div class="faq__list reveal">
       <details class="faq__item">
-        <summary class="faq__q">em quanto tempo vejo resultado?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">primeiro orçamento que cair no WhatsApp depois da compra. a maioria aplica o script de abertura e fecha pelo menos um orçamento dentro da primeira semana. não é "transformação em 30 dias", é mudança no próximo "quanto custa?".</div>
+        <summary class="faq__q">Em quanto tempo vejo resultado?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">No primeiro orçamento que cair no seu WhatsApp depois da compra. A maioria aplica o script de abertura e fecha pelo menos um orçamento dentro da primeira semana. Não é "transformação em 30 dias", é mudança no próximo "quanto custa?".</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">funciona pra quem não entende de vendas?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">sim. pensado pra esteticista que entende muito de pele e zero de vendas. scripts copy-paste com instrução de quando usar cada um. se você manda mensagem no WhatsApp, aplica.</div>
+        <summary class="faq__q">Funciona pra quem não entende de vendas?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Sim. Foi pensado pra esteticista que entende muito de pele e zero de vendas. São scripts copia-e-cola, com instrução de quando usar cada um. Se você manda mensagem no WhatsApp, consegue aplicar.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">funciona pra qualquer procedimento?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">facial, corporal, pós-operatório, depilação, micropigmentação, drenagem, harmonização. todos. o método é sobre como conduzir a conversa, não sobre qual procedimento você vende.</div>
+        <summary class="faq__q">Funciona pra qualquer procedimento?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Facial, corporal, pós-operatório, depilação, micropigmentação, drenagem, harmonização. Todos. O método é sobre como conduzir a conversa, não sobre qual procedimento você vende.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">preciso de Instagram ou anúncios?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">não. o protocolo trabalha o que acontece depois que a pessoa já caiu no seu WhatsApp, venha ela do Instagram, indicação, anúncio ou panfleto. você não precisa virar influencer. precisa fechar quem já chegou.</div>
+        <summary class="faq__q">Preciso de Instagram ou anúncios?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Não. O protocolo trabalha o que acontece depois que a pessoa já caiu no seu WhatsApp, venha ela do Instagram, de indicação, de anúncio ou de panfleto. Você não precisa virar influencer. Precisa fechar quem já chegou.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">e se eu não gostar?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">7 dias de garantia incondicional. aplica, testa, sente. responde "não foi" ao e-mail de boas-vindas, devolvemos 100% sem precisar de motivo.</div>
+        <summary class="faq__q">E se eu não gostar?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">São 7 dias de garantia incondicional. Aplica, testa, sente. Responde "não foi" ao e-mail de boas-vindas e devolvemos 100%, sem precisar de motivo.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">como recebo o acesso?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">acesso imediato após confirmação do pagamento. e-mail com link pra área de membros, PDF dos scripts, kit antivácuo e mapa de bolso. tudo baixável.</div>
+        <summary class="faq__q">Como recebo o acesso?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Acesso imediato após a confirmação do pagamento. Você recebe um e-mail com o link para a área de membros, o PDF dos scripts, o Kit Antivácuo e o Mapa de Bolso. Tudo baixável.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">o preço de R$ 44,90 é por quanto tempo?<span class="faq__sign" aria-hidden="true"></span></summary>
-        <div class="faq__a">preço de lançamento. sem timer falso, mas o valor sobe quando o lote inicial de cadastros esgotar. quem entra agora trava o preço e mantém o acesso vitalício, sem mensalidade.</div>
+        <summary class="faq__q">O preço de R$ 44,90 é por quanto tempo?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">É o preço de lançamento. Sem timer falso, mas o valor sobe quando o lote inicial de cadastros esgotar. Quem entra agora trava o preço e mantém o acesso vitalício, sem mensalidade.</div>
       </details>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="exit-title">
+<section class="section section--dark" aria-labelledby="exit-title">
   <div class="container">
     <div class="exit__inner reveal">
-      <div class="cmd cmd--gt">exit</div>
-      <h2 id="exit-title" class="display" style="font-size: clamp(28px, 4.8vw, 48px); margin-bottom: 24px;">
-        duas opções no <em>shell</em>.
-      </h2>
+      <span class="eyebrow" style="justify-content:center;">A decisão é sua</span>
+      <h2 id="exit-title" class="h2 h2--light">Duas opções pro próximo orçamento.</h2>
 
       <div class="exit__options">
-        <span><strong>[a]</strong><span class="a">continuar perdendo</span></span>
-        <span><strong>[b]</strong><span class="b">aplicar no próximo orçamento</span></span>
+        <div class="exit__opt exit__opt--a">
+          <span class="exit__opt-tag" aria-hidden="true">A</span>
+          <span>Continuar mandando preço solto e ver o orçamento sumir.</span>
+        </div>
+        <div class="exit__opt exit__opt--b">
+          <span class="exit__opt-tag" aria-hidden="true">B</span>
+          <span>Aplicar o Método MACA na próxima conversa e fechar pelo cuidado.</span>
+        </div>
       </div>
 
-      <div class="exit__line">// R$ 44,90 · menos que um almoço · 7d garantia · risco zero</div>
+      <div class="exit__line">R$ 44,90 · menos que um almoço · 7 dias de garantia · risco zero</div>
 
       <div class="exit__buttons">
         <a href="https://checkout.ticto.app/OCC46FBCB"
            class="btn btn--primary btn--xl"
            data-event="cta_click"
            data-position="fechamento"
-           aria-label="Inicializar protocolo por R$ 44,90">
-          INICIALIZAR · R$ 44,90
+           aria-label="Quero o protocolo por R$ 44,90">
+          Quero o protocolo · R$ 44,90 <span class="btn__arrow" aria-hidden="true">→</span>
         </a>
         <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
-           class="btn btn--whatsapp btn--xl"
+           class="btn btn--light-ghost btn--xl"
            target="_blank" rel="noopener noreferrer"
            data-event="whatsapp_click"
            data-position="fechamento">
-          wa.me/+lead
+          Falar no WhatsApp
         </a>
       </div>
-
-      <div class="exit__eof">end-of-file</div>
     </div>
   </div>
 </section>
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    // <strong>protocolo_fecha-tudo</strong> · método MACA por Felipe Granemann · produto digital · resultados variam · © 2026
+    <strong>Protocolo Fecha-Tudo</strong> · Método MACA por Felipe Granemann · Produto digital · Resultados variam de acordo com a aplicação · © 2026
   </div>
 </footer>
 
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta__txt">
     <strong>R$ 44,90</strong>
-    pagamento único · 7d garantia
+    Pagamento único · 7 dias de garantia
   </div>
   <a href="https://checkout.ticto.app/OCC46FBCB"
      class="btn btn--primary"
      data-event="cta_click"
      data-position="sticky">
-    EXECUTAR
+    Quero
   </a>
 </div>
 
@@ -1622,7 +1367,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   }
 
   var sticky = document.getElementById('stickyCta');
-  var hero = document.querySelector('.boot');
+  var hero = document.querySelector('.hero');
   if (sticky && hero) {
     var heroIO = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -1640,7 +1385,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       var t = document.querySelector(href);
       if (!t) return;
       e.preventDefault();
-      var top = t.getBoundingClientRect().top + window.pageYOffset - 60;
+      var top = t.getBoundingClientRect().top + window.pageYOffset - 64;
       window.scrollTo({ top: top, behavior: 'smooth' });
       t.setAttribute('tabindex', '-1');
       setTimeout(function(){ t.focus({ preventScroll: true }); }, 320);
