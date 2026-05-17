@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#FAF7F2" />
-<title>Protocolo Fecha-Tudo · Método MACA para esteticistas</title>
-<meta name="description" content="8 em 10 orçamentos somem depois do 'vou pensar e te falo'. O Protocolo Fecha-Tudo é o método de 4 movimentos que conduz a conversa do WhatsApp até a paciente fechada. R$ 44,90, pagamento único." />
-<meta property="og:title" content="Protocolo Fecha-Tudo · Método MACA" />
-<meta property="og:description" content="O método que para de perder o orçamento que já chegou. 4 movimentos. 15 minutos. WhatsApp." />
+<title>Protocolo Fecha-Tudo · O script de 15 minutos para fechar pelo WhatsApp</title>
+<meta name="description" content="Cansada de perder 8 em 10 orçamentos no 'vou pensar'? O Método M.A.C.A. transforma quem só quer saber o preço em paciente de ticket alto, em 15 minutos de conversa. R$ 44,90, pagamento único." />
+<meta property="og:title" content="Protocolo Fecha-Tudo · Método M.A.C.A." />
+<meta property="og:description" content="O script que para de perder o orçamento que já chegou no seu WhatsApp. 4 movimentos. 15 minutos." />
 <meta property="og:type" content="product" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23F2C744'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='900' text-anchor='middle' fill='%23221E18'%3EF%3C/text%3E%3C/svg%3E" />
 
@@ -243,7 +243,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-family: 'Anton', sans-serif;
   font-weight: 400;
   font-size: clamp(30px, 4.4vw, 52px);
-  line-height: 1.02;
+  line-height: 1.06;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--ink);
@@ -636,6 +636,12 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .offer__final-num { font-family: 'Anton', sans-serif; font-size: clamp(64px, 10vw, 104px); line-height: 0.86; }
 .offer__final-cents { font-family: 'Anton', sans-serif; font-size: clamp(26px, 3.4vw, 38px); align-self: flex-start; }
 .offer__final-pay { font-size: 15px; color: var(--ink-soft); font-weight: 500; }
+.offer__final-justify {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.offer__final-justify strong { color: var(--ink); font-weight: 600; }
 .offer__final-buttons { display: flex; flex-direction: column; gap: 10px; }
 @media (min-width: 540px) { .offer__final-buttons { flex-direction: row; flex-wrap: wrap; } }
 .offer__final-assurances {
@@ -906,14 +912,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   <div class="container">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow">Protocolo Fecha-Tudo · Método MACA</span>
+        <span class="eyebrow">Protocolo Fecha-Tudo · Método M.A.C.A.</span>
 
         <h1 id="hero-title" class="display">
           8 em 10 orçamentos <em>somem</em> depois do <mark>"vou pensar"</mark>.
         </h1>
 
         <p class="hero__sub">
-          Cada um valia entre <strong>R$ 300 e R$ 2.000</strong> que você não chegou a cobrar. O Protocolo Fecha-Tudo conduz a conversa do WhatsApp até a paciente fechada, em 4 movimentos e 15 minutos.
+          Cada curioso que pergunta o preço e some valia entre <strong>R$ 300 e R$ 2.000</strong>. O Protocolo Fecha-Tudo te dá o script exato pra conduzir a conversa do "quanto custa?" até a paciente agendada, em 4 movimentos e 15 minutos.
         </p>
 
         <div class="hero__cta-row">
@@ -921,8 +927,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
              class="btn btn--primary btn--xl"
              data-event="cta_click"
              data-position="hero"
-             aria-label="Quero o protocolo por R$ 44,90">
-            Quero o protocolo · R$ 44,90 <span class="btn__arrow" aria-hidden="true">→</span>
+             aria-label="Quero o script de fechamento por R$ 44,90">
+            Quero o script de fechamento <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
           <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
              class="btn btn--whatsapp btn--xl"
@@ -941,9 +947,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       </div>
 
       <div class="hero__photo">
-        <img src="../assets/felipe-noir.jpg" alt="Felipe Granemann, idealizador do Método MACA" loading="eager" fetchpriority="high" />
+        <img src="../assets/felipe-noir.jpg" alt="Felipe Granemann, idealizador do Método M.A.C.A." loading="eager" fetchpriority="high" />
         <div class="hero__photo-tag">
-          <span class="hero__photo-tag-role">Idealizador do Método MACA</span>
+          <span class="hero__photo-tag-role">Idealizador do Método M.A.C.A.</span>
           <div class="hero__photo-tag-name">Felipe Granemann</div>
         </div>
       </div>
@@ -986,7 +992,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       </div>
       <div class="stats__row">
         <div class="stats__num">04</div>
-        <div class="stats__lbl">movimentos: abertura, ancoragem, condução, agendamento</div>
+        <div class="stats__lbl">movimentos: mapeamento, ancoragem, comando, agendamento</div>
       </div>
     </div>
   </div>
@@ -1002,18 +1008,18 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
     <div class="diagnosis__list reveal">
       <div class="diagnosis__item">
         <div class="diagnosis__id">01</div>
-        <h3 class="diagnosis__head">Preço sem ancoragem vira comparação.</h3>
-        <p class="diagnosis__body">Você manda o número, ela compara com a concorrência em três segundos e você virou só mais um orçamento. O preço só sustenta o que veio antes dele.</p>
+        <h3 class="diagnosis__head">Você responde como um catálogo.</h3>
+        <p class="diagnosis__body">A cliente pergunta o preço, você manda o preço. Sem valor percebido antes do número, o cérebro dela só enxerga custo, e te compara com a concorrência mais barata em três segundos.</p>
       </div>
       <div class="diagnosis__item">
         <div class="diagnosis__id">02</div>
-        <h3 class="diagnosis__head">"Vou pensar e te falo" é perda de controle.</h3>
-        <p class="diagnosis__body">Quem conduz a conversa fecha. Quem espera o retorno, espera pra sempre. A iniciativa não volta sozinha pra sua mão.</p>
+        <h3 class="diagnosis__head">O "vou pensar" é você perdendo o controle.</h3>
+        <p class="diagnosis__body">Quem conduz a conversa agenda. Quem espera o retorno, espera no vácuo. Depois que a iniciativa sai da sua mão, ela não volta sozinha.</p>
       </div>
       <div class="diagnosis__item">
         <div class="diagnosis__id">03</div>
         <h3 class="diagnosis__head">Desconto não conserta falta de método.</h3>
-        <p class="diagnosis__body">Ela some do mesmo jeito, só que agora você ganhou menos. Trata o sintoma sem curar a causa, e perde duas vezes na mesma conversa.</p>
+        <p class="diagnosis__body">Você baixa o preço, ela some do mesmo jeito, e agora você ganhou menos. Tratou o sintoma sem curar a causa, e perdeu duas vezes na mesma conversa.</p>
       </div>
     </div>
   </div>
@@ -1022,38 +1028,38 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 <section class="section" id="protocolo" aria-labelledby="protocol-title">
   <div class="container">
     <div class="section__head reveal">
-      <span class="eyebrow">O Método MACA</span>
+      <span class="eyebrow">O Método M.A.C.A.</span>
       <h2 id="protocol-title" class="h2">Quatro movimentos. <em>Quinze minutos.</em></h2>
-      <p class="lede" style="margin-top:16px;">Sem timer falso, sem agressividade. Você conduz a conversa, a cliente sente o cuidado, e a agenda fecha.</p>
+      <p class="lede" style="margin-top:16px;">Sem catálogo de preço, sem áudio de cinco minutos, sem implorar. Você conduz cada virada da conversa, a cliente sente o cuidado, e a agenda fecha.</p>
     </div>
 
     <div class="protocol__list reveal">
       <div class="protocol__step">
         <div class="protocol__letter" aria-hidden="true">M</div>
         <div class="protocol__content">
-          <div class="protocol__name">Mensagem de entrada</div>
-          <p class="protocol__desc">Em vez de devolver um número, você devolve uma pergunta calibrada. A cliente sai do modo catálogo e entra no modo diagnóstico já na terceira mensagem.</p>
+          <div class="protocol__name">Mapeamento da dor</div>
+          <p class="protocol__desc">Em vez de mandar a tabela de preço, você devolve a pergunta de diagnóstico. A cliente sai do modo catálogo e admite o que <strong>realmente incomoda</strong>, antes de qualquer valor.</p>
         </div>
       </div>
       <div class="protocol__step">
         <div class="protocol__letter" aria-hidden="true">A</div>
         <div class="protocol__content">
           <div class="protocol__name">Ancoragem de valor</div>
-          <p class="protocol__desc">Antes do preço aparecer, ela enxerga o próprio problema em alta resolução. Quando o número chega, parece pequeno perto da dor evitada.</p>
+          <p class="protocol__desc">Você mostra o custo de continuar com o problema antes de revelar o preço. Quando o número aparece, ele já parece pequeno perto do que ela quer resolver.</p>
         </div>
       </div>
       <div class="protocol__step">
         <div class="protocol__letter" aria-hidden="true">C</div>
         <div class="protocol__content">
-          <div class="protocol__name">Condução firme</div>
-          <p class="protocol__desc">Sem implorar, sem agressividade, sem urgência fabricada. Cada mensagem com um objetivo só: <strong>fechar</strong>.</p>
+          <div class="protocol__name">Comando da conversa</div>
+          <p class="protocol__desc">Você assume a direção com firmeza profissional, sem agressividade. Apresenta as <strong>janelas reais</strong> da sua agenda e traz a decisão pra dentro da conversa.</p>
         </div>
       </div>
       <div class="protocol__step">
         <div class="protocol__letter" aria-hidden="true">A</div>
         <div class="protocol__content">
-          <div class="protocol__name">Agendamento real</div>
-          <p class="protocol__desc">Você apresenta a próxima janela honesta da agenda. Ela escolhe entrar ou ficar de fora. Fecha na hora, não na semana que vem.</p>
+          <div class="protocol__name">Agendamento blindado</div>
+          <p class="protocol__desc">Você fecha com a dupla escolha: dois horários concretos. A cliente escolhe um deles, em vez de escolher entre o "sim" e o "vou pensar".</p>
         </div>
       </div>
     </div>
@@ -1065,39 +1071,39 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
     <div class="section__head reveal">
       <span class="eyebrow">O que vem no protocolo</span>
       <h2 id="content-title" class="h2">Pronto pra <em>copiar e colar</em>.</h2>
-      <p class="lede" style="margin-top:16px;">Não é teoria nem aula motivacional. São as sequências prontas que você cola na conversa, uma pra cada momento do orçamento.</p>
+      <p class="lede" style="margin-top:16px;">Não é teoria nem aula de marketing. São as mensagens prontas, na ordem certa, pra cada momento da conversa de orçamento.</p>
     </div>
 
     <div class="features__grid reveal">
       <div class="features__cell">
         <div class="features__num">01</div>
-        <div class="features__name">Aberturas calibradas</div>
-        <p class="features__desc">Respostas pro "quanto custa?" que tiram a cliente do modo catálogo e abrem o diagnóstico.</p>
+        <div class="features__name">Aberturas que prendem</div>
+        <p class="features__desc">A resposta certa pro primeiro "oi" e pro "quanto custa?", que segura a atenção e abre espaço pro diagnóstico.</p>
       </div>
       <div class="features__cell">
         <div class="features__num">02</div>
-        <div class="features__name">Ancoragens de valor</div>
-        <p class="features__desc">Sequências que fazem a cliente enxergar o tamanho do problema antes do número aparecer.</p>
+        <div class="features__name">Perguntas de diagnóstico</div>
+        <p class="features__desc">As perguntas que fazem a cliente revelar o que dói nela de verdade, e quanto está disposta a investir.</p>
       </div>
       <div class="features__cell">
         <div class="features__num">03</div>
-        <div class="features__name">Contornos de objeção</div>
-        <p class="features__desc">Scripts prontos pro "vou pensar", "tá caro" e "depois te falo", sem forçar e sem desconto.</p>
+        <div class="features__name">Ancoragem de valor</div>
+        <p class="features__desc">As mensagens que fazem o preço parecer pequeno perto do resultado, antes de você revelar o número.</p>
       </div>
       <div class="features__cell">
         <div class="features__num">04</div>
-        <div class="features__name">Reativação Antivácuo</div>
-        <p class="features__desc">Sequência pra acordar quem sumiu nos últimos quatro meses e trazer de volta pra conversa.</p>
+        <div class="features__name">Contornos de objeção</div>
+        <p class="features__desc">Respostas prontas pro "tá caro", "vou pensar" e "depois te falo", sem forçar e sem dar desconto.</p>
       </div>
       <div class="features__cell">
         <div class="features__num">05</div>
-        <div class="features__name">Perguntas de diagnóstico</div>
-        <p class="features__desc">Perguntas que geram autoridade, conexão e desejo de fechar ainda no WhatsApp.</p>
+        <div class="features__name">Fechamento por dupla escolha</div>
+        <p class="features__desc">A técnica de agendamento que leva a cliente a escolher um horário, sem deixar margem pro vácuo.</p>
       </div>
       <div class="features__cell">
         <div class="features__num">06</div>
-        <div class="features__name">Fechamento de agenda</div>
-        <p class="features__desc">Condução firme até a janela marcada, com objetivo claro em cada mensagem.</p>
+        <div class="features__name">Sequência Antivácuo</div>
+        <p class="features__desc">As mensagens pra reativar quem sumiu depois do preço e trazer a conversa de volta.</p>
       </div>
     </div>
   </div>
@@ -1125,7 +1131,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <div class="felipe__row"><div class="felipe__key">Bastidor</div><div class="felipe__val">Já operou clínicas próprias. Conhece os dois lados do balcão.</div></div>
 
         <p class="felipe__note">
-          <strong>O Método MACA não é teoria de curso.</strong> É o que Felipe aplica nos clientes da agência todo dia, condensado em um protocolo que cabe em 15 minutos de WhatsApp. Agora pronto pra copiar e colar.
+          <strong>O Método M.A.C.A. não é teoria de curso.</strong> É o que Felipe aplica nos clientes da agência todo dia, condensado num protocolo que cabe em 15 minutos de WhatsApp. Agora copia-e-cola, na sua mão.
         </p>
       </div>
     </div>
@@ -1142,26 +1148,26 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
     <div class="offer__stack reveal">
       <div class="offer__row">
-        <div class="offer__row-name">Scripts MACA
-          <span>4 sequências copia-e-cola, uma por movimento. Adaptáveis a facial, corporal, depilação e harmonização.</span>
+        <div class="offer__row-name">Scripts do Método M.A.C.A.
+          <span>As 4 sequências copia-e-cola, uma por movimento. Adaptáveis a facial, corporal, depilação e harmonização.</span>
         </div>
         <div class="offer__row-price">R$ 197</div>
       </div>
       <div class="offer__row">
         <div class="offer__row-name">Aula de aplicação com Felipe
-          <span>Treino direto, sem encheção. Dá pra ouvir no celular entre uma cliente e outra.</span>
+          <span>Felipe mostra o método rodando numa conversa real. Dá pra ouvir no celular entre uma cliente e outra.</span>
         </div>
         <div class="offer__row-price">R$ 97</div>
       </div>
       <div class="offer__row">
         <div class="offer__row-name">Kit Antivácuo
-          <span>Sequência pra reativar quem sumiu nos últimos 4 meses. É só adaptar e enviar.</span>
+          <span>A sequência pronta pra reativar quem sumiu depois do preço nos últimos 4 meses. É só adaptar e enviar.</span>
         </div>
         <div class="offer__row-price">R$ 47</div>
       </div>
       <div class="offer__row">
-        <div class="offer__row-name">Mapa de Bolso MACA
-          <span>O método inteiro em uma imagem. Salve no celular e consulte durante a conversa.</span>
+        <div class="offer__row-name">Mapa de Bolso M.A.C.A.
+          <span>O método inteiro em uma imagem. Salve no celular e consulte durante a conversa de orçamento.</span>
         </div>
         <div class="offer__row-price">R$ 27</div>
       </div>
@@ -1180,6 +1186,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <span class="offer__final-cents">,90</span>
       </div>
       <div class="offer__final-pay">Pagamento único · Acesso vitalício</div>
+      <p class="offer__final-justify">
+        Custa menos que um kit de descartáveis de uma única sessão. <strong>Um orçamento fechado já paga o protocolo dezenas de vezes.</strong>
+      </p>
 
       <div class="offer__final-buttons">
         <a href="https://checkout.ticto.app/OCC46FBCB"
@@ -1230,7 +1239,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         </div>
       </div>
       <div class="guarantee__txt">
-        <p>Você tem <strong>sete dias</strong> contados do acesso. Aplica os scripts em pelo menos uma conversa real, vê funcionar (ou não), e decide. Não funcionou? Responde <strong>"não foi"</strong> ao e-mail de boas-vindas e devolvemos cada centavo. <strong>Sem perguntar o motivo.</strong></p>
+        <p>Você tem <strong>sete dias</strong> contados do acesso. Aplica os scripts em pelo menos uma conversa real, vê funcionar (ou não), e decide. Não funcionou? Responde <strong>"não foi"</strong> ao e-mail de boas-vindas e devolvemos cada centavo. <strong>Sem perguntar o motivo.</strong> O risco é nosso, não seu.</p>
       </div>
     </div>
   </div>
@@ -1239,8 +1248,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 <section class="section" aria-labelledby="proof-title">
   <div class="container">
     <div class="section__head reveal">
-      <span class="eyebrow">Quem já aplicou</span>
-      <h2 id="proof-title" class="h2">Resultado em uma <em>semana</em>.</h2>
+      <span class="eyebrow">Prova social</span>
+      <h2 id="proof-title" class="h2">Quem aplica, <em>contou</em>.</h2>
     </div>
 
     <div class="proof__list reveal">
@@ -1254,7 +1263,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       </div>
       <div class="proof__slot">
         <div class="proof__slot-label">Relato 03</div>
-        <p class="proof__slot-text">Espaço reservado para o terceiro depoimento, de preferência com um número fechado na conversa.</p>
+        <p class="proof__slot-text">Espaço reservado para o terceiro depoimento, de preferência com um orçamento fechado na conversa.</p>
       </div>
     </div>
     <p class="proof__note">Nenhum depoimento foi inventado. Estes espaços aguardam relatos reais coletados após o lançamento.</p>
@@ -1270,32 +1279,40 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
     <div class="faq__list reveal">
       <details class="faq__item">
-        <summary class="faq__q">Em quanto tempo vejo resultado?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">No primeiro orçamento que cair no seu WhatsApp depois da compra. A maioria aplica o script de abertura e fecha pelo menos um orçamento dentro da primeira semana. Não é "transformação em 30 dias", é mudança no próximo "quanto custa?".</div>
+        <summary class="faq__q">Meus procedimentos são de ticket alto. O script funciona?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Funciona melhor ainda. O Método M.A.C.A. tira o foco do preço e coloca no resultado: a cliente deseja a transformação antes de saber o custo. Quanto maior o ticket, mais a ancoragem de valor pesa a seu favor.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">Funciona pra quem não entende de vendas?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">Sim. Foi pensado pra esteticista que entende muito de pele e zero de vendas. São scripts copia-e-cola, com instrução de quando usar cada um. Se você manda mensagem no WhatsApp, consegue aplicar.</div>
+        <summary class="faq__q">Esses scripts copia-e-cola não deixam o atendimento robótico?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Não, porque o protocolo é uma sequência de perguntas e respostas, não um texto decorado de telemarketing. Você não recita: você conduz. A conversa flui como uma consultoria, e a cliente sente que está sendo cuidada, não vendida.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Eu mesma atendo, não tenho secretária. Vou perder tempo?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Ao contrário. O método filtra o curioso em poucos minutos e concentra a conversa em quem tem real intenção de fechar. Você responde menos e fecha mais. E dá pra treinar a recepcionista com o mesmo material.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Tenho vergonha de vender. Serve pra mim?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Serve. Você não precisa ser vendedora nata. Os scripts são copia-e-cola, com instrução de quando usar cada um. Se você manda mensagem no WhatsApp, você aplica.</div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Funciona pra qualquer procedimento?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">Facial, corporal, pós-operatório, depilação, micropigmentação, drenagem, harmonização. Todos. O método é sobre como conduzir a conversa, não sobre qual procedimento você vende.</div>
+        <div class="faq__a">Facial, corporal, pós-operatório, depilação, harmonização, micropigmentação. Todos. A lógica de condução é a mesma; muda só o procedimento que entra no roteiro.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">Preciso de Instagram ou anúncios?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">Não. O protocolo trabalha o que acontece depois que a pessoa já caiu no seu WhatsApp, venha ela do Instagram, de indicação, de anúncio ou de panfleto. Você não precisa virar influencer. Precisa fechar quem já chegou.</div>
+        <summary class="faq__q">Preciso ter Instagram ou anúncios rodando?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Não. O protocolo trabalha o que acontece depois que a pessoa já caiu no seu WhatsApp, venha ela de indicação, anúncio, post ou panfleto. Você não precisa virar influencer. Precisa fechar quem já chegou.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">E se a cliente me deixar no vácuo?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Você usa o Kit Antivácuo: mensagens prontas pra reabrir a conversa sem parecer chata nem desesperada. É o que recupera o orçamento que parecia perdido.</div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">E se eu não gostar?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">São 7 dias de garantia incondicional. Aplica, testa, sente. Responde "não foi" ao e-mail de boas-vindas e devolvemos 100%, sem precisar de motivo.</div>
+        <div class="faq__a">São 7 dias de garantia incondicional. Aplica, testa numa conversa real. Se não fizer sentido, responde "não foi" ao e-mail de boas-vindas e devolvemos 100%, sem perguntar o motivo.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">Como recebo o acesso?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">Acesso imediato após a confirmação do pagamento. Você recebe um e-mail com o link para a área de membros, o PDF dos scripts, o Kit Antivácuo e o Mapa de Bolso. Tudo baixável.</div>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__q">O preço de R$ 44,90 é por quanto tempo?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">É o preço de lançamento. Sem timer falso, mas o valor sobe quando o lote inicial de cadastros esgotar. Quem entra agora trava o preço e mantém o acesso vitalício, sem mensalidade.</div>
+        <summary class="faq__q">Como recebo o acesso e o preço de R$ 44,90 dura quanto?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Acesso imediato após a confirmação do pagamento, com tudo baixável na área de membros. R$ 44,90 é o preço de lançamento: sem timer falso, mas o valor sobe quando o lote inicial de cadastros esgotar. Quem entra agora trava o preço e mantém o acesso vitalício.</div>
       </details>
     </div>
   </div>
@@ -1305,20 +1322,20 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   <div class="container">
     <div class="exit__inner reveal">
       <span class="eyebrow" style="justify-content:center;">A decisão é sua</span>
-      <h2 id="exit-title" class="h2 h2--light">Duas opções pro próximo orçamento.</h2>
+      <h2 id="exit-title" class="h2 h2--light">Dois caminhos pro próximo "quanto custa?".</h2>
 
       <div class="exit__options">
         <div class="exit__opt exit__opt--a">
           <span class="exit__opt-tag" aria-hidden="true">A</span>
-          <span>Continuar mandando preço solto e ver o orçamento sumir.</span>
+          <span>Continuar respondendo como um catálogo de preço e ver o orçamento sumir no vácuo.</span>
         </div>
         <div class="exit__opt exit__opt--b">
           <span class="exit__opt-tag" aria-hidden="true">B</span>
-          <span>Aplicar o Método MACA na próxima conversa e fechar pelo cuidado.</span>
+          <span>Aplicar o Método M.A.C.A. na próxima conversa e fechar pelo valor, não pelo menor preço.</span>
         </div>
       </div>
 
-      <div class="exit__line">R$ 44,90 · menos que um almoço · 7 dias de garantia · risco zero</div>
+      <div class="exit__line">R$ 44,90 · menos que um kit de descartáveis · 7 dias de garantia · risco zero</div>
 
       <div class="exit__buttons">
         <a href="https://checkout.ticto.app/OCC46FBCB"
@@ -1342,7 +1359,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <strong>Protocolo Fecha-Tudo</strong> · Método MACA por Felipe Granemann · Produto digital · Resultados variam de acordo com a aplicação · © 2026
+    <strong>Protocolo Fecha-Tudo</strong> · Método M.A.C.A. por Felipe Granemann · Produto digital · Resultados variam de acordo com a aplicação · © 2026
   </div>
 </footer>
 
