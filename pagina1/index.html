@@ -247,6 +247,26 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .topbar .btn { padding: 10px 16px; font-size: 12px; }
 
+/* ============== TOPBAR NAV ============== */
+
+.topbar__nav {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin-inline: auto;
+}
+@media (min-width: 860px) { .topbar__nav { display: inline-flex; } }
+.topbar__nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  padding: 7px 11px;
+  letter-spacing: 0.04em;
+  transition: color 200ms var(--ease-out);
+}
+.topbar__nav a::before { content: "/"; color: var(--phosphor-dim); margin-right: 3px; }
+.topbar__nav a:hover { color: var(--phosphor); }
+
 /* ============== TERMINAL TYPOGRAPHY ============== */
 
 .cmd {
@@ -565,6 +585,47 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   max-width: 70ch;
 }
 
+/* ============== TREE / O QUE VEM INSTALADO ============== */
+
+.tree__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--rule);
+  margin-top: 32px;
+}
+@media (min-width: 680px) { .tree__grid { grid-template-columns: 1fr 1fr; } }
+.tree__cell {
+  padding: clamp(20px, 2.8vw, 30px);
+  border-bottom: 1px solid var(--rule);
+  transition: background 240ms var(--ease-out);
+}
+@media (min-width: 680px) {
+  .tree__cell:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .tree__cell:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 679px) {
+  .tree__cell:last-child { border-bottom: 0; }
+}
+.tree__cell:hover { background: var(--bg); }
+.tree__name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--phosphor);
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+.tree__name::before { content: "├─ "; color: var(--ink-faint); }
+.tree__cell:nth-last-child(-n+1) .tree__name::before,
+.tree__cell:last-child .tree__name::before { content: "└─ "; }
+.tree__desc {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-mute);
+  max-width: 46ch;
+}
+
 /* ============== WHOAMI / FELIPE ============== */
 
 .whoami__grid {
@@ -766,6 +827,26 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-weight: 700;
 }
 
+.ls__final-secure {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+}
+.ls__final-secure strong {
+  color: var(--phosphor);
+  font-weight: 600;
+}
+.ls__final-secure span::before { content: "· "; color: var(--ink-faint); }
+.ls__final-secure span:first-of-type::before { content: ""; }
+
 /* ============== GUARANTEE ============== */
 
 .guarantee__box {
@@ -852,6 +933,22 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   color: var(--ink);
 }
 .logs__entry-text strong { color: var(--phosphor); font-weight: 500; }
+
+.logs__entry--ph {
+  border-style: dashed;
+  border-color: var(--rule-strong);
+  background: transparent;
+}
+.logs__entry--ph:hover { border-color: var(--amber); }
+.logs__entry--ph .logs__entry-meta { color: var(--amber); }
+.logs__entry--ph .logs__entry-text { color: var(--ink-mute); }
+.logs__note {
+  margin-top: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
 
 /* ============== FAQ ============== */
 
@@ -1055,6 +1152,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       <span class="brand__mark">_</span>
       <span>fecha-tudo<span class="brand__cursor" aria-hidden="true"></span></span>
     </a>
+    <nav class="topbar__nav" aria-label="Seções da página">
+      <a href="#diagnostico">diagnóstico</a>
+      <a href="#protocolo">protocolo</a>
+      <a href="#instalado">o que vem</a>
+      <a href="#felipe">felipe</a>
+      <a href="#faq">faq</a>
+    </nav>
     <a href="#oferta"
        class="btn btn--primary"
        data-event="cta_click"
@@ -1118,7 +1222,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <span class="boot__photo-stamp" aria-hidden="true">REC · v1.0</span>
         <div class="boot__photo-tag">
           <div class="boot__photo-tag-role">// operador</div>
-          <div class="boot__photo-tag-name">FELIPE V.</div>
+          <div class="boot__photo-tag-name">FELIPE G.</div>
         </div>
       </div>
     </div>
@@ -1138,14 +1242,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <div class="stats__lbl">duração de uma conversa que fecha com o método</div>
       </div>
       <div class="stats__row">
-        <div class="stats__num">+450</div>
-        <div class="stats__lbl">operadoras com protocol.maca ativado</div>
+        <div class="stats__num">04</div>
+        <div class="stats__lbl">movimentos do método: abertura, ancoragem, condução, agendamento</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" aria-labelledby="diag-title">
+<section class="section section--alt" id="diagnostico" aria-labelledby="diag-title">
   <div class="container">
     <div class="section__head reveal">
       <div class="cmd cmd--gt">diagnosis</div>
@@ -1172,7 +1276,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 </section>
 
-<section class="section" aria-labelledby="protocol-title">
+<section class="section" id="protocolo" aria-labelledby="protocol-title">
   <div class="container">
     <div class="section__head reveal">
       <div class="cmd cmd--gt">protocol.maca</div>
@@ -1213,11 +1317,11 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 </section>
 
-<section class="section section--alt" aria-labelledby="who-title">
+<section class="section section--alt" id="felipe" aria-labelledby="who-title">
   <div class="container">
     <div class="section__head reveal" style="margin-bottom:32px;">
       <div class="cmd cmd--gt">whoami</div>
-      <h2 id="who-title" class="h2">felipe vargas.<br>10 anos · 70+ clínicas · <em>1 método.</em></h2>
+      <h2 id="who-title" class="h2">felipe granemann.<br>10 anos · 70+ clínicas · <em>1 método.</em></h2>
     </div>
 
     <div class="whoami__grid">
@@ -1238,6 +1342,43 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
       <div class="whoami__photo reveal">
         <img src="../assets/felipe-studio.jpg" alt="Felipe em retrato de estúdio" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="instalado" aria-labelledby="tree-title">
+  <div class="container">
+    <div class="section__head reveal" style="max-width: 660px;">
+      <div class="cmd cmd--gt">tree PROTOCOLO_FECHA-TUDO/</div>
+      <h2 id="tree-title" class="h2">o que vem <em>instalado</em>.</h2>
+      <p class="lede" style="margin-top:18px;">não é teoria nem aula motivacional. são as sequências exatas que você cola na conversa, uma pra cada momento do orçamento.</p>
+    </div>
+
+    <div class="tree__grid reveal">
+      <div class="tree__cell">
+        <div class="tree__name">aberturas_calibradas</div>
+        <p class="tree__desc">respostas pro "quanto custa?" que tiram a cliente do modo catálogo e abrem o diagnóstico.</p>
+      </div>
+      <div class="tree__cell">
+        <div class="tree__name">ancoragens_de_valor</div>
+        <p class="tree__desc">sequências que fazem a cliente enxergar o tamanho do problema antes de o número aparecer.</p>
+      </div>
+      <div class="tree__cell">
+        <div class="tree__name">contornos_de_objecao</div>
+        <p class="tree__desc">scripts prontos pro "vou pensar", "tá caro" e "depois te falo", sem forçar e sem desconto.</p>
+      </div>
+      <div class="tree__cell">
+        <div class="tree__name">reativacao_antivacuo</div>
+        <p class="tree__desc">sequência pra acordar quem sumiu nos últimos quatro meses e trazer de volta pra conversa.</p>
+      </div>
+      <div class="tree__cell">
+        <div class="tree__name">perguntas_de_diagnostico</div>
+        <p class="tree__desc">perguntas que geram autoridade, conexão e desejo de fechar ainda dentro do WhatsApp.</p>
+      </div>
+      <div class="tree__cell">
+        <div class="tree__name">fechamento_de_agenda</div>
+        <p class="tree__desc">condução firme até a janela marcada, com objetivo claro em cada mensagem: a agenda.</p>
       </div>
     </div>
   </div>
@@ -1313,6 +1454,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <span>garantia incondicional de 7 dias</span>
         <span>sem mensalidade, sem upsell</span>
       </div>
+
+      <div class="ls__final-secure" aria-label="Pagamento seguro">
+        <span><strong>[secure]</strong> checkout ticto</span>
+        <span>ssl</span>
+        <span>cartão</span>
+        <span>pix</span>
+        <span>boleto</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1346,19 +1495,20 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
     </div>
 
     <div class="logs__list reveal">
-      <article class="logs__entry">
-        <div class="logs__entry-meta">Mariana V. · esteticista facial · Curitiba/PR</div>
-        <p class="logs__entry-text">&gt; apliquei o script de abertura e o de ancoragem na mesma semana. <strong>R$ 1.800 fechados sem desconto.</strong> ainda agendou retorno.</p>
+      <article class="logs__entry logs__entry--ph">
+        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
+        <p class="logs__entry-text">&gt; espaço para o primeiro depoimento real do lançamento. substituir por print ou texto de cliente antes de publicar.</p>
       </article>
-      <article class="logs__entry">
-        <div class="logs__entry-meta">Bruna F. · biomédica esteta · Goiânia/GO</div>
-        <p class="logs__entry-text">&gt; kit antivácuo é cirúrgico. mandei pra 23 clientes que tinham sumido. voltaram 9. fechei 6. <strong>R$ 11k de gente já dada por perdida.</strong></p>
+      <article class="logs__entry logs__entry--ph">
+        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
+        <p class="logs__entry-text">&gt; espaço para o segundo depoimento real. nome, cidade e especialidade ajudam a sustentar a prova.</p>
       </article>
-      <article class="logs__entry">
-        <div class="logs__entry-meta">Larissa T. · fisio dermatofuncional · Recife/PE</div>
-        <p class="logs__entry-text">&gt; sou cética. comprei por curiosidade. apliquei MACA em 4 dias. <strong>3 orçamentos que iam sumir, fechados.</strong> travou meu antes-e-depois.</p>
+      <article class="logs__entry logs__entry--ph">
+        <div class="logs__entry-meta">slot reservado · relato de operadora</div>
+        <p class="logs__entry-text">&gt; espaço para o terceiro depoimento real, de preferência com número fechado na conversa.</p>
       </article>
     </div>
+    <p class="logs__note">// nenhum depoimento foi inventado. estes slots aguardam relatos reais coletados após o lançamento.</p>
   </div>
 </section>
 
@@ -1441,7 +1591,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    // <strong>protocolo_fecha-tudo</strong> · método MACA por Felipe · produto digital · resultados variam · © 2026
+    // <strong>protocolo_fecha-tudo</strong> · método MACA por Felipe Granemann · produto digital · resultados variam · © 2026
   </div>
 </footer>
 

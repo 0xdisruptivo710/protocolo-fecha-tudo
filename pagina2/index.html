@@ -199,6 +199,24 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .topbar .btn { padding: 10px 22px; font-size: 12px; }
 
+.topbar__nav {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin-inline: auto;
+}
+@media (min-width: 940px) { .topbar__nav { display: inline-flex; } }
+.topbar__nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  padding: 8px 13px;
+  letter-spacing: 0.005em;
+  transition: color 200ms var(--ease-edit);
+}
+.topbar__nav a:hover { color: var(--pigment); }
+
 .topbar {
   position: sticky;
   top: 0;
@@ -647,6 +665,23 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .edition__final-trust span::before { content: "· "; color: var(--pigment); }
 
+.edition__final-secure {
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+.edition__final-secure strong { color: var(--ink); font-weight: 500; }
+.edition__final-secure span:not(:last-child)::after { content: "·"; color: var(--pigment); margin-left: 16px; }
+
 .guarantee {
   display: grid;
   grid-template-columns: 1fr;
@@ -753,6 +788,44 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   color: var(--ink-mute);
 }
 .testimonials__minor-author::before { content: "— "; color: var(--pigment); }
+
+.testimonials__slots {
+  max-width: 920px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 720px) { .testimonials__slots { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+.testimonials__slot {
+  border: 1px dashed var(--rule-strong);
+  padding: clamp(24px, 3vw, 36px);
+}
+.testimonials__slot-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pigment);
+  margin-bottom: 16px;
+}
+.testimonials__slot-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+.testimonials__note {
+  max-width: 920px;
+  margin: 28px auto 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: center;
+}
 
 .faq__list { max-width: 880px; margin-inline: auto; border-top: 1px solid var(--rule); }
 .faq__item { border-bottom: 1px solid var(--rule); padding-block: 4px; }
@@ -927,6 +1000,12 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       <span>Protocolo Fecha-Tudo</span>
       <span class="brand__sub">Nº 01</span>
     </a>
+    <nav class="topbar__nav" aria-label="Seções da edição">
+      <a href="#estrategista">O estrategista</a>
+      <a href="#metodo">O método</a>
+      <a href="#recebe">O que você recebe</a>
+      <a href="#faq">Perguntas</a>
+    </nav>
     <a href="#oferta"
        class="btn btn--primary"
        data-event="cta_click"
@@ -1008,7 +1087,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="estrategista">
   <div class="container">
     <div class="section__head reveal">
       <div class="section__num">I.</div>
@@ -1077,7 +1156,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="metodo">
   <div class="container">
     <div class="section__head reveal">
       <div class="section__num">III.</div>
@@ -1115,10 +1194,58 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   </div>
 </section>
 
-<section class="section edition" id="oferta">
+<section class="section" id="recebe">
   <div class="container">
     <div class="section__head reveal">
       <div class="section__num">IV.</div>
+      <span class="kicker"><span class="kicker__line"></span>O que você recebe</span>
+      <h2 class="h2" style="margin-top: 24px;">
+        Seis entregas práticas. <em>Nenhuma teoria solta.</em>
+      </h2>
+      <p class="lede" style="margin-top: 24px;">
+        O Protocolo Fecha-Tudo não é uma aula sobre vendas. É o conjunto de textos prontos que você cola na conversa, um para cada momento do orçamento.
+      </p>
+    </div>
+
+    <div class="method__list reveal">
+      <article class="method__item">
+        <div class="method__num">01</div>
+        <h3 class="method__head">Aberturas calibradas.</h3>
+        <p class="method__body">Respostas para o "quanto custa?" que tiram a cliente do modo catálogo e abrem espaço para o diagnóstico.</p>
+      </article>
+      <article class="method__item">
+        <div class="method__num">02</div>
+        <h3 class="method__head">Ancoragens de valor.</h3>
+        <p class="method__body">Sequências que constroem a percepção de valor antes de o número entrar na conversa.</p>
+      </article>
+      <article class="method__item">
+        <div class="method__num">03</div>
+        <h3 class="method__head">Contornos de objeção.</h3>
+        <p class="method__body">Textos prontos para "vou pensar", "está caro" e "depois te falo", sem forçar e sem desconto.</p>
+      </article>
+      <article class="method__item">
+        <div class="method__num">04</div>
+        <h3 class="method__head">Reativação Antivácuo.</h3>
+        <p class="method__body">A sequência para reabrir a conversa com quem sumiu nos últimos quatro meses.</p>
+      </article>
+      <article class="method__item">
+        <div class="method__num">05</div>
+        <h3 class="method__head">Perguntas de diagnóstico.</h3>
+        <p class="method__body">Perguntas que geram autoridade e desejo de fechar ainda dentro do WhatsApp.</p>
+      </article>
+      <article class="method__item">
+        <div class="method__num">06</div>
+        <h3 class="method__head">Fechamento de agenda.</h3>
+        <p class="method__body">A condução firme até a janela marcada, com objetivo claro em cada mensagem.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section edition" id="oferta">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="section__num">V.</div>
       <span class="kicker"><span class="kicker__line"></span>A edição completa</span>
       <h2 class="h2" style="margin-top: 24px;">
         Tudo o que vai pra sua mão, no <em>acesso vitalício</em>.
@@ -1199,6 +1326,14 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <span>Garantia 7 dias</span>
         <span>Sem mensalidade</span>
       </div>
+
+      <div class="edition__final-secure" aria-label="Pagamento seguro">
+        <span><strong>Pagamento seguro</strong></span>
+        <span>Checkout Ticto</span>
+        <span>Cartão</span>
+        <span>Pix</span>
+        <span>Boleto</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1227,23 +1362,21 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
       </h2>
     </div>
 
-    <div class="testimonials__main reveal">
-      <p class="testimonials__quote">
-        O Kit Antivácuo é cirúrgico. Mandei a sequência para vinte e três clientes que tinham sumido nos últimos quatro meses. Voltaram nove. Fechei seis. <em>Faturei R$ 11 mil de gente que eu já tinha dado por perdida.</em>
-      </p>
-      <div class="testimonials__author">Bruna F. · Biomédica esteta · Goiânia/GO</div>
+    <div class="testimonials__slots reveal">
+      <div class="testimonials__slot">
+        <div class="testimonials__slot-label">Relato 01</div>
+        <p class="testimonials__slot-text">Espaço reservado para o primeiro depoimento real de uma operadora, coletado após o lançamento de abril.</p>
+      </div>
+      <div class="testimonials__slot">
+        <div class="testimonials__slot-label">Relato 02</div>
+        <p class="testimonials__slot-text">Espaço reservado para o segundo depoimento. Nome, cidade e especialidade ajudam a sustentar a prova.</p>
+      </div>
+      <div class="testimonials__slot">
+        <div class="testimonials__slot-label">Relato 03</div>
+        <p class="testimonials__slot-text">Espaço reservado para o terceiro depoimento, de preferência com um número fechado na conversa.</p>
+      </div>
     </div>
-
-    <div class="testimonials__secondary reveal">
-      <p class="testimonials__minor">
-        "Eu travava sempre no <em>'quanto custa?'</em>. Apliquei o script de abertura e o de ancoragem na mesma semana. Fechei R$ 1.800 sem desconto, e ainda agendei retorno."
-        <span class="testimonials__minor-author">Mariana V. · Esteticista facial · Curitiba/PR</span>
-      </p>
-      <p class="testimonials__minor">
-        "Sou cética. Comprei mais por curiosidade. Apliquei o método MACA inteiro em quatro dias, fechei três orçamentos que eu sabia que iam sumir. <em>Mudou o meu antes-e-depois.</em>"
-        <span class="testimonials__minor-author">Larissa T. · Fisio dermatofuncional · Recife/PE</span>
-      </p>
-    </div>
+    <p class="testimonials__note">Nenhum depoimento foi inventado. Estes espaços aguardam relatos reais.</p>
   </div>
 </section>
 
@@ -1325,7 +1458,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <strong>Protocolo Fecha-Tudo</strong> · Método MACA por Felipe · Edição Nº 01 · Abril 2026 · Resultados variam de acordo com a aplicação
+    <strong>Protocolo Fecha-Tudo</strong> · Método MACA por Felipe Granemann · Edição Nº 01 · Abril 2026 · Resultados variam de acordo com a aplicação
   </div>
 </footer>
 
