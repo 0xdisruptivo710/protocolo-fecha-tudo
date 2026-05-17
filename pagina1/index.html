@@ -225,13 +225,19 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   font-family: 'Anton', sans-serif;
   font-weight: 400;
   font-size: clamp(40px, 7vw, 84px);
-  line-height: 0.98;
+  line-height: 1.1;
   letter-spacing: 0.005em;
   text-transform: uppercase;
   color: var(--ink);
 }
 .display em { font-style: normal; color: var(--alert); }
-.display mark { background: var(--accent); color: var(--ink); padding: 0 0.1em; }
+.display mark {
+  background: var(--accent);
+  color: var(--ink);
+  padding: 0.04em 0.14em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 
 .h2 {
   font-family: 'Anton', sans-serif;
