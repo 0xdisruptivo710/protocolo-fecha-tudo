@@ -9,12 +9,12 @@
 <meta property="og:title" content="Protocolo Fecha-Tudo · Edição Nº 01" />
 <meta property="og:description" content="O método que Felipe aplica nas franquias premium da estética brasileira, condensado em quatro movimentos de WhatsApp." />
 <meta property="og:type" content="article" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F2EDE3'/%3E%3Ctext x='50' y='72' font-family='Fraunces,serif' font-size='72' font-style='italic' text-anchor='middle' fill='%239A4A2E'%3EF%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F2EDE3'/%3E%3Ctext x='50' y='72' font-family='Arial,Helvetica,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%239A4A2E'%3EF%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" />
 
 <style>
 /* ============================================================
@@ -113,29 +113,27 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .eyebrow::before { content: ""; display: inline-block; width: 32px; height: 1px; background: var(--pigment); }
 
 .display, .h1 {
-  font-family: 'Fraunces', 'Tiempos Headline', Georgia, serif;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144, "SOFT" 0;
-  letter-spacing: -0.024em;
-  line-height: 1.02;
-  font-size: clamp(46px, 7.4vw, 104px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  font-size: clamp(42px, 6.6vw, 92px);
   color: var(--ink);
 }
-.display em, .h1 em { font-style: italic; font-weight: 500; font-variation-settings: "opsz" 144; color: var(--ink); }
+.display em, .h1 em { font-weight: 800; color: var(--pigment); }
 
 .h2 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144;
-  letter-spacing: -0.018em;
-  line-height: 1.08;
-  font-size: clamp(34px, 4.6vw, 64px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+  font-size: clamp(30px, 4vw, 54px);
   color: var(--ink);
 }
-.h2 em { font-style: italic; font-weight: 500; }
+.h2 em { font-weight: 700; color: var(--pigment); }
 
 .lede {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(19px, 2vw, 24px);
   line-height: 1.5;
@@ -190,9 +188,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .btn--whatsapp:hover { border-color: var(--whatsapp-bright); background: rgba(37, 211, 102, 0.06); }
 
 .btn__arrow {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-style: italic;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
   transition: transform 240ms var(--ease-edit);
 }
 .btn:hover .btn__arrow { transform: translateX(4px); }
@@ -237,12 +234,12 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 500;
   font-size: 18px;
   color: var(--ink);
 }
-.brand__mark { font-family: 'Fraunces', serif; font-style: italic; color: var(--pigment); font-size: 26px; line-height: 1; font-weight: 700; }
+.brand__mark { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--pigment); font-size: 24px; line-height: 1; font-weight: 800; }
 .brand__sep { display: inline-block; width: 20px; height: 1px; background: var(--rule); }
 .brand__sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mute); letter-spacing: 0.16em; text-transform: uppercase; }
 
@@ -258,10 +255,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   flex-wrap: wrap;
 }
 .masthead__title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(28px, 3vw, 38px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 32px);
   color: var(--ink);
   letter-spacing: -0.02em;
 }
@@ -285,10 +281,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hero__title { margin-bottom: 32px; }
 
 .hero__byline {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(17px, 1.9vw, 21px);
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(17px, 1.7vw, 20px);
+  line-height: 1.55;
   color: var(--ink-soft);
   max-width: 56ch;
   margin-bottom: 36px;
@@ -298,7 +293,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hero__lead {
   column-count: 1;
   column-gap: 40px;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(16px, 1.4vw, 18px);
   line-height: 1.7;
@@ -311,7 +306,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .hero__lead p + p { margin-top: 14px; }
 .hero__lead em { font-style: italic; color: var(--ink); }
 .hero__lead strong { font-weight: 500; color: var(--ink); }
-.hero__lead-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 500; color: var(--pigment); }
+.hero__lead-quote { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; color: var(--pigment); }
 
 .hero__cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
@@ -350,9 +345,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   margin-bottom: 16px;
 }
 .circulation__list {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
   font-size: clamp(15px, 1.6vw, 19px);
   color: var(--ink-2);
   line-height: 1.7;
@@ -366,9 +360,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .section__head { max-width: 800px; margin-bottom: clamp(48px, 6vw, 80px); }
 .section__head .kicker { margin-bottom: 20px; }
 .section__num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(16px, 1.4vw, 19px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(15px, 1.3vw, 18px);
   color: var(--pigment);
   letter-spacing: 0.04em;
   margin-bottom: 12px;
@@ -380,7 +374,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .bio__copy {
   column-count: 1;
   column-gap: 40px;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(16px, 1.4vw, 18px);
   line-height: 1.78;
@@ -392,14 +386,13 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .bio__copy strong { font-weight: 500; color: var(--ink); }
 .bio__copy em { font-style: italic; color: var(--ink); }
 .bio__copy p:first-child::first-letter {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 5.4em;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: 4.6em;
   float: left;
-  line-height: 0.84;
-  margin-right: 12px;
-  margin-top: 6px;
+  line-height: 0.8;
+  margin-right: 14px;
+  margin-top: 8px;
   color: var(--pigment);
 }
 
@@ -423,15 +416,15 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   border-top: 1px solid var(--rule);
 }
 .bio__stat-num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   font-size: clamp(36px, 4vw, 56px);
   line-height: 1;
   color: var(--ink);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-bottom: 6px;
 }
-.bio__stat-num em { font-style: italic; color: var(--pigment); }
+.bio__stat-num em { font-style: normal; color: var(--pigment); }
 .bio__stat-lbl {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -449,24 +442,21 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .pullquote__inner { max-width: 1000px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 60px); }
 .pullquote__mark {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 700;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   font-size: clamp(80px, 9vw, 140px);
   line-height: 0.6;
   color: var(--pigment);
   margin-bottom: 12px;
 }
 .pullquote__text {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144;
-  font-size: clamp(34px, 5vw, 68px);
-  line-height: 1.08;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4.6vw, 60px);
+  line-height: 1.12;
   color: var(--ink);
-  letter-spacing: -0.022em;
-  max-width: 14ch;
+  letter-spacing: -0.025em;
+  max-width: 18ch;
   margin-bottom: 32px;
 }
 .pullquote__author {
@@ -483,7 +473,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .diagnosis__copy {
   max-width: 64ch;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(20px, 2.2vw, 26px);
   line-height: 1.5;
@@ -491,7 +481,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   letter-spacing: -0.012em;
 }
 .diagnosis__copy strong { font-weight: 500; color: var(--ink); }
-.diagnosis__copy em { font-style: italic; color: var(--pigment); }
+.diagnosis__copy em { font-style: normal; font-weight: 600; color: var(--pigment); }
 
 .method__list {
   display: grid;
@@ -503,22 +493,22 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .method__item { padding-top: 24px; border-top: 1px solid var(--rule); }
 .method__num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(28px, 3vw, 40px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 36px);
   color: var(--pigment);
   margin-bottom: 12px;
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 .method__head {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(22px, 2.4vw, 28px);
-  line-height: 1.2;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(21px, 2.2vw, 26px);
+  line-height: 1.25;
   color: var(--ink);
   margin-bottom: 14px;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.015em;
 }
 .method__body {
   font-family: 'Inter', sans-serif;
@@ -530,10 +520,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .edition { background: var(--paper-2); }
 .edition__intro {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
-  font-size: clamp(17px, 1.8vw, 20px);
+  font-size: clamp(16px, 1.6vw, 19px);
   line-height: 1.6;
   color: var(--ink-soft);
   max-width: 56ch;
@@ -556,20 +545,20 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .toc__row:last-child { border-bottom: 0; }
 .toc__num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   font-size: clamp(22px, 2.4vw, 28px);
   color: var(--pigment);
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 .toc__title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
   font-size: clamp(18px, 1.8vw, 22px);
   color: var(--ink);
   margin-bottom: 4px;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.015em;
   line-height: 1.3;
 }
 .toc__desc {
@@ -578,7 +567,6 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: 60ch;
-  font-style: italic;
 }
 .toc__price {
   font-family: 'JetBrains Mono', monospace;
@@ -624,29 +612,29 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   color: var(--pigment);
 }
 .edition__final-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(28px, 3.6vw, 44px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.2vw, 40px);
   color: var(--ink);
-  line-height: 1.05;
-  letter-spacing: -0.018em;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 .edition__final-price {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 .edition__final-currency { font-size: clamp(20px, 2.4vw, 28px); }
 .edition__final-num { font-size: clamp(64px, 9vw, 110px); line-height: 0.86; letter-spacing: -0.022em; font-feature-settings: "tnum"; }
 .edition__final-cents { font-size: clamp(28px, 3.6vw, 44px); align-self: flex-start; line-height: 1; }
 .edition__final-pay {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: 16px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--ink-mute);
 }
 .edition__final-buttons { display: flex; flex-direction: column; gap: 12px; }
@@ -692,17 +680,16 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 @media (min-width: 740px) { .guarantee { grid-template-columns: auto 1fr; } }
 .guarantee__num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   font-size: clamp(96px, 14vw, 200px);
   line-height: 0.8;
   color: var(--pigment);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 .guarantee__num em { font-style: normal; }
 .guarantee__copy {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(17px, 1.8vw, 21px);
   line-height: 1.6;
@@ -722,10 +709,9 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 .testimonials__main { max-width: 920px; margin-inline: auto; }
 .testimonials__quote {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-style: italic;
   font-weight: 400;
-  font-variation-settings: "opsz" 144;
   font-size: clamp(24px, 3.4vw, 44px);
   line-height: 1.18;
   color: var(--ink);
@@ -740,7 +726,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   position: absolute;
   top: -32px;
   left: -8px;
-  font-family: 'Fraunces', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 120px;
@@ -770,7 +756,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 @media (min-width: 720px) { .testimonials__secondary { grid-template-columns: 1fr 1fr; gap: 48px; } }
 .testimonials__minor {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 17px;
@@ -810,9 +796,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   margin-bottom: 16px;
 }
 .testimonials__slot-text {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: 16px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
   line-height: 1.55;
   color: var(--ink-mute);
 }
@@ -837,23 +822,23 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   gap: 24px;
   padding: 24px 0;
   text-align: left;
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(18px, 2vw, 22px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 1.8vw, 21px);
   color: var(--ink);
   cursor: pointer;
   list-style: none;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.015em;
 }
 .faq__q::-webkit-details-marker { display: none; }
 .faq__q:hover { color: var(--pigment); }
 .faq__sign {
   flex-shrink: 0;
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 24px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 26px;
   color: var(--pigment);
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1;
   transition: transform 280ms var(--ease-edit);
 }
 .faq__item[open] .faq__sign { transform: rotate(45deg); }
@@ -869,27 +854,26 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .closing { padding-block: clamp(80px, 10vw, 140px); border-bottom: 1px solid var(--rule); }
 .closing__inner { max-width: 760px; margin-inline: auto; }
 .closing__title {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(20px, 1.8vw, 24px);
-  letter-spacing: -0.012em;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--pigment);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .closing__head {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144;
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1.04;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 4.4vw, 60px);
+  line-height: 1.08;
   color: var(--ink);
-  letter-spacing: -0.022em;
+  letter-spacing: -0.03em;
   margin-bottom: 32px;
 }
-.closing__head em { font-style: italic; font-weight: 500; color: var(--pigment); }
+.closing__head em { font-style: normal; font-weight: 800; color: var(--pigment); }
 .closing__body {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   font-size: clamp(17px, 1.8vw, 20px);
   line-height: 1.65;
@@ -953,20 +937,18 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 }
 .sticky-cta.is-visible { transform: translateY(0); }
 .sticky-cta__txt {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: 14px;
-  color: var(--ink-2);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: var(--ink-soft);
   flex: 1;
   line-height: 1.3;
 }
 .sticky-cta__txt strong {
   display: block;
-  font-style: normal;
   color: var(--ink);
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
   margin-bottom: 2px;
   letter-spacing: -0.015em;
 }
@@ -1423,8 +1405,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         <div class="faq__a">São sete dias de garantia incondicional. Aplica, testa numa conversa real. Se não fizer sentido, basta responder o e-mail de boas-vindas com "não foi", e devolvemos cada centavo, sem perguntar o motivo.</div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q">Como recebo o acesso, e o preço de R$ 44,90 dura quanto?<span class="faq__sign" aria-hidden="true">+</span></summary>
-        <div class="faq__a">Acesso imediato após a confirmação do pagamento, com tudo baixável na área de membros. R$ 44,90 é o preço de lançamento: sem timer falso, mas o valor sobe quando o lote inicial de cadastros se esgotar. Quem entra agora trava o preço e mantém o acesso vitalício.</div>
+        <summary class="faq__q">Como recebo o acesso, e o preço de lançamento dura quanto?<span class="faq__sign" aria-hidden="true">+</span></summary>
+        <div class="faq__a">Acesso imediato após a confirmação do pagamento, com tudo baixável na área de membros. O preço de lançamento não tem timer falso, mas sobe quando o lote inicial de cadastros se esgotar. Quem entra agora trava o valor e mantém o acesso vitalício.</div>
       </details>
     </div>
   </div>
@@ -1438,7 +1420,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
         Continuar competindo por preço, ou <em>cobrar pela autoridade</em>.
       </h2>
       <p class="closing__body">
-        Por R$ 44,90, menos do que o custo de um almoço, você não compra um curso. Adquire uma <strong>edição de método</strong>. Se em sete dias não fizer sentido, devolvemos cada centavo. O risco é nosso.
+        Por menos do que o custo de um almoço, você não compra um curso. Adquire uma <strong>edição de método</strong>. Se em sete dias não fizer sentido, devolvemos cada centavo. O risco é nosso.
       </p>
 
       <div class="closing__buttons">
@@ -1446,7 +1428,7 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
            class="btn btn--primary btn--xl"
            data-event="cta_click"
            data-position="fechamento">
-          Adquirir por R$ 44,90 <span class="btn__arrow">→</span>
+          Adquirir a edição <span class="btn__arrow">→</span>
         </a>
         <a href="https://wa.me/5515981730591?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Protocolo%20Fecha-Tudo"
            class="btn btn--ghost btn--xl"
@@ -1472,8 +1454,8 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta__txt">
-    <strong>R$ 44,90</strong>
-    Edição de lançamento
+    <strong>Edição de lançamento</strong>
+    Acesso vitalício · pagamento único
   </div>
   <a href="https://checkout.ticto.app/OCC46FBCB"
      class="btn btn--primary"
